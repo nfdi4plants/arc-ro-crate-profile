@@ -199,136 +199,80 @@ Protocol --reagent---> prop
 
 ## Requirements
 
-<table>
+### Dataset
 
-  <tr>
-   <td><strong>Property</strong></td>
-   <td><strong>Required?</strong></td>
-   <td><strong>Description</strong></td>
-  </tr>
+[schema.org/Dataset](https://schema.org/Dataset) containing and contexualizing the processes.
 
-  <tr>
-   <th colspan="3"><strong>Dataset</strong> (the <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html">root data entity</a>, e.g. <code>"@id": "./"</code>)</th>
-  </tr>
-  <tr>
-   <td>conformsTo</td>
-   <td>MUST</td>
-   <td>MUST reference a <code>CreativeWork</code> entity with an <code>@id</code> URI that is consistent with the versioned <em>Permalink</em> of this document, e.g. <code>{"@id": "https://w3id.org/ro/wfrun/process/0.4"}</code></td>
-  </tr>
+| Property | Required | Expected Type | Description |
+|----------|----------|---------------|-------------|
+|@id|MUST|Text or URL|According to ROCrate specification.|
+|@type|MUST|Text|MUST be '[schema.org/Dataset](https://schema.org/Dataset)'|
+|about|SHOULD|[bioschemas.org/LabProcess](#labprocess)|The processes described here and possibly leading up to the files grouped in this dataset.|
+|hasPart|COULD|[File](https://schema.org/MediaObject)|Data files resulting from the process sequence.|
 
-  <tr>
-   <th colspan="3"><strong>SoftwareApplication</strong></th>
-  </tr>
+### LabProcess
 
-  <tr>
-   <td>@type</td>
-   <td>MUST</td>
-   <td>SHOULD include <a href="http://schema.org/SoftwareApplication">SoftwareApplication</a>, <a href="http://schema.org/SoftwareSourceCode">SoftwareSourceCode</a> or <a href="https://bioschemas.org/ComputationalWorkflow">ComputationalWorkflow</a></td>
-  </tr>
+Has the new Bioschemas DRAFT [bioschemas.org/LabProcess](https://bioschemas.org/LabProcess) type and maps to the [ISA-JSON Process](https://isa-specs.readthedocs.io/en/latest/isajson.html#process-schema-json)
 
-  <tr>
-   <td>@id</td>
-   <td>MUST</td>
-   <td>SHOULD be an absolute URI, but MAY be a relative URI to a data entity in the crate (e.g. <code>"bin/simulation4"</code>) or a local identifier for tools that are not otherwise described on the web (e.g. <code>"#statistical-analysis"</code>)</td>
-  </tr>
+| Property | Required | Expected Type | Description |
+|----------|----------|---------------|-------------|
+|@id|MUST|Text or URL|Could identify the process using the isa metadata filename and the protocol reference or process name.|
+|@type |MUST|Text|MUST be '[bioschemas.org/LabProcess](https://bioschemas.org/LabProcess)'|
+|name|MUST|Text| -|
+|object|SHOULD|[bioschemas.org/Sample](#sample) or [File](https://schema.org/MediaObject)|The input of the process. If there are multiple inputs, they SHOULD be stored as a sorted list to establish correspondence with outputs. (Both lists need the same length in that case.)|
+|result|SHOULD|[bioschemas.org/Sample](#sample) or [File](https://schema.org/MediaObject)|The output of the process. If there are multiple outputs, they SHOULD be stored as a sorted list to establish correspondence with inputs. (Both lists need the same length in that case.)|
+|agent|SHOULD|[schema.org/Person](#person)|The performer|
+|executesLabProtocol|SHOULD|[bioschemas.org/LabProtocol](https://bioschemas.org/LabProtocol)|The protocol executed|
+|parameterValue|SHOULD|[schema.org/PropertyValue](https://schema.org/PropertyValue) ([Parameter](#propertyvalue---parameter))|A parameter value of the experimental process, usually a key-value pair using ontology terms|
+|endTime|SHOULD|DateTime||
+|disambiguatingDescription|COULD|Text|Comments|
 
-  <tr>
-   <td>name</td>
-   <td>SHOULD</td>
-   <td>A human readable name for the tool <em>in general</em> (not just how it was used here)</td>
-  </tr>
+### LabProtocol
 
-  <tr>
-   <td>url</td>
-   <td>SHOULD</td>
-   <td>Homepage, documentation or source for the tool</td>
-  </tr>
+Is based on the Bioschemas [bioschemas.org/LabProtocol](https://bioschemas.org/LabProtocol) type and maps to the [ISA-JSON Protocol](https://isa-specs.readthedocs.io/en/latest/isajson.html#protocol-schema-json)  
 
-  <tr>
-   <td>version</td>
-   <td>SHOULD</td>
-   <td>The version string for the software application. In the case of a <code>SoftwareApplication</code>, this MAY be provided via the more specific <a href="http://schema.org/softwareVersion">softwareVersion</a>. <code>SoftwareApplication</code> entities SHOULD NOT specify both <code>version</code> and <code>softwareVersion</code>: in this case, consumers SHOULD prioritize <code>softwareVersion</code>. In order to facilitate comparison attempts by consumers, it is RECOMMENDED to specify a machine-readable version string if available (see for instance Python's <a href="https://peps.python.org/pep-0440/">PEP 440</a>).</td>
-  </tr>
+| Property | Required | Expected Type | Description |
+|----------|----------|---------------|-------------|
+|@id|MUST|Text or URL|Could be the url pointing to the protocol resource.|
+|@type |MUST|Text|MUST be '[bioschemas.org/LabProtocol](https://bioschemas.org/LabProtocol)'|
+|description|SHOULD|Text|A short description of the protocol (e.g. an abstract)|
+|intendedUse|SHOULD|[schema.org/DefinedTerm](#definedterm) or Text or URL|The protocol type as an ontology term|
+|name|SHOULD|Text|Main title of the LabProtocol.|
+|comment|COULD|[schema.org/Comment](#comment)|Comment|
+|computationalTool|COULD|[schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue---component)) or [schema.org/SoftwareApplication](https://schema.org/SoftwareApplication)|Software or tool used as part of the lab protocol to complete a part of it.|
+|labEquipment|COULD|[schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue---component)) or Text or URL|For LabProtocols it would be a laboratory equipment use by a person to follow one or more steps described in this LabProtocol.|
+|reagent|COULD|[schema.org/BioChemEntity](https://schema.org/BioChemEntity://bioschemas.org/Sample) or [schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue---component)) or Text or URL|Reagents used in the protocol.|
+|url|COULD|URL|Pointer to protocol resources external to the ISA-Tab that can be accessed by their Uniform Resource Identifier (URI).|
+|version|COULD|Number or Text|An identifier for the version to ensure protocol tracking.|
 
-  <tr>
-   <th colspan="3"><strong>CreateAction</strong></th>
-  </tr>
+### Sample
 
-  <tr>
-   <td>@type</td>
-   <td>MUST</td>
-   <td>SHOULD be <a href="http://schema.org/CreateAction">CreateAction</a> to indicate that this tool created the <code>result</code> data entities. MAY be <a href="http://schema.org/ActivateAction">ActivateAction</a> if the provenance does not include any <code>result</code>. MAY be <a href="http://schema.org/UpdateAction">UpdateAction</a> if the tool modified an existing data entity or database in-place.</td>
-  </tr>
+Is based on the Bioschemas [bioschemas.org/Sample](https://bioschemas.org/Sample) type, and represents the ISA-JSON [Sample](https://isa-specs.readthedocs.io/en/latest/isajson.html#sample-schema-json),
+[Source](https://isa-specs.readthedocs.io/en/latest/isajson.html#source-schema-json) and [Material](https://isa-specs.readthedocs.io/en/latest/isajson.html#material-schema-json)
 
-  <tr>
-   <td>@id</td>
-   <td>MUST</td>
-   <td>A unique identifier for the execution, e.g. <code>"urn:uuid:50ec5c76-1f7a-4130-8ef6-846756b228c1"</code>, <code>"#f99a8e6c"</code>. MAY be an absolute URI, e.g. <a href="http://example.com/runs/846756b228c1">http://example.com/runs/846756b228c1</a>. The use of randomly generated <a href="https://datatracker.ietf.org/doc/html/rfc4122">UUIDs</a> (type 4) is RECOMMENDED. SHOULD be listed under <a href="http://schema.org/mentions">mentions</a> of the <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html">root data entity</a>.</td>
-  </tr>
+| Property | Required | Expected Type | Description |
+|----------|----------|---------------|-------------|
+|@id|MUST|Text or URL|Could be the unique sample name.|
+|@type |MUST|Text|MUST be '[bioschemas.org/Sample](https://bioschemas.org/Sample)'|
+|name|MUST|Text|A name identifying the sample.|
+|additionalProperty|SHOULD|[schema.org/PropertyValue](https://schema.org/PropertyValue) ([Characteristic](#propertyvalue---characteristic) or [Factor](#propertyvalue---factor))|characteristics or factors|
 
-  <tr>
-   <td>name</td>
-   <td>SHOULD</td>
-   <td>Short human-readable description of the execution.</td>
-  </tr>
+### Data
 
-  <tr>
-   <td>description</td>
-   <td>SHOULD</td>
-   <td>Details of the execution, for instance command line arguments or settings. This field is for information only, no particular structure is to be assumed.</td>
-  </tr>
+Describes and points to a Data file or a segment of a Data file (via [data fragment selectors](https://www.w3.org/TR/annotation-model/#fragment-selector)), and maps to the [ISA-JSON Data](https://isa-specs.readthedocs.io/en/latest/isajson.html#data-schema-json)
 
-  <tr>
-   <td>endTime</td>
-   <td>SHOULD</td>
-   <td>The time the process ended, i.e. when the last of the entities in <code>result</code> has been created. SHOULD be a <a href="http://schema.org/DateTime">DateTime</a> in ISO 8601 format.</td>
-  </tr>
+| Property | Required | Expected Type | Description |
+|----------|----------|---------------|-------------|
+|@id|MUST|Text or URL|Should be the path pointing to the file|
+|@type |MUST|Text|MUST be 'File' or 'MediaObject'|
+|name|MUST|Text or URL|The name of the file.|
+|comment|COULD|[schema.org/Comment](#comment)|Comment|
+|disambiguatingDescription|COULD|Text|The type of the data file (“Raw Data File", “Derived Data File" or "Image File").|
+|encodingFormat|COULD|Text of URL|Media format as a MIME type|
+|hasPart|COULD|Text of URL|Data fragments of this Data object, described by [data fragment selectors](https://www.w3.org/TR/annotation-model/#fragment-selector). SHOULD not be used on data fragments.|
+|usageInfo|COULD|Text of URL|Description/specification of the [data fragment selector](https://www.w3.org/TR/annotation-model/#fragment-selector), if the object describes a data fragment and a selector is present in the path/`@id`. SHOULD only be used on data fragments.|
 
-  <tr>
-   <td>startTime</td>
-   <td>MAY</td>
-   <td>The time the process started, i.e. the earliest time the process may have accessed an entity in <code>object</code>. SHOULD be a <a href="http://schema.org/DateTime">DateTime</a> in ISO 8601 format.</td>
-  </tr>
-
-  <tr>
-   <td>instrument</td>
-   <td>MUST</td>
-   <td>Identifier of the executed tool.</td>
-  </tr>
-
-  <tr>
-   <td>agent</td>
-   <td>SHOULD</td>
-   <td>Identifier of a <a href="https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#people">Person</a> or <a href="https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#organizations-as-values">Organization</a> contextual entity that started/executed this tool.</td>
-  </tr>
-
-  <tr>
-   <td>object</td>
-   <td>MAY</td>
-   <td>The identifier of one or more entities of the RO-Crate that were consumed by this action, e.g. input files or reference datasets.</td>
-  </tr>
-
-  <tr>
-   <td>result</td>
-   <td>SHOULD</td>
-   <td>The identifier of one or more entities that were created or modified by this action, e.g. output files.</td>
-  </tr>
-
-  <tr>
-   <td>actionStatus</td>
-   <td>MAY</td>
-   <td>SHOULD be <a href="http://schema.org/CompletedActionStatus">CompletedActionStatus</a> if the process completed successfully or <a href="http://schema.org/FailedActionStatus">FailedActionStatus</a> if it failed to complete. In the latter case, consumers should be prepared for the absence of any dependent actions in the metadata. If this attribute is not specified, consumers should assume that the process completed successfully.</td>
-  </tr>
-
-  <tr>
-   <td>error</td>
-   <td>MAY</td>
-   <td>Additional information on the cause of the failure, such as an error message from the application, if available. SHOULD NOT be specified unless <code>actionStatus</code> is set to <code>FailedActionStatus</code>.</td>
-  </tr>
-
-</table>
-
-Entities referenced by an action's [object](http://schema.org/object) or [result](http://schema.org/result) SHOULD be of type `File` (an RO-Crate alias for [MediaObject](http://schema.org/MediaObject)) for files, [Dataset](http://schema.org/Dataset) for directories and [Collection](http://schema.org/Collection) for [multi-file datasets](#representing-multi-file-objects), but MAY be a [CreativeWork](http://schema.org/CreativeWork) for other types of data (e.g. an online database); they MAY be of type [PropertyValue](http://schema.org/PropertyValue) to capture numbers/strings that are not stored as files.
+Entities referenced by an processes's [object](http://schema.org/object) or [result](http://schema.org/result) SHOULD be of type `File` (an RO-Crate alias for [MediaObject](http://schema.org/MediaObject)) for files, [Dataset](http://schema.org/Dataset) for directories and [Collection](http://schema.org/Collection) for [multi-file datasets](#representing-multi-file-objects), but MAY be a [CreativeWork](http://schema.org/CreativeWork) for other types of data (e.g. an online database); they MAY be of type [PropertyValue](http://schema.org/PropertyValue) to capture numbers/strings that are not stored as files.
 
 Data entities involved in an application's input and output SHOULD have an `@id` that reflects the original file or directory name as processed by the application, but MAY be renamed to avoid clashes with other entities in the crate. In this case, they SHOULD refer to the original name via [alternateName](http://schema.org/alternateName). This is particularly important to support reproducibility in cases where an application expects to find input in specific locations and with specific names (see the MIRAX example in [Representing multi-file objects](#representing-multi-file-objects)).
 
