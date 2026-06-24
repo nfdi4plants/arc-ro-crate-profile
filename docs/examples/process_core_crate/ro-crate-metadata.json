@@ -1,0 +1,119 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.2/context",
+    {
+      "Sample": "https://bioschemas.org/Sample",
+      "LabProtocol": "https://bioschemas.org/LabProtocol",
+      "LabProcess": "https://bioschemas.org/LabProcess",
+      "computationalTool": "https://bioschemas.org/properties/computationalTool",
+      "labEquipment": "https://bioschemas.org/properties/labEquipment",
+      "reagent": "https://bioschemas.org/properties/reagent",
+      "intendedUse": "https://bioschemas.org/properties/intendedUse",
+      "executesLabProtocol": "https://bioschemas.org/properties/executesLabProtocol",
+      "parameterValue": "https://bioschemas.org/properties/parameterValue",
+      "columnIndex": "https://w3id.org/ro/terms/arc#columnIndex"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "datafile.wiff",
+      "@type": "File",
+      "name": "datafile.wiff"
+    },
+    {
+      "@id": "#CharacteristicValue_organism_Arabidopsis_thaliana",
+      "@type": "PropertyValue",
+      "additionalType": "CharacteristicValue",
+      "name": "organism",
+      "value": "Arabidopsis thaliana",
+      "propertyID": "https://bioregistry.io/OBI:0100026",
+      "valueReference": "http://purl.obolibrary.org/obo/NCBITAXON_3702"
+    },
+    {
+      "@id": "#Material_MyObservable",
+      "@type": "Sample",
+      "additionalType": "Material",
+      "name": "MyObservable",
+      "additionalProperty": {
+        "@id": "#CharacteristicValue_organism_Arabidopsis_thaliana"
+      }
+    },
+    {
+      "@id": "#Sample_MySample",
+      "@type": "Sample",
+      "additionalType": "Sample",
+      "name": "MySample"
+    },
+    {
+      "@id": "#CharacteristicValue_Temperature_25",
+      "@type": "PropertyValue",
+      "additionalType": "CharacteristicValue",
+      "name": "Temperature",
+      "value": "25",
+      "propertyID": "https://bioregistry.io/NCIT:C25206",
+      "unitCode": "http://purl.obolibrary.org/obo/UO_0000027",
+      "unitText": "degree Celsius"
+    },
+    {
+      "@id": "#Process_Preparation",
+      "@type": "LabProcess",
+      "name": "Preparation",
+      "object": {
+        "@id": "#Material_MyObservable"
+      },
+      "result": {
+        "@id": "#Sample_MySample"
+      },
+      "parameterValue": {
+        "@id": "#CharacteristicValue_Temperature_25"
+      }
+    },
+    {
+      "@id": "#Process_Measurement",
+      "@type": "LabProcess",
+      "name": "Measurement",
+      "object": {
+        "@id": "#Sample_MySample"
+      },
+      "result": {
+        "@id": "datafile.wiff"
+      }
+    },
+    {
+      "@id": "LICENSE",
+      "@type": "CreativeWork",
+      "text": "ALL RIGHTS RESERVED BY THE AUTHORS"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "description": "An example of a ROCrate with a core process model, including preparation and measurement processes.",
+      "name": "Experimental ARC Process Core Crate Example",
+      "hasPart": {
+        "@id": "datafile.wiff"
+      },
+      "about": [
+        {
+          "@id": "#Process_Preparation"
+        },
+        {
+          "@id": "#Process_Measurement"
+        }
+      ],
+      "dateCreated": "2026-06-24T23:04:48.2431278",
+      "license": {
+        "@id": "LICENSE"
+      }
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      },
+      "about": {
+        "@id": "./"
+      }
+    }
+  ]
+}
