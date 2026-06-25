@@ -221,11 +221,8 @@ Has the new Bioschemas DRAFT [bioschemas.org/LabProcess](https://bioschemas.org/
 |name|MUST|Text| -|
 |object|SHOULD|[bioschemas.org/Sample](#sample) or [File](https://schema.org/MediaObject)|The input of the process. If there are multiple inputs, they SHOULD be stored as a sorted list to establish correspondence with outputs. (Both lists need the same length in that case.)|
 |result|SHOULD|[bioschemas.org/Sample](#sample) or [File](https://schema.org/MediaObject)|The output of the process. If there are multiple outputs, they SHOULD be stored as a sorted list to establish correspondence with inputs. (Both lists need the same length in that case.)|
-|agent|SHOULD|[schema.org/Person](#person)|The performer|
 |executesLabProtocol|SHOULD|[bioschemas.org/LabProtocol](https://bioschemas.org/LabProtocol)|The protocol executed|
 |parameterValue|SHOULD|[schema.org/PropertyValue](https://schema.org/PropertyValue) ([Parameter](#propertyvalue---parameter))|A parameter value of the experimental process, usually a key-value pair using ontology terms|
-|endTime|SHOULD|DateTime||
-|disambiguatingDescription|COULD|Text|Comments|
 
 ### LabProtocol
 
@@ -238,7 +235,6 @@ Is based on the Bioschemas [bioschemas.org/LabProtocol](https://bioschemas.org/L
 |description|SHOULD|Text|A short description of the protocol (e.g. an abstract)|
 |intendedUse|SHOULD|[schema.org/DefinedTerm](#definedterm) or Text or URL|The protocol type as an ontology term|
 |name|SHOULD|Text|Main title of the LabProtocol.|
-|comment|COULD|[schema.org/Comment](#comment)|Comment|
 |computationalTool|COULD|[schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue---component)) or [schema.org/SoftwareApplication](https://schema.org/SoftwareApplication)|Software or tool used as part of the lab protocol to complete a part of it.|
 |labEquipment|COULD|[schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue---component)) or Text or URL|For LabProtocols it would be a laboratory equipment use by a person to follow one or more steps described in this LabProtocol.|
 |reagent|COULD|[schema.org/BioChemEntity](https://schema.org/BioChemEntity://bioschemas.org/Sample) or [schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue---component)) or Text or URL|Reagents used in the protocol.|
@@ -277,258 +273,79 @@ Entities referenced by an processes's [object](http://schema.org/object) or [res
 Data entities involved in an application's input and output SHOULD have an `@id` that reflects the original file or directory name as processed by the application, but MAY be renamed to avoid clashes with other entities in the crate. In this case, they SHOULD refer to the original name via [alternateName](http://schema.org/alternateName). This is particularly important to support reproducibility in cases where an application expects to find input in specific locations and with specific names (see the MIRAX example in [Representing multi-file objects](#representing-multi-file-objects)).
 
 
-## Multiple processes
-
-A process crate can be used to indicate one single execution as a single `CreateAction`, or a series of processes that generate different data entities. These actions MAY form an *implicit workflow* by following the links between entities that appear as `result` in an action and as `object` in the following one, but a process crate is not required to ensure such consistency (e.g. there may be an intermediate action that has not been recorded).
-
-<img alt="Multiple processes diagram" src="../img/multiple_processes.svg" width="800" />
+## Processes as graph edges
 
 
-## Referencing configuration files
+## Data Fragment-level annotation
 
-Some applications support the modification of their behavior via configuration files. Typically, these are not part of the input interface, but are searched for by the application among a set of possible predefined file system paths. In the case of applications that support a configuration file, the specific configuration file used during a run SHOULD be added to the `object` attribute of the corresponding `CreateAction`, especially if its settings are different from the default ones.
+<img alt="Data Fragment-level annotation diagram" src="../../../img/DFS-ISA.svg" width="800" />
 
 ```json
-    {
-        "@id": "#SepiaConversion_1",
-        "@type": "CreateAction",
-        "name": "Convert dog image to sepia",
-        "description": "convert -sepia-tone 80% test_data/sample/pics/2017-06-11\\ 12.56.14.jpg test_data/sample/pics/sepia_fence.jpg",
-        "endTime": "2018-09-19T17:01:07+10:00",
-        "instrument": {"@id": "https://www.imagemagick.org/"},
-        "object": [
-            {"@id": "pics/2017-06-11%2012.56.14.jpg"},
-            {"@id": "SepiaConversion_1/colors.xml"}
-        ],
-        "result": {"@id": "pics/sepia_fence.jpg"},
-        "agent": {"@id": "https://orcid.org/0000-0001-9842-9718"}
+[
+  {
+    "@id": "raw_data1.wiff",
+    "@type": "File",
+    "name": "raw_data1.wiff"
+  },
+  {
+    "@id": "raw_data2.wiff",
+    "@type": "File",
+    "name": "raw_data2.wiff"
+  },
+  {
+    "@id": "processed_data.csv#col=1",
+    "@type": "File",
+    "name": "processed_data.csv#col=1",
+    "encodingFormat": "text/csv",
+    "usageInfo": "https://datatracker.ietf.org/doc/html/rfc7111"
+  },
+  {
+    "@id": "processed_data.csv#col=2",
+    "@type": "File",
+    "name": "processed_data.csv#col=2",
+    "encodingFormat": "text/csv",
+    "usageInfo": "https://datatracker.ietf.org/doc/html/rfc7111"
+  },
+  {
+    "@id": "#Process_DataProcessing_1",
+    "@type": "LabProcess",
+    "name": "DataProcessing_1",
+    "object": {
+      "@id": "raw_data1.wiff"
     },
-    {
-        "@id": "SepiaConversion_1/colors.xml",
-        "@type": "File",
-        "description": "Imagemagick color names configuration",
-        "encodingFormat": "text/xml",
-        "name": "colors"
+    "result": {
+      "@id": "processed_data.csv#col=1"
     }
+  },
+  {
+    "@id": "#Process_DataProcessing_2",
+    "@type": "LabProcess",
+    "name": "DataProcessing_2",
+    "object": {
+      "@id": "raw_data2.wiff"
+    },
+    "result": {
+      "@id": "processed_data.csv#col=2"
+    }
+  }
+]
 ```
 
-
-## Representing multi-file objects
-
-In some formats, the data belonging to a digital entity is stored in more than one file. For instance, the [Mirax2-Fluorescence-2](https://openslide.cs.cmu.edu/download/openslide-testdata/Mirax/Mirax2-Fluorescence-2.zip) image is stored as the following set of files:
-
-```
-Mirax2-Fluorescence-2.mrxs
-Mirax2-Fluorescence-2/Index.dat
-Mirax2-Fluorescence-2/Slidedat.ini
-Mirax2-Fluorescence-2/Data0000.dat
-Mirax2-Fluorescence-2/Data0001.dat
-...
-Mirax2-Fluorescence-2/Data0023.dat
-```
-
-An application that reads [this format](https://openslide.org/formats/mirax/) needs to be pointed to the `.mrxs` file, and expects to find a directory containing the other files in the same location as the `.mrxs` file, with the same name minus the extension. Thus, even though an application that processes MIRAX files would probably take only the `.mrxs` file as argument, the other ones must be present in the expected location and with the expected names (in CWL, this kind of relationship is expressed via `secondaryFiles`). In this case, the object SHOULD be represented by a [contextual entity](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html) of type [Collection](http://schema.org/Collection) listing all files under `hasPart`, with a `mainEntity` referencing the main file. The collection SHOULD be referenced from the root data entity via `mentions`.
+## Experimental process
 
 ```json
-{
-    "@id": "./",
-    "@type": "Dataset",
-    "hasPart": [
-        {"@id": "Mirax2-Fluorescence-2.mrxs"},
-        {"@id": "Mirax2-Fluorescence-2/"},
-        {"@id": "Mirax2-Fluorescence-2.png"}
-    ],
-    "mentions": [
-        {"@id": "https://openslide.cs.cmu.edu/download/openslide-testdata/Mirax/Mirax2-Fluorescence-2.zip"},
-        {"@id": "#conversion_1"}
-    ]
-},
-{
-    "@id": "https://openslide.org/",
-    "@type": "SoftwareApplication",
-    "url": "https://openslide.org/",
-    "name": "OpenSlide",
-    "version": "3.4.1"
-},
-{
-    "@id": "#conversion_1",
-    "@type": "CreateAction",
-    "name": "Convert image to PNG",
-    "endTime": "2018-09-19T17:01:07+10:00",
-    "instrument": {"@id": "https://openslide.org/"},
-    "object": {"@id": "https://openslide.cs.cmu.edu/download/openslide-testdata/Mirax/Mirax2-Fluorescence-2.zip"},
-    "result": {"@id": "Mirax2-Fluorescence-2.png"}
-},
-{
-    "@id": "https://openslide.cs.cmu.edu/download/openslide-testdata/Mirax/Mirax2-Fluorescence-2.zip",
-    "@type": "Collection",
-    "mainEntity": {"@id": "Mirax2-Fluorescence-2.mrxs"},
-    "hasPart": [
-        {"@id": "Mirax2-Fluorescence-2.mrxs"},
-        {"@id": "Mirax2-Fluorescence-2/"}
-    ]
-},
-{
-    "@id": "Mirax2-Fluorescence-2.mrxs",
-    "@type": "File"
-},
-{
-    "@id": "Mirax2-Fluorescence-2/",
-    "@type": "Dataset"
-},
-{
-    "@id": "Mirax2-Fluorescence-2.png",
-    "@type": "File"
-}
-```
-
-If the collection does not have a web presence, its `@id` can be an arbitrary internal one, possibly randomly generated (as for any other contextual entity):
-
-```json
-{
-    "@id": "#af0253d688f3409a2c6d24bf6b35df7c4e271292",
-    "@type": "Collection",
-    "mainEntity": {"@id": "Mirax2-Fluorescence-2.mrxs"},
-    "hasPart": [
-        {"@id": "Mirax2-Fluorescence-2.mrxs"},
-        {"@id": "Mirax2-Fluorescence-2/"}
-    ]
-}
-```
-
-The use case shown here is an example of a situation where it's important to refer to the original names in case any renamings took place, as described in [Requirements](#requirements):
-
-```json
-{
-    "@id": "#af0253d688f3409a2c6d24bf6b35df7c4e271292",
-    "@type": "Collection",
-    "mainEntity": {"@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"},
-    "hasPart": [
-        {"@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852"},
-        {"@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/"}
-    ]
-},
-{
-    "@id": "f62aa607a75508ac5fc6a22e9c0e39ef58a2c852",
-    "@type": "File",
-    "alternateName": "Mirax2-Fluorescence-2.mrxs"
-},
-{
-    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/",
-    "@type": "Dataset",
-    "alternateName": "Mirax2-Fluorescence-2/",
-    "hasPart": [
-        {"@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/46c443af080a36000c9298b49b675eb240eeb41c"},
-        ...
-    ]
-},
-{
-    "@id": "c7398fbf741b851e80ae731d60cbee9258ff81f3/46c443af080a36000c9298b49b675eb240eeb41c",
-    "@type": "File",
-    "alternateName": "Mirax2-Fluorescence-2/Index.dat"
-},
-...
 ```
 
 
-## Representing environment variable settings
+## Computational process
 
-The behavior of some applications may be modified by setting appropriate environment variables. These are different from ordinary application inputs in that they are part of the environment in which the process runs, rather than parameters supplied through a command line or a graphical interface. To represent the fact that an environment variable was set to a certain value during the execution of an action, use the `environment` property from the [workflow-run](https://w3id.org/ro/terms/workflow-run#) ro-terms namespace, making it point to a `PropertyValue` that describes the setting:
 
 ```json
-{
-    "@context": [
-        "https://w3id.org/ro/crate/1.1/context",
-        "https://w3id.org/ro/terms/workflow-run/context"
-    ],
-    "@graph": [
-        ...
-        {
-            "@id": "#SepiaConversion_1",
-            "@type": "CreateAction",
-            "instrument": {"@id": "https://www.imagemagick.org/"},
-            "object": {"@id": "pics/2017-06-11%2012.56.14.jpg"},
-            "result": {"@id": "pics/sepia_fence.jpg"},
-            "environment": [
-                {"@id": "#height-limit-pv"},
-                {"@id": "#width-limit-pv"}
-            ]
-        },
-        {
-            "@id": "#width-limit-pv",
-            "@type": "PropertyValue",
-            "name": "MAGICK_WIDTH_LIMIT",
-            "value": "4096"
-        },
-        {
-            "@id": "#height-limit-pv",
-            "@type": "PropertyValue",
-            "name": "MAGICK_HEIGHT_LIMIT",
-            "value": "3072"
-        }
-    ]
-}
+
 ```
 
-Note that we added the `workflow-run` context to the `@context` entry in order to bring in the definition of `environment`.
-
-Environment variable settings SHOULD be listed if they are different from the default ones (usually unset) and affected the results of the action.
-
-
-## Representing container images
-
-An application may use one or more container images (e.g. [Docker](https://www.docker.com) container images) to perform its duty. An action MAY indicate that a container image was used during the execution via the `containerImage` property, defined in the [workflow-run](https://github.com/ResearchObject/ro-terms/tree/master/workflow-run) ro-terms namespace.
+## PropertyValue Annotations
 
 ```json
-{
-    "@id": "#cb04c897-eb92-4c53-8a38-bcc1a16fd650",
-    "@type": "CreateAction",
-    "instrument": {"@id": "bam2fastq.cwl"},
-    ...
-    "containerImage": {"@id": "#samtools-image"}
-},
-{
-    "@id": "#samtools-image",
-    "@type": "ContainerImage",
-    "additionalType": {"@id": "https://w3id.org/ro/terms/workflow-run#DockerImage"},
-    "registry": "docker.io",
-    "name": "biocontainers/samtools",
-    "tag": "v1.9-4-deb_cv1",
-    "sha256": "da61624fda230e94867c9429ca1112e1e77c24e500b52dfc84eaf2f5820b4a2a"
-}
-```
 
-The `ContainerImage` type (note the leading lowercase "C") and most of the properties shown above are also defined in the workflow-run namespace. The `additionalType` describes the specific image type (e.g., `DockerImage`, `SIFImage`); the registry is the service that hosts the image (e.g., "docker.io", "quay.io"); the `name` is the identifier of the image within the registry; `tag` describes the image tag and `sha256` its sha256 checksum. A `ContainerImage` entity SHOULD list at least the `additionalType`, `registry` and `name` properties.
-
-Alternatively, the `containerImage` could point to a `URL`. For instance:
-
-```json
-{
-    "@id": "#cb04c897-eb92-4c53-8a38-bcc1a16fd650",
-    "@type": "CreateAction",
-    "instrument": {"@id": "bam2fastq.cwl"},
-    ...
-    "containerImage": "https://example.com/samtools.sif"
-}
-```
-
-
-## Specifying software dependencies
-
-Software dependencies MAY be specified using `softwareRequirements` to a `SoftwareApplication`:
-
-```json
-{
-    "@id": "script.py",
-    "@type": "SoftwareApplication",
-    "name": "Analysis Script",
-    "version": "0.1",
-    "softwareRequirements": {"@id": "https://pypi.org/project/numpy/1.26.2/"}
-},
-{
-    "@id": "https://pypi.org/project/numpy/1.26.2/",
-    "@type": "SoftwareApplication",
-    "name": "NumPy",
-    "version": "1.26.2"
-}
 ```

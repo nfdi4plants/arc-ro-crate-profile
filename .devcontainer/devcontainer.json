@@ -1,5 +1,5 @@
 {
-  "name": "ARC RO-Crate Profile (Jekyll / GitHub Pages)",
+  "name": "ARC RO-Crate Profile Collection (Jekyll / GitHub Pages)",
 
   // Official Microsoft devcontainer image with Ruby, Jekyll and build tools preinstalled.
   "image": "mcr.microsoft.com/devcontainers/jekyll:2-bullseye",
