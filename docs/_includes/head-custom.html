@@ -1,0 +1,21 @@
+<!--
+  Render ```mermaid fenced code blocks as diagrams.
+  Jekyll / GitHub Pages has NO built-in mermaid support: it just emits the block as
+  <pre><code class="language-mermaid">. This script loads mermaid and converts those.
+  Loaded via the Slate theme's head-custom hook in its head. Runs deferred (type=module),
+  so the page DOM is already parsed when it executes.
+-->
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  mermaid.initialize({ startOnLoad: false });
+
+  // mermaid needs raw text in a <pre class="mermaid">; rewrite the highlighted blocks.
+  for (const code of document.querySelectorAll("code.language-mermaid")) {
+    const pre = document.createElement("pre");
+    pre.className = "mermaid";
+    pre.textContent = code.textContent;
+    (code.closest("div.highlight") || code.closest("pre")).replaceWith(pre);
+  }
+
+  await mermaid.run();
+</script>
