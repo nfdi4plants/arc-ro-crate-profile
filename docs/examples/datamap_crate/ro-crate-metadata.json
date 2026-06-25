@@ -1,0 +1,166 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.2/context",
+    {
+      "Sample": "https://bioschemas.org/Sample",
+      "LabProtocol": "https://bioschemas.org/LabProtocol",
+      "LabProcess": "https://bioschemas.org/LabProcess",
+      "computationalTool": "https://bioschemas.org/properties/computationalTool",
+      "labEquipment": "https://bioschemas.org/properties/labEquipment",
+      "reagent": "https://bioschemas.org/properties/reagent",
+      "intendedUse": "https://bioschemas.org/properties/intendedUse",
+      "executesLabProtocol": "https://bioschemas.org/properties/executesLabProtocol",
+      "parameterValue": "https://bioschemas.org/properties/parameterValue",
+      "columnIndex": "https://w3id.org/ro/terms/arc#columnIndex"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "http://purl.obolibrary.org/obo/NCIT_C45253",
+      "@type": "DefinedTerm",
+      "name": "string",
+      "termCode": "http://purl.obolibrary.org/obo/NCIT_C45253"
+    },
+    {
+      "@id": "processed_data.csv#col=1",
+      "@type": "File",
+      "name": "processed_data.csv#col=1",
+      "encodingFormat": "text/csv",
+      "usageInfo": "https://datatracker.ietf.org/doc/html/rfc7111",
+      "pattern": {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C45253"
+      },
+      "about": {
+        "@id": "#Descriptor_processed_data.csv#col=1"
+      }
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/NCIT_C48150",
+      "@type": "DefinedTerm",
+      "name": "float",
+      "termCode": "http://purl.obolibrary.org/obo/NCIT_C48150"
+    },
+    {
+      "@id": "processed_data.csv#col=2",
+      "@type": "File",
+      "name": "processed_data.csv#col=2",
+      "encodingFormat": "text/csv",
+      "usageInfo": "https://datatracker.ietf.org/doc/html/rfc7111",
+      "pattern": {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C48150"
+      },
+      "about": {
+        "@id": "#Descriptor_processed_data.csv#col=2"
+      }
+    },
+    {
+      "@id": "processed_data.csv#col=3",
+      "@type": "File",
+      "name": "processed_data.csv#col=3",
+      "encodingFormat": "text/csv",
+      "usageInfo": "https://datatracker.ietf.org/doc/html/rfc7111",
+      "pattern": {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C48150"
+      },
+      "about": {
+        "@id": "#Descriptor_processed_data.csv#col=3"
+      }
+    },
+    {
+      "@id": "processed_data.csv",
+      "@type": "File",
+      "name": "processed_data.csv",
+      "encodingFormat": "text/csv",
+      "hasPart": [
+        {
+          "@id": "processed_data.csv#col=1"
+        },
+        {
+          "@id": "processed_data.csv#col=2"
+        },
+        {
+          "@id": "processed_data.csv#col=3"
+        }
+      ]
+    },
+    {
+      "@id": "#Descriptor_processed_data.csv#col=1",
+      "@type": "PropertyValue",
+      "name": "FragmentDescriptor",
+      "value": "Protein identifier",
+      "propertyID": "https://github.com/nfdi4plants/ARC-specification/blob/dev/ISA-XLSX.md#datamap-table-sheets",
+      "valueReference": "http://purl.obolibrary.org/obo/NCIT_C165059",
+      "alternateName": "protID",
+      "subjectOf": {
+        "@id": "processed_data.csv#col=1"
+      }
+    },
+    {
+      "@id": "#Descriptor_processed_data.csv#col=2",
+      "@type": "PropertyValue",
+      "name": "FragmentDescriptor",
+      "value": "molecule count",
+      "propertyID": "https://github.com/nfdi4plants/ARC-specification/blob/dev/ISA-XLSX.md#datamap-table-sheets",
+      "unitCode": "http://purl.obolibrary.org/obo/NCIT_C68892",
+      "unitText": "Millimole per Kilogram",
+      "valueReference": "http://purl.obolibrary.org/obo/UO_0000192",
+      "alternateName": "quant1",
+      "subjectOf": {
+        "@id": "processed_data.csv#col=2"
+      }
+    },
+    {
+      "@id": "#Descriptor_processed_data.csv#col=3",
+      "@type": "PropertyValue",
+      "name": "FragmentDescriptor",
+      "value": "molecule count",
+      "propertyID": "https://github.com/nfdi4plants/ARC-specification/blob/dev/ISA-XLSX.md#datamap-table-sheets",
+      "unitCode": "http://purl.obolibrary.org/obo/NCIT_C68892",
+      "unitText": "Millimole per Kilogram",
+      "valueReference": "http://purl.obolibrary.org/obo/UO_0000192",
+      "alternateName": "quant2",
+      "subjectOf": {
+        "@id": "processed_data.csv#col=3"
+      }
+    },
+    {
+      "@id": "LICENSE",
+      "@type": "CreativeWork",
+      "text": "ALL RIGHTS RESERVED BY THE AUTHORS"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "description": "An example of a ROCrate with a datamap, including annotation of a tabular data file.",
+      "name": "ARC Datamap Crate Example",
+      "hasPart": {
+        "@id": "processed_data.csv"
+      },
+      "variableMeasured": [
+        {
+          "@id": "#Descriptor_processed_data.csv#col=1"
+        },
+        {
+          "@id": "#Descriptor_processed_data.csv#col=2"
+        },
+        {
+          "@id": "#Descriptor_processed_data.csv#col=3"
+        }
+      ],
+      "dateCreated": "2026-06-25T22:58:40.2416018",
+      "license": {
+        "@id": "LICENSE"
+      }
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      },
+      "about": {
+        "@id": "./"
+      }
+    }
+  ]
+}
