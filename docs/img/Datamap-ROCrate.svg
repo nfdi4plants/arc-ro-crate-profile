@@ -1,0 +1,1079 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1444 1248" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <g id="g30" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="rect16" d="M1886.5,16C1886.5,13.792 1884.71,12 1882.5,12L1353.5,12C1351.29,12 1349.5,13.792 1349.5,16L1349.5,214C1349.5,216.208 1351.29,218 1353.5,218L1882.5,218C1884.71,218 1886.5,216.208 1886.5,214L1886.5,16Z" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+        <g id="g29">
+            <rect id="rect17" x="1349.5" y="12" width="537" height="26" style="fill:rgb(224,209,240);stroke:rgb(58,114,120);stroke-width:1px;"/>
+            <g transform="matrix(1,0,0,1,1356.5,33.4492)">
+                <g id="text17">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:24px;fill:rgb(58,114,120);">about</text>
+                </g>
+            </g>
+            <rect id="rect18" x="1349.5" y="38" width="537" height="26" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            <g id="text18" transform="matrix(1,0,0,1,1355.75,56.6842)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@id:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1491.42,55.3199)">
+                <g id="text19">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">#Descriptor_result1.csv#col=1</text>
+                </g>
+            </g>
+            <rect id="rect19" x="1349.5" y="64" width="537" height="26" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            <g id="text20" transform="matrix(1,0,0,1,1355.75,82.6842)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@type:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1490.56,81.3199)">
+                <g id="text21">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">PropertyV</text>
+                        <g transform="matrix(1,0,0,1,78.697,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">alue</text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <rect id="rect21" x="1349.5" y="90" width="537" height="26" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            <g id="text22" transform="matrix(1,0,0,1,1355.54,108.684)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">name:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1490.49,107.32)">
+                <g id="text23">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">FragmentDescriptor</text>
+                </g>
+            </g>
+            <rect id="rect23" x="1349.5" y="116" width="537" height="26" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            <g id="text24" transform="matrix(1,0,0,1,1356.5,134.684)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">value:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1490.87,133.32)">
+                <g id="text25">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">Gene Identiﬁer</text>
+                </g>
+            </g>
+            <rect id="rect25" x="1349.5" y="142" width="537" height="51" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            <g id="text26" transform="matrix(1,0,0,1,1355.54,160.684)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">propertyID:</text>
+            </g>
+            <g id="text27" transform="matrix(1,0,0,1,41.0584,3.81994)">
+                <g transform="matrix(1,0,0,1,1450.1,155.5)">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">https://github.com/nfdi4plants/ARC-speciﬁcation</text>
+                </g>
+                <g transform="matrix(1,0,0,1,1450.1,180.5)">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">/blob/dev/ISA-XLSX.md#datamap-table-sheets</text>
+                </g>
+            </g>
+            <rect id="rect27" x="1349.5" y="193" width="537" height="26" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            <g id="text28" transform="matrix(1,0,0,1,1356.5,211.684)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">valueReference:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1490.7,210.32)">
+                <g id="text29">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">https://bioregistry</text>
+                        <g transform="matrix(1,0,0,1,135.721,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">.io/NCIT</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,199.731,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">:C48664</text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <path id="rect29" d="M1886,16C1886,14.068 1884.43,12.5 1882.5,12.5L1353.5,12.5C1351.57,12.5 1350,14.068 1350,16L1350,214C1350,215.932 1351.57,217.5 1353.5,217.5L1882.5,217.5C1884.43,217.5 1886,215.932 1886,214L1886,16Z" style="fill:none;stroke:rgb(197,184,211);stroke-opacity:0;stroke-width:1px;"/>
+    </g>
+    <g id="g40" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="rect30" d="M1707.5,242C1707.5,239.792 1705.71,238 1703.5,238L1353.5,238C1351.29,238 1349.5,239.792 1349.5,242L1349.5,363C1349.5,365.208 1351.29,367 1353.5,367L1703.5,367C1705.71,367 1707.5,365.208 1707.5,363L1707.5,242Z" style="fill:white;stroke:rgb(45,55,134);stroke-width:1px;"/>
+        <g id="g39">
+            <g id="rect31" transform="matrix(1.0703,0,0,1,-94.8639,0)">
+                <rect x="1349.5" y="238" width="358" height="26" style="fill:rgb(235,214,217);stroke:rgb(45,55,134);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,1356.5,257.012)">
+                <g id="text31">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:24px;fill:rgb(45,55,134);">pattern</text>
+                </g>
+            </g>
+            <g id="rect32" transform="matrix(1.0703,0,0,1,-94.8639,0)">
+                <rect x="1349.5" y="264" width="358" height="26" style="fill:white;stroke:rgb(45,55,134);stroke-width:1px;"/>
+            </g>
+            <g id="text32" transform="matrix(1,0,0,1,1355.84,282.616)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@id:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1450.1,281.658)">
+                <g id="text33">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">https://bioregistry<tspan x="135.721px 140.722px " y="0px 0px ">.i</tspan>o/NCITC45253</text>
+                    </g>
+                </g>
+            </g>
+            <g id="rect33" transform="matrix(1.0703,0,0,1,-94.8639,0)">
+                <rect x="1349.5" y="290" width="358" height="26" style="fill:white;stroke:rgb(45,55,134);stroke-width:1px;"/>
+            </g>
+            <g id="text34" transform="matrix(1,0,0,1,1355.84,308.616)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@type:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1449.95,307.658)">
+                <g id="text35">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">DeﬁnedT<tspan x="71.042px 81.053px " y="0px 0px ">er</tspan>m</text>
+                    </g>
+                </g>
+            </g>
+            <g id="rect35" transform="matrix(1.0703,0,0,1,-94.8639,0)">
+                <rect x="1349.5" y="316" width="358" height="26" style="fill:white;stroke:rgb(45,55,134);stroke-width:1px;"/>
+            </g>
+            <g id="text36" transform="matrix(1,0,0,1,1355.63,334.616)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">name:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1450.37,333.658)">
+                <g id="text37">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">String</text>
+                </g>
+            </g>
+            <g id="rect37" transform="matrix(1.0703,0,0,1,-94.8639,0)">
+                <rect x="1349.5" y="342" width="358" height="26" style="fill:white;stroke:rgb(45,55,134);stroke-width:1px;"/>
+            </g>
+            <g id="text38" transform="matrix(1,0,0,1,1356.5,360.616)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">termCode:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1450.1,359.658)">
+                <g id="text39">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">https://bioregistry<tspan x="135.721px 140.722px " y="0px 0px ">.i</tspan>o/NCIT<tspan x="199.731px 204.732px " y="0px 0px ">:C</tspan>45253</text>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <path id="rect39" d="M1707,242C1707,240.068 1705.43,238.5 1703.5,238.5L1353.5,238.5C1351.57,238.5 1350,240.068 1350,242L1350,363C1350,364.932 1351.57,366.5 1353.5,366.5L1703.5,366.5C1705.43,366.5 1707,364.932 1707,363L1707,242Z" style="fill:none;stroke:rgb(207,188,191);stroke-opacity:0;stroke-width:1px;"/>
+    </g>
+    <g id="g56" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="rect40" d="M1248.5,113C1248.5,110.792 1246.71,109 1244.5,109L801.5,109C799.292,109 797.5,110.792 797.5,113L797.5,312C797.5,314.208 799.292,316 801.5,316L1244.5,316C1246.71,316 1248.5,314.208 1248.5,312L1248.5,113Z" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+        <g id="g55">
+            <g id="rect41" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="109" width="451" height="26" style="fill:rgb(242,205,244);stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,804.5,128.24)">
+                <g id="text41">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:24px;fill:rgb(141,31,147);">hasPart[0]</text>
+                </g>
+            </g>
+            <g id="rect42" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="135" width="451" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text42" transform="matrix(1,0,0,1,804.5,152.934)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@id:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,944.456,153.957)">
+                <g id="text43">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">result1.csv#col=1</text>
+                </g>
+            </g>
+            <g id="rect43" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="161" width="451" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text44" transform="matrix(1,0,0,1,804.5,178.934)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@type:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,944.234,179.957)">
+                <g id="text45">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">File</text>
+                </g>
+            </g>
+            <g id="rect45" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="187" width="451" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text46" transform="matrix(1,0,0,1,804.5,204.934)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">name:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,944.456,205.957)">
+                <g id="text47">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">result1.csv#col=1</text>
+                </g>
+            </g>
+            <g id="rect47" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="213" width="451" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text48" transform="matrix(1,0,0,1,804.5,230.934)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">encodingFormat:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,945.071,231.957)">
+                <g id="text49">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">text/csv</text>
+                </g>
+            </g>
+            <g id="rect49" transform="matrix(1.08224,0,0,1.02809,-65.5878,-6.71469)">
+                <rect x="797.5" y="239" width="451" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text50" transform="matrix(1,0,0,1,804.5,256.934)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">usageInfo:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,944.443,257.023)">
+                <g id="text51">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">https://datatracker</text>
+                        <g transform="matrix(1,0,0,1,143.077,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">.ietf.org/doc/html/rfc71</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,319.816,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">1<tspan x="8.675px " y="0px ">1</tspan></text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="rect53" transform="matrix(1.08224,0,0,1,-65.5878,-25.2695)">
+                <rect x="797.5" y="291" width="451" height="26" style="fill:rgb(246,246,246);stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="rect51" transform="matrix(1.08224,0,0,1,-65.5878,25)">
+                <rect x="797.5" y="265" width="451" height="26" style="fill:rgb(246,246,246);stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text52" transform="matrix(1,0,0,1,804.5,281.654)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">about:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,944.938,281.658)">
+                <g id="text53">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">{6 keys}</text>
+                </g>
+            </g>
+            <g id="text54" transform="matrix(1,0,0,1,804.5,307.654)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">pattern:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,944.938,307.658)">
+                <g id="text55">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">{4 keys}</text>
+                </g>
+            </g>
+        </g>
+        <path id="rect55" d="M1248,113C1248,111.068 1246.43,109.5 1244.5,109.5L801.5,109.5C799.568,109.5 798,111.068 798,113L798,312C798,313.932 799.568,315.5 801.5,315.5L1244.5,315.5C1246.43,315.5 1248,313.932 1248,312L1248,113Z" style="fill:none;stroke:rgb(213,180,215);stroke-opacity:0;stroke-width:1px;"/>
+    </g>
+    <g id="g74" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="rect56" d="M1886.5,391C1886.5,388.792 1884.71,387 1882.5,387L1353.5,387C1351.29,387 1349.5,388.792 1349.5,391L1349.5,641C1349.5,643.208 1351.29,645 1353.5,645L1882.5,645C1884.71,645 1886.5,643.208 1886.5,641L1886.5,391Z" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+        <g id="g73">
+            <rect id="rect57" x="1349.5" y="387" width="537" height="26" style="fill:rgb(214,233,235);stroke:rgb(58,114,120);stroke-width:1px;"/>
+            <g transform="matrix(1,0,0,1,1356.5,408.449)">
+                <g id="text57">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:24px;fill:rgb(58,114,120);">about</text>
+                </g>
+            </g>
+            <rect id="rect58" x="1349.5" y="413" width="537" height="26" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            <g id="text58" transform="matrix(1,0,0,1,1356.5,429.774)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@id:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1491.96,430.691)">
+                <g id="text59">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">#Descriptor_result1.csv#col=2</text>
+                </g>
+            </g>
+            <rect id="rect59" x="1349.5" y="439" width="537" height="26" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            <g id="text60" transform="matrix(1,0,0,1,1356.5,455.774)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@type:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1491.09,456.691)">
+                <g id="text61">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">PropertyV</text>
+                        <g transform="matrix(1,0,0,1,78.697,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">alue</text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <rect id="rect61" x="1349.5" y="465" width="537" height="26" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            <g id="text62" transform="matrix(1,0,0,1,1356.5,481.774)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">name:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1491.02,482.691)">
+                <g id="text63">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">FragmentDescriptor</text>
+                </g>
+            </g>
+            <rect id="rect63" x="1349.5" y="491" width="537" height="26" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            <g id="text64" transform="matrix(1,0,0,1,1356.5,507.774)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">value:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1491.07,508.691)">
+                <g id="text65">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">RNA</text>
+                        <g transform="matrix(1,0,0,1,37.011,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">accumulation</text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <rect id="rect65" x="1349.5" y="517" width="537" height="51" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            <g id="text66" transform="matrix(1,0,0,1,1356.5,533.774)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">propertyID:</text>
+            </g>
+            <g id="text67" transform="matrix(1,0,0,1,41.5913,4.19102)">
+                <g transform="matrix(1,0,0,1,1450.1,530.5)">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">https://github.com/nfdi4plants/ARC-speciﬁcation</text>
+                </g>
+                <g transform="matrix(1,0,0,1,1450.1,555.5)">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">/blob/dev/ISA-XLSX.md#datamap-table-sheets</text>
+                </g>
+            </g>
+            <rect id="rect67" x="1349.5" y="568" width="537" height="26" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            <rect id="rect71" x="1349.5" y="620" width="537" height="26" style="fill:white;"/>
+            <g id="text68" transform="matrix(1,0,0,1,1356.5,584.774)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">unitCode:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1491.23,585.691)">
+                <g id="text69">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">https://bioregistry</text>
+                        <g transform="matrix(1,0,0,1,135.721,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">.io/UO:0010072</text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <rect id="rect69" x="1349.5" y="594" width="537" height="26" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            <g id="rect691" serif:id="rect69" transform="matrix(1,1.10187e-17,-1.21081e-17,-1,1.28025e-13,1240)">
+                <rect x="1349.5" y="594" width="537" height="26" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            </g>
+            <g id="text70" transform="matrix(1,0,0,1,1356.5,610.774)">
+                <g>
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">unitT</text>
+                    <g transform="matrix(1,0,0,1,38.021,0)">
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">ext:</text>
+                    </g>
+                </g>
+            </g>
+            <g transform="matrix(1,0,0,1,1491.23,611.691)">
+                <g id="text71">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">microgram per microliter</text>
+                </g>
+            </g>
+            <g id="text72" transform="matrix(1,0,0,1,1356.5,636.774)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">valueReference:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1491.23,637.691)">
+                <g id="text73">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">http://purl.obolibrary</text>
+                        <g transform="matrix(1,0,0,1,157.746,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">.org/obo/APO_0000224</text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <path id="rect73" d="M1886,391C1886,389.068 1884.43,387.5 1882.5,387.5L1353.5,387.5C1351.57,387.5 1350,389.068 1350,391L1350,641C1350,642.932 1351.57,644.5 1353.5,644.5L1882.5,644.5C1884.43,644.5 1886,642.932 1886,641L1886,391Z" style="fill:none;stroke:rgb(188,205,207);stroke-opacity:0;stroke-width:1px;"/>
+    </g>
+    <g id="g84" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="rect74" d="M1707.5,669C1707.5,666.792 1705.71,665 1703.5,665L1353.5,665C1351.29,665 1349.5,666.792 1349.5,669L1349.5,790C1349.5,792.208 1351.29,794 1353.5,794L1703.5,794C1705.71,794 1707.5,792.208 1707.5,790L1707.5,669Z" style="fill:white;stroke:rgb(45,55,134);stroke-width:1px;"/>
+        <g id="g83">
+            <g id="rect75" transform="matrix(1.03963,0,0,1,-53.4838,0)">
+                <rect x="1349.5" y="665" width="358" height="26" style="fill:rgb(209,213,240);stroke:rgb(45,55,134);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,1356.5,684.012)">
+                <g id="text75">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:24px;fill:rgb(45,55,134);">pattern</text>
+                </g>
+            </g>
+            <g id="rect76" transform="matrix(1.03963,0,0,1,-53.4838,0)">
+                <rect x="1349.5" y="691" width="358" height="26" style="fill:white;stroke:rgb(45,55,134);stroke-width:1px;"/>
+            </g>
+            <g id="text76" transform="matrix(1,0,0,1,1355.84,708.635)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@id:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1445.02,708.658)">
+                <g id="text77">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">https://bioregistry</text>
+                        <g transform="matrix(1,0,0,1,135.721,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">.io/NCIT</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,199.731,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">:C45255</text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="rect77" transform="matrix(1.03963,0,0,1,-53.4838,0)">
+                <rect x="1349.5" y="717" width="358" height="26" style="fill:white;stroke:rgb(45,55,134);stroke-width:1px;"/>
+            </g>
+            <g id="text78" transform="matrix(1,0,0,1,1355.84,734.635)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@type:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1444.87,734.658)">
+                <g id="text79">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">DeﬁnedT</text>
+                        <g transform="matrix(1,0,0,1,71.042,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">erm</text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="rect79" transform="matrix(1.03963,0,0,1,-53.4838,0)">
+                <rect x="1349.5" y="743" width="358" height="26" style="fill:white;stroke:rgb(45,55,134);stroke-width:1px;"/>
+            </g>
+            <g id="text80" transform="matrix(1,0,0,1,1355.63,760.635)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">name:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1444.66,760.658)">
+                <g id="text81">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">Integer</text>
+                </g>
+            </g>
+            <g id="rect81" transform="matrix(1.03963,0,0,1,-53.4838,0)">
+                <rect x="1349.5" y="769" width="358" height="26" style="fill:white;stroke:rgb(45,55,134);stroke-width:1px;"/>
+            </g>
+            <g id="text82" transform="matrix(1,0,0,1,1356.5,786.635)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">termCode:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1445.02,786.658)">
+                <g id="text83">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">https://bioregistry</text>
+                        <g transform="matrix(1,0,0,1,135.721,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">.io/NCIT</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,199.731,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">:C45255</text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="rect83" transform="matrix(1.03963,0,0,1,-53.4838,0)">
+            <path d="M1707,669C1707,667.068 1705.49,665.5 1703.63,665.5L1353.37,665.5C1351.51,665.5 1350,667.068 1350,669L1350,790C1350,791.932 1351.51,793.5 1353.37,793.5L1703.63,793.5C1705.49,793.5 1707,791.932 1707,790L1707,669Z" style="fill:none;stroke:rgb(184,187,211);stroke-opacity:0;stroke-width:1px;"/>
+        </g>
+    </g>
+    <g id="g100" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="rect84" d="M1248.5,462C1248.5,459.792 1246.71,458 1244.5,458L801.5,458C799.292,458 797.5,459.792 797.5,462L797.5,661C797.5,663.208 799.292,665 801.5,665L1244.5,665C1246.71,665 1248.5,663.208 1248.5,661L1248.5,462Z" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+        <g id="g99">
+            <g id="rect85" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="458" width="451" height="26" style="fill:rgb(242,205,244);stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,804.5,477.24)">
+                <g id="text85">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:24px;fill:rgb(141,31,147);">hasPart[1]</text>
+                </g>
+            </g>
+            <g id="rect86" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="484" width="451" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text86" transform="matrix(1,0,0,1,804.5,502.275)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@id:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,942.75,502.19)">
+                <g id="text87">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">result1.csv#col=2</text>
+                </g>
+            </g>
+            <g id="rect87" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="510" width="451" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text88" transform="matrix(1,0,0,1,804.5,528.275)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@type:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,942.528,528.19)">
+                <g id="text89">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">File</text>
+                </g>
+            </g>
+            <g id="rect89" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="536" width="451" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text90" transform="matrix(1,0,0,1,804.5,554.275)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">name:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,942.75,554.19)">
+                <g id="text91">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">result1.csv#col=2</text>
+                </g>
+            </g>
+            <g id="rect91" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="562" width="451" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text92" transform="matrix(1,0,0,1,804.5,580.275)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">encodingFormat:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,943.366,580.19)">
+                <g id="text93">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">text/csv</text>
+                </g>
+            </g>
+            <g id="rect93" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="588" width="451" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text94" transform="matrix(1,0,0,1,804.5,606.275)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">usageInfo:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,942.738,606.19)">
+                <g id="text95">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">https://datatracker</text>
+                        <g transform="matrix(1,0,0,1,143.077,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">.ietf.org/doc/html/rfc71</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,319.816,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">1<tspan x="8.675px " y="0px ">1</tspan></text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="rect95" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="614" width="451" height="26" style="fill:rgb(246,246,246);stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text96" transform="matrix(1,0,0,1,804.5,632.275)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">about:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,943.233,632.19)">
+                <g id="text97">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">{8 keys}</text>
+                </g>
+            </g>
+            <g id="rect97" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="640" width="451" height="26" style="fill:rgb(246,246,246);stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text98" transform="matrix(1,0,0,1,804.5,658.275)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">pattern:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,943.233,658.19)">
+                <g id="text99">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">{4 keys}</text>
+                </g>
+            </g>
+        </g>
+        <path id="rect99" d="M1248,462C1248,460.068 1246.43,458.5 1244.5,458.5L801.5,458.5C799.568,458.5 798,460.068 798,462L798,661C798,662.932 799.568,664.5 801.5,664.5L1244.5,664.5C1246.43,664.5 1248,662.932 1248,661L1248,462Z" style="fill:none;stroke:rgb(213,180,215);stroke-opacity:0;stroke-width:1px;"/>
+    </g>
+    <g id="g106" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="rect100" d="M1629.5,818C1629.5,815.792 1627.71,814 1625.5,814L1353.5,814C1351.29,814 1349.5,815.792 1349.5,818L1349.5,887C1349.5,889.208 1351.29,891 1353.5,891L1625.5,891C1627.71,891 1629.5,889.208 1629.5,887L1629.5,818Z" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+        <g id="g105">
+            <g id="rect101" transform="matrix(1.0803,0,0,1,-108.36,0)">
+                <rect x="1349.5" y="814" width="280" height="26" style="fill:rgb(218,205,244);stroke:rgb(58,114,120);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,1356.5,835.449)">
+                <g id="text101">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:24px;fill:rgb(58,114,120);">about</text>
+                </g>
+            </g>
+            <g id="rect102" transform="matrix(1.0803,0,0,1,-108.36,0)">
+                <rect x="1349.5" y="840" width="280" height="26" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            </g>
+            <g id="text102" transform="matrix(1,0,0,1,1356.5,859.561)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@id:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1402.85,859.552)">
+                <g id="text103">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">#Descriptor_result1.csv#col=3</text>
+                </g>
+            </g>
+            <g id="rect103" transform="matrix(1.0803,0,0,1,-108.36,0)">
+                <rect x="1349.5" y="866" width="280" height="26" style="fill:white;stroke:rgb(58,114,120);stroke-width:1px;"/>
+            </g>
+            <g id="text104" transform="matrix(1,0,0,1,1356.5,885.561)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">...:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1401.4,885.552)">
+                <g id="text105">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">...</text>
+                </g>
+            </g>
+        </g>
+        <path id="rect105" d="M1629,818C1629,816.068 1627.43,814.5 1625.5,814.5L1353.5,814.5C1351.57,814.5 1350,816.068 1350,818L1350,887C1350,888.932 1351.57,890.5 1353.5,890.5L1625.5,890.5C1627.43,890.5 1629,888.932 1629,887L1629,818Z" style="fill:none;stroke:rgb(192,180,215);stroke-opacity:0;stroke-width:1px;"/>
+    </g>
+    <g id="g112" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="rect106" d="M1668.5,915C1668.5,912.792 1666.71,911 1664.5,911L1353.5,911C1351.29,911 1349.5,912.792 1349.5,915L1349.5,984C1349.5,986.208 1351.29,988 1353.5,988L1664.5,988C1666.71,988 1668.5,986.208 1668.5,984L1668.5,915Z" style="fill:white;stroke:rgb(45,55,134);stroke-width:1px;"/>
+        <g id="g111">
+            <rect id="rect107" x="1349.5" y="911" width="319" height="26" style="fill:rgb(244,205,239);stroke:rgb(45,55,134);stroke-width:1px;"/>
+            <g transform="matrix(1,0,0,1,1356.5,930.012)">
+                <g id="text107">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:24px;fill:rgb(45,55,134);">pattern</text>
+                </g>
+            </g>
+            <rect id="rect108" x="1349.5" y="937" width="319" height="26" style="fill:white;stroke:rgb(45,55,134);stroke-width:1px;"/>
+            <g id="text108" transform="matrix(1,0,0,1,1356.5,954.32)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@id:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1395.5,955.016)">
+                <g id="text109">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">https://bioregistry</text>
+                        <g transform="matrix(1,0,0,1,135.721,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">.io/NCIT</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,199.731,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">:C45255</text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <rect id="rect109" x="1349.5" y="963" width="319" height="26" style="fill:white;stroke:rgb(45,55,134);stroke-width:1px;"/>
+            <g id="text110" transform="matrix(1,0,0,1,1355.84,980.32)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">...:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,1395.5,981.016)">
+                <g id="text111">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">...</text>
+                </g>
+            </g>
+        </g>
+        <path id="rect111" d="M1668,915C1668,913.068 1666.43,911.5 1664.5,911.5L1353.5,911.5C1351.57,911.5 1350,913.068 1350,915L1350,984C1350,985.932 1351.57,987.5 1353.5,987.5L1664.5,987.5C1666.43,987.5 1668,985.932 1668,984L1668,915Z" style="fill:none;stroke:rgb(215,180,210);stroke-opacity:0;stroke-width:1px;"/>
+    </g>
+    <g id="g128" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="rect112" d="M1248.5,689C1248.5,686.792 1246.71,685 1244.5,685L801.5,685C799.292,685 797.5,686.792 797.5,689L797.5,888C797.5,890.208 799.292,892 801.5,892L1244.5,892C1246.71,892 1248.5,890.208 1248.5,888L1248.5,689Z" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+        <g id="g127">
+            <g id="rect113" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="685" width="451" height="26" style="fill:rgb(242,205,244);stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,804.5,704.24)">
+                <g id="text113">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:24px;fill:rgb(141,31,147);">hasPart[2]</text>
+                </g>
+            </g>
+            <g id="rect114" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="711" width="451" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text114" transform="matrix(1,0,0,1,804.5,728.593)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@id:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,940.704,728.934)">
+                <g id="text115">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">result1.csv#col=3</text>
+                </g>
+            </g>
+            <g id="rect115" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="737" width="451" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text116" transform="matrix(1,0,0,1,804.5,754.593)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@type:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,940.482,754.934)">
+                <g id="text117">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">File</text>
+                </g>
+            </g>
+            <g id="rect117" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="763" width="451" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text118" transform="matrix(1,0,0,1,804.5,780.593)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">name:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,940.704,780.934)">
+                <g id="text119">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">result1.csv#col=3</text>
+                </g>
+            </g>
+            <g id="rect119" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="789" width="451" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text120" transform="matrix(1,0,0,1,804.5,806.593)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">encodingFormat:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,941.32,806.934)">
+                <g id="text121">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">text/csv</text>
+                </g>
+            </g>
+            <g id="rect121" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="815" width="451" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text122" transform="matrix(1,0,0,1,804.5,832.593)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">usageInfo:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,940.691,832.934)">
+                <g id="text123">
+                    <g>
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">https://datatracker</text>
+                        <g transform="matrix(1,0,0,1,143.077,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">.ietf.org/doc/html/rfc71</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,319.816,0)">
+                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">1<tspan x="8.675px " y="0px ">1</tspan></text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="rect123" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="841" width="451" height="26" style="fill:rgb(246,246,246);stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text124" transform="matrix(1,0,0,1,804.5,858.593)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">about:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,941.186,858.934)">
+                <g id="text125">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">{2 keys}</text>
+                </g>
+            </g>
+            <g id="rect125" transform="matrix(1.08224,0,0,1,-65.5878,0)">
+                <rect x="797.5" y="867" width="451" height="26" style="fill:rgb(246,246,246);stroke:rgb(141,31,147);stroke-width:1px;"/>
+            </g>
+            <g id="text126" transform="matrix(1,0,0,1,804.5,884.593)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">pattern:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,941.186,884.934)">
+                <g id="text127">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">{2 keys}</text>
+                </g>
+            </g>
+        </g>
+        <path id="rect127" d="M1248,689C1248,687.068 1246.43,685.5 1244.5,685.5L801.5,685.5C799.568,685.5 798,687.068 798,689L798,888C798,889.932 799.568,891.5 801.5,891.5L1244.5,891.5C1246.43,891.5 1248,889.932 1248,888L1248,689Z" style="fill:none;stroke:rgb(213,180,215);stroke-opacity:0;stroke-width:1px;"/>
+    </g>
+    <g id="g140" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="rect128" d="M696.5,424C696.5,421.792 694.708,420 692.5,420L498.5,420C496.292,420 494.5,421.792 494.5,424L494.5,571C494.5,573.208 496.292,575 498.5,575L692.5,575C694.708,575 696.5,573.208 696.5,571L696.5,424Z" style="fill:white;stroke:rgb(92,134,45);stroke-width:1px;"/>
+        <g id="g139">
+            <g id="rect129" transform="matrix(1.17425,0,0,1,-86.1657,0)">
+                <rect x="494.5" y="420" width="202" height="26" style="fill:rgb(225,240,209);stroke:rgb(92,134,45);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,501.77,439.24)">
+                <g id="text129">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:24px;fill:rgb(92,134,45);">hasPart[0]</text>
+                </g>
+            </g>
+            <g id="rect130" transform="matrix(1.17425,0,0,1,-86.1657,0)">
+                <rect x="494.5" y="446" width="202" height="26" style="fill:white;stroke:rgb(92,134,45);stroke-width:1px;"/>
+            </g>
+            <g id="text130" transform="matrix(1,0,0,1,501.711,464.077)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@id:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,638.182,464.411)">
+                <g id="text131">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">result1.csv</text>
+                </g>
+            </g>
+            <g id="rect131" transform="matrix(1.17425,0,0,1,-86.1657,0)">
+                <rect x="494.5" y="472" width="202" height="26" style="fill:white;stroke:rgb(92,134,45);stroke-width:1px;"/>
+            </g>
+            <g id="text132" transform="matrix(1,0,0,1,501.5,489.866)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@type:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,637.959,490.411)">
+                <g id="text133">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">File</text>
+                </g>
+            </g>
+            <g id="rect133" transform="matrix(1.17425,0,0,1,-86.1657,0)">
+                <rect x="494.5" y="498" width="202" height="26" style="fill:white;stroke:rgb(92,134,45);stroke-width:1px;"/>
+            </g>
+            <g id="text134" transform="matrix(1,0,0,1,501.5,515.866)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">name:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,638.182,516.411)">
+                <g id="text135">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">result1.csv</text>
+                </g>
+            </g>
+            <g id="rect135" transform="matrix(1.17425,0,0,1,-86.1657,0)">
+                <rect x="494.5" y="524" width="202" height="26" style="fill:white;stroke:rgb(92,134,45);stroke-width:1px;"/>
+            </g>
+            <g id="text136" transform="matrix(1,0,0,1,501.5,541.866)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">encodingFormat:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,638.797,542.411)">
+                <g id="text137">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">text/csv</text>
+                </g>
+            </g>
+            <g id="rect137" transform="matrix(1.17425,0,0,1,-86.1657,0)">
+                <rect x="494.5" y="550" width="202" height="26" style="fill:rgb(246,246,246);stroke:rgb(92,134,45);stroke-width:1px;"/>
+            </g>
+            <g id="text138" transform="matrix(1,0,0,1,501.5,567.866)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">hasPart:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,638.143,568.411)">
+                <g id="text139">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">[3 items]</text>
+                </g>
+            </g>
+        </g>
+        <g id="rect139" transform="matrix(1.17425,0,0,1,-86.1657,0)">
+            <path d="M696,424C696,422.068 694.664,420.5 693.019,420.5L497.981,420.5C496.336,420.5 495,422.068 495,424L495,571C495,572.932 496.336,574.5 497.981,574.5L693.019,574.5C694.664,574.5 696,572.932 696,571L696,424Z" style="fill:none;stroke:rgb(198,211,184);stroke-opacity:0;stroke-width:1px;"/>
+        </g>
+    </g>
+    <g id="g146" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="rect140" d="M983.5,916C983.5,913.792 981.708,912 979.5,912L801.5,912C799.292,912 797.5,913.792 797.5,916L797.5,985C797.5,987.208 799.292,989 801.5,989L979.5,989C981.708,989 983.5,987.208 983.5,985L983.5,916Z" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+        <g id="g145">
+            <rect id="rect141" x="797.5" y="912" width="186" height="26" style="fill:rgb(233,205,244);stroke:rgb(141,31,147);stroke-width:1px;"/>
+            <g transform="matrix(1,0,0,1,804.5,931.24)">
+                <g id="text141">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:24px;fill:rgb(114,31,147);">hasPart[0]</text>
+                </g>
+            </g>
+            <rect id="rect142" x="797.5" y="938" width="186" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            <g id="text142" transform="matrix(1,0,0,1,804.5,957.561)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@id:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,843.5,957.561)">
+                <g id="text143">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">result2.csv#col=1</text>
+                </g>
+            </g>
+            <rect id="rect143" x="797.5" y="964" width="186" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            <g id="text144" transform="matrix(1,0,0,1,804.5,983.561)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">...:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,843.5,983.561)">
+                <g id="text145">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">...</text>
+                </g>
+            </g>
+        </g>
+        <path id="rect145" d="M983,916C983,914.068 981.432,912.5 979.5,912.5L801.5,912.5C799.568,912.5 798,914.068 798,916L798,985C798,986.932 799.568,988.5 801.5,988.5L979.5,988.5C981.432,988.5 983,986.932 983,985L983,916Z" style="fill:none;stroke:rgb(205,180,215);stroke-opacity:0;stroke-width:1px;"/>
+    </g>
+    <g id="g152" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="rect146" d="M983.5,1013C983.5,1010.79 981.708,1009 979.5,1009L801.5,1009C799.292,1009 797.5,1010.79 797.5,1013L797.5,1082C797.5,1084.21 799.292,1086 801.5,1086L979.5,1086C981.708,1086 983.5,1084.21 983.5,1082L983.5,1013Z" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+        <g id="g151">
+            <rect id="rect147" x="797.5" y="1009" width="186" height="26" style="fill:rgb(233,205,244);stroke:rgb(141,31,147);stroke-width:1px;"/>
+            <g transform="matrix(1,0,0,1,804.5,1028.24)">
+                <g id="text147">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:24px;fill:rgb(114,31,147);">hasPart[1]</text>
+                </g>
+            </g>
+            <rect id="rect148" x="797.5" y="1035" width="186" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            <g id="text148" transform="matrix(1,0,0,1,804.5,1052.32)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@id:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,843.5,1052.32)">
+                <g id="text149">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">result2.csv#col=2</text>
+                </g>
+            </g>
+            <rect id="rect149" x="797.5" y="1061" width="186" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            <g id="text150" transform="matrix(1,0,0,1,804.5,1078.32)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">...:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,843.5,1078.32)">
+                <g id="text151">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">...</text>
+                </g>
+            </g>
+        </g>
+        <path id="rect151" d="M983,1013C983,1011.07 981.432,1009.5 979.5,1009.5L801.5,1009.5C799.568,1009.5 798,1011.07 798,1013L798,1082C798,1083.93 799.568,1085.5 801.5,1085.5L979.5,1085.5C981.432,1085.5 983,1083.93 983,1082L983,1013Z" style="fill:none;stroke:rgb(205,180,215);stroke-opacity:0;stroke-width:1px;"/>
+    </g>
+    <g id="g158" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="rect152" d="M983.5,1110C983.5,1107.79 981.708,1106 979.5,1106L801.5,1106C799.292,1106 797.5,1107.79 797.5,1110L797.5,1179C797.5,1181.21 799.292,1183 801.5,1183L979.5,1183C981.708,1183 983.5,1181.21 983.5,1179L983.5,1110Z" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+        <g id="g157">
+            <rect id="rect153" x="797.5" y="1106" width="186" height="26" style="fill:rgb(233,205,244);stroke:rgb(141,31,147);stroke-width:1px;"/>
+            <g transform="matrix(1,0,0,1,804.5,1125.24)">
+                <g id="text153">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:24px;fill:rgb(114,31,147);">hasPart[2]</text>
+                </g>
+            </g>
+            <rect id="rect154" x="797.5" y="1132" width="186" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            <g id="text154" transform="matrix(1,0,0,1,804.5,1149.32)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@id:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,843.5,1149.32)">
+                <g id="text155">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">result2.csv#col=3</text>
+                </g>
+            </g>
+            <rect id="rect155" x="797.5" y="1158" width="186" height="26" style="fill:white;stroke:rgb(141,31,147);stroke-width:1px;"/>
+            <g id="text156" transform="matrix(1,0,0,1,804.5,1175.32)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">...:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,843.5,1175.32)">
+                <g id="text157">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">...</text>
+                </g>
+            </g>
+        </g>
+        <path id="rect157" d="M983,1110C983,1108.07 981.432,1106.5 979.5,1106.5L801.5,1106.5C799.568,1106.5 798,1108.07 798,1110L798,1179C798,1180.93 799.568,1182.5 801.5,1182.5L979.5,1182.5C981.432,1182.5 983,1180.93 983,1179L983,1110Z" style="fill:none;stroke:rgb(205,180,215);stroke-opacity:0;stroke-width:1px;"/>
+    </g>
+    <g id="g170" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="rect158" d="M696.5,813C696.5,810.792 694.708,809 692.5,809L498.5,809C496.292,809 494.5,810.792 494.5,813L494.5,960C494.5,962.208 496.292,964 498.5,964L692.5,964C694.708,964 696.5,962.208 696.5,960L696.5,813Z" style="fill:white;stroke:rgb(92,134,45);stroke-width:1px;"/>
+        <g id="g169">
+            <g id="rect159" transform="matrix(1.15804,0,0,1,-78.1503,0)">
+                <rect x="494.5" y="809" width="202" height="26" style="fill:rgb(225,240,209);stroke:rgb(92,134,45);stroke-width:1px;stroke-linejoin:round;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,501.5,828.24)">
+                <g id="text159">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:24px;fill:rgb(92,134,45);">hasPart[1]</text>
+                </g>
+            </g>
+            <g id="rect160" transform="matrix(1.15804,0,0,1,-78.1503,0)">
+                <rect x="494.5" y="835" width="202" height="26" style="fill:white;stroke:rgb(92,134,45);stroke-width:1px;stroke-linejoin:round;"/>
+            </g>
+            <g id="text160" transform="matrix(1,0,0,1,501.5,852.866)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@id:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,638.182,852.68)">
+                <g id="text161">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">result2.csv</text>
+                </g>
+            </g>
+            <g id="rect161" transform="matrix(1.15804,0,0,1,-78.1503,0)">
+                <rect x="494.5" y="861" width="202" height="26" style="fill:white;stroke:rgb(92,134,45);stroke-width:1px;stroke-linejoin:round;"/>
+            </g>
+            <g id="text162" transform="matrix(1,0,0,1,501.5,878.866)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@type:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,637.959,878.68)">
+                <g id="text163">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">File</text>
+                </g>
+            </g>
+            <g id="rect163" transform="matrix(1.15804,0,0,1,-78.1503,0)">
+                <rect x="494.5" y="887" width="202" height="26" style="fill:white;stroke:rgb(92,134,45);stroke-width:1px;stroke-linejoin:round;"/>
+            </g>
+            <g id="text164" transform="matrix(1,0,0,1,501.5,904.866)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">name:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,638.182,904.68)">
+                <g id="text165">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">result2.csv</text>
+                </g>
+            </g>
+            <g id="rect165" transform="matrix(1.15804,0,0,1,-78.1503,0)">
+                <rect x="494.5" y="913" width="202" height="26" style="fill:white;stroke:rgb(92,134,45);stroke-width:1px;stroke-linejoin:round;"/>
+            </g>
+            <g id="text166" transform="matrix(1,0,0,1,501.5,930.866)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">encodingFormat:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,638.797,930.68)">
+                <g id="text167">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">text/csv</text>
+                </g>
+            </g>
+            <g id="rect167" transform="matrix(1.15804,0,0,1,-78.1503,0)">
+                <rect x="494.5" y="939" width="202" height="26" style="fill:rgb(246,246,246);stroke:rgb(92,134,45);stroke-width:1px;stroke-linejoin:round;"/>
+            </g>
+            <g id="text168" transform="matrix(1,0,0,1,501.5,956.866)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">hasPart:</text>
+            </g>
+            <g transform="matrix(1,0,0,1,638.143,956.68)">
+                <g id="text169">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">[3 items]</text>
+                </g>
+            </g>
+        </g>
+        <path id="rect169" d="M696,813C696,811.068 694.432,809.5 692.5,809.5L498.5,809.5C496.568,809.5 495,811.068 495,813L495,960C495,961.932 496.568,963.5 498.5,963.5L692.5,963.5C694.432,963.5 696,961.932 696,960L696,813Z" style="fill:none;stroke:rgb(198,211,184);stroke-opacity:0;stroke-width:1px;"/>
+    </g>
+    <g id="g180" transform="matrix(1,0,0,1,38.7665,-381.5)">
+        <path id="rect170" d="M393.5,386C393.5,383.792 391.708,382 389.5,382L16.5,382C14.292,382 12.5,383.792 12.5,386L12.5,507C12.5,509.208 14.292,511 16.5,511L389.5,511C391.708,511 393.5,509.208 393.5,507L393.5,386Z" style="fill:white;stroke:rgb(120,77,58);stroke-width:1px;"/>
+        <rect id="rect171" x="12.5" y="382" width="381" height="26" style="fill:rgb(235,220,214);stroke:rgb(120,77,58);stroke-width:1px;"/>
+        <g transform="matrix(1,0,0,1,19.5,403.449)">
+            <g id="text171">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:24px;fill:rgb(120,77,58);">Dataset</text>
+            </g>
+        </g>
+        <rect id="rect172" x="12.5" y="408" width="381" height="26" style="fill:white;stroke:rgb(120,77,58);stroke-width:1px;"/>
+        <g id="text172" transform="matrix(1,0,0,1,19.5,425.667)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@id:</text>
+        </g>
+        <g transform="matrix(1,0,0,1,107.781,425.654)">
+            <g id="text173">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">Dataset</text>
+            </g>
+        </g>
+        <rect id="rect173" x="12.5" y="434" width="381" height="26" style="fill:white;stroke:rgb(120,77,58);stroke-width:1px;"/>
+        <g id="text174" transform="matrix(1,0,0,1,19.5,451.167)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@type:</text>
+        </g>
+        <g transform="matrix(1,0,0,1,107.781,451.654)">
+            <g id="text175">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">Dataset</text>
+            </g>
+        </g>
+        <rect id="rect175" x="12.5" y="460" width="381" height="26" style="fill:white;stroke:rgb(120,77,58);stroke-width:1px;"/>
+        <g id="text176" transform="matrix(1,0,0,1,19.5,477.667)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">@context:</text>
+        </g>
+        <g transform="matrix(1,0,0,1,107.927,477.654)">
+            <g id="text177">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">https://w3id.org/ro/crate/1.1/context</text>
+            </g>
+        </g>
+        <rect id="rect177" x="12.5" y="486" width="381" height="26" style="fill:rgb(246,246,246);stroke:rgb(120,77,58);stroke-width:1px;"/>
+        <g id="text178" transform="matrix(1,0,0,1,19.2891,505.337)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(23,113,241);">hasPart:</text>
+        </g>
+        <g transform="matrix(1,0,0,1,107.902,503.654)">
+            <g id="text179">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:18px;fill:rgb(96,96,96);">[2 items]</text>
+            </g>
+        </g>
+        <path id="rect179" d="M393,386C393,384.068 391.432,382.5 389.5,382.5L16.5,382.5C14.568,382.5 13,384.068 13,386L13,507C13,508.932 14.568,510.5 16.5,510.5L389.5,510.5C391.432,510.5 393,508.932 393,507L393,386Z" style="fill:none;stroke:rgb(207,194,188);stroke-opacity:0;stroke-width:1px;"/>
+    </g>
+    <g id="g183" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="path180" d="M1285.59,278L1295,278C1297,278 1299,276 1299,274L1299,120C1299,118 1301,116 1303,116L1345,116" style="fill:none;fill-rule:nonzero;stroke:rgb(188,190,192);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+        <path id="path181" d="M1347.65,116L1341.65,120L1341.65,112L1347.65,116Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        <g id="g182" transform="matrix(1,0,0,1,1285.59,278)">
+            <path id="path182" d="M0,-3C1.646,-3 3,-1.646 3,-0C3,1.646 1.646,3 0,3L0,-3Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        </g>
+    </g>
+    <g id="g186" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <g id="path183" transform="matrix(0.616053,0,0,1,516.409,0)">
+            <path d="M1251,304L1345,304" style="fill:none;fill-rule:nonzero;stroke:rgb(188,190,192);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+        </g>
+        <path id="path184" d="M1347.65,304L1341.65,308L1341.65,300L1347.65,304Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        <g id="g185" transform="matrix(1,0,0,1,1285.59,304)">
+            <path id="path185" d="M0,-3C1.646,-3 3,-1.646 3,-0C3,1.646 1.646,3 0,3L0,-3Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        </g>
+    </g>
+    <g id="g189" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="path186" d="M1285.59,627L1295,627C1297,627 1299,625 1299,623L1299,521C1299,519 1301,517 1303,517L1345,517" style="fill:none;fill-rule:nonzero;stroke:rgb(188,190,192);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+        <path id="path187" d="M1347.65,517L1341.65,521L1341.65,513L1347.65,517Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        <g transform="matrix(1,0,0,1,1285.59,627)">
+            <g id="g188">
+                <path id="path188" d="M0,-3C1.646,-3 3,-1.646 3,-0C3,1.646 1.646,3 0,3L0,-3Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+            </g>
+        </g>
+    </g>
+    <g id="g192" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="path189" d="M1285.59,653L1295,653C1297,653 1299,655 1299,657L1299,727C1299,729 1301,731 1303,731L1345,731" style="fill:none;fill-rule:nonzero;stroke:rgb(188,190,192);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+        <path id="path190" d="M1347.65,731L1341.65,735L1341.65,727L1347.65,731Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        <g id="g191" transform="matrix(1,0,0,1,1285.59,653)">
+            <path id="path191" d="M0,-3C1.646,-3 3,-1.646 3,-0C3,1.646 1.646,3 0,3L0,-3Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        </g>
+    </g>
+    <g id="g195" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="path192" d="M1285.59,854L1345,854" style="fill:none;fill-rule:nonzero;stroke:rgb(188,190,192);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+        <path id="path193" d="M1347.65,854L1341.65,858L1341.65,850L1347.65,854Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        <g id="g194" transform="matrix(1,0,0,1,1285.59,854)">
+            <path id="path194" d="M0,-3C1.646,-3 3,-1.646 3,-0C3,1.646 1.646,3 0,3L0,-3Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        </g>
+    </g>
+    <g id="g198" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="path195" d="M1285.59,880L1295,880C1297,880 1299,882 1299,884L1299,947C1299,949 1301,951 1303,951L1345,951" style="fill:none;fill-rule:nonzero;stroke:rgb(188,190,192);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+        <path id="path196" d="M1347.65,951.045L1341.65,955.045L1341.65,947.045L1347.65,951.045Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        <g id="g197" transform="matrix(1,0,0,1,1287.09,880)">
+            <path id="path197" d="M0,-3C1.646,-3 3,-1.646 3,-0C3,1.646 1.646,3 0,3L0,-3Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        </g>
+    </g>
+    <g id="g201" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="path198" d="M733.869,563L743,563C745,563 747,561 747,559L747,218C747,216 749,214 751,214L793,214" style="fill:none;fill-rule:nonzero;stroke:rgb(188,190,192);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+        <path id="path199" d="M795.674,214L789.674,218L789.674,210L795.674,214Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+    </g>
+    <g id="g204" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="path201" d="M734.468,563L793,563" style="fill:none;fill-rule:nonzero;stroke:rgb(188,190,192);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+        <path id="path202" d="M795.665,563L789.665,567L789.665,559L795.665,563Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+    </g>
+    <g id="g207" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="path204" d="M732.968,563L743,563C745,563 747,565 747,567L747,786C747,788 749,790 751,790L793,790" style="fill:none;fill-rule:nonzero;stroke:rgb(188,190,192);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+        <path id="path205" d="M795.665,790L789.665,794L789.665,786L795.665,790Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        <g id="g206" transform="matrix(1,0,0,1,732.968,563)">
+            <path id="path206" d="M0,-3C1.646,-3 3,-1.646 3,-0C3,1.646 1.646,3 0,3L0,-3Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        </g>
+    </g>
+    <g id="g210" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <g id="path207" transform="matrix(0.671842,0,0,0.671842,260.229,312.406)">
+            <path d="M699,952L793,952" style="fill:none;fill-rule:nonzero;stroke:rgb(188,190,192);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+        </g>
+        <path id="path208" d="M795.665,952L789.665,956L789.665,948L795.665,952Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+    </g>
+    <path id="path210" d="M285.19,1015.9L299.767,1015.9C301.767,1015.9 303.767,1017.9 303.767,1019.9L303.767,1108.9C303.767,1110.9 305.767,1112.9 307.767,1112.9L349.767,1112.9" style="fill:none;fill-rule:nonzero;stroke:rgb(188,190,192);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+    <path id="path211" d="M352.432,1112.9L346.432,1116.9L346.432,1108.9L352.432,1112.9Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+    <g id="g216" transform="matrix(1,0,0,1,-443.233,63.8999)">
+        <path id="path213" d="M728.424,952L743,952C745,952 747,954 747,956L747,1142C747,1144 749,1146 751,1146L793,1146" style="fill:none;fill-rule:nonzero;stroke:rgb(188,190,192);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+        <path id="path214" d="M795.665,1146L789.665,1150L789.665,1142L795.665,1146Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        <g id="g215" transform="matrix(1,0,0,1,729.847,952)">
+            <path id="path215" d="M0,-3C1.646,-3 3,-1.646 3,-0C3,1.646 1.646,3 0,3L0,-3Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        </g>
+    </g>
+    <path id="path217" d="M49.401,561.451L43.401,565.451L43.401,557.451L49.401,561.451Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+    <path id="path219" d="M0.767,68.068L0.767,947.9C0.767,949.9 2.766,951.9 4.767,951.9L48.767,951.9" style="fill:none;fill-rule:nonzero;stroke:rgb(188,190,192);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+    <path id="path220" d="M49.418,951.9L43.418,955.9L43.418,947.9L49.418,951.9Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+    <path id="path222" d="M0.778,557.442C0.778,559.442 2.778,561.442 4.778,561.442L46.778,561.442" style="fill:none;fill-rule:nonzero;stroke:rgb(188,190,192);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+    <g id="g226" transform="matrix(1,0,0,1,-311.982,-433.152)">
+        <path id="path223" d="M362.148,497.402L316.732,497.402C314.732,497.402 312.732,499.402 312.732,501.402" style="fill:none;fill-rule:nonzero;stroke:rgb(188,190,192);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;"/>
+        <g id="g225" transform="matrix(-1,0,0,1,362.103,497.402)">
+            <path id="path225" d="M0,-3C1.646,-3 3,-1.646 3,-0C3,1.646 1.646,3 0,3L0,-3Z" style="fill:rgb(188,190,192);fill-rule:nonzero;stroke:rgb(123,129,132);stroke-width:1.5px;"/>
+        </g>
+    </g>
+</svg>
