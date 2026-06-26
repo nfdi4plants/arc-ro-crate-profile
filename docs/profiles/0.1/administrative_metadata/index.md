@@ -4,15 +4,6 @@ title: ARC Administrative Metadata Crate
 
 # ISA RO-Crate Profile
 
-* Version: 1.0.0-draft.1
-* Permalink: _coming soon_
-* Authors
-  * Florian Wetzels - https://orcid.org/0000-0002-5526-7138
-  * Lukas Weil - https://orcid.org/0000-0003-1945-6342
-  * Kevin Schneider - https://orcid.org/0000-0002-2198-5262
-  * Sebastian Beier - https://orcid.org/0000-0002-2177-8781
-  * Stuart Owen - https://orcid.org/0000-0003-2130-0865
-  * Timo Muehlhaus - https://orcid.org/0000-0003-3925-6778
 * **Table of contents**
   * [Overview](#overview)
   * [Requirements](#requirements)
