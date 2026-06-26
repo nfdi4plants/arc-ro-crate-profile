@@ -9,7 +9,7 @@ Our [ARC RO-Crate Profile Collection](./profiles/index.md) captures the essence 
   * Heinrich Lukas Weil - https://orcid.org/0000-0003-1945-6342
   * Florian Wetzels     - https://orcid.org/0000-0002-5526-7138
   * Kevin Schneider     - https://orcid.org/0000-0002-2198-5262
-  * Carolin Ott         - https://orcid.org/0000-0003-1512-9504
+  * Caroline Ott        - https://orcid.org/0000-0003-1512-9504
   * Sebastian Beier     - https://orcid.org/0000-0002-2177-8781
   * Stuart Owen         - https://orcid.org/0000-0003-2130-0865
   * Timo Mühlhaus       - https://orcid.org/0000-0003-3925-6778
