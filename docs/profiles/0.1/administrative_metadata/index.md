@@ -2,26 +2,34 @@
 title: ARC Administrative Metadata Crate
 ---
 
-# ISA RO-Crate Profile
+# ARC Administrative Metadata RO-Crate profile
+
+* Version: 0.1
+<!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
+* Authors: [ARC RO-Crate community](./../../../index.md/#authors)
+* License: [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0) (SPDX: [`Apache-2.0`](http://spdx.org/licenses/Apache-2.0))
+* Example conforming crate: [ro-crate-metadata.json](../../../examples/administrative_metadata_crate/ro-crate-metadata.json) [ro-crate-preview.html](../../../examples/administrative_metadata_crate/ro-crate-preview.html)
+* Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json)
+* Extends:
+  - [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
+* JSON-LD context: <https://www.researchobject.org/ro-terms/arc/context.jsonld>
+* Vocabulary terms:  <https://w3id.org/ro/terms/arc#>
 
 * **Table of contents**
   * [Overview](#overview)
+  * [Example ro-crate-metadata.json](#example-ro-crate-metadatajson)
   * [Requirements](#requirements)
     * [Dataset](#dataset)
     * [Person](#person)
     * [ScholarlyArticle](#scholarlyarticle)
     * [DefinedTerm](#definedterm)
     * [PropertyValue](#propertyvalue)
-      * [PropertyValue - Parameter](#propertyvalue---parameter)
-      * [PropertyValue - Characteristic](#propertyvalue---characteristic)
-      * [PropertyValue - Factor](#propertyvalue---factor)
-      * [PropertyValue - Component](#propertyvalue---component)
       * [PropertyValue - DOI](#propertyvalue---doi)
       * [PropertyValue - PubMedID](#propertyvalue---pubmedid)
-  * [Example ro-crate-metadata.json](#example-ro-crate-metadatajson)
+  * [Person IDs](#person-ids)
+  * [Organization IDs](#organization-ids)
 
 ## Overview
-
 
 The aim of the profile is to be able to provide administrative provenance information about a dataset in a structured way. The profile is based on the [Schema.org](https://schema.org/) vocabulary and provides a set of properties that can be used to describe the dataset, its creators, and related publications.
 
@@ -50,9 +58,157 @@ article --identifier--> prop
 
 ## Example ro-crate-metadata.json
 
-_TODO: simple example and a link to a more complete example_
+* [ro-crate-metadata.json](../../../examples/administrative_metadata_crate/ro-crate-metadata.json)
+* [ro-crate-preview.html](../../../examples/administrative_metadata_crate/ro-crate-preview.html)
+
+<!-- Remember to update above as well as below! -->
 
 ```json
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.2/context",
+    {
+      "Sample": "https://bioschemas.org/Sample",
+      "LabProtocol": "https://bioschemas.org/LabProtocol",
+      "LabProcess": "https://bioschemas.org/LabProcess",
+      "computationalTool": "https://bioschemas.org/properties/computationalTool",
+      "labEquipment": "https://bioschemas.org/properties/labEquipment",
+      "reagent": "https://bioschemas.org/properties/reagent",
+      "intendedUse": "https://bioschemas.org/properties/intendedUse",
+      "executesLabProtocol": "https://bioschemas.org/properties/executesLabProtocol",
+      "parameterValue": "https://bioschemas.org/properties/parameterValue",
+      "columnIndex": "https://w3id.org/ro/terms/arc#columnIndex"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "https://ror.org/01qrts582",
+      "@type": "Organization",
+      "name": "RPTU Kaiserslautern-Landau",
+      "url": "https://www.rptu.de/en/"
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/T4FS_0000132",
+      "@type": "DefinedTerm",
+      "name": "data curation",
+      "termCode": "http://purl.obolibrary.org/obo/T4FS_0000132"
+    },
+    {
+      "@id": "http://orcid.org/0000-0003-1945-6342",
+      "@type": "Person",
+      "givenName": "Heinrich Lukas",
+      "affiliation": {
+        "@id": "https://ror.org/01qrts582"
+      },
+      "familyName": "Weil",
+      "jobTitle": {
+        "@id": "http://purl.obolibrary.org/obo/T4FS_0000132"
+      }
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/T4FS_0000352",
+      "@type": "DefinedTerm",
+      "name": "data analysis",
+      "termCode": "http://purl.obolibrary.org/obo/T4FS_0000352"
+    },
+    {
+      "@id": "http://orcid.org/0000-0002-2198-5262",
+      "@type": "Person",
+      "givenName": "Kevin",
+      "affiliation": {
+        "@id": "https://ror.org/01qrts582"
+      },
+      "familyName": "Schneider",
+      "jobTitle": {
+        "@id": "http://purl.obolibrary.org/obo/T4FS_0000352"
+      }
+    },
+    {
+      "@id": "https://credit.niso.org/contributor-roles/supervision",
+      "@type": "DefinedTerm",
+      "name": "Supervision",
+      "termCode": "https://credit.niso.org/contributor-roles/supervision"
+    },
+    {
+      "@id": "http://orcid.org/0000-0003-3925-6778",
+      "@type": "Person",
+      "givenName": "Timo",
+      "affiliation": {
+        "@id": "https://ror.org/01qrts582"
+      },
+      "email": "timo.muehlhaus[at]rptu.de",
+      "familyName": "Mühlhaus",
+      "jobTitle": {
+        "@id": "https://credit.niso.org/contributor-roles/supervision"
+      },
+      "address": "Erwin-Schrödinger-Str. 56, 67663 Kaiserslautern, Germany"
+    },
+    {
+      "@id": "https://www.doi.org/10.1000/182",
+      "@type": "PropertyValue",
+      "name": "DOI",
+      "value": "https://www.doi.org/10.1000/182",
+      "propertyID": "http://purl.obolibrary.org/obo/OBI_0002110"
+    },
+    {
+      "@id": "http://www.ebi.ac.uk/efo/EFO_0001796",
+      "@type": "DefinedTerm",
+      "name": "published",
+      "termCode": "http://www.ebi.ac.uk/efo/EFO_0001796"
+    },
+    {
+      "@id": "https://www.doi.org/the-identifier/resources/handbook/",
+      "@type": "ScholarlyArticle",
+      "headline": "An example publication",
+      "identifier": {
+        "@id": "https://www.doi.org/10.1000/182"
+      },
+      "url": "https://www.doi.org/the-identifier/resources/handbook/",
+      "creativeWorkStatus": {
+        "@id": "http://www.ebi.ac.uk/efo/EFO_0001796"
+      }
+    },
+    {
+      "@id": "LICENSE",
+      "@type": "CreativeWork",
+      "text": "ALL RIGHTS RESERVED BY THE AUTHORS"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "description": "An example of a ROCrate with administrative metadata including creators and citations.",
+      "name": "ARC Administrative Metadata Crate Example",
+      "creator": [
+        {
+          "@id": "http://orcid.org/0000-0003-1945-6342"
+        },
+        {
+          "@id": "http://orcid.org/0000-0002-2198-5262"
+        },
+        {
+          "@id": "http://orcid.org/0000-0003-3925-6778"
+        }
+      ],
+      "citation": {
+        "@id": "https://www.doi.org/the-identifier/resources/handbook/"
+      },
+      "dateCreated": "2026-06-26T12:35:46.9265674",
+      "license": {
+        "@id": "LICENSE"
+      }
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      },
+      "about": {
+        "@id": "./"
+      }
+    }
+  ]
+}
 ```
 
 ## Requirements
@@ -106,7 +262,6 @@ Textual publication associated with the dataset.
 |identifier|MUST|Text or URL or [schema.org/PropertyValue](#propertyvalue)|One or many identifiers for this article like a DOI or PubMedID. Can be of type PropertyValue to indicate the kind of reference (See details in Section on PropertyValue).|
 |author|SHOULD|[schema.org/Person](#person)||
 |creativeWorkStatus|COULD|[schema.org/DefinedTerm](#definedterm)|The status of the publication in terms of its stage in a lifecycle.|
-|comment|COULD|[schema.org/Comment](#comment)|Comment|
 
 ### DefinedTerm
 
@@ -156,3 +311,29 @@ If a [schema.org/PropertyValue](https://schema.org/PropertyValue) object represe
 |value|SHOULD|-|The PubMedID|
 |propertyID|MUST|'http://purl.obolibrary.org/obo/OBI_0001617'|Ontology term describing a PubMedID|
 
+## Person IDs
+
+If possible, the profile recommends to use [ORCID](https://orcid.org/) identifiers for persons. The ORCID identifier should be used as the `@id` of the person object.
+
+```json
+{
+  "@id": "http://orcid.org/0000-0003-1945-6342",
+  "@type": "Person",
+  "givenName": "Heinrich Lukas",
+  "familyName": "Weil",
+}
+
+```
+
+## Organization IDs
+
+If possible, the profile recommends to use [ROR](https://ror.org/) identifiers for organizations. The ROR identifier should be used as the `@id` of the organization object.
+
+```json
+{
+  "@id": "https://ror.org/01qrts582",
+  "@type": "Organization",
+  "name": "RPTU Kaiserslautern-Landau",
+  "url": "https://www.rptu.de/en/"
+}
+```

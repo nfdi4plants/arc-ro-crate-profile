@@ -4,11 +4,30 @@ title: ARC Datamap Crate
 
 # ARC Datamap RO-Crate profile
 
+* Version: 0.1
+<!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
+* Authors: [ARC RO-Crate community](./../../../index.md/#authors)
+* License: [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0) (SPDX: [`Apache-2.0`](http://spdx.org/licenses/Apache-2.0))
+* Example conforming crate: [ro-crate-metadata.json](../../../examples/datamap_crate/ro-crate-metadata.json) [ro-crate-preview.html](../../../examples/datamap_crate/ro-crate-preview.html)
+* Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json)
+* Extends:
+  - [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
+* JSON-LD context: <https://www.researchobject.org/ro-terms/arc/context.jsonld>
+* Vocabulary terms:  <https://w3id.org/ro/terms/arc#>
+
+* **Table of contents**
+  * [Overview](#overview)
+  * [Example ro-crate-metadata.json](#example-ro-crate-metadatajson)
+  * [Requirements](#requirements)
+    * [Dataset](#dataset)
+    * [Data File](#data-file)
+    * [Data Fragment](#data-fragment)
+    * [Fragment Description](#fragment-description)
+
+
 ## Overview
 
 This profile shows the intended representation of the ARC datamap in the RO-Crate. The datamap contains contextual information for fragments within data files. Data files are already referenced in their respective datasets through `hasPart`. We extend this by splitting data files into data fragments (using the same type `MediaObject` for the fragments and connecting them through `hasPart`). 
-
-
 
 <img alt="Data Fragment Selector" src="../../../img/DFS.png" width="1000" />
 

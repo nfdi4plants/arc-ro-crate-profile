@@ -7,9 +7,9 @@ title: ARC Process Core Crate
 
 * Version: 0.1
 <!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
-<!-- * Authors: [Workflow Run RO-Crate working group](https://www.researchobject.org/workflow-run-crate/#community) -->
+* Authors: [ARC RO-Crate community](./../../../index.md/#authors)
 * License: [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0) (SPDX: [`Apache-2.0`](http://spdx.org/licenses/Apache-2.0))
-* Example conforming crate: [ro-crate-metadata.json](example1/ro-crate-metadata.json) [ro-crate-preview.html](example1/ro-crate-preview.html)
+* Example conforming crate: [ro-crate-metadata.json](../../../examples/process_core_crate/ro-crate-metadata.json) [ro-crate-preview.html](../../../examples/process_core_crate/ro-crate-preview.html)
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json)
 * Extends:
   - [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
@@ -17,6 +17,18 @@ title: ARC Process Core Crate
 * Vocabulary terms:  <https://w3id.org/ro/terms/arc#>
 
 This profile uses terminology from the [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2), and [extends it](https://www.researchobject.org/ro-crate/specification/1.2/appendix/jsonld.html#extending-ro-crate) with additional terms from the [ARC](https://github.com/ResearchObject/ro-terms/tree/master/arc) ro-terms and [Bioschemas](https://bioschemas.org/) namespace.
+
+* **Table of contents**
+  * [Overview](#overview)
+  * [Example ro-crate-metadata.json](#example-ro-crate-metadatajson)
+  * [Requirements](#requirements)
+    * [Dataset](#dataset)
+    * [LabProcess](#labprocess)
+    * [LabProtocol](#labprotocol)
+    * [Sample](#sample)
+    * [Data](#data)
+  * [Processes as graph edges](#processes-as-graph-edges)
+  * [Data Fragment-level annotation](#data-fragment-level-annotation)
 
 
 ## Overview
