@@ -76,11 +76,11 @@ let dataset = LDDataset.create(
 )
 
 let graph = ARC.ROCrate.packDatasetAsCrate(
-    dataset, datasetName = "ARC Administrative Metadata Crate Example", 
-    datasetDescription = "An example of a ROCrate with administrative metadata including creators and citations.", 
+    dataset, datasetName = "ARC Administrative Crate Example", 
+    datasetDescription = "An example of a ROCrate with administrative information including creators and citations.", 
     metadataFileDescriptor = None,
     license = License.GetDefaultLicense()
     )
 
 let jsonString = graph.ToROCrateJsonString(spaces = 2)
-System.IO.File.WriteAllText(__SOURCE_DIRECTORY__ + "/../docs/examples/administrative_metadata_crate/ro-crate-metadata.json", jsonString)
+System.IO.File.WriteAllText(__SOURCE_DIRECTORY__ + "/../docs/examples/administrative_crate/ro-crate-metadata.json", jsonString)

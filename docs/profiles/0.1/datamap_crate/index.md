@@ -8,7 +8,7 @@ title: ARC Datamap Crate
 <!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
 * Authors: [ARC RO-Crate community](./../../../index.md/#authors)
 * License: [MIT License](https://mit-license.org/)
-* Example conforming crate: [ro-crate-metadata.json](../../../examples/datamap_crate/ro-crate-metadata.json) [ro-crate-preview.html](../../../examples/datamap_crate/ro-crate-preview.html)
+* Example conforming crate: [ro-crate-metadata.json](../../../examples/datamap_crate/ro-crate-metadata.json)
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json)
 * Extends:
   - [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
@@ -69,7 +69,7 @@ dataset --variableMeasured--> prop
 
 
 * [ro-crate-metadata.json](../../../examples/datamap_crate/ro-crate-metadata.json)
-* [ro-crate-preview.html](../../../examples/datamap_crate/ro-crate-preview.html)
+<!-- * [ro-crate-preview.html](../../../examples/datamap_crate/ro-crate-preview.html) -->
 
 ```json
 {

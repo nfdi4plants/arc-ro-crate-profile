@@ -1,14 +1,14 @@
 ---
-title: ARC Administrative Metadata Crate
+title: ARC Administrative Crate
 ---
 
-# ARC Administrative Metadata RO-Crate profile
+# ARC Administrative RO-Crate profile
 
 * Version: 0.1
 <!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
 * Authors: [ARC RO-Crate community](./../../../index.md/#authors)
 * License: [MIT License](https://mit-license.org/)
-* Example conforming crate: [ro-crate-metadata.json](../../../examples/administrative_metadata_crate/ro-crate-metadata.json) [ro-crate-preview.html](../../../examples/administrative_metadata_crate/ro-crate-preview.html)
+* Example conforming crate: [ro-crate-metadata.json](../../../examples/administrative_crate/ro-crate-metadata.json)
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json)
 * Extends:
   - [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
@@ -33,7 +33,7 @@ title: ARC Administrative Metadata Crate
 
 The aim of the profile is to be able to provide administrative provenance information about a dataset in a structured way. The profile is based on the [Schema.org](https://schema.org/) vocabulary and provides a set of properties that can be used to describe the dataset, its creators, and related publications.
 
-The following graph summarizes the Administrative Metadata model in terms of [Schema.org](https://schema.org/) vocabulary:
+The following graph summarizes the Administrative model in terms of [Schema.org](https://schema.org/) vocabulary:
 
 ```mermaid
 flowchart TD
@@ -58,8 +58,8 @@ article --identifier--> prop
 
 ## Example ro-crate-metadata.json
 
-* [ro-crate-metadata.json](../../../examples/administrative_metadata_crate/ro-crate-metadata.json)
-* [ro-crate-preview.html](../../../examples/administrative_metadata_crate/ro-crate-preview.html)
+* [ro-crate-metadata.json](../../../examples/administrative_crate/ro-crate-metadata.json)
+<!-- * [ro-crate-preview.html](../../../examples/administrative_crate/ro-crate-preview.html) -->
 
 <!-- Remember to update above as well as below! -->
 
@@ -176,8 +176,8 @@ article --identifier--> prop
     {
       "@id": "./",
       "@type": "Dataset",
-      "description": "An example of a ROCrate with administrative metadata including creators and citations.",
-      "name": "ARC Administrative Metadata Crate Example",
+      "description": "An example of a ROCrate with administrative information including creators and citations.",
+      "name": "ARC Administrative Crate Example",
       "creator": [
         {
           "@id": "http://orcid.org/0000-0003-1945-6342"

@@ -83,10 +83,10 @@
     {
       "@id": "index.md",
       "@type": "File",
-      "name": "Administrative Metadata RO-Crate Profile description",
+      "name": "Administrative RO-Crate Profile description",
       "encodingFormat": "text/markdown",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative_metadata_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative_crate"
       }
     },
     {
@@ -120,16 +120,16 @@
       "name": "ARC RO-Crate Annotation Modelling guidance",
       "encodingFormat": "text/html",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative_metadata_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative_crate"
       }
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/administrative_metadata_crate/ro-crate-metadata.json",
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/administrative_crate/ro-crate-metadata.json",
       "@type": "File",
-      "name": "Administrative Metadata RO-Crate Example",
+      "name": "Administrative RO-Crate Example",
       "encodingFormat": "application/json",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative_metadata_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative_crate"
       }
     },
     {
@@ -159,7 +159,7 @@
         "@id": "http://www.w3.org/ns/dx/prof/role/example"
       },
       "hasArtifact": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/administrative_metadata_crate/ro-crate-metadata.json"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/administrative_crate/ro-crate-metadata.json"
       }
     },
     {
@@ -170,7 +170,7 @@
       "alternateName": "NFDI4Plants"
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative_metadata_crate",
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative_crate",
       "@type": [
         "Dataset",
         "Profile"
@@ -178,8 +178,8 @@
       "license": {
         "@id": "https://mit-license.org/"
       },
-      "name": "Administrative Metadata Crate Profile",
-      "description": "An RO-Crate profile for representing the Administrative Metadata of the ARC metadata framework in Research Object Crates (RO-Crates).",
+      "name": "Administrative Crate Profile",
+      "description": "An RO-Crate profile for representing administrative information of the ARC metadata framework in Research Object Crates (RO-Crates).",
       "author": [
         {
           "@id": "https://orcid.org/0000-0002-5526-71389"
@@ -206,7 +206,7 @@
       "keywords": [
         "RO-Crate",
         "Research Object Crate",
-        "Administrative Metadata",
+        "Administrative",
         "Metadata Standard",
         "Bioschemas",
         "FAIR Data",
@@ -238,7 +238,7 @@
           "@id": "https://arc-rdm.org/details/documentation-principle/"
         },
         {
-          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/administrative_metadata_crate/ro-crate-metadata.json"
+          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/administrative_crate/ro-crate-metadata.json"
         }
       ],
       "hasResource": [
@@ -262,7 +262,7 @@
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative_metadata_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative_crate"
       },
       "license": {
         "@id": "https://mit-license.org/"

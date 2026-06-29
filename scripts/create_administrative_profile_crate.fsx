@@ -15,18 +15,18 @@ let types = ResizeArray [
     Types.propertyValue
 ]
 
-let subId = "administrative_metadata_crate"
+let subId = "administrative_crate"
 
 let id = $"{Profile.profilesRoot}/{subId}"
 
-let name = "Administrative Metadata Crate Profile"
+let name = "Administrative Crate Profile"
 
-let description = "An RO-Crate profile for representing the Administrative Metadata of the ARC metadata framework in Research Object Crates (RO-Crates)."
+let description = "An RO-Crate profile for representing administrative information of the ARC metadata framework in Research Object Crates (RO-Crates)."
 
 let keywords = ResizeArray [
     "RO-Crate"
     "Research Object Crate"
-    "Administrative Metadata"
+    "Administrative"
     "Metadata Standard"
     "Bioschemas"
     "FAIR Data"
@@ -37,7 +37,7 @@ let keywords = ResizeArray [
 
 let specifications = ResizeArray[
     TextualResource(
-        name = "Administrative Metadata RO-Crate Profile description",
+        name = "Administrative RO-Crate Profile description",
         filePath = "index.md",
         encodingFormat = "text/markdown",
         rootDataEntityId = id
@@ -61,7 +61,7 @@ let guidances = ResizeArray[
 
 let examples = ResizeArray[
     TextualResource(
-        name = "Administrative Metadata RO-Crate Example",
+        name = "Administrative RO-Crate Example",
         filePath = $"{Profile.examplesRoot}/{subId}/ro-crate-metadata.json",
         encodingFormat = "application/json",
         rootDataEntityId = id
