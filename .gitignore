@@ -396,3 +396,12 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Jekyll / GitHub Pages local preview
+docs/_site/
+docs/.jekyll-cache/
+docs/.jekyll-metadata
+docs/.bundle/
+docs/vendor/
+# github-pages pins versions itself; a committed lock can drift from GitHub's build.
+docs/Gemfile.lock

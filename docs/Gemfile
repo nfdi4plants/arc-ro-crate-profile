@@ -1,0 +1,9 @@
+# Mirrors GitHub Pages' build environment so local previews match production.
+source "https://rubygems.org"
+
+# Pins Jekyll and all plugins to the exact versions GitHub Pages uses.
+gem "github-pages", group: :jekyll_plugins
+
+# Jekyll 3.9 (shipped by github-pages) needs webrick explicitly on Ruby >= 3.0,
+# since webrick was removed from the standard library.
+gem "webrick", "~> 1.8"

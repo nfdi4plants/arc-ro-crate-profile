@@ -1,0 +1,42 @@
+{
+  "name": "ARC RO-Crate Profile Collection (Jekyll / GitHub Pages)",
+
+  // Official Microsoft devcontainer image with Ruby, Jekyll and build tools preinstalled.
+  "image": "mcr.microsoft.com/devcontainers/jekyll:2-bullseye",
+
+  // Adds the .NET SDK on top of the Jekyll image. The SDK bundles F#, so
+  // `dotnet fsi scripts/create_process_core_example.fsx` works out of the box.
+  "features": {
+    "ghcr.io/devcontainers/features/dotnet:2": {
+      "version": "lts"
+    },
+    // Node is required by the Claude Code feature (it only declares installsAfter,
+    // it does not install Node itself), so add it explicitly.
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+  },
+
+  // The Jekyll site lives in docs/ (matches GitHub Pages "Deploy from a branch -> /docs").
+  // Install the pinned github-pages gems once, after the container is created.
+  "postCreateCommand": "cd docs && bundle install",
+
+  // Serve the site on attach; rebuilds + live-reloads as you edit the Markdown.
+  // --force_polling makes file-change detection work over Docker Desktop bind mounts.
+  "postAttachCommand": "cd docs && bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling",
+
+  "forwardPorts": [4000, 35729],
+  "portsAttributes": {
+    "4000": { "label": "Jekyll site", "onAutoForward": "openPreview" },
+    "35729": { "label": "LiveReload", "onAutoForward": "silent" }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yzhang.markdown-all-in-one",
+        "ionide.ionide-fsharp",
+        "anthropic.claude-code"
+      ]
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.2/context",
+    {
+      "Sample": "https://bioschemas.org/Sample",
+      "LabProtocol": "https://bioschemas.org/LabProtocol",
+      "LabProcess": "https://bioschemas.org/LabProcess",
+      "computationalTool": "https://bioschemas.org/properties/computationalTool",
+      "labEquipment": "https://bioschemas.org/properties/labEquipment",
+      "reagent": "https://bioschemas.org/properties/reagent",
+      "intendedUse": "https://bioschemas.org/properties/intendedUse",
+      "executesLabProtocol": "https://bioschemas.org/properties/executesLabProtocol",
+      "parameterValue": "https://bioschemas.org/properties/parameterValue",
+      "columnIndex": "https://w3id.org/ro/terms/arc#columnIndex"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "raw_data1.wiff",
+      "@type": "File",
+      "name": "raw_data1.wiff"
+    },
+    {
+      "@id": "raw_data2.wiff",
+      "@type": "File",
+      "name": "raw_data2.wiff"
+    },
+    {
+      "@id": "processed_data.csv#col=1",
+      "@type": "File",
+      "name": "processed_data.csv#col=1",
+      "encodingFormat": "text/csv",
+      "usageInfo": "https://datatracker.ietf.org/doc/html/rfc7111"
+    },
+    {
+      "@id": "processed_data.csv#col=2",
+      "@type": "File",
+      "name": "processed_data.csv#col=2",
+      "encodingFormat": "text/csv",
+      "usageInfo": "https://datatracker.ietf.org/doc/html/rfc7111"
+    },
+    {
+      "@id": "#Process_DataProcessing_1",
+      "@type": "LabProcess",
+      "name": "DataProcessing_1",
+      "object": {
+        "@id": "raw_data1.wiff"
+      },
+      "result": {
+        "@id": "processed_data.csv#col=1"
+      }
+    },
+    {
+      "@id": "#Process_DataProcessing_2",
+      "@type": "LabProcess",
+      "name": "DataProcessing_2",
+      "object": {
+        "@id": "raw_data2.wiff"
+      },
+      "result": {
+        "@id": "processed_data.csv#col=2"
+      }
+    },
+    {
+      "@id": "LICENSE",
+      "@type": "CreativeWork",
+      "text": "ALL RIGHTS RESERVED BY THE AUTHORS"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "description": "An example of a ROCrate with a core process model, including processing from raw data to processed data fragments.",
+      "name": "Data Fragment ARC Process Core Crate Example",
+      "hasPart": [
+        {
+          "@id": "raw_data1.wiff"
+        },
+        {
+          "@id": "raw_data2.wiff"
+        },
+        {
+          "@id": "processed_data.csv#col=1"
+        },
+        {
+          "@id": "processed_data.csv#col=2"
+        }
+      ],
+      "about": [
+        {
+          "@id": "#Process_DataProcessing_1"
+        },
+        {
+          "@id": "#Process_DataProcessing_2"
+        }
+      ],
+      "dateCreated": "2026-06-25T21:55:09.1573727",
+      "license": {
+        "@id": "LICENSE"
+      }
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      },
+      "about": {
+        "@id": "./"
+      }
+    }
+  ]
+}

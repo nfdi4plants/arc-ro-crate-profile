@@ -1,0 +1,16 @@
+title: ARC RO-Crate Profile
+description: >-
+  Profiles for representing ARCs (Annotated Research Contexts) as RO-Crate.
+
+# Supported by GitHub Pages; swap for jekyll-theme-cayman / -primer / etc. if preferred.
+theme: jekyll-theme-slate
+
+# Tooling files that should not be copied into the built site.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+
+# When the site is served from a subpath (e.g. <org>.github.io/arc-ro-crate-profile/),
+# uncomment so internal links resolve. Leave commented for root / custom-domain serving.
+# baseurl: "/arc-ro-crate-profile"
