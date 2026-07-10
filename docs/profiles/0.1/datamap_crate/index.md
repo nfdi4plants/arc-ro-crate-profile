@@ -59,7 +59,7 @@ DataFile --hasPart--> DataFragment
 dataset --hasPart--> DataFile
 
 DataFragment --about--> prop
-prop -.subjectOf.-> DataFragment
+prop --subjectOf--> DataFragment
 
 dataset --variableMeasured--> prop
 
@@ -292,7 +292,7 @@ Adds further annotation to a *Fragment* of a Data file.
 |@id|MUST|Text or URL||
 |name|MUST|Text|Must be "FragmentDescriptor"|
 |propertyID|MUST|URL|TO-DO?|
-|subjectOf|MUST|URL|Reference to the described data fragement using a [fragment selector](https://www.w3.org/TR/annotation-model/#selectors), following the [data fragment profile](#data-fragment).|
+|subjectOf|MUST|[schema.org/MediaObject](https://schema.org/MediaObject)|The described data fragement using a [fragment selector](https://www.w3.org/TR/annotation-model/#selectors), following the [data fragment profile](#data-fragment).|
 |value|SHOULD|Text|Explication of the data fragment contents|
 |valueReference|SHOULD|URL|Value ontology reference|
 |unitText|SHOULD|Text|Unit of the data fragment|
