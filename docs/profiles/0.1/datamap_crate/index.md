@@ -29,11 +29,11 @@ title: ARC Datamap Crate
 
 This profile shows the intended representation of the ARC datamap in the RO-Crate. The datamap contains contextual information for fragments within data files. Data files are already referenced in their respective datasets through `hasPart`. We extend this by splitting data files into data fragments (using the same type `MediaObject` for the fragments and connecting them through `hasPart`). 
 
-<img alt="Data Fragment Selector" src="../../../img/DFS.png" width="1000" />
+<img alt="Data Fragment Selector" src="../img/DFS.png" width="1000" />
 
 Furthermore, we add the contextual information per entry in the datamap to the `Dataset` objects. The fragments and their information then reference each other.
 
-<img alt="Datamap" src="../../../img/Datamap-XLSX_simple.svg" width="1000" />
+<img alt="Datamap" src="../img/Datamap-XLSX_simple.svg" width="1000" />
 
 See our peer-reviewed publication for more information on the datamap and its usage: [Fragment-level FAIRness](https://doi.org/10.1515/jib-2025-0052)
 
