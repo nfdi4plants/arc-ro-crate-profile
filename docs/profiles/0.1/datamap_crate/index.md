@@ -9,7 +9,7 @@ title: ARC Datamap Crate
 * Authors: [ARC RO-Crate community](./../../../index.md/#authors)
 * License: [MIT License](https://mit-license.org/)
 * Example conforming crate: [ro-crate-metadata.json](../../../examples/datamap_crate/ro-crate-metadata.json)
-* Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json)
+* Profile Crate: [ro-crate-metadata.jsonld](ro-crate-metadata.jsonld)
 * Extends:
   - [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
 * JSON-LD context: <https://www.researchobject.org/ro-terms/arc/context.jsonld>

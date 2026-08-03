@@ -83,16 +83,34 @@
     {
       "@id": "index.md",
       "@type": "File",
-      "name": "Datamap RO-Crate Profile description",
+      "name": "Process Core RO-Crate Profile description",
       "encodingFormat": "text/markdown",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/process_core_crate"
       }
     },
     {
       "@id": "https://schema.org/Dataset",
       "@type": "DefinedTerm",
       "name": "Dataset"
+    },
+    {
+      "@id": "https://bioschemas.org/types/LabProcess/0.1-DRAFT",
+      "@type": "DefinedTerm",
+      "name": "LabProcess",
+      "termCode": "LabProcess"
+    },
+    {
+      "@id": "https://bioschemas.org/types/LabProtocol/0.5-DRAFT",
+      "@type": "DefinedTerm",
+      "name": "LabProtocol",
+      "termCode": "LabProtocol"
+    },
+    {
+      "@id": "https://bioschemas.org/types/Sample/0.3-DRAFT",
+      "@type": "DefinedTerm",
+      "name": "Sample",
+      "termCode": "Sample"
     },
     {
       "@id": "https://schema.org/MediaObject",
@@ -110,16 +128,16 @@
       "name": "ARC RO-Crate Annotation Modelling guidance",
       "encodingFormat": "text/html",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/process_core_crate"
       }
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/datamap_crate/ro-crate-metadata.json",
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/process_core_crate/ro-crate-metadata.json",
       "@type": "File",
-      "name": "Datamap RO-Crate Example",
+      "name": "Process Core RO-Crate Example",
       "encodingFormat": "application/json",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/process_core_crate"
       }
     },
     {
@@ -149,7 +167,7 @@
         "@id": "http://www.w3.org/ns/dx/prof/role/example"
       },
       "hasArtifact": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/datamap_crate/ro-crate-metadata.json"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/process_core_crate/ro-crate-metadata.json"
       }
     },
     {
@@ -160,7 +178,7 @@
       "alternateName": "NFDI4Plants"
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap_crate",
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/process_core_crate",
       "@type": [
         "Dataset",
         "Profile"
@@ -168,8 +186,8 @@
       "license": {
         "@id": "https://mit-license.org/"
       },
-      "name": "Datamap Crate Profile",
-      "description": "An RO-Crate profile for representing the Datamap of the ARC metadata framework in Research Object Crates (RO-Crates).",
+      "name": "Process Core Crate Profile",
+      "description": "An RO-Crate profile for representing the Process Core of the ARC metadata framework in Research Object Crates (RO-Crates).",
       "author": [
         {
           "@id": "https://orcid.org/0000-0002-5526-71389"
@@ -196,7 +214,8 @@
       "keywords": [
         "RO-Crate",
         "Research Object Crate",
-        "Datamap",
+        "Process Core",
+        "Process",
         "Metadata Standard",
         "Bioschemas",
         "FAIR Data",
@@ -213,6 +232,15 @@
           "@id": "https://schema.org/Dataset"
         },
         {
+          "@id": "https://bioschemas.org/types/LabProcess/0.1-DRAFT"
+        },
+        {
+          "@id": "https://bioschemas.org/types/LabProtocol/0.5-DRAFT"
+        },
+        {
+          "@id": "https://bioschemas.org/types/Sample/0.3-DRAFT"
+        },
+        {
           "@id": "https://schema.org/MediaObject"
         },
         {
@@ -222,7 +250,7 @@
           "@id": "https://arc-rdm.org/details/documentation-principle/"
         },
         {
-          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/datamap_crate/ro-crate-metadata.json"
+          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/process_core_crate/ro-crate-metadata.json"
         }
       ],
       "hasResource": [
@@ -236,7 +264,7 @@
           "@id": "#hasExample"
         }
       ],
-      "datePublished": "2026-06-26T20:00:46.4540985Z",
+      "datePublished": "2026-08-03T18:37:07.1352410Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },
@@ -246,7 +274,7 @@
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/process_core_crate"
       },
       "license": {
         "@id": "https://mit-license.org/"
