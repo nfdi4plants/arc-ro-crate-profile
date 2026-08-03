@@ -290,7 +290,7 @@ Data entities involved in an application's input and output SHOULD have an `@id`
 
 ## Data Fragment-level annotation
 
-<img alt="Data Fragment-level annotation diagram" src="../../../img/DFS-ISA.svg" width="800" />
+<img alt="Data Fragment-level annotation diagram" src="../img/DFS-ISA.svg" width="800" />
 
 ```json
 [
