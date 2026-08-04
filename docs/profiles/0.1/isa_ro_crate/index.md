@@ -4,7 +4,7 @@ title: ISA RO-Crate Profile
 
 # ISA RO-Crate Profile
 
-* Version: 1.0.0-draft.1
+* Version: 0.1
 * Permalink: _coming soon_
 * Authors
   * Florian Wetzels - https://orcid.org/0000-0002-5526-7138
