@@ -83,7 +83,7 @@ prop[ParameterValue=PropertyValue]
 
 dataset --hasPart--> dataset
 dataset --hasPart----> DataFile
-dataset --processSequence--> Process
+dataset --about--> Process
 
 Process --"result"---> DataFile
 Process --"result"--> BioSample
