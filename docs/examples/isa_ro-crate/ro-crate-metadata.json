@@ -1,0 +1,464 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.2/context",
+    {
+      "Sample": "https://bioschemas.org/Sample",
+      "LabProtocol": "https://bioschemas.org/LabProtocol",
+      "LabProcess": "https://bioschemas.org/LabProcess",
+      "computationalTool": "https://bioschemas.org/properties/computationalTool",
+      "labEquipment": "https://bioschemas.org/properties/labEquipment",
+      "reagent": "https://bioschemas.org/properties/reagent",
+      "intendedUse": "https://bioschemas.org/properties/intendedUse",
+      "executesLabProtocol": "https://bioschemas.org/properties/executesLabProtocol",
+      "parameterValue": "https://bioschemas.org/properties/parameterValue",
+      "sha256": "http://schema.org/sha256"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/crate/1.2",
+      "@type": "CreativeWork",
+      "name": "RO-Crate Metadata Specification 1.2"
+    },
+    {
+      "@id": "https://github.com/nfdi4plants/isa-ro-crate-profile",
+      "@type": "Profile",
+      "name": "ISA RO-Crate Profile"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "additionalType": "Investigation",
+      "identifier": "facultative-cam-reduced-example",
+      "name": "Facultative CAM in Talinum triangulare — reduced ISA RO-Crate example",
+      "description": "A compact, self-contained example derived from the original investigation. It preserves one complete material provenance chain in the Study and one data-producing and data-processing chain in the Assay.",
+      "creator": {
+        "@id": "https://orcid.org/0000-0001-9021-3197"
+      },
+      "datePublished": "2026-07-29",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "hasPart": [
+        {
+          "@id": "./studies/talinum-samples/"
+        },
+        {
+          "@id": "./assays/gc-ms/"
+        }
+      ],
+      "conformsTo": {
+        "@id": "https://github.com/nfdi4plants/isa-ro-crate-profile"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9021-3197",
+      "@type": "Person",
+      "givenName": "Dominik",
+      "familyName": "Brilhaus",
+      "affiliation": {
+        "@id": "#org-hhu"
+      }
+    },
+    {
+      "@id": "#org-hhu",
+      "@type": "Organization",
+      "name": "Institute of Plant Biochemistry, HHU Düsseldorf"
+    },
+    {
+      "@id": "./studies/talinum-samples/",
+      "@type": "Dataset",
+      "additionalType": "Study",
+      "identifier": "talinum-samples",
+      "name": "Talinum plant material study",
+      "description": "Growth and drought treatment of Talinum plant material. This Study contains only material-producing processes.",
+      "creator": {
+        "@id": "https://orcid.org/0000-0001-9021-3197"
+      },
+      "hasPart": [],
+      "about": {
+        "@id": "#process-plant-material"
+      }
+    },
+    {
+      "@id": "#source-db097",
+      "@type": "Sample",
+      "additionalType": "Source",
+      "name": "DB_097 plant source",
+      "additionalProperty": [
+        {
+          "@id": "#characteristic-organism"
+        },
+        {
+          "@id": "#characteristic-organism-part"
+        }
+      ]
+    },
+    {
+      "@id": "#sample-cam01",
+      "@type": "Sample",
+      "additionalType": "Sample",
+      "name": "CAM_01 drought-treated leaf sample",
+      "additionalProperty": {
+        "@id": "#factor-watering"
+      }
+    },
+    {
+      "@id": "#characteristic-organism",
+      "@type": "PropertyValue",
+      "additionalType": "CharacteristicValue",
+      "name": "organism",
+      "value": "Talinum fruticosum",
+      "propertyID": "http://purl.obolibrary.org/obo/OBI_0100026",
+      "valueReference": "http://purl.obolibrary.org/obo/NCBITaxon_215506"
+    },
+    {
+      "@id": "#characteristic-organism-part",
+      "@type": "PropertyValue",
+      "additionalType": "CharacteristicValue",
+      "name": "organism part",
+      "value": "leaf",
+      "propertyID": "http://purl.obolibrary.org/obo/OBI_0000953",
+      "valueReference": "http://purl.obolibrary.org/obo/PO_0025034"
+    },
+    {
+      "@id": "#factor-watering",
+      "@type": "PropertyValue",
+      "additionalType": "FactorValue",
+      "name": "watering exposure",
+      "value": "12 days drought",
+      "propertyID": "http://purl.obolibrary.org/obo/PECO_0007383"
+    },
+    {
+      "@id": "#protocol-plant-material",
+      "@type": "LabProtocol",
+      "name": "Plant growth and drought treatment",
+      "intendedUse": {
+        "@id": "http://purl.org/nfdi4plants/ontology/dpbo/DPBO_1000164"
+      }
+    },
+    {
+      "@id": "#process-plant-material",
+      "@type": "LabProcess",
+      "name": "Grow and drought-treat plant material",
+      "object": {
+        "@id": "#source-db097"
+      },
+      "result": {
+        "@id": "#sample-cam01"
+      },
+      "executesLabProtocol": {
+        "@id": "#protocol-plant-material"
+      },
+      "parameterValue": [
+        {
+          "@id": "#ParameterValue_temperature_day_30"
+        },
+        {
+          "@id": "#ParameterValue_growth_day_length_12_hr_light_/_12_hr_dark"
+        }
+      ]
+    },
+    {
+      "@id": "./assays/gc-ms/",
+      "@type": "Dataset",
+      "additionalType": "Assay",
+      "identifier": "gc-ms",
+      "name": "GC–MS metabolite profiling assay",
+      "description": "Metabolite extraction, gas chromatography, mass spectrometry acquisition, and computational peak-table generation.",
+      "creator": {
+        "@id": "https://orcid.org/0000-0001-9021-3197"
+      },
+      "hasPart": [
+        {
+          "@id": "./assays/gc-ms/data/raw-run/"
+        },
+        {
+          "@id": "./assays/gc-ms/data/peak-table.csv"
+        }
+      ],
+      "about": [
+        {
+          "@id": "#process-extraction"
+        },
+        {
+          "@id": "#process-gc"
+        },
+        {
+          "@id": "#process-ms"
+        },
+        {
+          "@id": "#process-peak-detection"
+        }
+      ],
+      "measurementMethod": {
+        "@id": "https://www.ebi.ac.uk/ols4/ontologies/ms/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FMS_1000490"
+      },
+      "measurementTechnique": {
+        "@id": "https://www.ebi.ac.uk/ols4/ontologies/ms/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FMS_1003542"
+      },
+      "variableMeasured": {
+        "@id": "#variable-metabolites"
+      }
+    },
+    {
+      "@id": "#variable-metabolites",
+      "@type": "PropertyValue",
+      "name": "targeted polar metabolites",
+      "value": "relative metabolite abundance"
+    },
+    {
+      "@id": "#sample-extract",
+      "@type": "Sample",
+      "additionalType": "Sample",
+      "name": "CAM_01 metabolite extract"
+    },
+    {
+      "@id": "#sample-gc-effluent",
+      "@type": "Sample",
+      "additionalType": "Sample",
+      "name": "CAM_01 chromatographic effluent"
+    },
+    {
+      "@id": "#protocol-extraction",
+      "@type": "LabProtocol",
+      "name": "Metabolite extraction",
+      "intendedUse": {
+        "@id": "http://purl.org/nfdi4plants/ontology/dpbo/DPBO_1000171"
+      }
+    },
+    {
+      "@id": "#reagent-ribitol",
+      "@type": "ChemicalSubstance",
+      "name": "ribitol internal standard",
+      "identifier": "CHEBI:15963"
+    },
+    {
+      "@id": "#process-extraction",
+      "@type": "LabProcess",
+      "name": "Extract metabolites from CAM_01",
+      "object": {
+        "@id": "#sample-cam01"
+      },
+      "result": {
+        "@id": "#sample-extract"
+      },
+      "executesLabProtocol": {
+        "@id": "#protocol-extraction"
+      },
+      "parameterValue": [
+        {
+          "@id": "#ParameterValue_Extraction_buffer_water:methanol:chloroform_1:2.5:1_(v:v:v)"
+        }
+      ],
+      "reagent": {
+        "@id": "#reagent-ribitol"
+      }
+    },
+    {
+      "@id": "#protocol-gc",
+      "@type": "LabProtocol",
+      "name": "Gas chromatography separation",
+      "intendedUse": {
+        "@id": "http://purl.org/nfdi4plants/ontology/dpbo/DPBO_1000175"
+      }
+    },
+    {
+      "@id": "#equipment-gc",
+      "@type": "Product",
+      "name": "Agilent 7890 gas chromatograph"
+    },
+    {
+      "@id": "#process-gc",
+      "@type": "LabProcess",
+      "name": "Separate extract by gas chromatography",
+      "object": {
+        "@id": "#sample-extract"
+      },
+      "result": {
+        "@id": "#sample-gc-effluent"
+      },
+      "executesLabProtocol": {
+        "@id": "#protocol-gc"
+      },
+      "labEquipment": {
+        "@id": "#equipment-gc"
+      }
+    },
+    {
+      "@id": "#protocol-ms",
+      "@type": "LabProtocol",
+      "name": "GC-QTOF mass spectrometry acquisition",
+      "intendedUse": {
+        "@id": "http://purl.org/nfdi4plants/ontology/dpbo/DPBO_1000177"
+      }
+    },
+    {
+      "@id": "#equipment-ms",
+      "@type": "Product",
+      "name": "Agilent 7200 GC-QTOF mass spectrometer"
+    },
+    {
+      "@id": "#process-ms",
+      "@type": "LabProcess",
+      "name": "Acquire raw GC–MS data",
+      "object": {
+        "@id": "#sample-gc-effluent"
+      },
+      "result": {
+        "@id": "./assays/gc-ms/data/raw-run/"
+      },
+      "executesLabProtocol": {
+        "@id": "#protocol-ms"
+      },
+      "labEquipment": {
+        "@id": "#equipment-ms"
+      }
+    },
+    {
+      "@id": "./assays/gc-ms/data/raw-run/",
+      "@type": [
+        "Dataset",
+        "File"
+      ],
+      "name": "Representative raw GC–MS run",
+      "hasPart": [
+        {
+          "@id": "./assays/gc-ms/data/raw-run/MSPeak.bin"
+        },
+        {
+          "@id": "./assays/gc-ms/data/raw-run/method.txt"
+        }
+      ]
+    },
+    {
+      "@id": "./assays/gc-ms/data/raw-run/MSPeak.bin",
+      "@type": "File",
+      "name": "Raw mass spectral peaks",
+      "contentSize": "243430500 B",
+      "encodingFormat": "application/octet-stream"
+    },
+    {
+      "@id": "./assays/gc-ms/data/raw-run/method.txt",
+      "@type": "File",
+      "name": "Instrument acquisition method",
+      "contentSize": "1446 B",
+      "encodingFormat": "text/plain"
+    },
+    {
+      "@id": "#protocol-peak-detection",
+      "@type": "LabProtocol",
+      "name": "Peak detection and quantification workflow",
+      "intendedUse": {
+        "@id": "http://purl.obolibrary.org/obo/MS_1000544"
+      }
+    },
+    {
+      "@id": "#process-peak-detection",
+      "@type": "LabProcess",
+      "name": "Generate quantified metabolite peak table",
+      "object": {
+        "@id": "./assays/gc-ms/data/raw-run/"
+      },
+      "result": {
+        "@id": "./assays/gc-ms/data/peak-table.csv"
+      },
+      "executesLabProtocol": {
+        "@id": "#protocol-peak-detection"
+      }
+    },
+    {
+      "@id": "./assays/gc-ms/data/peak-table.csv",
+      "@type": [
+        "File",
+        "Dataset"
+      ],
+      "name": "Quantified metabolite peak table",
+      "encodingFormat": "text/csv",
+      "contentSize": "2048 B"
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/MS_1000490",
+      "@type": "DefinedTerm",
+      "name": "Agilent instrument model",
+      "termCode": "MS_1000490",
+      "inDefinedTermSet": "http://purl.obolibrary.org/obo/"
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/MS_1003542",
+      "@type": "DefinedTerm",
+      "name": "7200 Q-TOF GC/MS",
+      "termCode": "MS_1003542",
+      "inDefinedTermSet": "http://purl.obolibrary.org/obo/"
+    },
+    {
+      "@id": "http://purl.org/nfdi4plants/ontology/dpbo/DPBO_1000164",
+      "@type": "DefinedTerm",
+      "name": "plant growth protocol",
+      "termCode": "DPBO_1000164",
+      "inDefinedTermSet": "http://purl.org/nfdi4plants/ontology/dpbo/"
+    },
+    {
+      "@id": "http://purl.org/nfdi4plants/ontology/dpbo/DPBO_1000171",
+      "@type": "DefinedTerm",
+      "name": "extraction protocol",
+      "termCode": "DPBO_1000171",
+      "inDefinedTermSet": "http://purl.org/nfdi4plants/ontology/dpbo/"
+    },
+    {
+      "@id": "http://purl.org/nfdi4plants/ontology/dpbo/DPBO_1000175",
+      "@type": "DefinedTerm",
+      "name": "chromatography protocol",
+      "termCode": "DPBO_1000175",
+      "inDefinedTermSet": "http://purl.org/nfdi4plants/ontology/dpbo/"
+    },
+    {
+      "@id": "http://purl.org/nfdi4plants/ontology/dpbo/DPBO_1000177",
+      "@type": "DefinedTerm",
+      "name": "assay protocol",
+      "termCode": "DPBO_1000177",
+      "inDefinedTermSet": "http://purl.org/nfdi4plants/ontology/dpbo/"
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/MS_1000544",
+      "@type": "DefinedTerm",
+      "name": "data processing protocol",
+      "termCode": "MS_1000544",
+      "inDefinedTermSet": "http://purl.obolibrary.org/obo/"
+    },
+    {
+      "@id": "#ParameterValue_temperature_day_30",
+      "@type": "PropertyValue",
+      "additionalType": "ParameterValue",
+      "name": "temperature day",
+      "value": "30",
+      "propertyID": "http://purl.org/nfdi4plants/ontology/dpbo/DPBO_0000007",
+      "unitCode": "https://bioregistry.io/UO:0000027",
+      "unitText": "degree celsius"
+    },
+    {
+      "@id": "#ParameterValue_growth_day_length_12_hr_light_/_12_hr_dark",
+      "@type": "PropertyValue",
+      "additionalType": "ParameterValue",
+      "name": "growth day length",
+      "value": "12 hr light / 12 hr dark",
+      "propertyID": "http://purl.org/nfdi4plants/ontology/dpbo/DPBO_0000041"
+    },
+    {
+      "@id": "#ParameterValue_Extraction_buffer_water:methanol:chloroform_1:2.5:1_(v:v:v)",
+      "@type": "PropertyValue",
+      "additionalType": "ParameterValue",
+      "name": "Extraction buffer",
+      "value": "water:methanol:chloroform 1:2.5:1 (v:v:v)",
+      "propertyID": "http://purl.org/nfdi4plants/ontology/dpbo/DPBO_0000050"
+    }
+  ]
+}

@@ -274,8 +274,6 @@ Describes and points to a Data file or a segment of a Data file (via [data fragm
 |@id|MUST|Text or URL|Should be the path pointing to the file|
 |@type |MUST|Text|MUST be 'File' or 'MediaObject'|
 |name|MUST|Text or URL|The name of the file.|
-|comment|COULD|[schema.org/Comment](#comment)|Comment|
-|disambiguatingDescription|COULD|Text|The type of the data file (“Raw Data File", “Derived Data File" or "Image File").|
 |encodingFormat|COULD|Text of URL|Media format as a MIME type|
 |hasPart|COULD|Text of URL|Data fragments of this Data object, described by [data fragment selectors](https://www.w3.org/TR/annotation-model/#fragment-selector). SHOULD not be used on data fragments.|
 |usageInfo|COULD|Text of URL|Description/specification of the [data fragment selector](https://www.w3.org/TR/annotation-model/#fragment-selector), if the object describes a data fragment and a selector is present in the path/`@id`. SHOULD only be used on data fragments.|
@@ -283,6 +281,34 @@ Describes and points to a Data file or a segment of a Data file (via [data fragm
 Entities referenced by an processes's [object](http://schema.org/object) or [result](http://schema.org/result) SHOULD be of type `File` (an RO-Crate alias for [MediaObject](http://schema.org/MediaObject)) for files, [Dataset](http://schema.org/Dataset) for directories and [Collection](http://schema.org/Collection) for [multi-file datasets](#representing-multi-file-objects), but MAY be a [CreativeWork](http://schema.org/CreativeWork) for other types of data (e.g. an online database); they MAY be of type [PropertyValue](http://schema.org/PropertyValue) to capture numbers/strings that are not stored as files.
 
 Data entities involved in an application's input and output SHOULD have an `@id` that reflects the original file or directory name as processed by the application, but MAY be renamed to avoid clashes with other entities in the crate. In this case, they SHOULD refer to the original name via [alternateName](http://schema.org/alternateName). This is particularly important to support reproducibility in cases where an application expects to find input in specific locations and with specific names (see the MIRAX example in [Representing multi-file objects](#representing-multi-file-objects)).
+
+### DefinedTerm
+
+Single ontology term.
+
+| Property | Required | Expected Type | Description |
+|----------|----------|---------------|-------------|
+|@id|MUST|Text or URL||
+|@type |MUST|Text|MUST be '[schema.org/DefinedTerm](https://schema.org/DefinedTerm)'|
+|name|MUST|Text|The term name.|
+|termCode|SHOULD|Text|The identifier within the ontology.|
+|inDefinedTermSet|COULD|URL or [schema.org/DefinedTermSet](https://schema.org/DefinedTermSet)|Link to the ontology.|
+
+### PropertyValue
+
+General profile for key-value pairs. It is based on [schema.org/PropertyValue](https://schema.org/PropertyValue).
+
+| Property | Required | Expected Type | Description |
+|----------|----------|---------------|-------------|
+|@id|MUST|Text or URL||
+|@type |MUST|Text|MUST be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
+|name|MUST|Text|Key name|
+|value|SHOULD|Text|Value text or number|
+|propertyID|SHOULD|URL|Key ontology reference|
+|additionalType|Could|Text|Can be used to further clarify the type of this property|
+|unitCode|COULD|URL|Unit ontology reference|
+|unitText|COULD|Text|Unit name|
+|valueReference|COULD|URL|Value ontology reference|
 
 
 ## Processes as graph edges
