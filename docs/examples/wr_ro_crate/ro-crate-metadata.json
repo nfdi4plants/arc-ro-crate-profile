@@ -1,0 +1,302 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.2/context",
+    {
+      "Sample": "https://bioschemas.org/Sample",
+      "LabProtocol": "https://bioschemas.org/LabProtocol",
+      "LabProcess": "https://bioschemas.org/LabProcess",
+      "computationalTool": "https://bioschemas.org/properties/computationalTool",
+      "labEquipment": "https://bioschemas.org/properties/labEquipment",
+      "reagent": "https://bioschemas.org/properties/reagent",
+      "intendedUse": "https://bioschemas.org/properties/intendedUse",
+      "executesLabProtocol": "https://bioschemas.org/properties/executesLabProtocol",
+      "parameterValue": "https://bioschemas.org/properties/parameterValue",
+      "columnIndex": "https://w3id.org/ro/terms/arc#columnIndex"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "http://orcid.org/0000-0003-3925-6778",
+      "@type": "Person",
+      "givenName": "Timo",
+      "familyName": "Mühlhaus"
+    },
+    {
+      "@id": "http://edamontology.org/format_3752",
+      "@type": "DefinedTerm",
+      "name": "Comma-separated values",
+      "termCode": "http://edamontology.org/format_3752"
+    },
+    {
+      "@id": "#intensity_table",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "encodingFormat": {
+        "@id": "http://edamontology.org/format_3752"
+      },
+      "name": "intensity_table"
+    },
+    {
+      "@id": "#file_name",
+      "@type": "FormalParameter",
+      "additionalType": "Text",
+      "name": "file_name"
+    },
+    {
+      "@id": "http://edamontology.org/format_3475",
+      "@type": "DefinedTerm",
+      "name": "Tab-separated values",
+      "termCode": "http://edamontology.org/format_3475"
+    },
+    {
+      "@id": "#summed_intensities",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "encodingFormat": {
+        "@id": "http://edamontology.org/format_3475"
+      },
+      "name": "summed_intensities"
+    },
+    {
+      "@id": "#FSharp",
+      "@type": "ComputerLanguage",
+      "name": "F Sharp",
+      "alternateName": "F#",
+      "url": {
+        "@id": "https://dotnet.microsoft.com/en-us/languages/fsharp"
+      }
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.2/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://git.nfdi4plants.org/explore",
+      "@type": "Organization",
+      "name": "DataPLANT DataHub"
+    },
+    {
+      "@id": "workflows/FixedScript/workflow.cwl",
+      "@type": [
+        "File",
+        "ComputationalWorkflow",
+        "SoftwareSourceCode",
+        "LabProtocol"
+      ],
+      "additionalType": "WorkflowProtocol",
+      "input": [
+        {
+          "@id": "#intensity_table"
+        },
+        {
+          "@id": "#file_name"
+        }
+      ],
+      "output": {
+        "@id": "#summed_intensities"
+      },
+      "creator": {
+        "@id": "http://orcid.org/0000-0003-3925-6778"
+      },
+      "name": "Column Addition",
+      "programmingLanguage": [
+        {
+          "@id": "#FSharp"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://git.nfdi4plants.org/explore"
+      },
+      "url": "https://git.nfdi4plants.org/muehlhaus/ArcPrototype/-/blob/main/workflows/FixedScript/workflow.cwl",
+      "version": "0.1",
+      "description": "Sums up the intensity columns of a table and writes the result to a new file.",
+      "conformsTo": {
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate/index.md#workflow-protocol"
+      }
+    },
+    {
+      "@id": "workflows/FixedScript/",
+      "@type": "Dataset",
+      "additionalType": "Workflow",
+      "identifier": "FixedScript",
+      "creator": {
+        "@id": "http://orcid.org/0000-0003-3925-6778"
+      },
+      "hasPart": {
+        "@id": "workflows/FixedScript/workflow.cwl"
+      },
+      "name": "Column Addition",
+      "mainEntity": {
+        "@id": "workflows/FixedScript/workflow.cwl"
+      },
+      "conformsTo": {
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate/index.md#arc-workflow"
+      }
+    },
+    {
+      "@id": "http://orcid.org/0000-0003-1512-9504",
+      "@type": "Person",
+      "givenName": "Caroline",
+      "familyName": "Ott"
+    },
+    {
+      "@id": "runs/fsResult1/summed_intensities.csv",
+      "@type": "File",
+      "name": "runs/fsResult1/summed_intensities.csv",
+      "exampleOfWork": {
+        "@id": "#summed_intensities"
+      }
+    },
+    {
+      "@id": "assays/measurement1/dataset/table.csv",
+      "@type": "File",
+      "name": "assays/measurement1/dataset/table.csv",
+      "exampleOfWork": {
+        "@id": "#intensity_table"
+      }
+    },
+    {
+      "@id": "#WorkflowParameter_file_name_summed_intensities.csv",
+      "@type": "PropertyValue",
+      "additionalType": "WorkflowInput",
+      "name": "file_name",
+      "value": "summed_intensities.csv",
+      "exampleOfWork": {
+        "@id": "#file_name"
+      }
+    },
+    {
+      "@id": "#wfrun-fixed-script",
+      "@type": [
+        "CreateAction",
+        "LabProcess"
+      ],
+      "additionalType": "WorkflowInvocation",
+      "name": "Column Addition with fixed script",
+      "object": [
+        {
+          "@id": "assays/measurement1/dataset/table.csv"
+        },
+        {
+          "@id": "#WorkflowParameter_file_name_summed_intensities.csv"
+        }
+      ],
+      "result": {
+        "@id": "runs/fsResult1/summed_intensities.csv"
+      },
+      "instrument": {
+        "@id": "workflows/FixedScript/workflow.cwl"
+      },
+      "agent": {
+        "@id": "http://orcid.org/0000-0003-1512-9504"
+      },
+      "executesLabProtocol": {
+        "@id": "workflows/FixedScript/workflow.cwl"
+      },
+      "conformsTo": {
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate/index.md#workflow-invocation"
+      }
+    },
+    {
+      "@id": "runs/fsResult1/",
+      "@type": "Dataset",
+      "additionalType": "Run",
+      "identifier": "fsResult1",
+      "creator": {
+        "@id": "http://orcid.org/0000-0003-1512-9504"
+      },
+      "hasPart": {
+        "@id": "runs/fsResult1/summed_intensities.csv"
+      },
+      "name": "Column Addition Result",
+      "about": {
+        "@id": "#wfrun-fixed-script"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/wfrun/process/0.5"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/workflow/0.5"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        },
+        {
+          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate/index.md#arc-run"
+        }
+      ],
+      "mentions": {
+        "@id": "#wfrun-fixed-script"
+      }
+    },
+    {
+      "@id": "LICENSE",
+      "@type": "CreativeWork",
+      "text": "ALL RIGHTS RESERVED BY THE AUTHORS"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "description": "An example of a ROCrate describing a computational workflow and its invocation, covering both prospective and retrospective provenance.",
+      "name": "ARC Workflow Run Crate Example",
+      "hasPart": [
+        {
+          "@id": "workflows/FixedScript/"
+        },
+        {
+          "@id": "runs/fsResult1/"
+        },
+        {
+          "@id": "assays/measurement1/dataset/table.csv"
+        }
+      ],
+      "conformsTo": {
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate"
+      },
+      "dateCreated": "2026-08-05T14:07:17.0067155",
+      "license": {
+        "@id": "LICENSE"
+      }
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      },
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.5",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.5"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.5",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.5"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+      "@type": "CreativeWork",
+      "name": "Workflow RO-Crate",
+      "version": "1.0"
+    }
+  ]
+}

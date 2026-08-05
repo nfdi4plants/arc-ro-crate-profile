@@ -38,7 +38,7 @@ module Organization =
 
 module People =
 
-    let fw = Author(orcid = "0000-0002-5526-71389", name = "Florian Wetzels", affiliation = Organization.rptu)
+    let fw = Author(orcid = "0000-0002-5526-7138", name = "Florian Wetzels", affiliation = Organization.rptu)
     let hlw = Author(orcid = "0000-0003-1945-6342", name = "Heinrich Lukas Weil", affiliation = Organization.rptu)
     let ks = Author(orcid = "0000-0002-2198-5262", name = "Kevin Schneider", affiliation = Organization.rptu)
     let so = Author(orcid = "0000-0003-2130-0865", name = "Stuart Owen", affiliation = Organization.uom)
@@ -64,6 +64,11 @@ module Types =
     let mediaObject = UsedType(iri = "https://schema.org/MediaObject", name = "MediaObject")
     let sample = UsedType(iri = "https://bioschemas.org/types/Sample/0.3-DRAFT", name = "Sample", termCode = "Sample")
     let organization = UsedType(iri = "https://schema.org/Organization", name = "Organization")
+    let createAction = UsedType(iri = "https://schema.org/CreateAction", name = "CreateAction")
+    let softwareSourceCode = UsedType(iri = "https://schema.org/SoftwareSourceCode", name = "SoftwareSourceCode")
+    let softwareApplication = UsedType(iri = "https://schema.org/SoftwareApplication", name = "SoftwareApplication")
+    let computationalWorkflow = UsedType(iri = "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE", name = "ComputationalWorkflow", termCode = "ComputationalWorkflow")
+    let formalParameter = UsedType(iri = "https://bioschemas.org/types/FormalParameter/1.0-RELEASE", name = "FormalParameter", termCode = "FormalParameter")
 
 module Profile = 
 
