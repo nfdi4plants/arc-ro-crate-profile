@@ -13,7 +13,7 @@
       "url": "https://ror.org/01qrts582"
     },
     {
-      "@id": "https://orcid.org/0000-0002-5526-71389",
+      "@id": "https://orcid.org/0000-0002-5526-7138",
       "@type": "Person",
       "name": "Florian Wetzels",
       "affiliation": {
@@ -191,7 +191,7 @@
       "description": "An RO-Crate profile for representing ISA metadata in Research Object Crates (RO-Crates).",
       "author": [
         {
-          "@id": "https://orcid.org/0000-0002-5526-71389"
+          "@id": "https://orcid.org/0000-0002-5526-7138"
         },
         {
           "@id": "https://orcid.org/0000-0003-1945-6342"
@@ -274,7 +274,7 @@
           "@id": "#hasGuidance"
         }
       ],
-      "datePublished": "2026-07-27T10:10:38.7749551Z",
+      "datePublished": "2026-08-05T12:07:44.3761020Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },

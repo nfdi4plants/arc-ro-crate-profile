@@ -13,7 +13,7 @@
       "url": "https://ror.org/01qrts582"
     },
     {
-      "@id": "https://orcid.org/0000-0002-5526-71389",
+      "@id": "https://orcid.org/0000-0002-5526-7138",
       "@type": "Person",
       "name": "Florian Wetzels",
       "affiliation": {
@@ -190,7 +190,7 @@
       "description": "An RO-Crate profile for representing the Process Core of the ARC metadata framework in Research Object Crates (RO-Crates).",
       "author": [
         {
-          "@id": "https://orcid.org/0000-0002-5526-71389"
+          "@id": "https://orcid.org/0000-0002-5526-7138"
         },
         {
           "@id": "https://orcid.org/0000-0003-1945-6342"
@@ -264,7 +264,7 @@
           "@id": "#hasExample"
         }
       ],
-      "datePublished": "2026-08-03T18:37:07.1352410Z",
+      "datePublished": "2026-08-05T12:07:39.6953848Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },

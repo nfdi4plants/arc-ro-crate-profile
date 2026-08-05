@@ -15,6 +15,7 @@ The current profile collection includes:
 - `ARC Administrative Crate`
 - `ARC Datamap Crate`
 - `ARC Process Core Crate`
+- `ARC Workflow Run RO-Crate`
 
 Each profile has a matching example crate collection under `docs/examples/` with the same folder name.
 
@@ -26,12 +27,14 @@ The F# scripts in `scripts/` generate two kinds of crate metadata files:
     - `create_administrative_profile_crate.fsx` generates the Administrative profile crate metadata in `docs/profiles/0.1/administrative_crate/`.
     - `create_process_core_profile_crate.fsx` generates the Process Core profile crate metadata in `docs/profiles/0.1/process_core_crate/`.
     - `create_datamap_profile_crate.fsx` generates the Datamap profile crate metadata in `docs/profiles/0.1/datamap_crate/`.
+    - `create_wr_profile_crate.fsx` generates the Workflow Run profile crate metadata in `docs/profiles/0.1/wr_ro_crate/`.
 
 - `example crates` located in `docs/examples/`:
     - `create_administrative_example.fsx` generates the Administrative example crate metadata in `docs/examples/administrative_crate/`.
     - `create_datamap_example.fsx` generates the Datamap example crate metadata in `docs/examples/datamap_crate/`.
     - `create_process_core_example.fsx` generates the Process Core example crate metadata in `docs/examples/process_core_crate/`.
     - `create_process_core_dfs_example.fsx` generates the Process Core DFS example data.
+    - `create_wr_example.fsx` generates the Workflow Run example crate metadata in `docs/examples/wr_ro_crate/`.
 
 The Administrative scripts currently write to these paths:
 
