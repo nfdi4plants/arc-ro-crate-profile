@@ -104,6 +104,8 @@ workflow --mainEntity--> workflowProtocol
 
 An ARC Workflow is an object that bundles ISA-compliant administrative metadata (e.g., the person that created it) and the prospective provenance of the workflow in form of [Workflow Protocol(s)](#workflow-protocol).
 It is based upon [schema.org/Dataset](https://schema.org/Dataset) and maps to the [ISA-XLSX **Workflow**](https://github.com/nfdi4plants/ARC-specification/blob/release/ISA-XLSX.md#workflow-section).
+A dataset following this profile also follows the [Administrative Crate](../administrative_crate/index.md) profile.
+In particular, the ARC Workflow object MUST follow the [Dataset profile](../administrative_crate/index.md#dataset) defined in the Administrative Crate profile with the following adaptions and additions to the properties defined in that profile.
 In the context of an ARC, an ARC Workflow can be seen as the top-level object describing the contents and provenance of a single _workflow folder_ inside the _workflows folder_.
 
 An ARC Workflow contains a `mainEntity` following the [`Workflow Protocol` profile](#workflow-protocol) that describes the _Main Workflow_ of this `workflow folder`, analogous to [Workflow RO Crates](https://about.workflowhub.eu/Workflow-RO-Crate/).
@@ -126,6 +128,7 @@ An ARC Workflow contains a `mainEntity` following the [`Workflow Protocol` profi
 ### Workflow Protocol
 
 A multitype object that combines [`ComputationalWorkflow`](https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE) and [`LabProtocol`](https://bioschemas.org/types/LabProtocol/0.5-DRAFT), providing prospective provenance of computational workflows that can be understood as traditional workflows as well as from a protocol perspective.
+A Workflow Protocol MUST follow the [Protocol profile](../process_core_crate/index.md#protocol) defined in the Process Core Crate profile.
 
 | Property | Required | Cardinality | Expected Type | Description | Source Profile |
 |----------|----------|-------------|---------------|-------------|----------------|
@@ -157,6 +160,8 @@ A multitype object that combines [`ComputationalWorkflow`](https://bioschemas.or
 
 An ARC Run is an object that bundles ISA-compliant administrative metadata (e.g., the person that executed it) and the retrospective provenance of the run in form of [Workflow Invocation(s)](#workflow-invocation).
 It is based upon [schema.org/Dataset](https://schema.org/Dataset) and maps to the [ISA-XLSX **Run**](https://github.com/nfdi4plants/ARC-specification/blob/release/ISA-XLSX.md#run-section).
+A dataset following this profile also follows the [Process Core Crate](../process_core_crate/index.md) profile.
+In particular, the ARC Run object MUST follow the [Process Core Crate Dataset profile](../process_core_crate/index.md#dataset) and the [Administrative Crate Dataset profile](../administrative_crate/index.md#dataset) with the following adaptions and additions to the properties defined in that profile.
 In the context of an ARC, an ARC Run can be seen as the top-level object describing the contents and provenance of a single _run folder_ inside the _runs folder_.
 
 | Property | Required | Cardinality | Expected Type | Description |
@@ -183,6 +188,7 @@ In the context of an ARC, an ARC Run can be seen as the top-level object describ
 ### Workflow Invocation
 
 A multitype object that combines [`CreateAction`](https://schema.org/CreateAction) and [`LabProcess`](https://bioschemas.org/types/LabProcess/0.1-DRAFT), providing retrospective provenance of computational workflow execution that can be understood as traditional workflow runs as well as from a process sequence perspective.
+An Workflow Invocation MUST follow the [Process profile](../process_core_crate/index.md#process) defined in the Process Core Crate profile, with the following additions to the properties defined in that profile.
 
 | Property | Required | Cardinality | Expected Type | Description | Source Profile |
 |----------|----------|-------------|---------------|-------------|----------------|
@@ -225,6 +231,7 @@ They provide prospective provenance, while their realized values are described b
 ### PropertyValue
 
 Where possible, PropertyValues representing `parameterValue`s in process sequences of [WorkflowInvocations](#workflow-invocation) SHOULD follow the respective (sub)profile defined in the [ISA RO-Crate Profile](../isa_ro_crate/index.md#propertyvalue)
+Workflow Run PropertyValue objects, in general, MUST follow the [PropertyValue profile](../administrative_crate/index.md#propertyvalue) defined in the Administrative Crate profile.
 
 #### PropertyValue - Workflow Input
 
