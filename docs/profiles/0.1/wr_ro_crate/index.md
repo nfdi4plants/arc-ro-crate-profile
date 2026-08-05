@@ -7,7 +7,7 @@ title: ARC Workflow Run RO-Crate Profile
 * Version: 0.1
 * Permalink: _coming soon_
 * Example conforming crate: [ro-crate-metadata.json](../../../examples/wr_ro_crate/ro-crate-metadata.json)
-* Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json)
+* Profile Crate: [ro-crate-metadata.jsonld](ro-crate-metadata.jsonld)
 * Authors
   * Caroline Ott - https://orcid.org/0000-0003-1512-9504
   * Florian Wetzels - https://orcid.org/0000-0002-5526-7138
