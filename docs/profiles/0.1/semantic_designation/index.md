@@ -34,17 +34,18 @@ The profile distinguishes three kinds of metadata according to their relationshi
 - *Intrinsic metadata* describes characteristics that are considered part of the entity itself. Examples include a file's format, a sample's mass, or the datatype associated with a measured value.
 - *Interpretations* describe stable semantic meanings assigned to an entity or one of its components. For example, an interpretation may state that a particular table column represents temperature. Although such meanings are generally stable, they express how an entity is understood rather than a property of the entity itself.
 - *Designations* describe roles, classifications, or other contextual assignments whose applicability depends on a particular activity, study, or dataset. For example, a designation may identify a sample as belonging to a control group in a particular experiment.
+
 For the purpose of modeling annotations in RO-Crate, this profile distinguishes between intrinsic metadata and externally assigned metadata. The latter comprises both Interpretations and Designations. This distinction is based on whether the metadata is considered an inherent property of the entity or an assignment made from an external perspective. Stability is treated as a separate concern: interpretations are generally stable, whereas designations are inherently context-dependent, yet both represent metadata assigned to an entity rather than intrinsic to it.
 
 This conceptual distinction is reflected in the RO-Crate representation. Intrinsic metadata is modeled directly as attributes of the corresponding entity, whereas Interpretations and Designations are modeled as separate descriptor objects. Representing externally assigned metadata through descriptor objects makes its origin and scope explicit, while allowing the same entity to participate in multiple semantic or contextual descriptions without conflating those assignments with the entity's inherent properties.
 
 ## Detailed Description
 
-We use `MediaObject` for data fragments and annotate them through the `variableMeasured` property in the `Dataset` object. Specifically, we plan the following:
-- Each entry in the datamap becomes one entry in `variableMeasured` of type `PropertyValue`.
-- Each data fragment becomes an object of type `MediaObject`, referenced from its file object through `hasPart`.
-- The data fragments from the data map point to descriptions in form of a `PropertyValue` through the `about` property.
-- The `PropertyValue` objects point back through `subjectOf`.
+Within this generic profile, we consider the semantic annotation of any object in the crate, meaning a `Thing` in the RO-Crate context. The annotation objects themselves are represented through `PropertyValue` objects. Their relationship and interpretation depend on their type, i.e. whether they are internal metadata or external metadata.
+
+If a `PropertyValue` object is used to describe an intrinsic property of a `Thing`, it is linked from the `Thing` through the `additionalProperty` attribute.
+If a `PropertyValue` object represents a descriptor for external metadata, it links to the `Thing` through its `about` attribute, while the `Thing` links back through the inverse attribute `subjectOf`.
+To indicate the type annotation, we use the `additionalType` attribute of the `PropertyValue` object, which can be either `Interpretation` or `Designation`. The following diagram illustrates the relationships between these objects.
 
 ```mermaid
 flowchart TD
@@ -241,61 +242,45 @@ propDes --about--> thing
 
 ## Requirements
 
-### Dataset
+### Thing
 
-Object containing and annotating data files and fragments. In the context of this profile, this object is used to represent the datamap and its entries.
-
-| Property | Required | Expected Type | Description |
-|----------|----------|---------------|-------------|
-|@type |MUST|Text|Must be '[schema.org/Dataset](https://schema.org/Dataset)'|
-|@id|MUST|Text or URL|Should be a subdirectory corresponding to this dataset.|
-|hasPart|SHOULD|[File](https://schema.org/MediaObject)|The data files resulting from the processes performed in this dataset.|
-|variableMeasured|COULD|Text or [schema.org/PropertyValue](https://schema.org/PropertyValue)|A fragment description entry from the datamap as a [PropertyValue](https://schema.org/PropertyValue) following the [fragment description profile](#fragment-description).|
-
-
-### Data (File)
-
-Describes and points to a Data file.
+Object to be semantically annotated.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@type |MUST|Text|Must be 'File' or 'MediaObject'|
-|@id|MUST|Text or URL|Should be the path pointing to the file./
-|name|MUST|Text or URL|The name of the file.|
-|comment|COULD|[schema.org/Comment](https://schema.org/Comment)|Comment|
-|encodingFormat|COULD|Text of URL|Media format as a MIME type|
-|hasPart|COULD|[File](https://schema.org/MediaObject)|The data fragments within this file. They must follow the [Data Fragment profile](#data-fragment).|
+|additionalProperty|COULD|[schema.org/PropertyValue](https://schema.org/PropertyValue)|Ontology annotated properties of the object. Must follow the [semantic attribute profile](#semantic-attribute).|
+|subjectOf|COULD|[schema.org/PropertyValue](https://schema.org/PropertyValue)|The semantic description for object. It must follow the [semantic descriptor profile](#semantic-descriptor).|
 
-### Data Fragment
+### Semantic Description
 
-Describes and points to a *Fragment* of a Data file. In addition to the filepath, the `@id` property must contain a [fragment selector](https://www.w3.org/TR/annotation-model/#selectors)(separated by a `#`) to point to the specific fragment within the file. The specifcation describing the fragment selector should be provided in the `usageInfo` property.
+Adds external annotation to a `Thing`. 
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@type |MUST|Text|Must be 'File' or 'MediaObject'|
-|@id|MUST|Text or URL|Should be the path pointing to the file with a [fragment selector](https://www.w3.org/TR/annotation-model/#selectors) attached.|
-|usageInfo|MUST|Text of URL|(Formal) Description of the fragment selector.|
-|about|SHOULD|[schema.org/PropertyValue](https://schema.org/PropertyValue)|The fragment description for this fragment. It must follow the [fragment description profile](#fragment-description).|
-|pattern|SHOULD|DefinedTerm|Defines the shape or format of entries in this fragment.|
-|name|COULD|Text or URL|The name of the file.|
-|comment|COULD|[schema.org/Comment](https://schema.org/Comment)|Comment|
-|encodingFormat|COULD|Text of URL|Media format as a MIME type|
-
-### Fragment Description
-
-Adds further annotation to a *Fragment* of a Data file. 
-
-| Property | Required | Expected Type | Description |
-|----------|----------|---------------|-------------|
-|@type |MUST|Text|Must be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
 |@id|MUST|Text or URL||
-|name|MUST|Text|Must be "FragmentDescriptor"|
-|propertyID|MUST|URL|TO-DO?|
-|subjectOf|MUST|[schema.org/MediaObject](https://schema.org/MediaObject)|The described data fragement using a [fragment selector](https://www.w3.org/TR/annotation-model/#selectors), following the [data fragment profile](#data-fragment).|
-|value|SHOULD|Text|Explication of the data fragment contents|
-|valueReference|SHOULD|URL|Value ontology reference|
-|unitText|SHOULD|Text|Unit of the data fragment|
+|@type |MUST|Text|Must be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
+|additionalType|COULD|Text|Can be 'Interpretation' or 'Designation'.|
+|name|MUST|Text|Explication of the annotated property.|
+|about|MUST|[schema.org/Thing](https://schema.org/Thing)|The described entity.|
+|propertyID|SHOULD|URL|TO-DO?|
+|value|COULD|Text|Potential value for the annotated property.|
+|valueReference|COULD|URL|Value ontology reference|
+|unitText|SHOULD|Text|Unit of the described entity.|
 |unitCode|SHOULD|URL|Unit ontology reference|
-|alternateName|SHOULD|Text|The label of the fragment, e.g. a column header.|
-|measurementMethod|SHOULD|Text|Name of the tool used to create the data.|
-|description|SHOULD|Text|Can be used to describe further details of the fragment|
+|description|SHOULD|Text|Can be used to describe further details of the annotation or the described entity.|
+
+### Semantic Attribute
+
+Generic, intrinsic attributes represented by key-value pairs.
+
+| Property | Required | Expected Type | Description |
+|----------|----------|---------------|-------------|
+|@id|MUST|Text or URL||
+|@type |MUST|Text|MUST be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
+|additionalType|COULD|Text|Can be used to further clarify the type of this property|
+|name|MUST|Text|Key name/property name/attrbute name|
+|value|SHOULD|Text|Value text or number|
+|propertyID|SHOULD|URL|Key ontology reference|
+|unitCode|COULD|URL|Unit ontology reference|
+|unitText|COULD|Text|Unit of the value|
+|valueReference|COULD|URL|Value ontology reference|
