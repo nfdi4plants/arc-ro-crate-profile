@@ -1,14 +1,14 @@
 ---
-title: ARC Datamap Crate
+title: Semantic Designation
 ---
 
-# ARC Datamap RO-Crate profile
+# Semantic Designation profile
 
 * Version: 0.1
 <!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
 * Authors: [ARC RO-Crate community](./../../../index.md/#authors)
 * License: [MIT License](https://mit-license.org/)
-* Example conforming crate: [ro-crate-metadata.json](../../../examples/datamap_crate/ro-crate-metadata.json)
+* Example conforming crate: [ro-crate-metadata.json](../../../examples/semantic_designation_crate/ro-crate-metadata.json)
 * Profile Crate: [ro-crate-metadata.jsonld](ro-crate-metadata.jsonld)
 * Extends:
   - [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
@@ -19,10 +19,9 @@ title: ARC Datamap Crate
   * [Overview](#overview)
   * [Example ro-crate-metadata.json](#example-ro-crate-metadatajson)
   * [Requirements](#requirements)
-    * [Dataset](#dataset)
-    * [Data File](#data-file)
-    * [Data Fragment](#data-fragment)
-    * [Fragment Description](#fragment-description)
+    * [Thing](#thing)
+    * [Semantic Description](#semantic-description)
+    * [Semantic Attribute](#semantic-attribute)
 
 
 ## Overview
@@ -47,8 +46,12 @@ If a `PropertyValue` object is used to describe an intrinsic property of a `Thin
 If a `PropertyValue` object represents a descriptor for external metadata, it links to the `Thing` through its `about` attribute, while the `Thing` links back through the inverse attribute `subjectOf`.
 To indicate the type annotation, we use the `additionalType` attribute of the `PropertyValue` object, which can be either `Interpretation` or `Designation`. The following diagram illustrates the relationships between these objects.
 
+The profile recommends to reference the annotation entities from the `Dataset` entity through the `mentions` attribute, to indicate that the dataset contains these annotations.
+
 ```mermaid
 flowchart TD
+
+dataset[Dataset]
 
 thing[Thing]
 
@@ -62,6 +65,10 @@ thing --subjectOf--> propInt
 thing --subjectOf--> propDes
 propInt --about--> thing
 propDes --about--> thing
+
+dataset --mentions--> propAttr
+dataset --mentions--> propInt
+dataset --mentions--> propDes
 
 ```
 
@@ -242,6 +249,16 @@ propDes --about--> thing
 
 ## Requirements
 
+### Dataset
+
+RO-Crate Dataset Entity that contains semantically annotated objects.
+
+| Property | Required | Expected Type | Description |
+|----------|----------|---------------|-------------|
+|@type |MUST|Text|Must be '[schema.org/Dataset](https://schema.org/Dataset)'|
+|mentions|SHOULD|[schema.org/PropertyValue](https://schema.org/PropertyValue)|An annotation enitity as a [PropertyValue](https://schema.org/PropertyValue) following the [semantic description profile](#semantic-description) or the [semantic attribute profile](#semantic-attribute).|
+
+
 ### Thing
 
 Object to be semantically annotated.
@@ -260,13 +277,13 @@ Adds external annotation to a `Thing`.
 |@id|MUST|Text or URL||
 |@type |MUST|Text|Must be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
 |additionalType|COULD|Text|Can be 'Interpretation' or 'Designation'.|
-|name|MUST|Text|Explication of the annotated property.|
+|name|MUST|Text|Description of what is annotated.|
 |about|MUST|[schema.org/Thing](https://schema.org/Thing)|The described entity.|
-|propertyID|SHOULD|URL|TO-DO?|
-|value|COULD|Text|Potential value for the annotated property.|
-|valueReference|COULD|URL|Value ontology reference|
+|propertyID|SHOULD|URL|Ontology reference corresponding `name`.|
+|value|COULD|Text|The annotated property.|
+|valueReference|COULD|URL|Value ontology reference.|
 |unitText|SHOULD|Text|Unit of the described entity.|
-|unitCode|SHOULD|URL|Unit ontology reference|
+|unitCode|SHOULD|URL|Unit ontology reference.|
 |description|SHOULD|Text|Can be used to describe further details of the annotation or the described entity.|
 
 ### Semantic Attribute
