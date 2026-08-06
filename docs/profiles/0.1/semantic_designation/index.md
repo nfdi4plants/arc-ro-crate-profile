@@ -26,27 +26,39 @@ title: Semantic Designation
 
 ## Overview
 
-This profile describes how to annotate semantic metadata associated with entities represented in an RO-Crate. These entities may be data entities, such as directories, files, or fragments of files, as well as contextual entities, such as physical samples, instruments, or other real-world objects represented in the crate.
+This profile defines a consistent approach for describing semantic metadata associated with entities represented in an RO-Crate. These entities may be **data entities**, such as directories, files, or fragments of files, as well as **contextual entities**, such as physical samples, instruments, or other real-world objects represented in the crate.
 
 The profile distinguishes three kinds of metadata according to their relationship with the entity they describe:
 
+
 - *Intrinsic metadata* describes characteristics that are considered part of the entity itself. Examples include a file's format, a sample's mass, or the datatype associated with a measured value.
-- *Interpretations* describe stable semantic meanings assigned to an entity or one of its components. For example, an interpretation may state that a particular table column represents temperature. Although such meanings are generally stable, they express how an entity is understood rather than a property of the entity itself.
-- *Designations* describe roles, classifications, or other contextual assignments whose applicability depends on a particular activity, study, or dataset. For example, a designation may identify a sample as belonging to a control group in a particular experiment.
+- **Intrinsic metadata** describes characteristics that are considered part of the entity itself. Examples include a file's format, a sample's mass, or the datatype associated with a measured value.
 
-For the purpose of modeling annotations in RO-Crate, this profile distinguishes between intrinsic metadata and externally assigned metadata. The latter comprises both Interpretations and Designations. This distinction is based on whether the metadata is considered an inherent property of the entity or an assignment made from an external perspective. Stability is treated as a separate concern: interpretations are generally stable, whereas designations are inherently context-dependent, yet both represent metadata assigned to an entity rather than intrinsic to it.
+- **Interpretations** describe stable semantic meanings assigned to an entity or one of its components. For example, an interpretation may state that a particular table column represents a physical quantity such as temperature. Although such meanings are generally stable, they express how an entity is understood rather than a property of the entity itself.
 
-This conceptual distinction is reflected in the RO-Crate representation. Intrinsic metadata is modeled directly as attributes of the corresponding entity, whereas Interpretations and Designations are modeled as separate descriptor objects. Representing externally assigned metadata through descriptor objects makes its origin and scope explicit, while allowing the same entity to participate in multiple semantic or contextual descriptions without conflating those assignments with the entity's inherent properties.
+- **Designations** describe roles, classifications, or other contextual assignments whose applicability depends on a particular activity, study, or dataset. For example, a designation may identify a sample as belonging to the control group of an experiment.
+
+For the purpose of modeling semantic annotations in RO-Crate, this profile distinguishes between **intrinsic metadata** and **externally assigned metadata**. The latter comprises both **Interpretations** and **Designations**. This distinction is based on whether the metadata is considered an inherent property of the entity or an assignment made from an external perspective. Stability is treated as a separate concern: interpretations are generally stable, whereas designations are inherently context-dependent, yet both represent externally assigned metadata.
+
+This conceptual distinction is reflected in the RO-Crate representation. Intrinsic metadata is modeled directly as attributes of the corresponding entity, whereas Interpretations and Designations are modeled as separate descriptor objects. Representing externally assigned metadata through descriptor objects makes their origin and scope explicit, while allowing the same entity to participate in multiple semantic or contextual descriptions without conflating those assignments with the entity's intrinsic properties.
+
 
 ## Detailed Description
 
-Within this generic profile, we consider the semantic annotation of any object in the crate, meaning a `Thing` in the RO-Crate context. The annotation objects themselves are represented through `PropertyValue` objects. Their relationship and interpretation depend on their type, i.e. whether they are internal metadata or external metadata.
+Within this profile, any entity that can be described in an RO-Crate (i.e. a `Thing`) may be annotated using `PropertyValue` objects.
 
-If a `PropertyValue` object is used to describe an intrinsic property of a `Thing`, it is linked from the `Thing` through the `additionalProperty` attribute.
-If a `PropertyValue` object represents a descriptor for external metadata, it links to the `Thing` through its `about` attribute, while the `Thing` links back through the inverse attribute `subjectOf`.
-To indicate the type annotation, we use the `additionalType` attribute of the `PropertyValue` object, which can be either `Interpretation` or `Designation`. The following diagram illustrates the relationships between these objects.
+Intrinsic metadata is represented using `PropertyValue` objects linked from the annotated entity through the `additionalProperty` property. Such objects describe intrinsic characteristics of the entity itself.
 
-The profile recommends to reference the annotation entities from the `Dataset` entity through the `mentions` attribute, to indicate that the dataset contains these annotations.
+Externally assigned metadata is represented using **Semantic Descriptors**, which are likewise encoded as `PropertyValue` objects. A descriptor is linked to the annotated entity through the `about` property, while the entity links back to the descriptor through the inverse `subjectOf` property. The descriptor type is indicated using `additionalType`, whose value is either `Interpretation` or `Designation`.
+
+Every descriptor expresses a semantic annotation as a **semantic property** and an **assigned value**:
+
+- The **semantic property** (`name` and optionally `propertyID`) identifies the kind of annotation being made, such as *physical quantity represented*, *experimental role*, or *replicate group*.
+- The **assigned value** (`value` and optionally `valueReference`) specifies the value assigned for that semantic property. Depending on the annotation, this may be a concept, identifier, literal value, or another resource.
+
+For interpretation descriptors, `unitText` and `unitCode` may additionally be used to specify the unit associated with the described entity. For example, if a file column is interpreted as representing temperature measurements, the descriptor may indicate that the values are expressed in degrees Celsius.
+
+The profile recommends that all annotation entities (both intrinsic attributes and semantic descriptors) are referenced from the crate `Dataset` through the `mentions` property, making them explicitly discoverable within the crate.
 
 ```mermaid
 flowchart TD
@@ -55,184 +67,121 @@ dataset[Dataset]
 
 thing[Thing]
 
-propAttr[PropertyValue/Attribute]
-propInt[PropertyValue/Interpretation]
-propDes[PropertyValue/Designation]
+attr[PropertyValue<br/>Intrinsic Attribute]
+interp[PropertyValue<br/>Interpretation]
+desig[PropertyValue<br/>Designation]
 
-thing --additionalProperty--> propAttr
+thing -- additionalProperty --> attr
 
-thing --subjectOf--> propInt
-thing --subjectOf--> propDes
-propInt --about--> thing
-propDes --about--> thing
+thing -- subjectOf --> interp
+thing -- subjectOf --> desig
 
-dataset --mentions--> propAttr
-dataset --mentions--> propInt
-dataset --mentions--> propDes
+interp -- about --> thing
+desig -- about --> thing
 
+dataset -- mentions --> attr
+dataset -- mentions --> interp
+dataset -- mentions --> desig
 ```
 
 ## Example Metadata File (`ro-crate-metadata.json`)
 
-
-* [ro-crate-metadata.json](../../../examples/datamap_crate/ro-crate-metadata.json)
-<!-- * [ro-crate-preview.html](../../../examples/datamap_crate/ro-crate-preview.html) -->
+* [ro-crate-metadata.json](../../../examples/semantic_designation_crate/ro-crate-metadata.json)
 
 ```json
 {
   "@context": [
     "https://w3id.org/ro/crate/1.2/context",
     {
-      "Sample": "https://bioschemas.org/Sample",
-      "LabProtocol": "https://bioschemas.org/LabProtocol",
-      "LabProcess": "https://bioschemas.org/LabProcess",
-      "computationalTool": "https://bioschemas.org/properties/computationalTool",
-      "labEquipment": "https://bioschemas.org/properties/labEquipment",
-      "reagent": "https://bioschemas.org/properties/reagent",
-      "intendedUse": "https://bioschemas.org/properties/intendedUse",
-      "executesLabProtocol": "https://bioschemas.org/properties/executesLabProtocol",
-      "parameterValue": "https://bioschemas.org/properties/parameterValue",
-      "columnIndex": "https://w3id.org/ro/terms/arc#columnIndex"
+      "Sample": "https://bioschemas.org/Sample"
     }
   ],
   "@graph": [
-    {
-      "@id": "http://purl.obolibrary.org/obo/NCIT_C45253",
-      "@type": "DefinedTerm",
-      "name": "string",
-      "termCode": "http://purl.obolibrary.org/obo/NCIT_C45253"
-    },
-    {
-      "@id": "processed_data.csv#col=1",
-      "@type": "File",
-      "name": "processed_data.csv#col=1",
-      "encodingFormat": "text/csv",
-      "usageInfo": "https://datatracker.ietf.org/doc/html/rfc7111",
-      "pattern": {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C45253"
-      },
-      "about": {
-        "@id": "#Descriptor_processed_data.csv#col=1"
-      }
-    },
-    {
-      "@id": "http://purl.obolibrary.org/obo/NCIT_C48150",
-      "@type": "DefinedTerm",
-      "name": "float",
-      "termCode": "http://purl.obolibrary.org/obo/NCIT_C48150"
-    },
-    {
-      "@id": "processed_data.csv#col=2",
-      "@type": "File",
-      "name": "processed_data.csv#col=2",
-      "encodingFormat": "text/csv",
-      "usageInfo": "https://datatracker.ietf.org/doc/html/rfc7111",
-      "pattern": {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C48150"
-      },
-      "about": {
-        "@id": "#Descriptor_processed_data.csv#col=2"
-      }
-    },
-    {
-      "@id": "processed_data.csv#col=3",
-      "@type": "File",
-      "name": "processed_data.csv#col=3",
-      "encodingFormat": "text/csv",
-      "usageInfo": "https://datatracker.ietf.org/doc/html/rfc7111",
-      "pattern": {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C48150"
-      },
-      "about": {
-        "@id": "#Descriptor_processed_data.csv#col=3"
-      }
-    },
-    {
-      "@id": "processed_data.csv",
-      "@type": "File",
-      "name": "processed_data.csv",
-      "encodingFormat": "text/csv",
-      "hasPart": [
-        {
-          "@id": "processed_data.csv#col=1"
-        },
-        {
-          "@id": "processed_data.csv#col=2"
-        },
-        {
-          "@id": "processed_data.csv#col=3"
-        }
-      ]
-    },
-    {
-      "@id": "#Descriptor_processed_data.csv#col=1",
-      "@type": "PropertyValue",
-      "name": "FragmentDescriptor",
-      "value": "Protein identifier",
-      "propertyID": "https://github.com/nfdi4plants/ARC-specification/blob/dev/ISA-XLSX.md#datamap-table-sheets",
-      "valueReference": "http://purl.obolibrary.org/obo/NCIT_C165059",
-      "alternateName": "protID",
-      "subjectOf": {
-        "@id": "processed_data.csv#col=1"
-      }
-    },
-    {
-      "@id": "#Descriptor_processed_data.csv#col=2",
-      "@type": "PropertyValue",
-      "name": "FragmentDescriptor",
-      "value": "molecule count",
-      "propertyID": "https://github.com/nfdi4plants/ARC-specification/blob/dev/ISA-XLSX.md#datamap-table-sheets",
-      "unitCode": "http://purl.obolibrary.org/obo/NCIT_C68892",
-      "unitText": "Millimole per Kilogram",
-      "valueReference": "http://purl.obolibrary.org/obo/UO_0000192",
-      "alternateName": "quant1",
-      "subjectOf": {
-        "@id": "processed_data.csv#col=2"
-      }
-    },
-    {
-      "@id": "#Descriptor_processed_data.csv#col=3",
-      "@type": "PropertyValue",
-      "name": "FragmentDescriptor",
-      "value": "molecule count",
-      "propertyID": "https://github.com/nfdi4plants/ARC-specification/blob/dev/ISA-XLSX.md#datamap-table-sheets",
-      "unitCode": "http://purl.obolibrary.org/obo/NCIT_C68892",
-      "unitText": "Millimole per Kilogram",
-      "valueReference": "http://purl.obolibrary.org/obo/UO_0000192",
-      "alternateName": "quant2",
-      "subjectOf": {
-        "@id": "processed_data.csv#col=3"
-      }
-    },
-    {
-      "@id": "LICENSE",
-      "@type": "CreativeWork",
-      "text": "ALL RIGHTS RESERVED BY THE AUTHORS"
-    },
+
     {
       "@id": "./",
       "@type": "Dataset",
-      "description": "An example of a ROCrate with a datamap, including annotation of a tabular data file.",
-      "name": "ARC Datamap Crate Example",
-      "hasPart": {
-        "@id": "processed_data.csv"
+      "name": "Semantic Designation Example",
+      "mentions": [
+        { "@id": "#mass" },
+        { "@id": "#controlGroupDesignation" },
+        { "@id": "#temperatureInterpretation" }
+      ]
+    },
+
+    {
+      "@id": "#sample1",
+      "@type": "Sample",
+      "name": "Sample 1",
+
+      "additionalProperty": {
+        "@id": "#mass"
       },
-      "variableMeasured": [
-        {
-          "@id": "#Descriptor_processed_data.csv#col=1"
-        },
-        {
-          "@id": "#Descriptor_processed_data.csv#col=2"
-        },
-        {
-          "@id": "#Descriptor_processed_data.csv#col=3"
-        }
-      ],
-      "dateCreated": "2026-06-25T22:58:40.2416018",
-      "license": {
-        "@id": "LICENSE"
+
+      "subjectOf": {
+        "@id": "#controlGroupDesignation"
       }
     },
+
+    {
+      "@id": "#mass",
+      "@type": "PropertyValue",
+
+      "name": "mass",
+      "propertyID": "TODO",
+
+      "value": 2.3,
+      "unitText": "g",
+      "unitCode": "TODO"
+    },
+
+    {
+      "@id": "#controlGroupDesignation",
+      "@type": "PropertyValue",
+
+      "additionalType": "Designation",
+
+      "about": {
+        "@id": "#sample1"
+      },
+
+      "name": "experimental role",
+      "propertyID": "TODO",
+
+      "value": "control group",
+      "valueReference": "TODO"
+    },
+
+    {
+      "@id": "measurements.csv",
+      "@type": "File",
+      "name": "measurements.csv",
+      "encodingFormat": "text/csv",
+
+      "subjectOf": {
+        "@id": "#temperatureInterpretation"
+      }
+    },
+
+    {
+      "@id": "#temperatureInterpretation",
+      "@type": "PropertyValue",
+
+      "additionalType": "Interpretation",
+
+      "about": {
+        "@id": "measurements.csv"
+      },
+
+      "name": "physical quantity represented",
+      "propertyID": "TODO",
+
+      "value": "temperature",
+      "valueReference": "TODO",
+
+      "unitText": "°C"
+    },
+
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
@@ -243,6 +192,7 @@ dataset --mentions--> propDes
         "@id": "./"
       }
     }
+
   ]
 }
 ```
@@ -251,53 +201,59 @@ dataset --mentions--> propDes
 
 ### Dataset
 
-RO-Crate Dataset Entity that contains semantically annotated objects.
+RO-Crate `Dataset` entity containing semantically annotated entities.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@type |MUST|Text|Must be '[schema.org/Dataset](https://schema.org/Dataset)'|
-|mentions|SHOULD|[schema.org/PropertyValue](https://schema.org/PropertyValue)|An annotation enitity as a [PropertyValue](https://schema.org/PropertyValue) following the [semantic description profile](#semantic-description) or the [semantic attribute profile](#semantic-attribute).|
+| `@type` | MUST | Text | MUST be [`schema:Dataset`](https://schema.org/Dataset). |
+| `mentions` | SHOULD | [`schema:PropertyValue`](https://schema.org/PropertyValue) | References annotation entities represented as `PropertyValue` objects following either the [Semantic Descriptor](#semantic-descriptor) or [Semantic Attribute](#semantic-attribute) profile. |
 
+---
 
 ### Thing
 
-Object to be semantically annotated.
+An entity that is semantically annotated.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|additionalProperty|COULD|[schema.org/PropertyValue](https://schema.org/PropertyValue)|Ontology annotated properties of the object. Must follow the [semantic attribute profile](#semantic-attribute).|
-|subjectOf|COULD|[schema.org/PropertyValue](https://schema.org/PropertyValue)|The semantic description for object. It must follow the [semantic descriptor profile](#semantic-descriptor).|
+| `additionalProperty` | MAY | [`schema:PropertyValue`](https://schema.org/PropertyValue) | Intrinsic metadata of the entity. Each referenced `PropertyValue` MUST follow the [Semantic Attribute](#semantic-attribute) profile. |
+| `subjectOf` | MAY | [`schema:PropertyValue`](https://schema.org/PropertyValue) | Externally assigned metadata describing the entity. Each referenced `PropertyValue` MUST follow the [Semantic Descriptor](#semantic-descriptor) profile. |
 
-### Semantic Description
+---
 
-Adds external annotation to a `Thing`. 
+### Semantic Descriptor
+
+A semantic descriptor represents externally assigned metadata about a `Thing`, such as an Interpretation or Designation.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL||
-|@type |MUST|Text|Must be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
-|additionalType|COULD|Text|Can be 'Interpretation' or 'Designation'.|
-|name|MUST|Text|Description of what is annotated.|
-|about|MUST|[schema.org/Thing](https://schema.org/Thing)|The described entity.|
-|propertyID|SHOULD|URL|Ontology reference corresponding `name`.|
-|value|COULD|Text|The annotated property.|
-|valueReference|COULD|URL|Value ontology reference.|
-|unitText|SHOULD|Text|Unit of the described entity.|
-|unitCode|SHOULD|URL|Unit ontology reference.|
-|description|SHOULD|Text|Can be used to describe further details of the annotation or the described entity.|
+| `@id` | MUST | Text or URL | Identifier of the descriptor. |
+| `@type` | MUST | Text | MUST be [`schema:PropertyValue`](https://schema.org/PropertyValue). |
+| `additionalType` | SHOULD | Text | Indicates the descriptor type. SHOULD be either `Interpretation` or `Designation`. |
+| `about` | MUST | [`schema:Thing`](https://schema.org/Thing) | The entity described by this descriptor. |
+| `name` | MUST | Text | Human-readable name of the **semantic property** (e.g. *physical quantity represented*, *experimental role*, *replicate group*). |
+| `propertyID` | SHOULD | URL | Ontology identifier of the semantic property. |
+| `value` | SHOULD | Text, Number or Boolean | The **assigned value** for the semantic property. May be a literal value or a human-readable label. |
+| `valueReference` | MAY | URL | Ontology identifier or URI corresponding to the assigned value. |
+| `unitText` | MAY | Text | Unit associated with the described entity, where applicable. Primarily intended for Interpretation descriptors. |
+| `unitCode` | MAY | URL | Ontology identifier corresponding to `unitText`. |
+| `description` | MAY | Text | Additional information about the annotation. |
+
+---
 
 ### Semantic Attribute
 
-Generic, intrinsic attributes represented by key-value pairs.
+An intrinsic property of a `Thing`, represented as a `PropertyValue`.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL||
-|@type |MUST|Text|MUST be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
-|additionalType|COULD|Text|Can be used to further clarify the type of this property|
-|name|MUST|Text|Key name/property name/attrbute name|
-|value|SHOULD|Text|Value text or number|
-|propertyID|SHOULD|URL|Key ontology reference|
-|unitCode|COULD|URL|Unit ontology reference|
-|unitText|COULD|Text|Unit of the value|
-|valueReference|COULD|URL|Value ontology reference|
+| `@id` | MUST | Text or URL | Identifier of the attribute. |
+| `@type` | MUST | Text | MUST be [`schema:PropertyValue`](https://schema.org/PropertyValue). |
+| `additionalType` | MAY | Text | MAY further specialize the attribute type. |
+| `name` | MUST | Text | Human-readable name of the intrinsic property. |
+| `propertyID` | SHOULD | URL | Ontology identifier of the intrinsic property. |
+| `value` | SHOULD | Text, Number or Boolean | Value of the intrinsic property. |
+| `valueReference` | MAY | URL | Ontology identifier or URI corresponding to the value. |
+| `unitText` | MAY | Text | Unit of the intrinsic property value, where applicable. |
+| `unitCode` | MAY | URL | Ontology identifier corresponding to `unitText`. |
+| `description` | MAY | Text | Additional information about the intrinsic property. |
