@@ -6,7 +6,11 @@ title: Semantic Designation
 
 * Version: 0.1
 <!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
-* Authors: [ARC RO-Crate community](./../../../index.md/#authors)
+* Authors
+  * Lukas Weil - https://orcid.org/0000-0003-1945-6342
+  * Florian Wetzels - https://orcid.org/0000-0002-5526-7138
+  * Timo Mühlhaus - https://orcid.org/0000-0003-3925-6778
+  * Christoph Garth - https://orcid.org/0000-0003-1669-8549
 * License: [MIT License](https://mit-license.org/)
 * Example conforming crate: [ro-crate-metadata.json](../../../examples/semantic_designation_crate/ro-crate-metadata.json)
 * Profile Crate: [ro-crate-metadata.jsonld](ro-crate-metadata.jsonld)
