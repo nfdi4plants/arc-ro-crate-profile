@@ -27,11 +27,17 @@ title: ARC Datamap Crate
 
 ## Overview
 
-This profile shows the intended representation of the ARC datamap in the RO-Crate. The datamap contains contextual information for fragments within data files. Data files are already referenced in their respective datasets through `hasPart`. We extend this by splitting data files into data fragments (using the same type `MediaObject` for the fragments and connecting them through `hasPart`). 
+This profile is an instantiation of the [Semantic Designation](../semantic_designation/index.md) profile, intended to represent the ARC datamap in the RO-Crate.
+The datamap contains contextual information for fragments within data files.
+Hence, these contextual information is represented as [interpretations](../0.1/semantic_designation/index.md#semantic-descriptor) for the corresponding data entities.
+
+Data files are already referenced in their respective datasets through `hasPart`.
+To model data *fragments*, we extend the existing hierarchy at the bottom using the same mechanisms: fragments are of type `MediaObject` and referenced by their parent file or fragment through `hasPart`.
 
 <img alt="Data Fragment Selector" src="../img/DFS.png" width="1000" />
 
-Furthermore, we add the contextual information per entry in the datamap to the `Dataset` objects. The fragments and their information then reference each other.
+We add the contextual information per entry in the datamap to the `Dataset` objects, conforming with the [Semantic Designation Profile](../semantic_designation/index.md).
+Accordingly, the fragments and their information then reference each other.
 
 <img alt="Datamap" src="../img/Datamap-XLSX_simple.svg" width="1000" />
 
