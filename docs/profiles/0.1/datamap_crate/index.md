@@ -31,8 +31,9 @@ This profile is an instantiation of the [Semantic Designation](../semantic_desig
 The datamap contains contextual information for fragments within data files.
 Hence, these contextual information is represented as [interpretations](../0.1/semantic_designation/index.md#semantic-descriptor) for the corresponding data entities.
 
+To model data *fragments*, this profile extends the existing hierarchy at the bottom using the same mechanisms as in the normal RO-Crate data model:
 Data files are already referenced in their respective datasets through `hasPart`.
-To model data *fragments*, we extend the existing hierarchy at the bottom using the same mechanisms: fragments are of type `MediaObject` and referenced by their parent file or fragment through `hasPart`.
+Fragments are of type `MediaObject` (equivalent to `File`) and referenced by their parent file or fragment through `hasPart`.
 
 <img alt="Data Fragment Selector" src="../img/DFS.png" width="1000" />
 
