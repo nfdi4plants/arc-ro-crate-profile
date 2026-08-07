@@ -30,12 +30,8 @@ This profile defines a consistent approach for describing semantic metadata asso
 
 The profile distinguishes three kinds of metadata according to their relationship with the entity they describe:
 
-
-- *Intrinsic metadata* describes characteristics that are considered part of the entity itself. Examples include a file's format, a sample's mass, or the datatype associated with a measured value.
 - **Intrinsic metadata** describes characteristics that are considered part of the entity itself. Examples include a file's format, a sample's mass, or the datatype associated with a measured value.
-
 - **Interpretations** describe stable semantic meanings assigned to an entity or one of its components. For example, an interpretation may state that a particular table column represents a physical quantity such as temperature. Although such meanings are generally stable, they express how an entity is understood rather than a property of the entity itself.
-
 - **Designations** describe roles, classifications, or other contextual assignments whose applicability depends on a particular activity, study, or dataset. For example, a designation may identify a sample as belonging to the control group of an experiment.
 
 For the purpose of modeling semantic annotations in RO-Crate, this profile distinguishes between **intrinsic metadata** and **externally assigned metadata**. The latter comprises both **Interpretations** and **Designations**. This distinction is based on whether the metadata is considered an inherent property of the entity or an assignment made from an external perspective. Stability is treated as a separate concern: interpretations are generally stable, whereas designations are inherently context-dependent, yet both represent externally assigned metadata.
@@ -128,11 +124,11 @@ dataset -- mentions --> desig
       "@type": "PropertyValue",
 
       "name": "mass",
-      "propertyID": "TODO",
+      "propertyID": "http://purl.obolibrary.org/obo/PATO_0000125",
 
       "value": 2.3,
       "unitText": "g",
-      "unitCode": "TODO"
+      "unitCode": "http://purl.obolibrary.org/obo/UO_0000021"
     },
 
     {
@@ -149,7 +145,7 @@ dataset -- mentions --> desig
       "propertyID": "TODO",
 
       "value": "control group",
-      "valueReference": "TODO"
+      "valueReference": "http://purl.bioontology.org/ontology/MESH/D035061"
     },
 
     {
@@ -174,12 +170,12 @@ dataset -- mentions --> desig
       },
 
       "name": "physical quantity represented",
-      "propertyID": "TODO",
 
       "value": "temperature",
-      "valueReference": "TODO",
+      "valueReference": "http://purl.obolibrary.org/obo/PATO_0000146",
 
-      "unitText": "°C"
+      "unitText": "°C",
+      "unitCode": "http://purl.obolibrary.org/obo/UO_0000027"
     },
 
     {
@@ -216,8 +212,8 @@ An entity that is semantically annotated.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-| `additionalProperty` | MAY | [`schema:PropertyValue`](https://schema.org/PropertyValue) | Intrinsic metadata of the entity. Each referenced `PropertyValue` MUST follow the [Semantic Attribute](#semantic-attribute) profile. |
-| `subjectOf` | MAY | [`schema:PropertyValue`](https://schema.org/PropertyValue) | Externally assigned metadata describing the entity. Each referenced `PropertyValue` MUST follow the [Semantic Descriptor](#semantic-descriptor) profile. |
+| `additionalProperty` | COULD | [`schema:PropertyValue`](https://schema.org/PropertyValue) | Intrinsic metadata of the entity. Each referenced `PropertyValue` MUST follow the [Semantic Attribute](#semantic-attribute) profile. |
+| `subjectOf` | COULD | [`schema:PropertyValue`](https://schema.org/PropertyValue) | Externally assigned metadata describing the entity. Each referenced `PropertyValue` MUST follow the [Semantic Descriptor](#semantic-descriptor) profile. |
 
 ---
 
@@ -234,10 +230,10 @@ A semantic descriptor represents externally assigned metadata about a `Thing`, s
 | `name` | MUST | Text | Human-readable name of the **semantic property** (e.g. *physical quantity represented*, *experimental role*, *replicate group*). |
 | `propertyID` | SHOULD | URL | Ontology identifier of the semantic property. |
 | `value` | SHOULD | Text, Number or Boolean | The **assigned value** for the semantic property. May be a literal value or a human-readable label. |
-| `valueReference` | MAY | URL | Ontology identifier or URI corresponding to the assigned value. |
-| `unitText` | MAY | Text | Unit associated with the described entity, where applicable. Primarily intended for Interpretation descriptors. |
-| `unitCode` | MAY | URL | Ontology identifier corresponding to `unitText`. |
-| `description` | MAY | Text | Additional information about the annotation. |
+| `valueReference` | COULD | URL | Ontology identifier or URI corresponding to the assigned value. |
+| `unitText` | COULD | Text | Unit associated with the described entity, where applicable. Primarily intended for Interpretation descriptors. |
+| `unitCode` | COULD | URL | Ontology identifier corresponding to `unitText`. |
+| `description` | COULD | Text | Additional information about the annotation. |
 
 ---
 
@@ -249,11 +245,11 @@ An intrinsic property of a `Thing`, represented as a `PropertyValue`.
 |----------|----------|---------------|-------------|
 | `@id` | MUST | Text or URL | Identifier of the attribute. |
 | `@type` | MUST | Text | MUST be [`schema:PropertyValue`](https://schema.org/PropertyValue). |
-| `additionalType` | MAY | Text | MAY further specialize the attribute type. |
+| `additionalType` | COULD | Text | May further specialize the attribute type. |
 | `name` | MUST | Text | Human-readable name of the intrinsic property. |
 | `propertyID` | SHOULD | URL | Ontology identifier of the intrinsic property. |
 | `value` | SHOULD | Text, Number or Boolean | Value of the intrinsic property. |
-| `valueReference` | MAY | URL | Ontology identifier or URI corresponding to the value. |
-| `unitText` | MAY | Text | Unit of the intrinsic property value, where applicable. |
-| `unitCode` | MAY | URL | Ontology identifier corresponding to `unitText`. |
-| `description` | MAY | Text | Additional information about the intrinsic property. |
+| `valueReference` | COULD | URL | Ontology identifier or URI corresponding to the value. |
+| `unitText` | COULD | Text | Unit of the intrinsic property value, where applicable. |
+| `unitCode` | COULD | URL | Ontology identifier corresponding to `unitText`. |
+| `description` | COULD | Text | Additional information about the intrinsic property. |
