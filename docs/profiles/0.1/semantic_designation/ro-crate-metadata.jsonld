@@ -13,14 +13,6 @@
       "url": "https://ror.org/01qrts582"
     },
     {
-      "@id": "https://orcid.org/0000-0002-5526-7138",
-      "@type": "Person",
-      "name": "Florian Wetzels",
-      "affiliation": {
-        "@id": "https://ror.org/01qrts582"
-      }
-    },
-    {
       "@id": "https://orcid.org/0000-0003-1945-6342",
       "@type": "Person",
       "name": "Heinrich Lukas Weil",
@@ -29,47 +21,11 @@
       }
     },
     {
-      "@id": "https://orcid.org/0000-0002-2198-5262",
+      "@id": "https://orcid.org/0000-0002-5526-7138",
       "@type": "Person",
-      "name": "Kevin Schneider",
+      "name": "Florian Wetzels",
       "affiliation": {
         "@id": "https://ror.org/01qrts582"
-      }
-    },
-    {
-      "@id": "https://ror.org/027m9bs27",
-      "@type": "Organization",
-      "name": "The University of Manchester",
-      "url": "https://ror.org/027m9bs27"
-    },
-    {
-      "@id": "https://orcid.org/0000-0003-2130-0865",
-      "@type": "Person",
-      "name": "Stuart Owen",
-      "affiliation": {
-        "@id": "https://ror.org/027m9bs27"
-      }
-    },
-    {
-      "@id": "https://orcid.org/0000-0003-1512-9504",
-      "@type": "Person",
-      "name": "Caroline Ott",
-      "affiliation": {
-        "@id": "https://ror.org/01qrts582"
-      }
-    },
-    {
-      "@id": "https://ror.org/02nv7yv05",
-      "@type": "Organization",
-      "name": "Forschungszentrum Jülich",
-      "url": "https://ror.org/02nv7yv05"
-    },
-    {
-      "@id": "https://orcid.org/0000-0002-2177-8781",
-      "@type": "Person",
-      "name": "Sebastian Beier",
-      "affiliation": {
-        "@id": "https://ror.org/02nv7yv05"
       }
     },
     {
@@ -81,12 +37,20 @@
       }
     },
     {
+      "@id": "https://orcid.org/0000-0003-1669-8549",
+      "@type": "Person",
+      "name": "Christoph Garth",
+      "affiliation": {
+        "@id": "https://ror.org/01qrts582"
+      }
+    },
+    {
       "@id": "index.md",
       "@type": "File",
-      "name": "Datamap RO-Crate Profile description",
+      "name": "Semantic Designation RO-Crate Profile description",
       "encodingFormat": "text/markdown",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_designation"
       }
     },
     {
@@ -95,9 +59,10 @@
       "name": "Dataset"
     },
     {
-      "@id": "https://schema.org/MediaObject",
+      "@id": "https://bioschemas.org/types/Sample/0.3-DRAFT",
       "@type": "DefinedTerm",
-      "name": "MediaObject"
+      "name": "Sample",
+      "termCode": "Sample"
     },
     {
       "@id": "https://schema.org/PropertyValue",
@@ -110,16 +75,16 @@
       "name": "ARC RO-Crate Annotation Modelling guidance",
       "encodingFormat": "text/html",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_designation"
       }
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/datamap_crate/ro-crate-metadata.json",
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/semantic_designation/ro-crate-metadata.json",
       "@type": "File",
-      "name": "Datamap RO-Crate Example",
+      "name": "Semantic Designation RO-Crate Example",
       "encodingFormat": "application/json",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_designation"
       }
     },
     {
@@ -149,7 +114,7 @@
         "@id": "http://www.w3.org/ns/dx/prof/role/example"
       },
       "hasArtifact": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/datamap_crate/ro-crate-metadata.json"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/semantic_designation/ro-crate-metadata.json"
       }
     },
     {
@@ -160,7 +125,7 @@
       "alternateName": "NFDI4Plants"
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap_crate",
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_designation",
       "@type": [
         "Dataset",
         "Profile"
@@ -168,35 +133,26 @@
       "license": {
         "@id": "https://mit-license.org/"
       },
-      "name": "Datamap Crate Profile",
-      "description": "An RO-Crate profile for representing the Datamap of the ARC metadata framework in Research Object Crates (RO-Crates).",
+      "name": "Semantic Designation Profile",
+      "description": "An RO-Crate profile for representing semantic annotations of arbitrary entities within Research Object Crates (RO-Crates).",
       "author": [
-        {
-          "@id": "https://orcid.org/0000-0002-5526-7138"
-        },
         {
           "@id": "https://orcid.org/0000-0003-1945-6342"
         },
         {
-          "@id": "https://orcid.org/0000-0002-2198-5262"
-        },
-        {
-          "@id": "https://orcid.org/0000-0003-2130-0865"
-        },
-        {
-          "@id": "https://orcid.org/0000-0003-1512-9504"
-        },
-        {
-          "@id": "https://orcid.org/0000-0002-2177-8781"
+          "@id": "https://orcid.org/0000-0002-5526-7138"
         },
         {
           "@id": "https://orcid.org/0000-0003-3925-6778"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1669-8549"
         }
       ],
       "keywords": [
         "RO-Crate",
         "Research Object Crate",
-        "Datamap",
+        "Semantic Annotation",
         "Metadata Standard",
         "Bioschemas",
         "FAIR Data",
@@ -213,7 +169,7 @@
           "@id": "https://schema.org/Dataset"
         },
         {
-          "@id": "https://schema.org/MediaObject"
+          "@id": "https://bioschemas.org/types/Sample/0.3-DRAFT"
         },
         {
           "@id": "https://schema.org/PropertyValue"
@@ -222,7 +178,7 @@
           "@id": "https://arc-rdm.org/details/documentation-principle/"
         },
         {
-          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/datamap_crate/ro-crate-metadata.json"
+          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/semantic_designation/ro-crate-metadata.json"
         }
       ],
       "hasResource": [
@@ -236,7 +192,7 @@
           "@id": "#hasExample"
         }
       ],
-      "datePublished": "2026-08-05T12:07:34.9772166Z",
+      "datePublished": "2026-08-07T09:37:45.0479819Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },
@@ -246,7 +202,7 @@
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_designation"
       },
       "license": {
         "@id": "https://mit-license.org/"
