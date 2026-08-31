@@ -49,16 +49,16 @@ Within this profile, any entity that can be described in an RO-Crate (i.e. a `Th
 
 Intrinsic metadata is represented using `PropertyValue` objects linked from the annotated entity through the `additionalProperty` property. Such objects describe intrinsic characteristics of the entity itself.
 
-Externally assigned metadata is represented using **Semantic Descriptors**, which are likewise encoded as `PropertyValue` objects. A descriptor is linked to the annotated entity through the `about` property, while the entity links back to the descriptor through the inverse `subjectOf` property. The descriptor type is indicated using `additionalType`, whose value is either `Interpretation` or `Designation`.
+Externally assigned metadata is represented using **Semantic Descriptors**, which are encoded as objects of double type `["Statement", "ItemList"]`. Single assertions are modeled as `PropertyValue` objects in analogy with intrinsic attributes. The descriptor object bundles multiple assertions into a single semantic description, which also contains contextual information about the annotation itselfs, such as dates or authors. A descriptor is linked to the annotated entity through the `about` property, while the entity links back to the descriptor through the inverse `subjectOf` property. The assertion type is indicated using `additionalType`, whose value is either `"Interpretation"` or `"Designation"`.
 
-Every descriptor expresses a semantic annotation as a **semantic property** and an **assigned value**:
+Every assertion expresses a semantic annotation as a **semantic property** and an **assigned value**:
 
 - The **semantic property** (`name` and optionally `propertyID`) identifies the kind of annotation being made, such as *physical quantity represented*, *experimental role*, or *replicate group*.
 - The **assigned value** (`value` and optionally `valueReference`) specifies the value assigned for that semantic property. Depending on the annotation, this may be a concept, identifier, literal value, or another resource.
 
-For interpretation descriptors, `unitText` and `unitCode` may additionally be used to specify the unit associated with the described entity. For example, if a file column is interpreted as representing temperature measurements, the descriptor may indicate that the values are expressed in degrees Celsius.
+For interpretations, `unitText` and `unitCode` may additionally be used to specify the unit associated with the described entity. For example, if a file column is interpreted as representing temperature measurements, the descriptor may indicate that the values are expressed in degrees Celsius. Note that this is different from the unit of an intrinsic property --- for intrinsic properties, the unit refers to the assigned value, while the unit of an interpretation refers to the interpreted quantity.
 
-The profile recommends that all annotation entities (both intrinsic attributes and semantic descriptors) are referenced from the crate `Dataset` through the `mentions` property, making them explicitly discoverable within the crate.
+The profile recommends that semantic descriptors are referenced from the crate `Dataset` through the `mentions` property, making them explicitly discoverable within the crate.
 
 ```mermaid
 flowchart TD
@@ -70,18 +70,18 @@ thing[Thing]
 attr[PropertyValue<br/>Intrinsic Attribute]
 interp[PropertyValue<br/>Interpretation]
 desig[PropertyValue<br/>Designation]
+desc[Statement/ItemList<br/>Descriptor]
 
 thing -- additionalProperty --> attr
 
-thing -- subjectOf --> interp
-thing -- subjectOf --> desig
+thing -- subjectOf --> desc
 
-interp -- about --> thing
-desig -- about --> thing
+desc -- about --> thing
 
-dataset -- mentions --> attr
-dataset -- mentions --> interp
-dataset -- mentions --> desig
+desc -- itemListElement --> interp
+desc -- itemListElement --> desig
+
+dataset -- mentions --> desc
 ```
 
 ## Example Metadata File (`ro-crate-metadata.json`)
@@ -119,8 +119,30 @@ dataset -- mentions --> desig
       },
 
       "subjectOf": {
-        "@id": "#controlGroupDesignation"
+        "@id": "#semanticDescriptor1"
       }
+    },
+
+    {
+      "@id": "#sematicDescriptor1",
+      "@type": [ "Statement", "ItemList" ],
+      "about": {
+        "@id": "#sample1"
+      },
+      "itemListElement": [
+        { "@id": "#controlGroupDesignation" }
+      ]
+    },
+
+    {
+      "@id": "#sematicDescriptor2",
+      "@type": [ "Statement", "ItemList" ],
+      "about": {
+        "@id": "measurements.csv"
+      },
+      "itemListElement": [
+        { "@id": "#temperatureInterpretation" }
+      ]
     },
 
     {
@@ -141,10 +163,6 @@ dataset -- mentions --> desig
 
       "additionalType": "Designation",
 
-      "about": {
-        "@id": "#sample1"
-      },
-
       "name": "experimental role",
       "propertyID": "TODO",
 
@@ -159,7 +177,7 @@ dataset -- mentions --> desig
       "encodingFormat": "text/csv",
 
       "subjectOf": {
-        "@id": "#temperatureInterpretation"
+        "@id": "#semanticDescriptor2"
       }
     },
 
@@ -168,10 +186,6 @@ dataset -- mentions --> desig
       "@type": "PropertyValue",
 
       "additionalType": "Interpretation",
-
-      "about": {
-        "@id": "measurements.csv"
-      },
 
       "name": "physical quantity represented",
 
@@ -223,7 +237,24 @@ An entity that is semantically annotated.
 
 ### Semantic Descriptor
 
-A semantic descriptor represents externally assigned metadata about a `Thing`, such as an Interpretation or Designation.
+A semantic descriptor bundles externally assigned metadata about a `Thing`, such as an Interpretation or Designation.
+
+| Property | Required | Expected Type | Description |
+|----------|----------|---------------|-------------|
+| `@id` | MUST | Text or URL | Identifier of the descriptor. |
+| `@type` | MUST | Text | MUST be `[ "https://schema.org/Statement", "https://schema.org/ItemList" ]`. |
+| `about` | MUST | [`schema:Thing`](https://schema.org/Thing) | The entity described by this descriptor. |
+| `itemListElement` | MUST | [`schema:PropertyValue`](https://schema.org/PropertyValue) | References the contained assertions, each of which MUST follow the [Semantic Assertion](#semantic-assertion) profile. |
+| `creator` | COULD | Text | Annotator of the contained assertions. |
+| `dateCreated` | COULD | Text | Time of annotation. |
+| `name` | COULD | URL | Human-readable name of the descriptor. |
+| `description` | COULD | URL | Additional information about the descriptor. |
+
+---
+
+### Semantic Assertion
+
+A semantic assertion expresses an interpretation or designation as a **semantic property** and an **assigned value**. It is represented as a `PropertyValue` object.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
