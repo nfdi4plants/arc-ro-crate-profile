@@ -8,6 +8,6 @@ The Annotated Research Context (ARC) RO-Crate Profile Collection is a set of pro
 
 In addition to the base profiles above, the following profiles are built on top of them to provide additional context and meaning to research data following specific formats or models:
 
-- [ISA RO-Crate](./isa_ro_crate/index.md) is an instatiation of Administrative Crate and Process Core Crate to describe datasets following the Investigation-Study-Assay (ISA) model.
-- [ARC Workflow Run RO-Crate](./wr_ro_crate/index.md) is an instantiation of Process Core Crate to describe computational workflows and their invocations (runs), merging the Workflow Run Crate profile collection with the ISA process model.
-- [Datamap Crate](./datamap_crate/index.md) is an instantiation of Semantic Designation to describe the structural and semantic details of data files and fragments of data files.
+- [ISA RO-Crate](./isa_ro_crate/index.md) is a decoration of Administrative Crate and Process Core Crate to describe datasets following the Investigation-Study-Assay (ISA) model.
+- [ARC Workflow Run RO-Crate](./wr_ro_crate/index.md) is a decoration of Process Core Crate to describe computational workflows and their invocations (runs), merging the Workflow Run Crate profile collection with the ISA process model.
+- [Datamap Crate](./datamap_crate/index.md) is a decoration of Semantic Designation to describe the structural and semantic details of data files and fragments of data files.
