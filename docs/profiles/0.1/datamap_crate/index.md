@@ -49,8 +49,8 @@ See our peer-reviewed publication for more information on the datamap and its us
 We use `MediaObject` for data fragments and annotate them through the `variableMeasured` property in the `Dataset` object. Specifically, we plan the following:
 - Each entry in the datamap becomes one entry in `variableMeasured` of type `PropertyValue`.
 - Each data fragment becomes an object of type `MediaObject`, referenced from its file object through `hasPart`.
-- The data fragments from the data map point to descriptions in form of a `PropertyValue` through the `about` property.
-- The `PropertyValue` objects point back through `subjectOf`.
+- Each entry of the datamap becomes a semantic descriptor of type `ItemList` and `Statement` with an assertion in the form of a `PropertyValue` object.
+- The data fragments and their descriptors referennce each other through the `about` and `subjectOf` properties.
 
 ```mermaid
 flowchart TD
@@ -60,15 +60,18 @@ dataset[Datamap=Dataset]
 DataFile[Data=File]
 DataFragment[DataFragment=MediaObject]
 
-prop[DataContext=PropertyValue]
+desc[DataContext=Statement/ItemList]
+prop[Interpretation=PropertyValue]
 
 DataFile --hasPart--> DataFragment
 dataset --hasPart--> DataFile
 
-DataFragment --about--> prop
-prop --subjectOf--> DataFragment
+DataFragment --subjectOf--> desc
+desc --about--> DataFragment
 
-dataset --variableMeasured--> prop
+dataset --variableMeasured--> desc
+
+desc --itemListElement--> prop
 
 ```
 
@@ -289,17 +292,27 @@ Describes and points to a *Fragment* of a Data file. In addition to the filepath
 |comment|COULD|[schema.org/Comment](https://schema.org/Comment)|Comment|
 |encodingFormat|COULD|Text of URL|Media format as a MIME type|
 
-### Fragment Description
+### Fragment Descriptor
 
-Adds further annotation to a *Fragment* of a Data file. 
+Adds further annotation to a Data file or a *Fragment* thereof. 
+
+| Property | Required | Expected Type | Description |
+|----------|----------|---------------|-------------|
+|@type |MUST|Text|Must be `[schema.org/Statement, schema.org/ItemList]`|
+|@id|MUST|Text or URL||
+|about|MUST|[schema.org/MediaObject](https://schema.org/MediaObject)|The described data fragement using a [fragment selector](https://www.w3.org/TR/annotation-model/#selectors), following the [data fragment profile](#data-fragment).|
+|itemListElement|MUST|[schema.org/PropertyValue](https://schema.org/PropertyValue)| The assertion described in the datamap entry. |
+
+### Descriptor Assertion
+
+The actual assertion of a datamap entry, describing the contents of a data fragment. It is represented as a [PropertyValue](https://schema.org/PropertyValue) object.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
 |@type |MUST|Text|Must be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
 |@id|MUST|Text or URL||
-|name|MUST|Text|Must be "FragmentDescriptor"|
-|propertyID|MUST|URL|TO-DO?|
-|subjectOf|MUST|[schema.org/MediaObject](https://schema.org/MediaObject)|The described data fragement using a [fragment selector](https://www.w3.org/TR/annotation-model/#selectors), following the [data fragment profile](#data-fragment).|
+|name|MUST|Text|Must be `"Explication"`|
+|propertyID|MUST|URL|MUST be `"https://purl.org/nfdi4plants/ontology/dpbo/DPBO_0000111"`|
 |value|SHOULD|Text|Explication of the data fragment contents|
 |valueReference|SHOULD|URL|Value ontology reference|
 |unitText|SHOULD|Text|Unit of the data fragment|
