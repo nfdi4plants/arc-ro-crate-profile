@@ -27,9 +27,9 @@ title: ARC Datamap Crate
 
 ## Overview
 
-This profile is an instantiation of the [Semantic Designation](../0.1/semantic_designation/index.md) profile, intended to represent the ARC datamap in the RO-Crate.
+This profile is an instantiation of the [Semantic Designation](../semantic_designation/index.md) profile, intended to represent the ARC datamap in the RO-Crate.
 The datamap contains contextual information for fragments within data files.
-Hence, these contextual information is represented as [interpretations](../0.1/semantic_designation/index.md#semantic-descriptor) for the corresponding data entities.
+Hence, these contextual information is represented as [interpretations](../semantic_designation/index.md#semantic-descriptor) for the corresponding data entities.
 
 To model data *fragments*, this profile extends the existing hierarchy at the bottom using the same mechanisms as in the normal RO-Crate data model:
 Data files are already referenced in their respective datasets through `hasPart`.
@@ -37,7 +37,7 @@ Fragments are of type `MediaObject` (equivalent to `File`) and referenced by the
 
 <img alt="Data Fragment Selector" src="../img/DFS.png" width="1000" />
 
-We add the contextual information per entry in the datamap to the `Dataset` objects, conforming with the [Semantic Designation Profile](../0.1/semantic_designation/index.md).
+We add the contextual information per entry in the datamap to the `Dataset` objects, conforming with the [Semantic Designation Profile](../semantic_designation/index.md).
 Accordingly, the fragments and their information then reference each other.
 
 <img alt="Datamap" src="../img/Datamap-XLSX_simple.svg" width="1000" />
@@ -46,7 +46,7 @@ See our peer-reviewed publication for more information on the datamap and its us
 
 ## Detailed Description
 
-We use `MediaObject` for data fragments and annotate them through descriptor objects for external metadata as described in the [Semantic Designation Profile](../0.1/semantic_designation/index.md). Both objects reference each other. The `Dataset` object lists all datamap entries. Specifically, we plan the following:
+We use `MediaObject` for data fragments and annotate them through descriptor objects for external metadata as described in the [Semantic Designation Profile](../semantic_designation/index.md). Both objects reference each other. The `Dataset` object lists all datamap entries. Specifically, we plan the following:
 - Each entry in the datamap becomes one entry in `mentions` of type `PropertyValue`.
 - Each data fragment becomes an object of type `MediaObject`, referenced from its file object through `hasPart`.
 - Each entry of the datamap becomes a semantic descriptor of type `ItemList` and `Statement` with an assertion in the form of a `PropertyValue` object.
