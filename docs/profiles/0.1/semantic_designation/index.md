@@ -23,8 +23,10 @@ title: Semantic Designation
   * [Overview](#overview)
   * [Example ro-crate-metadata.json](#example-ro-crate-metadatajson)
   * [Requirements](#requirements)
+    * [Dataset](#dataset)
     * [Thing](#thing)
-    * [Semantic Description](#semantic-description)
+    * [Semantic Descriptor](#semantic-descriptor)
+    * [Semantic Assertion](#semantic-assertion)
     * [Semantic Attribute](#semantic-attribute)
 
 
@@ -36,27 +38,27 @@ The profile distinguishes three kinds of metadata according to their relationshi
 
 - **Intrinsic metadata** describes characteristics that are considered part of the entity itself. Examples include a file's format, a sample's mass, or the datatype associated with a measured value.
 - **Interpretations** describe stable semantic meanings assigned to an entity or one of its components. For example, an interpretation may state that a particular table column represents a physical quantity such as temperature. Although such meanings are generally stable, they express how an entity is understood rather than a property of the entity itself.
-- **Designations** describe roles, classifications, or other contextual assignments whose applicability depends on a particular activity, study, or dataset. For example, a designation may identify a sample as belonging to the control group of an experiment.
+- **Designations** describe roles, classifications, or other contextual statements whose applicability depends on a particular activity, study, or dataset. For example, a designation may identify a sample as belonging to the control group of an experiment.
 
-For the purpose of modeling semantic annotations in RO-Crate, this profile distinguishes between **intrinsic metadata** and **externally assigned metadata**. The latter comprises both **Interpretations** and **Designations**. This distinction is based on whether the metadata is considered an inherent property of the entity or an assignment made from an external perspective. Stability is treated as a separate concern: interpretations are generally stable, whereas designations are inherently context-dependent, yet both represent externally assigned metadata.
+For the purpose of modeling semantic annotations in RO-Crate, this profile distinguishes between **intrinsic metadata** and **externally assigned metadata**. The latter comprises both **Interpretations** and **Designations**. This distinction is based on whether the metadata is considered an inherent property of the entity or a statement made from an external perspective. Stability is treated as a separate concern: interpretations are generally stable, whereas designations are inherently context-dependent, yet both represent externally assigned metadata.
 
-This conceptual distinction is reflected in the RO-Crate representation. Intrinsic metadata is modeled directly as attributes of the corresponding entity, whereas Interpretations and Designations are modeled as separate descriptor objects. Representing externally assigned metadata through descriptor objects makes their origin and scope explicit, while allowing the same entity to participate in multiple semantic or contextual descriptions without conflating those assignments with the entity's intrinsic properties.
+This conceptual distinction is reflected in the RO-Crate representation. Intrinsic metadata is modeled directly as attributes of the corresponding entity, whereas Interpretations and Designations are modeled as separate descriptor objects. Representing externally assigned metadata through descriptor objects makes their origin and scope explicit, while allowing the same entity to participate in multiple semantic or contextual descriptions without conflating those statements with the entity's intrinsic properties.
 
 
 ## Detailed Description
 
 Within this profile, any entity that can be described in an RO-Crate (i.e. a `Thing`) may be annotated using `PropertyValue` objects.
 
-Intrinsic metadata is represented using `PropertyValue` objects linked from the annotated entity through the `additionalProperty` property. Such objects describe intrinsic characteristics of the entity itself.
+Intrinsic metadata is represented using `PropertyValue` objects linked from the annotated entity through the `additionalProperty` attribute. Each `PropertyValue` objects describes a single [semantic attribute](#semantic-attribute) of the entity itself.
 
-Externally assigned metadata is represented using **Semantic Descriptors**, which are encoded as objects of double type `["Statement", "ItemList"]`. Single assertions are modeled as `PropertyValue` objects in analogy with intrinsic attributes. The descriptor object bundles multiple assertions into a single semantic description, which also contains contextual information about the annotation itselfs, such as dates or authors. A descriptor is linked to the annotated entity through the `about` property, while the entity links back to the descriptor through the inverse `subjectOf` property. The assertion type is indicated using `additionalType`, whose value is either `"Interpretation"` or `"Designation"`.
+Externally assigned metadata is represented using **Semantic Descriptors**, which are encoded as objects of double type `["Statement", "ItemList"]`. Single assertions about the object are modeled as `PropertyValue` objects, in analogy with intrinsic attributes. A [semantic descriptor](#semantic-descriptor) object bundles multiple [semantic assertions](#semantic-assertion) into a single semantic annotation, which also contains contextual information about the annotation process itself, such as dates or authors. A descriptor is linked to the annotated entity through the `about` property, while the entity links back to the descriptor through the inverse `subjectOf` property. The assertion type is indicated using `additionalType`, whose value is either `"Interpretation"` or `"Designation"`.
 
-Every assertion expresses a semantic annotation as a **semantic property** and an **assigned value**:
+Every assertion is expressed as a **semantic property** and an **assigned value**:
 
-- The **semantic property** (`name` and optionally `propertyID`) identifies the kind of annotation being made, such as *physical quantity represented*, *experimental role*, or *replicate group*.
+- The **semantic property** (`name` and optionally `propertyID`) identifies the kind of statement being made, such as *physical quantity represented*, *experimental role*, or *replicate group*.
 - The **assigned value** (`value` and optionally `valueReference`) specifies the value assigned for that semantic property. Depending on the annotation, this may be a concept, identifier, literal value, or another resource.
 
-For interpretations, `unitText` and `unitCode` may additionally be used to specify the unit associated with the described entity. For example, if a file column is interpreted as representing temperature measurements, the descriptor may indicate that the values are expressed in degrees Celsius. Note that this is different from the unit of an intrinsic property --- for intrinsic properties, the unit refers to the assigned value, while the unit of an interpretation refers to the interpreted quantity.
+For interpretations, `unitText` and `unitCode` may additionally be used to specify the unit associated with the described entity. For example, if a file column is interpreted as representing temperature measurements, the assertion object may indicate that the values are expressed in degrees Celsius. Note that this is different from the unit of an intrinsic attribute --- for intrinsic attributes, the unit refers to the assigned value, while the unit of an interpretation refers to the interpreted quantity.
 
 The profile recommends that semantic descriptors are referenced from the crate `Dataset` through the `mentions` property, making them explicitly discoverable within the crate.
 
@@ -220,7 +222,7 @@ RO-Crate `Dataset` entity containing semantically annotated entities.
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
 | `@type` | MUST | Text | MUST be [`schema:Dataset`](https://schema.org/Dataset). |
-| `mentions` | SHOULD | [`schema:PropertyValue`](https://schema.org/PropertyValue) | References annotation entities represented as `PropertyValue` objects following either the [Semantic Descriptor](#semantic-descriptor) or [Semantic Attribute](#semantic-attribute) profile. |
+| `mentions` | SHOULD | [`schema:PropertyValue`](https://schema.org/PropertyValue) | References descriptor entities represented as `[Statement,ItemList]` objects following the [Semantic Descriptor](#semantic-descriptor) profile. |
 
 ---
 
@@ -231,7 +233,7 @@ An entity that is semantically annotated.
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
 | `additionalProperty` | COULD | [`schema:PropertyValue`](https://schema.org/PropertyValue) | Intrinsic metadata of the entity. Each referenced `PropertyValue` MUST follow the [Semantic Attribute](#semantic-attribute) profile. |
-| `subjectOf` | COULD | [`schema:PropertyValue`](https://schema.org/PropertyValue) | Externally assigned metadata describing the entity. Each referenced `PropertyValue` MUST follow the [Semantic Descriptor](#semantic-descriptor) profile. |
+| `subjectOf` | COULD | [`schema:PropertyValue`](https://schema.org/PropertyValue) | Externally assigned metadata describing the entity. Each referenced `PropertyValue` or `[Statement,ItemList]` object MUST follow the [Semantic Descriptor](#semantic-descriptor) profile. |
 
 ---
 
@@ -266,7 +268,7 @@ A semantic assertion expresses an interpretation or designation as a **semantic 
 | `propertyID` | SHOULD | URL | Ontology identifier of the semantic property. |
 | `value` | SHOULD | Text, Number or Boolean | The **assigned value** for the semantic property. May be a literal value or a human-readable label. |
 | `valueReference` | COULD | URL | Ontology identifier or URI corresponding to the assigned value. |
-| `unitText` | COULD | Text | Unit associated with the described entity, where applicable. Primarily intended for Interpretation descriptors. |
+| `unitText` | COULD | Text | Unit associated with the described entity, where applicable. Primarily intended for Interpretation assertions. |
 | `unitCode` | COULD | URL | Ontology identifier corresponding to `unitText`. |
 | `description` | COULD | Text | Additional information about the annotation. |
 
@@ -281,10 +283,10 @@ An intrinsic property of a `Thing`, represented as a `PropertyValue`.
 | `@id` | MUST | Text or URL | Identifier of the attribute. |
 | `@type` | MUST | Text | MUST be [`schema:PropertyValue`](https://schema.org/PropertyValue). |
 | `additionalType` | COULD | Text | May further specialize the attribute type. |
-| `name` | MUST | Text | Human-readable name of the intrinsic property. |
-| `propertyID` | SHOULD | URL | Ontology identifier of the intrinsic property. |
-| `value` | SHOULD | Text, Number or Boolean | Value of the intrinsic property. |
-| `valueReference` | COULD | URL | Ontology identifier or URI corresponding to the value. |
-| `unitText` | COULD | Text | Unit of the intrinsic property value, where applicable. |
+| `name` | MUST | Text | Human-readable name of the intrinsic attribute. |
+| `propertyID` | SHOULD | URL | Ontology identifier of the intrinsic atrribute. |
+| `value` | SHOULD | Text, Number or Boolean | Assigned value of the intrinsic attribute. |
+| `valueReference` | COULD | URL | Ontology identifier or URI corresponding to the assigned value. |
+| `unitText` | COULD | Text | Unit of the assigned value, where applicable. |
 | `unitCode` | COULD | URL | Ontology identifier corresponding to `unitText`. |
-| `description` | COULD | Text | Additional information about the intrinsic property. |
+| `description` | COULD | Text | Additional information about the intrinsic attribute. |
