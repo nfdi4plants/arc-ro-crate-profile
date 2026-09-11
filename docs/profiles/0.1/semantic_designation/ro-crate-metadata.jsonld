@@ -1,0 +1,213 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.2/context",
+  "@graph": [
+    {
+      "@id": "https://mit-license.org/",
+      "@type": "CreativeWork",
+      "name": "MIT License"
+    },
+    {
+      "@id": "https://ror.org/01qrts582",
+      "@type": "Organization",
+      "name": "RPTU Kaiserslautern-Landau",
+      "url": "https://ror.org/01qrts582"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-1945-6342",
+      "@type": "Person",
+      "name": "Heinrich Lukas Weil",
+      "affiliation": {
+        "@id": "https://ror.org/01qrts582"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5526-7138",
+      "@type": "Person",
+      "name": "Florian Wetzels",
+      "affiliation": {
+        "@id": "https://ror.org/01qrts582"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3925-6778",
+      "@type": "Person",
+      "name": "Timo Mühlhaus",
+      "affiliation": {
+        "@id": "https://ror.org/01qrts582"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-1669-8549",
+      "@type": "Person",
+      "name": "Christoph Garth",
+      "affiliation": {
+        "@id": "https://ror.org/01qrts582"
+      }
+    },
+    {
+      "@id": "index.md",
+      "@type": "File",
+      "name": "Semantic Designation RO-Crate Profile description",
+      "encodingFormat": "text/markdown",
+      "about": {
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_designation"
+      }
+    },
+    {
+      "@id": "https://schema.org/Dataset",
+      "@type": "DefinedTerm",
+      "name": "Dataset"
+    },
+    {
+      "@id": "https://bioschemas.org/types/Sample/0.3-DRAFT",
+      "@type": "DefinedTerm",
+      "name": "Sample",
+      "termCode": "Sample"
+    },
+    {
+      "@id": "https://schema.org/PropertyValue",
+      "@type": "DefinedTerm",
+      "name": "PropertyValue"
+    },
+    {
+      "@id": "https://arc-rdm.org/details/documentation-principle/",
+      "@type": "File",
+      "name": "ARC RO-Crate Annotation Modelling guidance",
+      "encodingFormat": "text/html",
+      "about": {
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_designation"
+      }
+    },
+    {
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/semantic_designation/ro-crate-metadata.json",
+      "@type": "File",
+      "name": "Semantic Designation RO-Crate Example",
+      "encodingFormat": "application/json",
+      "about": {
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_designation"
+      }
+    },
+    {
+      "@id": "#hasSpecification",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/specification"
+      },
+      "hasArtifact": {
+        "@id": "index.md"
+      }
+    },
+    {
+      "@id": "#hasGuidance",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/guidance"
+      },
+      "hasArtifact": {
+        "@id": "https://arc-rdm.org/details/documentation-principle/"
+      }
+    },
+    {
+      "@id": "#hasExample",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/example"
+      },
+      "hasArtifact": {
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/semantic_designation/ro-crate-metadata.json"
+      }
+    },
+    {
+      "@id": "https://nfdi4plants.de/",
+      "@type": "Organization",
+      "name": "DataPLANT",
+      "url": "https://nfdi4plants.de/",
+      "alternateName": "NFDI4Plants"
+    },
+    {
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_designation",
+      "@type": [
+        "Dataset",
+        "Profile"
+      ],
+      "license": {
+        "@id": "https://mit-license.org/"
+      },
+      "name": "Semantic Designation Profile",
+      "description": "An RO-Crate profile for representing semantic annotations of arbitrary entities within Research Object Crates (RO-Crates).",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0003-1945-6342"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5526-7138"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3925-6778"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1669-8549"
+        }
+      ],
+      "keywords": [
+        "RO-Crate",
+        "Research Object Crate",
+        "Semantic Annotation",
+        "Metadata Standard",
+        "Bioschemas",
+        "FAIR Data",
+        "ARC",
+        "Annotated Research Context",
+        "Data Management"
+      ],
+      "version": "0.1",
+      "hasPart": [
+        {
+          "@id": "index.md"
+        },
+        {
+          "@id": "https://schema.org/Dataset"
+        },
+        {
+          "@id": "https://bioschemas.org/types/Sample/0.3-DRAFT"
+        },
+        {
+          "@id": "https://schema.org/PropertyValue"
+        },
+        {
+          "@id": "https://arc-rdm.org/details/documentation-principle/"
+        },
+        {
+          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/semantic_designation/ro-crate-metadata.json"
+        }
+      ],
+      "hasResource": [
+        {
+          "@id": "#hasSpecification"
+        },
+        {
+          "@id": "#hasGuidance"
+        },
+        {
+          "@id": "#hasExample"
+        }
+      ],
+      "datePublished": "2026-08-07T09:37:45.0479819Z",
+      "publisher": {
+        "@id": "https://nfdi4plants.de/"
+      },
+      "isProfileOf": "https://w3id.org/ro/crate/1.2"
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_designation"
+      },
+      "license": {
+        "@id": "https://mit-license.org/"
+      },
+      "conformsTo": "https://w3id.org/ro/crate/1.2"
+    }
+  ]
+}

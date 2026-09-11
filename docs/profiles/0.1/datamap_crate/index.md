@@ -27,11 +27,18 @@ title: ARC Datamap Crate
 
 ## Overview
 
-This profile shows the intended representation of the ARC datamap in the RO-Crate. The datamap contains contextual information for fragments within data files. Data files are already referenced in their respective datasets through `hasPart`. We extend this by splitting data files into data fragments (using the same type `MediaObject` for the fragments and connecting them through `hasPart`). 
+This profile is an instantiation of the [Semantic Designation](../semantic_designation/index.md) profile, intended to represent the ARC datamap in the RO-Crate.
+The datamap contains contextual information for fragments within data files.
+Hence, these contextual information is represented as [interpretations](../semantic_designation/index.md#semantic-descriptor) for the corresponding data entities.
+
+To model data *fragments*, this profile extends the existing hierarchy at the bottom using the same mechanisms as in the normal RO-Crate data model:
+Data files are already referenced in their respective datasets through `hasPart`.
+Fragments are of type `MediaObject` (equivalent to `File`) and referenced by their parent file or fragment through `hasPart`.
 
 <img alt="Data Fragment Selector" src="../img/DFS.png" width="1000" />
 
-Furthermore, we add the contextual information per entry in the datamap to the `Dataset` objects. The fragments and their information then reference each other.
+We add the contextual information per entry in the datamap to the `Dataset` objects, conforming with the [Semantic Designation Profile](../semantic_designation/index.md).
+Accordingly, the fragments and their information then reference each other.
 
 <img alt="Datamap" src="../img/Datamap-XLSX_simple.svg" width="1000" />
 
@@ -39,11 +46,11 @@ See our peer-reviewed publication for more information on the datamap and its us
 
 ## Detailed Description
 
-We use `MediaObject` for data fragments and annotate them through the `variableMeasured` property in the `Dataset` object. Specifically, we plan the following:
-- Each entry in the datamap becomes one entry in `variableMeasured` of type `PropertyValue`.
+We use `MediaObject` for data fragments and annotate them through descriptor objects for external metadata as described in the [Semantic Designation Profile](../semantic_designation/index.md). Both objects reference each other. The `Dataset` object lists all datamap entries. Specifically, we plan the following:
+- Each entry in the datamap becomes one entry in `mentions` of type `PropertyValue`.
 - Each data fragment becomes an object of type `MediaObject`, referenced from its file object through `hasPart`.
-- The data fragments from the data map point to descriptions in form of a `PropertyValue` through the `about` property.
-- The `PropertyValue` objects point back through `subjectOf`.
+- Each entry of the datamap becomes a semantic descriptor of type `ItemList` and `Statement` with an assertion in the form of a `PropertyValue` object.
+- The data fragments and their descriptors referennce each other through the `about` and `subjectOf` properties.
 
 ```mermaid
 flowchart TD
@@ -53,15 +60,18 @@ dataset[Datamap=Dataset]
 DataFile[Data=File]
 DataFragment[DataFragment=MediaObject]
 
-prop[DataContext=PropertyValue]
+desc[DataContext=Statement/ItemList]
+prop[Interpretation=PropertyValue]
 
 DataFile --hasPart--> DataFragment
 dataset --hasPart--> DataFile
 
-DataFragment --about--> prop
-prop --subjectOf--> DataFragment
+DataFragment --subjectOf--> desc
+desc --about--> DataFragment
 
-dataset --variableMeasured--> prop
+dataset --mentions--> desc
+
+desc --itemListElement--> prop
 
 ```
 
@@ -104,7 +114,7 @@ dataset --variableMeasured--> prop
       "pattern": {
         "@id": "http://purl.obolibrary.org/obo/NCIT_C45253"
       },
-      "about": {
+      "subjectOf": {
         "@id": "#Descriptor_processed_data.csv#col=1"
       }
     },
@@ -123,7 +133,7 @@ dataset --variableMeasured--> prop
       "pattern": {
         "@id": "http://purl.obolibrary.org/obo/NCIT_C48150"
       },
-      "about": {
+      "subjectOf": {
         "@id": "#Descriptor_processed_data.csv#col=2"
       }
     },
@@ -136,7 +146,7 @@ dataset --variableMeasured--> prop
       "pattern": {
         "@id": "http://purl.obolibrary.org/obo/NCIT_C48150"
       },
-      "about": {
+      "subjectOf": {
         "@id": "#Descriptor_processed_data.csv#col=3"
       }
     },
@@ -159,43 +169,64 @@ dataset --variableMeasured--> prop
     },
     {
       "@id": "#Descriptor_processed_data.csv#col=1",
-      "@type": "PropertyValue",
-      "name": "FragmentDescriptor",
-      "value": "Protein identifier",
-      "propertyID": "https://github.com/nfdi4plants/ARC-specification/blob/dev/ISA-XLSX.md#datamap-table-sheets",
-      "valueReference": "http://purl.obolibrary.org/obo/NCIT_C165059",
-      "alternateName": "protID",
-      "subjectOf": {
+      "@type": [ "Statement", "ItemList" ],
+      "about": {
         "@id": "processed_data.csv#col=1"
-      }
+      },
+      "itemListElement": [
+        { "@id": "#Explication_processed_data.csv#col=1" }
+      ]
     },
     {
       "@id": "#Descriptor_processed_data.csv#col=2",
-      "@type": "PropertyValue",
-      "name": "FragmentDescriptor",
-      "value": "molecule count",
-      "propertyID": "https://github.com/nfdi4plants/ARC-specification/blob/dev/ISA-XLSX.md#datamap-table-sheets",
-      "unitCode": "http://purl.obolibrary.org/obo/NCIT_C68892",
-      "unitText": "Millimole per Kilogram",
-      "valueReference": "http://purl.obolibrary.org/obo/UO_0000192",
-      "alternateName": "quant1",
-      "subjectOf": {
+      "@type": [ "Statement", "ItemList" ],
+      "about": {
         "@id": "processed_data.csv#col=2"
-      }
+      },
+      "itemListElement": [
+        { "@id": "#Explication_processed_data.csv#col=2" }
+      ]
     },
     {
       "@id": "#Descriptor_processed_data.csv#col=3",
+      "@type": [ "Statement", "ItemList" ],
+      "about": {
+        "@id": "processed_data.csv#col=3"
+      },
+      "itemListElement": [
+        { "@id": "#Explication_processed_data.csv#col=3" }
+      ]
+    },
+    {
+      "@id": "#Explication_processed_data.csv#col=1",
       "@type": "PropertyValue",
-      "name": "FragmentDescriptor",
+      "name": "Explication",
+      "value": "Protein identifier",
+      "propertyID": "https://github.com/nfdi4plants/ARC-specification/blob/dev/ISA-XLSX.md#datamap-table-sheets",
+      "valueReference": "http://purl.obolibrary.org/obo/NCIT_C165059",
+      "alternateName": "protID"
+    },
+    {
+      "@id": "#Explication_processed_data.csv#col=2",
+      "@type": "PropertyValue",
+      "name": "Explication",
       "value": "molecule count",
       "propertyID": "https://github.com/nfdi4plants/ARC-specification/blob/dev/ISA-XLSX.md#datamap-table-sheets",
       "unitCode": "http://purl.obolibrary.org/obo/NCIT_C68892",
       "unitText": "Millimole per Kilogram",
       "valueReference": "http://purl.obolibrary.org/obo/UO_0000192",
-      "alternateName": "quant2",
-      "subjectOf": {
-        "@id": "processed_data.csv#col=3"
-      }
+      "alternateName": "quant1"
+    },
+    {
+      "@id": "#Explication_processed_data.csv#col=3",
+      "@type": "PropertyValue",
+      "name": "Explication",
+      "value": "molecule count",
+      "propertyID": "https://github.com/nfdi4plants/ARC-specification/blob/dev/ISA-XLSX.md#datamap-table-sheets",
+      "unitCode": "http://purl.obolibrary.org/obo/NCIT_C68892",
+      "unitText": "Millimole per Kilogram",
+      "valueReference": "http://purl.obolibrary.org/obo/UO_0000192",
+      "alternateName": "quant2"
     },
     {
       "@id": "LICENSE",
@@ -210,7 +241,7 @@ dataset --variableMeasured--> prop
       "hasPart": {
         "@id": "processed_data.csv"
       },
-      "variableMeasured": [
+      "mentions": [
         {
           "@id": "#Descriptor_processed_data.csv#col=1"
         },
@@ -251,7 +282,7 @@ Object containing and annotating data files and fragments. In the context of thi
 |@type |MUST|Text|Must be '[schema.org/Dataset](https://schema.org/Dataset)'|
 |@id|MUST|Text or URL|Should be a subdirectory corresponding to this dataset.|
 |hasPart|SHOULD|[File](https://schema.org/MediaObject)|The data files resulting from the processes performed in this dataset.|
-|variableMeasured|COULD|Text or [schema.org/PropertyValue](https://schema.org/PropertyValue)|A fragment description entry from the datamap as a [PropertyValue](https://schema.org/PropertyValue) following the [fragment description profile](#fragment-description).|
+|mentions|COULD|Text or [schema.org/PropertyValue](https://schema.org/PropertyValue)|A fragment description entry from the datamap as a [PropertyValue](https://schema.org/PropertyValue) following the [fragment description profile](#fragment-description).|
 
 
 ### Data (File)
@@ -282,17 +313,27 @@ Describes and points to a *Fragment* of a Data file. In addition to the filepath
 |comment|COULD|[schema.org/Comment](https://schema.org/Comment)|Comment|
 |encodingFormat|COULD|Text of URL|Media format as a MIME type|
 
-### Fragment Description
+### Fragment Descriptor
 
-Adds further annotation to a *Fragment* of a Data file. 
+Adds further annotation to a Data file or a *Fragment* thereof. 
+
+| Property | Required | Expected Type | Description |
+|----------|----------|---------------|-------------|
+|@type |MUST|Text|Must be `[schema.org/Statement, schema.org/ItemList]`|
+|@id|MUST|Text or URL||
+|about|MUST|[schema.org/MediaObject](https://schema.org/MediaObject)|The described data fragement using a [fragment selector](https://www.w3.org/TR/annotation-model/#selectors), following the [data fragment profile](#data-fragment).|
+|itemListElement|MUST|[schema.org/PropertyValue](https://schema.org/PropertyValue)| The assertion described in the datamap entry. |
+
+### Descriptor Assertion
+
+The actual assertion of a datamap entry, describing the contents of a data fragment. It is represented as a [PropertyValue](https://schema.org/PropertyValue) object.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
 |@type |MUST|Text|Must be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
 |@id|MUST|Text or URL||
-|name|MUST|Text|Must be "FragmentDescriptor"|
-|propertyID|MUST|URL|TO-DO?|
-|subjectOf|MUST|[schema.org/MediaObject](https://schema.org/MediaObject)|The described data fragement using a [fragment selector](https://www.w3.org/TR/annotation-model/#selectors), following the [data fragment profile](#data-fragment).|
+|name|MUST|Text|Must be `"Explication"`|
+|propertyID|MUST|URL|MUST be `"https://purl.org/nfdi4plants/ontology/dpbo/DPBO_0000111"`|
 |value|SHOULD|Text|Explication of the data fragment contents|
 |valueReference|SHOULD|URL|Value ontology reference|
 |unitText|SHOULD|Text|Unit of the data fragment|
