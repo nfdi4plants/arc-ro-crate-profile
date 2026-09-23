@@ -45,9 +45,14 @@ module People =
     let co = Author(orcid = "0000-0003-1512-9504", name = "Caroline Ott", affiliation = Organization.rptu)
     let sb = Author(orcid = "0000-0002-2177-8781", name = "Sebastian Beier", affiliation = Organization.fzj)
     let tm = Author(orcid = "0000-0003-3925-6778", name = "Timo Mühlhaus", affiliation = Organization.rptu)
+    let cg = Author(orcid = "0000-0003-1669-8549", name = "Christoph Garth", affiliation = Organization.rptu)
 
     let defaultAuthors = ResizeArray [
         fw; hlw; ks; so; co; sb; tm
+    ]
+
+    let semanticDesignationAuthors = ResizeArray [
+        hlw; fw; tm; cg
     ]
 
 
