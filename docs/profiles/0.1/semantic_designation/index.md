@@ -1,5 +1,5 @@
 ---
-title: ARC Datamap Crate
+title: Semantic Designation
 ---
 
 # Semantic Designation profile
@@ -7,32 +7,31 @@ title: ARC Datamap Crate
 * Version: 0.1
 <!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
 * Authors
-  - Lukas Weil - https://orcid.org/0000-0003-1945-6342
-  - Florian Wetzels - https://orcid.org/0000-0002-5526-7138
-  - Timo Mühlhaus - https://orcid.org/0000-0003-3925-6778
-  - Christoph Garth - https://orcid.org/0000-0003-1669-8549
+  * Lukas Weil - https://orcid.org/0000-0003-1945-6342
+  * Florian Wetzels - https://orcid.org/0000-0002-5526-7138
+  * Timo Mühlhaus - https://orcid.org/0000-0003-3925-6778
+  * Christoph Garth - https://orcid.org/0000-0003-1669-8549
 * License: [MIT License](https://mit-license.org/)
 * Example conforming crate: [ro-crate-metadata.json](../../../examples/semantic_designation_crate/ro-crate-metadata.json)
 * Profile Crate: [ro-crate-metadata.jsonld](ro-crate-metadata.jsonld)
 * Extends:
-  - [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
-* JSON-LD context: https://www.researchobject.org/ro-terms/arc/context.jsonld
-* Vocabulary terms: https://w3id.org/ro/terms/arc#
-
+  * [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
+* JSON-LD context: <https://www.researchobject.org/ro-terms/arc/context.jsonld>
+* Vocabulary terms: <https://w3id.org/ro/terms/arc#>
 * **Table of contents**
-- [Semantic Designation profile](#semantic-designation-profile)
-  - [Overview](#overview)
-  - [Detailed Description](#detailed-description)
-    - [Semantic Attributes](#semantic-attributes)
-    - [Semantic Assertions](#semantic-assertions)
-    - [Semantic Descriptors](#semantic-descriptors)
-  - [Example Metadata File (`ro-crate-metadata.json`)](#example-metadata-file-ro-crate-metadatajson)
-  - [Requirements](#requirements)
-    - [Dataset](#dataset)
-    - [Thing](#thing)
-    - [Semantic Attribute](#semantic-attribute)
-    - [Semantic Assertion](#semantic-assertion)
-    - [Semantic Descriptor](#semantic-descriptor)
+* [Semantic Designation profile](#semantic-designation-profile)
+  * [Overview](#overview)
+  * [Detailed Description](#detailed-description)
+    * [Semantic Attributes](#semantic-attributes)
+    * [Semantic Assertions](#semantic-assertions)
+    * [Semantic Descriptors](#semantic-descriptors)
+    * [Example Metadata File (`ro-crate-metadata.json`)](#example-metadata-file-ro-crate-metadatajson)
+  * [Requirements](#requirements)
+    * [Dataset](#dataset)
+    * [Thing](#thing)
+    * [Semantic Attribute](#semantic-attribute)
+    * [Semantic Assertion](#semantic-assertion)
+    * [Semantic Descriptor](#semantic-descriptor)
 
 ## Overview
 
@@ -277,7 +276,7 @@ An RO-Crate `Dataset` containing semantically annotated entities.
 
 | Property   | Required | Expected Type       | Description                                                                                                                                         |
 | ---------- | -------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `@type`    | MUST     | Text                | MUST be [`schema:Dataset`](https://schema.org/Dataset).                                                                                             |
+| `@type`    | MUST     | Text                | MUST be [`schema.org/Dataset`](https://schema.org/Dataset).                                                                                             |
 | `mentions` | SHOULD   | `[ "https://schema.org/Statement", "https://schema.org/ItemList" ]` | References Semantic Descriptors contained in the crate. Each referenced entity MUST follow the [Semantic Descriptor](#semantic-descriptor) profile. |
 
 ---
@@ -288,8 +287,8 @@ An entity that is semantically described.
 
 | Property             | Required | Expected Type                                              | Description                                                                                                                                                   |
 | -------------------- | -------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `additionalProperty` | MAY      | [`schema:PropertyValue`](https://schema.org/PropertyValue) | References intrinsic metadata of the entity. Each referenced `PropertyValue` MUST follow the [Semantic Attribute](#semantic-attribute) profile.               |
-| `subjectOf`          | MAY      | `[ "https://schema.org/Statement", "https://schema.org/ItemList" ]` | References extrinsic metadata descriptions concerning the entity. Each referenced object MUST follow the [Semantic Descriptor](#semantic-descriptor) profile. |
+| `additionalProperty` | COULD      | [`schema.org/PropertyValue`](https://schema.org/PropertyValue) | References intrinsic metadata of the entity. Each referenced `PropertyValue` MUST follow the [Semantic Attribute](#semantic-attribute) profile.               |
+| `subjectOf`          | COULD      | `[ "https://schema.org/Statement", "https://schema.org/ItemList" ]` | References extrinsic metadata descriptions concerning the entity. Each referenced object MUST follow the [Semantic Descriptor](#semantic-descriptor) profile. |
 
 ---
 
@@ -300,15 +299,15 @@ A **Semantic Attribute** represents one item of intrinsic metadata about a `Thin
 | Property         | Required | Expected Type            | Description                                                         |
 | ---------------- | -------- | ------------------------ | ------------------------------------------------------------------- |
 | `@id`            | MUST     | Text or URL              | Identifier of the attribute.                                        |
-| `@type`          | MUST     | Text                     | MUST be [`schema:PropertyValue`](https://schema.org/PropertyValue). |
-| `additionalType` | MAY      | Text or URL              | May further specialize the type of the attribute.                   |
+| `@type`          | MUST     | Text                     | MUST be [`schema.org/PropertyValue`](https://schema.org/PropertyValue). |
+| `additionalType` | COULD      | Text or URL              | May further specialize the type of the attribute.                   |
 | `name`           | MUST     | Text                     | Human-readable name of the represented property.                    |
 | `propertyID`     | SHOULD   | URL                      | Ontology identifier or URI identifying the represented property.    |
 | `value`          | SHOULD   | Text, Number, or Boolean | Value of the represented property.                                  |
-| `valueReference` | MAY      | URL                      | Ontology identifier or URI corresponding to the value.              |
-| `unitText`       | MAY      | Text                     | Unit of the value, where applicable.                                |
-| `unitCode`       | MAY      | URL                      | Ontology identifier or URI corresponding to `unitText`.             |
-| `description`    | MAY      | Text                     | Additional information about the attribute.                         |
+| `valueReference` | COULD      | URL                      | Ontology identifier or URI corresponding to the value.              |
+| `unitText`       | COULD      | Text                     | Unit of the value, where applicable.                                |
+| `unitCode`       | COULD      | URL                      | Ontology identifier or URI corresponding to `unitText`.             |
+| `description`    | COULD      | Text                     | Additional information about the attribute.                         |
 
 ---
 
@@ -321,15 +320,15 @@ A Semantic Assertion is classified as either an **Interpretation** or a **Design
 | Property         | Required | Expected Type            | Description                                                                                                                             |
 | ---------------- | -------- | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `@id`            | MUST     | Text or URL              | Identifier of the assertion.                                                                                                            |
-| `@type`          | MUST     | Text                     | MUST be [`schema:PropertyValue`](https://schema.org/PropertyValue).                                                                     |
+| `@type`          | MUST     | Text                     | MUST be [`schema.org/PropertyValue`](https://schema.org/PropertyValue).                                                                     |
 | `additionalType` | SHOULD   | Text or URL              | Indicates the kind of assertion. SHOULD be either `Interpretation` or `Designation`.                                                    |
 | `name`           | MUST     | Text                     | Human-readable name of the property being asserted, such as *physical quantity represented*, *experimental role*, or *replicate group*. |
 | `propertyID`     | SHOULD   | URL                      | Ontology identifier or URI identifying the asserted property.                                                                           |
 | `value`          | SHOULD   | Text, Number, or Boolean | Value asserted for the property. May be a literal value or a human-readable label.                                                      |
-| `valueReference` | MAY      | URL                      | Ontology identifier or URI corresponding to the asserted value.                                                                         |
-| `unitText`       | MAY      | Text                     | Unit associated with the represented quantity, where applicable. Primarily intended for Interpretation assertions.                      |
-| `unitCode`       | MAY      | URL                      | Ontology identifier or URI corresponding to `unitText`.                                                                                 |
-| `description`    | MAY      | Text                     | Additional information about the assertion.                                                                                             |
+| `valueReference` | COULD      | URL                      | Ontology identifier or URI corresponding to the asserted value.                                                                         |
+| `unitText`       | COULD      | Text                     | Unit associated with the represented quantity, where applicable. Primarily intended for Interpretation assertions.                      |
+| `unitCode`       | COULD      | URL                      | Ontology identifier or URI corresponding to `unitText`.                                                                                 |
+| `description`    | COULD      | Text                     | Additional information about the assertion.                                                                                             |
 
 An `Interpretation` SHOULD express meaning that is intended to remain stable independently of a particular experimental role, grouping, or transient context.
 
@@ -346,10 +345,10 @@ It is not itself an Interpretation or Designation. Instead, it establishes the s
 | Property          | Required | Expected Type                                                                                                   | Description                                                                                                                             |
 | ----------------- | -------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `@id`             | MUST     | Text or URL                                                                                                     | Identifier of the descriptor.                                                                                                           |
-| `@type`           | MUST     | Text array                                                                                                      | MUST contain both [`schema:Statement`](https://schema.org/Statement) and [`schema:ItemList`](https://schema.org/ItemList).              |
-| `about`           | MUST     | [`schema:Thing`](https://schema.org/Thing)                                                                      | The entity described by the contained Semantic Assertions.                                                                              |
-| `itemListElement` | MUST     | [`schema:PropertyValue`](https://schema.org/PropertyValue)                                                      | References the contained Semantic Assertions. Each referenced object MUST follow the [Semantic Assertion](#semantic-assertion) profile. |
-| `creator`         | MAY      | [`schema:Person`](https://schema.org/Person), [`schema:Organization`](https://schema.org/Organization), or Text | Creator or annotator responsible for the contained assertions.                                                                          |
-| `dateCreated`     | MAY      | Date or DateTime                                                                                                | Time at which the annotation was created.                                                                                               |
-| `name`            | MAY      | Text                                                                                                            | Human-readable name of the descriptor.                                                                                                  |
-| `description`     | MAY      | Text                                                                                                            | Additional information about the descriptor or annotation context.                                                                      |
+| `@type`           | MUST     | Text array                                                                                                      | MUST contain both [`schema.org/Statement`](https://schema.org/Statement) and [`schema.org/ItemList`](https://schema.org/ItemList).              |
+| `about`           | MUST     | [`schema.org/Thing`](https://schema.org/Thing)                                                                      | The entity described by the contained Semantic Assertions.                                                                              |
+| `itemListElement` | MUST     | [`schema.org/PropertyValue`](https://schema.org/PropertyValue)                                                      | References the contained Semantic Assertions. Each referenced object MUST follow the [Semantic Assertion](#semantic-assertion) profile. |
+| `creator`         | COULD      | [`schema.org/Person`](https://schema.org/Person), [`schema.org/Organization`](https://schema.org/Organization), or Text | Creator or annotator responsible for the contained assertions.                                                                          |
+| `dateCreated`     | COULD      | Date or DateTime                                                                                                | Time at which the annotation was created.                                                                                               |
+| `name`            | COULD      | Text                                                                                                            | Human-readable name of the descriptor.                                                                                                  |
+| `description`     | COULD      | Text                                                                                                            | Additional information about the descriptor or annotation context.                                                                      |
