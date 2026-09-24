@@ -217,20 +217,20 @@ article --identifier--> prop
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL|Should be “./”, the dataset object represents the root data entity.|
-|@type|MUST|Text|MUST be '[schema.org/Dataset](https://schema.org/Dataset)'|
-|additionalType|COULD|Text or URL|Decorator to identify it as a specialized dataset Investigation|
-|identifier|MUST|Text or URL|Identifying descriptor of the dataset (e.g. repository name).|
-|name|MUST|Text|A title of the dataset (e.g. a paper title).|
-|description|MUST|Text|A description of the dataset (e.g. an abstract).|
-|license|MUST|Text or URL|The license under which the RO-Crate may be used. When no license information is available on crate creation, use the default string `'ALL RIGHTS RESERVED BY THE AUTHORS'` |
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Should be “./”, the dataset object represents the root data entity.|
+|@type|MUST|[Text](https://schema.org/Text)|MUST be '[schema.org/Dataset](https://schema.org/Dataset)'|
+|additionalType|COULD|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Decorator to identify it as a specialized dataset Investigation|
+|identifier|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Identifying descriptor of the dataset (e.g. repository name).|
+|name|MUST|[Text](https://schema.org/Text)|A title of the dataset (e.g. a paper title).|
+|description|MUST|[Text](https://schema.org/Text)|A description of the dataset (e.g. an abstract).|
+|license|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|The license under which the RO-Crate may be used. When no license information is available on crate creation, use the default string `'ALL RIGHTS RESERVED BY THE AUTHORS'` |
 |creator|SHOULD|[schema.org/Person](#person)|The creator(s)/authors(s)/owner(s)/PI(s) of the dataset.|
 |hasPart|COULD|[schema.org/Dataset](https://schema.org/Dataset) | See RO-Crate specification.|
 |citation|COULD|[schema.org/ScholarlyArticle](#scholarlyarticle)|Publications corresponding with this dataset.|
 | additionalProperty|COULD|[schema.org/PropertyValue](#propertyvalue)|Additional properties of the dataset.|
-|datePublished|COULD|DateTime|When the dataset was published. If the dataset is not (yet) published, use the date of the crate creation as default value.|
-|dateCreated|COULD|DateTime|When the dataset was created|
-|dateModified|COULD|DateTime|When the dataset was last modified|
+|datePublished|COULD|[DateTime](https://schema.org/DateTime)|When the dataset was published. If the dataset is not (yet) published, use the date of the crate creation as default value.|
+|dateCreated|COULD|[DateTime](https://schema.org/DateTime)|When the dataset was created|
+|dateModified|COULD|[DateTime](https://schema.org/DateTime)|When the dataset was last modified|
 
 ### Person
 
@@ -238,17 +238,17 @@ Person associated with the dataset.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL||
-|@type |MUST|Text|MUST be '[schema.org/Person](https://schema.org/Person)'|
-|givenName|MUST|Text|Given name of a person. Can be used for any type of name.|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)||
+|@type |MUST|[Text](https://schema.org/Text)|MUST be '[schema.org/Person](https://schema.org/Person)'|
+|givenName|MUST|[Text](https://schema.org/Text)|Given name of a person. Can be used for any type of name.|
 |affiliation|SHOULD|[schema.org/Organization](https://schema.org/Organization)||
-|email|SHOULD|Text||
-|familyName|SHOULD|Text|Family name of a person.|
-|identifier|SHOULD|Text or URL or [schema.org/PropertyValue](#propertyvalue)|One or many identifiers for this person, e.g. an ORCID. Can be of type PropertyValue to indicate the kind of reference.|
+|email|SHOULD|[Text](https://schema.org/Text)||
+|familyName|SHOULD|[Text](https://schema.org/Text)|Family name of a person.|
+|identifier|SHOULD|[Text](https://schema.org/Text) or [URL](https://schema.org/URL) or [schema.org/PropertyValue](#propertyvalue)|One or many identifiers for this person, e.g. an ORCID. Can be of type PropertyValue to indicate the kind of reference.|
 |jobTitle|SHOULD|[schema.org/DefinedTerm](#definedterm)||
-|additionalName|COULD|Text||
+|additionalName|COULD|[Text](https://schema.org/Text)||
 |address|COULD|[schema.org/PostalAddress](https://schema.org/PostalAddress) or Text||
-|telephone|COULD|Text||
+|telephone|COULD|[Text](https://schema.org/Text)||
 
 ### ScholarlyArticle
 
@@ -256,10 +256,10 @@ Textual publication associated with the dataset.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL||
-|@type |MUST|Text|MUST be '[schema.org/ScholarlyArticle](https://schema.org/ScholarlyArticle)'|
-|headline|MUST|Text||
-|identifier|MUST|Text or URL or [schema.org/PropertyValue](#propertyvalue)|One or many identifiers for this article like a DOI or PubMedID. Can be of type PropertyValue to indicate the kind of reference (See details in Section on PropertyValue).|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)||
+|@type |MUST|[Text](https://schema.org/Text)|MUST be '[schema.org/ScholarlyArticle](https://schema.org/ScholarlyArticle)'|
+|headline|MUST|[Text](https://schema.org/Text)||
+|identifier|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL) or [schema.org/PropertyValue](#propertyvalue)|One or many identifiers for this article like a DOI or PubMedID. Can be of type PropertyValue to indicate the kind of reference (See details in Section on PropertyValue).|
 |author|SHOULD|[schema.org/Person](#person)||
 |creativeWorkStatus|COULD|[schema.org/DefinedTerm](#definedterm)|The status of the publication in terms of its stage in a lifecycle.|
 
@@ -269,11 +269,11 @@ Single ontology term.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL||
-|@type |MUST|Text|MUST be '[schema.org/DefinedTerm](https://schema.org/DefinedTerm)'|
-|name|MUST|Text|The term name.|
-|termCode|SHOULD|Text|The identifier within the ontology.|
-|inDefinedTermSet|COULD|URL or [schema.org/DefinedTermSet](https://schema.org/DefinedTermSet)|Link to the ontology.|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)||
+|@type |MUST|[Text](https://schema.org/Text)|MUST be '[schema.org/DefinedTerm](https://schema.org/DefinedTerm)'|
+|name|MUST|[Text](https://schema.org/Text)|The term name.|
+|termCode|SHOULD|[Text](https://schema.org/Text)|The identifier within the ontology.|
+|inDefinedTermSet|COULD|[URL](https://schema.org/URL) or [schema.org/DefinedTermSet](https://schema.org/DefinedTermSet)|Link to the ontology.|
 
 ### PropertyValue
 
@@ -281,15 +281,15 @@ General profile for key-value pairs. It is based on [schema.org/PropertyValue](h
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL||
-|@type |MUST|Text|MUST be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
-|name|MUST|Text|Key name|
-|value|SHOULD|Text|Value text or number|
-|propertyID|SHOULD|URL|Key ontology reference|
-|additionalType|Could|Text|Can be used to further clarify the type of this property|
-|unitCode|COULD|URL|Unit ontology reference|
-|unitText|COULD|Text|Unit name|
-|valueReference|COULD|URL|Value ontology reference|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)||
+|@type |MUST|[Text](https://schema.org/Text)|MUST be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
+|name|MUST|[Text](https://schema.org/Text)|Key name|
+|value|SHOULD|[Text](https://schema.org/Text)|Value text or number|
+|propertyID|SHOULD|[URL](https://schema.org/URL)|Key ontology reference|
+|additionalType|Could|[Text](https://schema.org/Text)|Can be used to further clarify the type of this property|
+|unitCode|COULD|[URL](https://schema.org/URL)|Unit ontology reference|
+|unitText|COULD|[Text](https://schema.org/Text)|Unit name|
+|valueReference|COULD|[URL](https://schema.org/URL)|Value ontology reference|
 
 #### PropertyValue - DOI
 
