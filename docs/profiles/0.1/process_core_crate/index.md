@@ -292,7 +292,18 @@ Single ontology term.
 |@type |MUST|Text|MUST be '[schema.org/DefinedTerm](https://schema.org/DefinedTerm)'|
 |name|MUST|Text|The term name.|
 |termCode|SHOULD|Text|The identifier within the ontology.|
-|inDefinedTermSet|COULD|URL or [schema.org/DefinedTermSet](https://schema.org/DefinedTermSet)|Link to the ontology.|
+|inDefinedTermSet|COULD|URL or [schema.org/DefinedTermSet](https://schema.org/DefinedTermSet)|Link to the ontology or object describing the ontology. In the latter case, the object MUST follow the [DefinedTermSet](#definedtermset) profile.|
+
+### DefinedTermSet
+
+An ontology, set of defined terms, or controlled vocabulary.
+
+| Property | Required | Expected Type | Description |
+|----------|----------|---------------|-------------|
+|@id|MUST|Text or URL||
+|@type |MUST|Text|MUST be '[schema.org/DefinedTermSet](https://schema.org/DefinedTermSet)'|
+|name|MUST|Text|Human-readable name of the ontology, controlled vocabulary, or other term set.|
+|identifier|COULD|Text or URL|Identifier of the term set, expressed as text or a URL.|
 
 ### PropertyValue
 
