@@ -250,7 +250,7 @@ Person associated with the dataset.
 |address|COULD|PostalAddress or Text||
 |telephone|COULD|Text||
 
-Note: As schema.org vocabluary does not yet allow software agents as creators or contributors, we suggest to use the double type `[schema.org/Person, schema.org/SoftwareApplication]` for software agents.
+Note: As schema.org vocabluary does not yet allow software agents as creators or contributors, we suggest to use the double type `[schema.org/Person, schema.org/SoftwareApplication]` for software agents. This allows for straight-forward compatibility with the schema.org vocabulary and this profile while also allowing to annotate additional metadata about the software agent, e.g. its version, programming language, etc.
 
 ### ScholarlyArticle
 
