@@ -250,6 +250,8 @@ Person associated with the dataset.
 |address|COULD|PostalAddress or Text||
 |telephone|COULD|Text||
 
+Note: As schema.org vocabluary does not yet allow software agents as creators or contributors, we suggest to use the double type `[schema.org/Person, schema.org/SoftwareApplication]` for software agents.
+
 ### ScholarlyArticle
 
 Textual publication associated with the dataset.
