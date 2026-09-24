@@ -247,7 +247,7 @@ Person associated with the dataset.
 |identifier|SHOULD|Text or URL or [schema.org/PropertyValue](#propertyvalue)|One or many identifiers for this person, e.g. an ORCID. Can be of type PropertyValue to indicate the kind of reference.|
 |jobTitle|SHOULD|[schema.org/DefinedTerm](#definedterm)||
 |additionalName|COULD|Text||
-|address|COULD|PostalAddress or Text||
+|address|COULD|[schema.org/PostalAddress](https://schema.org/PostalAddress) or Text||
 |telephone|COULD|Text||
 
 ### ScholarlyArticle
