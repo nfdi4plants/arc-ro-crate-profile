@@ -217,8 +217,8 @@ Protocol --reagent---> prop
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL|According to ROCrate specification.|
-|@type|MUST|Text|MUST be '[schema.org/Dataset](https://schema.org/Dataset)'|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|According to ROCrate specification.|
+|@type|MUST|[Text](https://schema.org/Text)|MUST be '[schema.org/Dataset](https://schema.org/Dataset)'|
 |about|SHOULD|[bioschemas.org/LabProcess](#labprocess)|The processes described here and possibly leading up to the files grouped in this dataset.|
 |hasPart|COULD|[File](https://schema.org/MediaObject)|Data files resulting from the process sequence.|
 
@@ -228,9 +228,9 @@ Has the new Bioschemas DRAFT [bioschemas.org/LabProcess](https://bioschemas.org/
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL|Could identify the process using the isa metadata filename and the protocol reference or process name.|
-|@type |MUST|Text|MUST be '[bioschemas.org/LabProcess](https://bioschemas.org/LabProcess)'|
-|name|MUST|Text| -|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Could identify the process using the isa metadata filename and the protocol reference or process name.|
+|@type |MUST|[Text](https://schema.org/Text)|MUST be '[bioschemas.org/LabProcess](https://bioschemas.org/LabProcess)'|
+|name|MUST|[Text](https://schema.org/Text)| -|
 |object|SHOULD|[bioschemas.org/Sample](#sample) or [File](https://schema.org/MediaObject)|The input of the process. If there are multiple inputs, they SHOULD be stored as a sorted list to establish correspondence with outputs. (Both lists need the same length in that case.)|
 |result|SHOULD|[bioschemas.org/Sample](#sample) or [File](https://schema.org/MediaObject)|The output of the process. If there are multiple outputs, they SHOULD be stored as a sorted list to establish correspondence with inputs. (Both lists need the same length in that case.)|
 |executesLabProtocol|SHOULD|[bioschemas.org/LabProtocol](https://bioschemas.org/LabProtocol)|The protocol executed|
@@ -242,16 +242,16 @@ Is based on the Bioschemas [bioschemas.org/LabProtocol](https://bioschemas.org/L
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL|Could be the url pointing to the protocol resource.|
-|@type |MUST|Text|MUST be '[bioschemas.org/LabProtocol](https://bioschemas.org/LabProtocol)'|
-|description|SHOULD|Text|A short description of the protocol (e.g. an abstract)|
-|intendedUse|SHOULD|[schema.org/DefinedTerm](#definedterm) or Text or URL|The protocol type as an ontology term|
-|name|SHOULD|Text|Main title of the LabProtocol.|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Could be the url pointing to the protocol resource.|
+|@type |MUST|[Text](https://schema.org/Text)|MUST be '[bioschemas.org/LabProtocol](https://bioschemas.org/LabProtocol)'|
+|description|SHOULD|[Text](https://schema.org/Text)|A short description of the protocol (e.g. an abstract)|
+|intendedUse|SHOULD|[schema.org/DefinedTerm](#definedterm) or [Text](https://schema.org/Text) or [URL](https://schema.org/URL)|The protocol type as an ontology term|
+|name|SHOULD|[Text](https://schema.org/Text)|Main title of the LabProtocol.|
 |computationalTool|COULD|[schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue---component)) or [schema.org/SoftwareApplication](https://schema.org/SoftwareApplication)|Software or tool used as part of the lab protocol to complete a part of it.|
-|labEquipment|COULD|[schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue---component)) or Text or URL|For LabProtocols it would be a laboratory equipment use by a person to follow one or more steps described in this LabProtocol.|
-|reagent|COULD|[schema.org/BioChemEntity](https://schema.org/BioChemEntity://bioschemas.org/Sample) or [schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue---component)) or Text or URL|Reagents used in the protocol.|
-|url|COULD|URL|Pointer to protocol resources external to the ISA-Tab that can be accessed by their Uniform Resource Identifier (URI).|
-|version|COULD|Number or Text|An identifier for the version to ensure protocol tracking.|
+|labEquipment|COULD|[schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue---component)) or [Text](https://schema.org/Text) or [URL](https://schema.org/URL)|For LabProtocols it would be a laboratory equipment use by a person to follow one or more steps described in this LabProtocol.|
+|reagent|COULD|[schema.org/BioChemEntity](https://schema.org/BioChemEntity) or [schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue---component)) or [Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Reagents used in the protocol.|
+|url|COULD|[URL](https://schema.org/URL)|Pointer to protocol resources external to the ISA-Tab that can be accessed by their Uniform Resource Identifier (URI).|
+|version|COULD|[Number](https://schema.org/Number) or [Text](https://schema.org/Text)|An identifier for the version to ensure protocol tracking.|
 
 ### Sample
 
@@ -260,9 +260,9 @@ Is based on the Bioschemas [bioschemas.org/Sample](https://bioschemas.org/Sample
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL|Could be the unique sample name.|
-|@type |MUST|Text|MUST be '[bioschemas.org/Sample](https://bioschemas.org/Sample)'|
-|name|MUST|Text|A name identifying the sample.|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Could be the unique sample name.|
+|@type |MUST|[Text](https://schema.org/Text)|MUST be '[bioschemas.org/Sample](https://bioschemas.org/Sample)'|
+|name|MUST|[Text](https://schema.org/Text)|A name identifying the sample.|
 |additionalProperty|SHOULD|[schema.org/PropertyValue](https://schema.org/PropertyValue) ([Characteristic](#propertyvalue---characteristic) or [Factor](#propertyvalue---factor))|characteristics or factors|
 
 ### Data
@@ -271,12 +271,12 @@ Describes and points to a Data file or a segment of a Data file (via [data fragm
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL|Should be the path pointing to the file|
-|@type |MUST|Text|MUST be 'File' or 'MediaObject'|
-|name|MUST|Text or URL|The name of the file.|
-|encodingFormat|COULD|Text of URL|Media format as a MIME type|
-|hasPart|COULD|Text of URL|Data fragments of this Data object, described by [data fragment selectors](https://www.w3.org/TR/annotation-model/#fragment-selector). SHOULD not be used on data fragments.|
-|usageInfo|COULD|Text of URL|Description/specification of the [data fragment selector](https://www.w3.org/TR/annotation-model/#fragment-selector), if the object describes a data fragment and a selector is present in the path/`@id`. SHOULD only be used on data fragments.|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Should be the path pointing to the file|
+|@type |MUST|[Text](https://schema.org/Text)|MUST be 'File' or 'MediaObject'|
+|name|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|The name of the file.|
+|encodingFormat|COULD|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Media format as a MIME type|
+|hasPart|COULD|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Data fragments of this Data object, described by [data fragment selectors](https://www.w3.org/TR/annotation-model/#fragment-selector). SHOULD not be used on data fragments.|
+|usageInfo|COULD|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Description/specification of the [data fragment selector](https://www.w3.org/TR/annotation-model/#fragment-selector), if the object describes a data fragment and a selector is present in the path/`@id`. SHOULD only be used on data fragments.|
 
 Entities referenced by an processes's [object](http://schema.org/object) or [result](http://schema.org/result) SHOULD be of type `File` (an RO-Crate alias for [MediaObject](http://schema.org/MediaObject)) for files, [Dataset](http://schema.org/Dataset) for directories and [Collection](http://schema.org/Collection) for [multi-file datasets](#representing-multi-file-objects), but MAY be a [CreativeWork](http://schema.org/CreativeWork) for other types of data (e.g. an online database); they MAY be of type [PropertyValue](http://schema.org/PropertyValue) to capture numbers/strings that are not stored as files.
 
@@ -288,11 +288,11 @@ Single ontology term.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL||
-|@type |MUST|Text|MUST be '[schema.org/DefinedTerm](https://schema.org/DefinedTerm)'|
-|name|MUST|Text|The term name.|
-|termCode|SHOULD|Text|The identifier within the ontology.|
-|inDefinedTermSet|COULD|URL or [schema.org/DefinedTermSet](https://schema.org/DefinedTermSet)|Link to the ontology.|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)||
+|@type |MUST|[Text](https://schema.org/Text)|MUST be '[schema.org/DefinedTerm](https://schema.org/DefinedTerm)'|
+|name|MUST|[Text](https://schema.org/Text)|The term name.|
+|termCode|SHOULD|[Text](https://schema.org/Text)|The identifier within the ontology.|
+|inDefinedTermSet|COULD|[URL](https://schema.org/URL) or [schema.org/DefinedTermSet](https://schema.org/DefinedTermSet)|Link to the ontology.|
 
 ### PropertyValue
 
@@ -300,15 +300,15 @@ General profile for key-value pairs. It is based on [schema.org/PropertyValue](h
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL||
-|@type |MUST|Text|MUST be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
-|name|MUST|Text|Key name|
-|value|SHOULD|Text|Value text or number|
-|propertyID|SHOULD|URL|Key ontology reference|
-|additionalType|Could|Text|Can be used to further clarify the type of this property|
-|unitCode|COULD|URL|Unit ontology reference|
-|unitText|COULD|Text|Unit name|
-|valueReference|COULD|URL|Value ontology reference|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)||
+|@type |MUST|[Text](https://schema.org/Text)|MUST be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
+|name|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Key name|
+|value|SHOULD|[Text](https://schema.org/Text)|Value text or number|
+|propertyID|SHOULD|[URL](https://schema.org/URL)|Key ontology reference|
+|additionalType|Could|[Text](https://schema.org/Text)|Can be used to further clarify the type of this property|
+|unitCode|COULD|[URL](https://schema.org/URL)|Unit ontology reference|
+|unitText|COULD|[Text](https://schema.org/Text)|Unit name|
+|valueReference|COULD|[URL](https://schema.org/URL)|Value ontology reference|
 
 
 ## Processes as graph edges

@@ -110,14 +110,14 @@ In particular, the Investigation object MUST follow the [Dataset profile](../adm
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL|Should be “./”, the investigation object represents the root data entity.|
-|additionalType|MUST|Text or URL|‘Investigation’ or ontology term to identify it as an Investigation|
-|datePublished|MUST|DateTime|When the Investigation was published. If the Investigation is not (yet) published, use the date of the crate creation as default value.|
-|dateCreated|SHOULD|DateTime|When the Investigation was created|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Should be “./”, the investigation object represents the root data entity.|
+|additionalType|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|‘Investigation’ or ontology term to identify it as an Investigation|
+|datePublished|MUST|[DateTime](https://schema.org/DateTime)|When the Investigation was published. If the Investigation is not (yet) published, use the date of the crate creation as default value.|
+|dateCreated|SHOULD|[DateTime](https://schema.org/DateTime)|When the Investigation was created|
 |hasPart|SHOULD|[schema.org/Dataset](https://schema.org/Dataset) ([Study](#study) or [Assay](#assay))|An Investigation object should contain other datasets representing the _studies_ of the investigation. The dataset objects in this list MUST follow the [Study profile](#study) or the [Assay profile](#assay) defined in this document.|
 |comment|COULD|[schema.org/Comment](#comment)|Comment|
 |mentions|COULD|[schema.org/DefinedTermSet](https://schema.org/DefinedTermSet)|Ontologies referenced in this investigation.|
-|url|COULD|URL|The filename or path of the metadata file describing the investigation. Optional, since in some contexts like an ARC the filename is implicit.|
+|url|COULD|[URL](https://schema.org/URL)|The filename or path of the metadata file describing the investigation. Optional, since in some contexts like an ARC the filename is implicit.|
 
 ### Study
 
@@ -127,16 +127,16 @@ In particular, the Study object MUST follow the [Process Core Crate Dataset prof
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL|Should be a subdirectory corresponding to this study.|
-|additionalType|MUST|Text or URL|‘Study’ or ontology term to identify it as a Study|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Should be a subdirectory corresponding to this study.|
+|additionalType|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|‘Study’ or ontology term to identify it as a Study|
 |creator|SHOULD|[schema.org/Person](#person)|The performer of the study.|
-|dateCreated|SHOULD|DateTime|When the Study was created|
-|license|COULD|Text or URL| - |
-|datePublished|SHOULD|DateTime|When the Study was published|
-|description|SHOULD|Text|A short description of the study (e.g. an abstract).|
+|dateCreated|SHOULD|[DateTime](https://schema.org/DateTime)|When the Study was created|
+|license|COULD|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)| - |
+|datePublished|SHOULD|[DateTime](https://schema.org/DateTime)|When the Study was published|
+|description|SHOULD|[Text](https://schema.org/Text)|A short description of the study (e.g. an abstract).|
 |hasPart|SHOULD|[schema.org/Dataset](https://schema.org/Dataset) ([Assay](#assay)) or [File](https://schema.org/MediaObject)|Assays contained in this study or actual data files resulting from the process sequence.|
 |comment|COULD|[schema.org/Comment](#comment)|Comment|
-|url|COULD|URL|The filename or path of the metadata file describing the study. Optional, since in some contexts like an ARC the filename is implicit.|
+|url|COULD|[URL](https://schema.org/URL)|The filename or path of the metadata file describing the study. Optional, since in some contexts like an ARC the filename is implicit.|
 
 ### Assay
 
@@ -146,18 +146,18 @@ In particular, the Assay object MUST follow the [Process Core Crate Dataset prof
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL|Should be a subdirectory corresponding to this assay.|
-|additionalType|MUST|Text or URL|‘Assay’ or ontology term to identify it as an Assay|
-|identifier|MUST|Text or URL|Identifying descriptor of the assay.|
-|name|SHOULD|Text|A title of the assay.|
-|description|SHOULD|Text|A short description of the assay (e.g. an abstract).|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Should be a subdirectory corresponding to this assay.|
+|additionalType|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|‘Assay’ or ontology term to identify it as an Assay|
+|identifier|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Identifying descriptor of the assay.|
+|name|SHOULD|[Text](https://schema.org/Text)|A title of the assay.|
+|description|SHOULD|[Text](https://schema.org/Text)|A short description of the assay (e.g. an abstract).|
 |hasPart|SHOULD|[File](https://schema.org/MediaObject)|The data files resulting from the process sequence. MUST not be used to directly point to data fragments.|
-|license|COULD|Text or URL| - |
-|measurementMethod|SHOULD|URL or [schema.org/DefinedTerm](#definedterm)|Describes the type measurement e.g Complexomics or Transcriptomics as an ontology term|
-|measurementTechnique|SHOULD|URL or [schema.org/DefinedTerm](#definedterm)|Describes the type of technology used to take the measurement, e.g mass spectrometry or deep sequencing|
+|license|COULD|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)| - |
+|measurementMethod|SHOULD|[URL](https://schema.org/URL) or [schema.org/DefinedTerm](#definedterm)|Describes the type measurement e.g Complexomics or Transcriptomics as an ontology term|
+|measurementTechnique|SHOULD|[URL](https://schema.org/URL) or [schema.org/DefinedTerm](#definedterm)|Describes the type of technology used to take the measurement, e.g mass spectrometry or deep sequencing|
 |comment|COULD|[schema.org/Comment](#comment)|Comment|
-|url|COULD|URL|The filename or path of the metadata file describing the assay. Optional, since in some contexts like an ARC the filename is implicit.|
-|variableMeasured|COULD|Text or [schema.org/PropertyValue](#propertyvalue)|The target variable being measured, e.g protein concentration|
+|url|COULD|[URL](https://schema.org/URL)|The filename or path of the metadata file describing the assay. Optional, since in some contexts like an ARC the filename is implicit.|
+|variableMeasured|COULD|[Text](https://schema.org/Text) or [schema.org/PropertyValue](#propertyvalue)|The target variable being measured, e.g protein concentration|
 
 ### LabProcess
 
@@ -167,8 +167,8 @@ An ISA Process MUST follow the [Process profile](../process_core_crate/index.md#
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
 |agent|SHOULD|[schema.org/Person](#person)|The performer|
-|endTime|SHOULD|DateTime||
-|disambiguatingDescription|COULD|Text|Comments|
+|endTime|SHOULD|[DateTime](https://schema.org/DateTime)||
+|disambiguatingDescription|COULD|[Text](https://schema.org/Text)|Comments|
 
 ### LabProtocol
 
@@ -189,7 +189,7 @@ An ISA Data object MUST follow the [Data profile](../process_core_crate/index.md
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
 |comment|COULD|[schema.org/Comment](#comment)|Comment|
-|disambiguatingDescription|COULD|Text|The type of the data file (“Raw Data File", “Derived Data File" or "Image File").|
+|disambiguatingDescription|COULD|[Text](https://schema.org/Text)|The type of the data file (“Raw Data File", “Derived Data File" or "Image File").|
 
 ### Person
 
@@ -199,8 +199,8 @@ Addionally, the following properties are defined for the ISA RO-Crate profile to
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|disambiguatingDescription|COULD|Text||
-|faxNumber|COULD|Text||
+|disambiguatingDescription|COULD|[Text](https://schema.org/Text)||
+|faxNumber|COULD|[Text](https://schema.org/Text)||
 
 ### ScholarlyArticle
 
@@ -218,10 +218,10 @@ It is based on [schema.org/Comment](https://schema.org/Comment) and maps to the 
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@id|MUST|Text or URL||
-|@type |MUST|Text|MUST be '[schema.org/Comment](https://schema.org/Comment)'|
-|name|SHOULD|Text||
-|text|SHOULD|Text||
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)||
+|@type |MUST|[Text](https://schema.org/Text)|MUST be '[schema.org/Comment](https://schema.org/Comment)'|
+|name|SHOULD|[Text](https://schema.org/Text)||
+|text|SHOULD|[Text](https://schema.org/Text)||
 
 ### DefinedTerm
 
@@ -230,7 +230,7 @@ An ISA DefinedTerm MUST follow the [DefinedTerm profile](../administrative_crate
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|disambiguatingDescription|COULD|Text|ISA comments|
+|disambiguatingDescription|COULD|[Text](https://schema.org/Text)|ISA comments|
 
 ### PropertyValue
 
@@ -244,7 +244,7 @@ An ISA process parameter MUST follow the [PropertyValue profile](../administrati
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|additionalType|MUST|Text|MUST be `"ParameterValue"`|
+|additionalType|MUST|[Text](https://schema.org/Text)|MUST be `"ParameterValue"`|
 
 #### PropertyValue - Characteristic
 
@@ -253,7 +253,7 @@ ISA characteristics MUST follow the [PropertyValue profile](../administrative_cr
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|additionalType|MUST|Text|MUST be `"CharacteristicValue"`|
+|additionalType|MUST|[Text](https://schema.org/Text)|MUST be `"CharacteristicValue"`|
 
 #### PropertyValue - Factor
 
@@ -262,7 +262,7 @@ An ISA factor MUST follow the [PropertyValue profile](../administrative_crate/in
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|additionalType|MUST|Text|MUST be `"FactorValue"`|
+|additionalType|MUST|[Text](https://schema.org/Text)|MUST be `"FactorValue"`|
 
 #### PropertyValue - Component
 
@@ -271,7 +271,7 @@ An ISA protocol component MUST follow the [PropertyValue profile](../administrat
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|additionalType|MUST|Text|MUST be `"Component"`|
+|additionalType|MUST|[Text](https://schema.org/Text)|MUST be `"Component"`|
 
 #### PropertyValue - DOI
 

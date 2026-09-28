@@ -279,10 +279,10 @@ Object containing and annotating data files and fragments. In the context of thi
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@type |MUST|Text|Must be '[schema.org/Dataset](https://schema.org/Dataset)'|
-|@id|MUST|Text or URL|Should be a subdirectory corresponding to this dataset.|
+|@type |MUST|[Text](https://schema.org/Text)|Must be '[schema.org/Dataset](https://schema.org/Dataset)'|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Should be a subdirectory corresponding to this dataset.|
 |hasPart|SHOULD|[File](https://schema.org/MediaObject)|The data files resulting from the processes performed in this dataset.|
-|mentions|COULD|Text or [schema.org/PropertyValue](https://schema.org/PropertyValue)|A fragment description entry from the datamap as a [PropertyValue](https://schema.org/PropertyValue) following the [fragment description profile](#fragment-description).|
+|mentions|COULD|[Text](https://schema.org/Text) or [schema.org/PropertyValue](https://schema.org/PropertyValue)|A fragment description entry from the datamap as a [PropertyValue](https://schema.org/PropertyValue) following the [fragment description profile](#fragment-description).|
 
 
 ### Data (File)
@@ -291,11 +291,11 @@ Describes and points to a Data file.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@type |MUST|Text|Must be 'File' or 'MediaObject'|
-|@id|MUST|Text or URL|Should be the path pointing to the file./
-|name|MUST|Text or URL|The name of the file.|
+|@type |MUST|[Text](https://schema.org/Text)|Must be 'File' or 'MediaObject'|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Should be the path pointing to the file./
+|name|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|The name of the file.|
 |comment|COULD|[schema.org/Comment](https://schema.org/Comment)|Comment|
-|encodingFormat|COULD|Text of URL|Media format as a MIME type|
+|encodingFormat|COULD|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Media format as a MIME type|
 |hasPart|COULD|[File](https://schema.org/MediaObject)|The data fragments within this file. They must follow the [Data Fragment profile](#data-fragment).|
 
 ### Data Fragment
@@ -304,14 +304,14 @@ Describes and points to a *Fragment* of a Data file. In addition to the filepath
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@type |MUST|Text|Must be 'File' or 'MediaObject'|
-|@id|MUST|Text or URL|Should be the path pointing to the file with a [fragment selector](https://www.w3.org/TR/annotation-model/#selectors) attached.|
-|usageInfo|MUST|Text of URL|(Formal) Description of the fragment selector.|
+|@type |MUST|[Text](https://schema.org/Text)|Must be 'File' or 'MediaObject'|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Should be the path pointing to the file with a [fragment selector](https://www.w3.org/TR/annotation-model/#selectors) attached.|
+|usageInfo|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|(Formal) Description of the fragment selector.|
 |about|SHOULD|[schema.org/PropertyValue](https://schema.org/PropertyValue)|The fragment description for this fragment. It must follow the [fragment description profile](#fragment-description).|
-|pattern|SHOULD|DefinedTerm|Defines the shape or format of entries in this fragment.|
-|name|COULD|Text or URL|The name of the file.|
+|pattern|SHOULD|[schema.org/DefinedTerm](https://schema.org/DefinedTerm)|Defines the shape or format of entries in this fragment.|
+|name|COULD|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|The name of the file.|
 |comment|COULD|[schema.org/Comment](https://schema.org/Comment)|Comment|
-|encodingFormat|COULD|Text of URL|Media format as a MIME type|
+|encodingFormat|COULD|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Media format as a MIME type|
 
 ### Fragment Descriptor
 
@@ -319,8 +319,8 @@ Adds further annotation to a Data file or a *Fragment* thereof.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@type |MUST|Text|Must be `[schema.org/Statement, schema.org/ItemList]`|
-|@id|MUST|Text or URL||
+|@type |MUST|[Text](https://schema.org/Text)|Must be `[schema.org/Statement, schema.org/ItemList]`|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)||
 |about|MUST|[schema.org/MediaObject](https://schema.org/MediaObject)|The described data fragement using a [fragment selector](https://www.w3.org/TR/annotation-model/#selectors), following the [data fragment profile](#data-fragment).|
 |itemListElement|MUST|[schema.org/PropertyValue](https://schema.org/PropertyValue)| The assertion described in the datamap entry. |
 
@@ -330,14 +330,14 @@ The actual assertion of a datamap entry, describing the contents of a data fragm
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
-|@type |MUST|Text|Must be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
-|@id|MUST|Text or URL||
-|name|MUST|Text|Must be `"Explication"`|
-|propertyID|MUST|URL|MUST be `"https://purl.org/nfdi4plants/ontology/dpbo/DPBO_0000111"`|
-|value|SHOULD|Text|Explication of the data fragment contents|
-|valueReference|SHOULD|URL|Value ontology reference|
-|unitText|SHOULD|Text|Unit of the data fragment|
-|unitCode|SHOULD|URL|Unit ontology reference|
-|alternateName|SHOULD|Text|The label of the fragment, e.g. a column header.|
-|measurementMethod|SHOULD|Text|Name of the tool used to create the data.|
-|description|SHOULD|Text|Can be used to describe further details of the fragment|
+|@type |MUST|[Text](https://schema.org/Text)|Must be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
+|@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)||
+|name|MUST|[Text](https://schema.org/Text)|Must be `"Explication"`|
+|propertyID|MUST|[URL](https://schema.org/URL)|MUST be `"https://purl.org/nfdi4plants/ontology/dpbo/DPBO_0000111"`|
+|value|SHOULD|[Text](https://schema.org/Text)|Explication of the data fragment contents|
+|valueReference|SHOULD|[URL](https://schema.org/URL)|Value ontology reference|
+|unitText|SHOULD|[Text](https://schema.org/Text)|Unit of the data fragment|
+|unitCode|SHOULD|[URL](https://schema.org/URL)|Unit ontology reference|
+|alternateName|SHOULD|[Text](https://schema.org/Text)|The label of the fragment, e.g. a column header.|
+|measurementMethod|SHOULD|[Text](https://schema.org/Text)|Name of the tool used to create the data.|
+|description|SHOULD|[Text](https://schema.org/Text)|Can be used to describe further details of the fragment|
