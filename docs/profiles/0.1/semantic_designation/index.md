@@ -1,8 +1,8 @@
 ---
-title: Semantic Designation
+title: Semantic Annotation
 ---
 
-# Semantic Designation profile
+# Semantic Annotation profile
 
 * Version: 0.1
 <!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
@@ -19,129 +19,134 @@ title: Semantic Designation
 * JSON-LD context: <https://www.researchobject.org/ro-terms/arc/context.jsonld>
 * Vocabulary terms: <https://w3id.org/ro/terms/arc#>
 * **Table of contents**
-* [Semantic Designation profile](#semantic-designation-profile)
+* [Semantic Annotation profile](#semantic-annotation-profile)
   * [Overview](#overview)
   * [Detailed Description](#detailed-description)
     * [Semantic Attributes](#semantic-attributes)
-    * [Semantic Assertions](#semantic-assertions)
     * [Semantic Descriptors](#semantic-descriptors)
+    * [Descriptor Items](#descriptor-items)
     * [Example Metadata File (`ro-crate-metadata.json`)](#example-metadata-file-ro-crate-metadatajson)
   * [Requirements](#requirements)
     * [Dataset](#dataset)
     * [Thing](#thing)
     * [Semantic Attribute](#semantic-attribute)
-    * [Semantic Assertion](#semantic-assertion)
+    * [Descriptor Item](#descriptor-item)
     * [Semantic Descriptor](#semantic-descriptor)
 
 ## Overview
 
 This profile defines a general approach for attaching semantic metadata to entities represented in an RO-Crate. The described entity may be a **data entity**, such as a file, directory, or part of a file, or a **contextual entity**, such as a physical sample, instrument, or other object represented in the crate.
 
-At the conceptual level, the profile distinguishes two kinds of metadata according to how the metadata relates to the described entity:
+The profile distinguishes two structural forms of annotation according to how the annotated information is represented in relation to the described entity:
 
-- **Intrinsic metadata** is treated as a property of the entity itself. Examples include the mass of a sample, the format of a file, or the datatype of a value.
-- **Extrinsic metadata** is asserted about the entity from an interpretive or contextual perspective. It does not describe a property that is modeled as belonging directly to the entity.
+* An **Internal Annotation** models a property **of the entity**. The asserted information forms part of the description of the entity itself. For example, the mass of a sample may be represented directly as a property of that sample.
 
-This distinction concerns how a statement is modeled in the crate rather than whether a property is intrinsically or permanently part of an object in an ontological sense.
+* An **External Annotation** models a statement **about the entity**. Rather than being incorporated directly into the entity's description, the assertion is represented separately and refers back to the entity it describes. For example, an External Annotation may state that a sample serves as a control in a particular experiment.
 
-Extrinsic metadata is further divided according to the function and stability of the assertion:
+The distinction is therefore not primarily about what kind of information is expressed, but about how the annotation relates structurally to the described entity. The key structural difference is that an External Annotation uses a separate **annotation object** to represent the assertion, whereas an Internal Annotation expresses the assertion as part of the entity's description.
 
-- An **Interpretation** states what an entity, component, or value represents or means. For example, an interpretation may state that a column in a table represents temperature measurements. Interpretations are generally intended to remain stable and valid independently of a particular experimental role, grouping, or other transient context.
-- A **Designation** assigns a role, grouping, status, or other context-dependent classification to an entity. For example, a designation may state that a sample serves as a control in a particular experiment. Designations are inherently context-dependent and may therefore change or cease to apply when the relevant activity, study, dataset, or other context changes.
+> **Note (for readers familiar with RDF):**
+> This distinction is also reflected in the orientation of the annotation. In an Internal Annotation, the described entity is the *subject* of the relation expressing the attribute. In an External Annotation, the described entity is the *object* of a relation originating from the annotation object.
 
-Stability is therefore independent of the distinction between intrinsic and extrinsic metadata. Both Interpretations and Designations are extrinsic because they are asserted from an external perspective; they differ in that Interpretations are intended to express relatively stable meaning, whereas Designations express context-dependent assignments.
+For readability, this profile refers to Internal Annotations as **Attributes**. External Annotations are implemented using **Descriptors**, which are separately represented resources that identify the entity being described and bundle one or more assertions about that entity into a single annotation. Because a Descriptor exists independently of the described entity, information about the annotation itself can also be expressed explicitly, such as its provenance, scope, or the circumstances under which it applies.
 
-At the representation level, the profile maps these conceptual distinctions to two kinds of `PropertyValue` objects:
+This structural difference becomes particularly important for context-dependent assertions. External Annotations can represent statements whose applicability depends on a particular activity, study, dataset, or other context without treating those statements as properties of the entity itself.
 
-- A **Semantic Attribute** represents one item of intrinsic metadata.
-- A **Semantic Assertion** represents one item of extrinsic metadata. A Semantic Assertion is classified as either an `Interpretation` or a `Designation`.
+The profile uses the two annotation patterns for different kinds of metadata:
 
-Semantic Attributes and Semantic Assertions therefore represent individual metadata statements at the same structural level. Their distinction reflects whether the represented metadata is treated as intrinsic or extrinsic.
+* **Intrinsic metadata** characterizes the entity itself, independently of a particular interpretation, role, or annotation context, for example the mass or size of a sample. Intrinsic metadata is represented through Internal Annotations, i.e. as Attributes.
 
-Semantic Attributes are linked directly from the described entity using `additionalProperty`. Semantic Assertions are represented separately from the entity so that the context and provenance of an extrinsic statement can be expressed explicitly.
+* **Extrinsic metadata** adds meaning, classification, or contextual information to an entity from a particular descriptive perspective. This includes statements about what an entity represents as well as roles or classifications assigned to it. Extrinsic metadata is represented through External Annotations using Descriptors.
 
-For this purpose, the profile introduces a **Semantic Descriptor**. A Semantic Descriptor groups one or more Semantic Assertions about an entity, identifies the entity being described, and may provide contextual or provenance information about the contained assertions.
+Extrinsic metadata is further divided according to the function and stability of the annotation:
 
-A Semantic Descriptor is therefore not another kind of semantic statement alongside Semantic Attributes and Semantic Assertions. Instead, it is a container that organizes and qualifies Semantic Assertions.
+* An **Interpretation** states what an entity, component, or value represents or means. For example, an Interpretation may state that a column in a table represents temperature measurements. Interpretations are generally intended to remain stable and valid independently of a particular experimental role, grouping, or other transient context.
+
+* A **Designation** assigns a role, grouping, status, or other context-dependent classification to an entity. For example, a Designation may state that a sample serves as a control in a particular experiment. Designations are inherently context-dependent and may therefore change or cease to apply when the relevant activity, study, dataset, or other context changes.
+
+Both Interpretations and Designations are therefore forms of extrinsic metadata expressed through External Annotations. They differ in their dependence on context: Interpretations are intended to express relatively stable meaning, whereas Designations express assignments whose validity depends on a particular context.
+
+At the representation level, Attributes are expressed using `PropertyValue` objects linked directly from the described entity through `additionalProperty`. External Annotations are represented through Descriptors, which associate one or more assertions with the entity they describe and provide a place for contextual and provenance information about the annotation.
+
 
 ## Detailed Description
 
 Within this profile, any entity that can be described in an RO-Crate may be semantically annotated. The described entity is referred to generally as a `Thing`.
 
-Individual metadata statements are represented using `PropertyValue` objects. Depending on whether the statement represents intrinsic or extrinsic metadata, the `PropertyValue` is modeled as either a Semantic Attribute or a Semantic Assertion.
+Internal and External Annotations differ in how the annotated information is represented in relation to the described entity. Internal Annotations are represented as **Attributes**, which form part of the direct description of the entity. External Annotations are represented using **Descriptors**, which are separate annotation objects referring to the entity they describe.
 
-### Semantic Attributes
+### (Semantic) Attributes
 
-Intrinsic metadata is represented using **Semantic Attributes**.
+Intrinsic metadata is represented using **Attributes**.
 
-A Semantic Attribute is a `PropertyValue` linked directly from the described entity through the `additionalProperty` property. It represents a property that is treated as belonging to the entity itself.
+An Attribute is a `PropertyValue` object linked directly from the described entity through the `additionalProperty` property. It represents a property that is treated as belonging to the entity itself.
 
-Each Semantic Attribute expresses a property and its value:
+Each Attribute expresses a property and its value:
 
 * `name`, and optionally `propertyID`, identify the property being described.
 * `value`, and optionally `valueReference`, provide the value of that property.
 * `unitText` and `unitCode` may specify the unit of the value where applicable.
 
-For example, the mass of a sample may be represented by a Semantic Attribute whose property is `mass`, whose value is `2.3`, and whose unit is `g`.
+For example, the mass of a sample may be represented by an Attribute whose property is `mass`, whose value is `2.3`, and whose unit is `g`.
 
-### Semantic Assertions
+### (Semantic) Descriptors
 
-Extrinsic metadata is represented using **Semantic Assertions**.
+Extrinsic metadata is represented through **Descriptors**.
 
-Like a Semantic Attribute, a Semantic Assertion is represented as a `PropertyValue`. Unlike an attribute, however, an assertion is not modeled as a property belonging directly to the described entity. Instead, it expresses a statement made about the entity from an interpretive or contextual perspective.
+A Descriptor is a separately represented annotation object that identifies the entity being described and bundles one or more **Descriptor Items** about that entity into a single External Annotation. It is encoded as an object with the types `Statement` and `ItemList`.
 
-Each Semantic Assertion expresses a property and an asserted value:
+The Descriptor:
+
+* identifies the entity being described using `about`;
+* contains its Descriptor Items using `itemListElement`; and
+* may provide contextual or provenance information about the annotation, such as its creator, creation date, name, or description.
+
+The described entity may link back to the Descriptor using `subjectOf`.
+
+Because contextual and provenance information is associated with the Descriptor rather than with each contained item individually, multiple related assertions can share the same annotation-level metadata. This avoids repeating information such as the creator, creation time, or annotation context for every individual assertion.
+
+A single entity may be described by multiple Descriptors. This allows different external annotations, potentially created in different contexts or by different annotators, to coexist independently.
+
+The crate `Dataset` SHOULD reference Descriptors through the `mentions` property so that External Annotations are explicitly discoverable from the root dataset.
+
+### Descriptor Items
+
+A **Descriptor Item** represents one individual assertion contained in a Descriptor. Descriptor Items are represented as `PropertyValue` objects and express extrinsic metadata about the entity identified by the enclosing Descriptor.
+
+Each Descriptor Item expresses a property and an assigned value:
 
 * `name`, and optionally `propertyID`, identify the kind of statement being made, such as *physical quantity represented*, *experimental role*, or *replicate group*.
-* `value`, and optionally `valueReference`, specify the value asserted for that property.
+* `value`, and optionally `valueReference`, specify the value assigned for that property.
 
-The kind of Semantic Assertion is indicated using `additionalType`:
+The kind of assertion represented by a Descriptor Item is indicated using `additionalType`:
 
-* `Interpretation` indicates that the assertion describes what an entity, component, or value represents or means.
-
-* `Designation` indicates that the assertion assigns a context-dependent role, grouping, status, or classification.
+* `Interpretation` indicates that the Descriptor Item states what an entity, component, or value represents or means.
+* `Designation` indicates that the Descriptor Item assigns a context-dependent role, grouping, status, or classification.
 
 For example, an Interpretation may state that a column in a file represents temperature, while a Designation may state that a sample serves as a control in a particular experiment.
 
-For Interpretations, `unitText` and `unitCode` may additionally be used to specify the unit associated with the interpreted quantity. For example, if a file column is interpreted as representing temperature measurements, the assertion may indicate that the represented values are expressed in degrees Celsius.
+For Interpretations, `unitText` and `unitCode` may additionally be used to specify the unit associated with the interpreted quantity. For example, if a file column is interpreted as representing temperature measurements, the Descriptor Item may indicate that the represented values are expressed in degrees Celsius.
 
-This use of a unit differs from its use in a Semantic Attribute. In a Semantic Attribute, the unit qualifies the attribute value itself. In an Interpretation, the unit qualifies the quantity represented by the described entity or component.
+This use of a unit differs from its use in an Attribute. In an Attribute, the unit qualifies the attribute value itself. In an Interpretation, the unit qualifies the quantity represented by the described entity or component.
 
-### Semantic Descriptors
-
-Semantic Assertions are organized using **Semantic Descriptors**.
-
-A Semantic Descriptor groups one or more Semantic Assertions concerning the same described entity. It is represented as an object with the types `Statement` and `ItemList`.
-
-The descriptor:
-
-* identifies the entity being described using `about`;
-* contains its Semantic Assertions using `itemListElement`; and
-* may provide contextual or provenance information about the annotation, such as its creator, creation date, name, or description.
-
-The described entity may link back to the Semantic Descriptor using `subjectOf`.
-
-The Semantic Descriptor therefore establishes the scope of its contained assertions and provides a place to record information about the annotation process itself. It does not constitute an additional semantic statement about the entity.
-
-A single entity may participate in multiple Semantic Descriptors. This allows different interpretations or contextual designations to coexist without conflating them with the intrinsic properties of the entity or with each other.
-
-The crate `Dataset` SHOULD reference Semantic Descriptors through the `mentions` property so that semantic annotations are explicitly discoverable from the root dataset.
+A Descriptor may contain one or more Descriptor Items. All contained items describe the entity identified by the Descriptor's `about` property and share the contextual or provenance information recorded on that Descriptor.
 
 ```mermaid
 flowchart TD
 
 dataset[Dataset]
 thing[Thing]
-desc[Statement / ItemList<br/>Semantic Descriptor]
 
 subgraph intrinsic["Intrinsic metadata"]
-    attr[PropertyValue<br/>Semantic Attribute]
+    attr[PropertyValue<br/>Attribute]
 end
 
 subgraph extrinsic["Extrinsic metadata"]
-    interp[PropertyValue<br/>Semantic Assertion<br/>Interpretation]
-    desig[PropertyValue<br/>Semantic Assertion<br/>Designation]
+    interp[PropertyValue<br/>Interpretation]
+    desig[PropertyValue<br/>Designation]
 end
+
+desc[Statement / ItemList<br/>Descriptor]
 
 thing -- additionalProperty --> attr
 
@@ -170,7 +175,7 @@ dataset -- mentions --> desc
     {
       "@id": "./",
       "@type": "Dataset",
-      "name": "Semantic Designation Example",
+      "name": "Semantic Annotation Example",
       "mentions": [
         { "@id": "#semanticDescriptor1" },
         { "@id": "#semanticDescriptor2" }
@@ -311,11 +316,11 @@ A **Semantic Attribute** represents one item of intrinsic metadata about a `Thin
 
 ---
 
-### Semantic Assertion
+### Descriptor Item
 
-A **Semantic Assertion** represents one item of extrinsic metadata about a `Thing`. It is represented as a `PropertyValue` and contained in a [Semantic Descriptor](#semantic-descriptor).
+A **Descriptor Item** represents one item of extrinsic metadata about a `Thing`. It is represented as a `PropertyValue` and contained in a [Semantic Descriptor](#semantic-descriptor).
 
-A Semantic Assertion is classified as either an **Interpretation** or a **Designation**.
+A Descriptor Item is classified as either an **Interpretation** or a **Designation**.
 
 | Property         | Required | Expected Type            | Description                                                                                                                             |
 | ---------------- | -------- | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -338,7 +343,7 @@ A `Designation` SHOULD express a role, grouping, status, or classification whose
 
 ### Semantic Descriptor
 
-A **Semantic Descriptor** groups and qualifies one or more Semantic Assertions concerning a `Thing`.
+A **Semantic Descriptor** groups and qualifies one or more Descriptor Items concerning a `Thing`.
 
 It is not itself an Interpretation or Designation. Instead, it establishes the subject and scope of its contained assertions and provides a place for contextual and provenance metadata concerning the annotation.
 
@@ -346,8 +351,8 @@ It is not itself an Interpretation or Designation. Instead, it establishes the s
 | ----------------- | -------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `@id`             | MUST     | [Text](https://schema.org/Text) or [URL](https://schema.org/URL)                                                     | Identifier of the descriptor.                                                                                                           |
 | `@type`           | MUST     | [Text](https://schema.org/Text) array                                                                                                      | MUST contain both [`schema.org/Statement`](https://schema.org/Statement) and [`schema.org/ItemList`](https://schema.org/ItemList).              |
-| `about`           | MUST     | [`schema.org/Thing`](https://schema.org/Thing)                                                                      | The entity described by the contained Semantic Assertions.                                                                              |
-| `itemListElement` | MUST     | [`schema.org/PropertyValue`](https://schema.org/PropertyValue)                                                      | References the contained Semantic Assertions. Each referenced object MUST follow the [Semantic Assertion](#semantic-assertion) profile. |
+| `about`           | MUST     | [`schema.org/Thing`](https://schema.org/Thing)                                                                      | The entity described by the contained Descriptor Items.                                                                              |
+| `itemListElement` | MUST     | [`schema.org/PropertyValue`](https://schema.org/PropertyValue)                                                      | References the contained Descriptor Items. Each referenced object MUST follow the [Descriptor Item](#descriptor-item) profile. |
 | `creator`         | COULD      | [`schema.org/Person`](https://schema.org/Person), [`schema.org/Organization`](https://schema.org/Organization), or [Text](https://schema.org/Text) | Creator or annotator responsible for the contained assertions.                                                                          |
 | `dateCreated`     | COULD      | [Date](https://schema.org/Date) or [DateTime](https://schema.org/DateTime)                                                                                                | Time at which the annotation was created.                                                                                               |
 | `name`            | COULD      | [Text](https://schema.org/Text)                                                                                                            | Human-readable name of the descriptor.                                                                                                  |
