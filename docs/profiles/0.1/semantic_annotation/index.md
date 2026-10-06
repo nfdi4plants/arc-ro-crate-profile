@@ -24,13 +24,13 @@ title: Semantic Annotation
   * [Detailed Description](#detailed-description)
     * [Semantic Attributes](#semantic-attributes)
     * [Semantic Descriptors](#semantic-descriptors)
-    * [Descriptor Items](#descriptor-items)
+    * [External Assertions](#external-assertions)
     * [Example Metadata File (`ro-crate-metadata.json`)](#example-metadata-file-ro-crate-metadatajson)
   * [Requirements](#requirements)
     * [Dataset](#dataset)
     * [Thing](#thing)
     * [Semantic Attribute](#semantic-attribute)
-    * [Descriptor Item](#descriptor-item)
+    * [External Assertion](#external-assertion)
     * [Semantic Descriptor](#semantic-descriptor)
 
 ## Overview
@@ -48,7 +48,8 @@ The distinction is therefore not primarily about what kind of information is exp
 > **Note (for readers familiar with RDF):**
 > This distinction is also reflected in the orientation of the annotation. In an Internal Annotation, the described entity is the *subject* of the relation expressing the attribute. In an External Annotation, the described entity is the *object* of a relation originating from the annotation object.
 
-For readability, this profile refers to Internal Annotations as **Attributes**. External Annotations are implemented using **Descriptors**, which are separately represented resources that identify the entity being described and bundle one or more assertions about that entity into a single annotation. Because a Descriptor exists independently of the described entity, information about the annotation itself can also be expressed explicitly, such as its provenance, scope, or the circumstances under which it applies.
+For readability, this profile refers to Internal Annotations as **Attributes**. External Annotations are implemented using **Descriptors**, which are separately represented resources that identify the entity being described and bundle one or more **External Assertions** (an atomic statement about the described entity) into a single annotation.
+Because a Descriptor exists independently of the described entity, information about the annotation itself can also be expressed explicitly, such as its provenance, scope, or the circumstances under which it applies.
 
 This structural difference becomes particularly important for context-dependent assertions. External Annotations can represent statements whose applicability depends on a particular activity, study, dataset, or other context without treating those statements as properties of the entity itself.
 
@@ -73,7 +74,7 @@ At the representation level, Attributes are expressed using `PropertyValue` obje
 
 Within this profile, any entity that can be described in an RO-Crate may be semantically annotated. The described entity is referred to generally as a `Thing`.
 
-Internal and External Annotations differ in how the annotated information is represented in relation to the described entity. Internal Annotations are represented as **Attributes**, which form part of the direct description of the entity. External Annotations are represented using **Descriptors**, which are separate annotation objects referring to the entity they describe.
+Internal and External Annotations differ in how the annotated information is represented in relation to the described entity. Internal Annotations are represented as **Attributes**, which form part of the direct description of the entity. External Annotations are represented using **Descriptors**, which relate one or more **External Assertions** to the entity they describe.
 
 ### (Semantic) Attributes
 
@@ -91,45 +92,45 @@ For example, the mass of a sample may be represented by an Attribute whose prope
 
 ### (Semantic) Descriptors
 
-Extrinsic metadata is represented through **Descriptors**.
+External Annotations are represented using **Descriptors**.
 
-A Descriptor is a separately represented annotation object that identifies the entity being described and bundles one or more **Descriptor Items** about that entity into a single External Annotation. It is encoded as an object with the types `Statement` and `ItemList`.
+A Descriptor is a separately represented annotation object that identifies the entity being described and bundles one or more External Assertions about that entity into a single annotation. It is encoded as an object with the types `Statement` and `ItemList`.
 
 The Descriptor:
 
 * identifies the entity being described using `about`;
-* contains its Descriptor Items using `itemListElement`; and
+* contains its External Assertions using `itemListElement`; and
 * may provide contextual or provenance information about the annotation, such as its creator, creation date, name, or description.
 
 The described entity may link back to the Descriptor using `subjectOf`.
 
-Because contextual and provenance information is associated with the Descriptor rather than with each contained item individually, multiple related assertions can share the same annotation-level metadata. This avoids repeating information such as the creator, creation time, or annotation context for every individual assertion.
+Contextual and provenance information recorded on the Descriptor applies to the External Assertions contained within it. Multiple related assertions can therefore share annotation-level metadata without repeating information such as the creator, creation time, or annotation context for each individual assertion.
 
-A single entity may be described by multiple Descriptors. This allows different external annotations, potentially created in different contexts or by different annotators, to coexist independently.
+A single entity may be described by multiple Descriptors. This allows different External Annotations, potentially created in different contexts or by different annotators, to coexist independently.
 
 The crate `Dataset` SHOULD reference Descriptors through the `mentions` property so that External Annotations are explicitly discoverable from the root dataset.
 
-### Descriptor Items
+### External Assertions
 
-A **Descriptor Item** represents one individual assertion contained in a Descriptor. Descriptor Items are represented as `PropertyValue` objects and express extrinsic metadata about the entity identified by the enclosing Descriptor.
+An **External Assertion** represents one individual statement contained in a Descriptor. External Assertions are represented as `PropertyValue` objects and express extrinsic metadata about the entity identified by the enclosing Descriptor.
 
-Each Descriptor Item expresses a property and an assigned value:
+Each External Assertion expresses a property and an assigned value:
 
 * `name`, and optionally `propertyID`, identify the kind of statement being made, such as *physical quantity represented*, *experimental role*, or *replicate group*.
 * `value`, and optionally `valueReference`, specify the value assigned for that property.
 
-The kind of assertion represented by a Descriptor Item is indicated using `additionalType`:
+External Assertions are classified according to their function using `additionalType`:
 
-* `Interpretation` indicates that the Descriptor Item states what an entity, component, or value represents or means.
-* `Designation` indicates that the Descriptor Item assigns a context-dependent role, grouping, status, or classification.
+* `Interpretation` indicates that the External Assertion states what an entity, component, or value represents or means.
+* `Designation` indicates that the External Assertion assigns a context-dependent role, grouping, status, or classification.
 
 For example, an Interpretation may state that a column in a file represents temperature, while a Designation may state that a sample serves as a control in a particular experiment.
 
-For Interpretations, `unitText` and `unitCode` may additionally be used to specify the unit associated with the interpreted quantity. For example, if a file column is interpreted as representing temperature measurements, the Descriptor Item may indicate that the represented values are expressed in degrees Celsius.
+For Interpretations, `unitText` and `unitCode` may additionally be used to specify the unit associated with the interpreted quantity. For example, if a file column is interpreted as representing temperature measurements, the External Assertion may indicate that the represented values are expressed in degrees Celsius.
 
 This use of a unit differs from its use in an Attribute. In an Attribute, the unit qualifies the attribute value itself. In an Interpretation, the unit qualifies the quantity represented by the described entity or component.
 
-A Descriptor may contain one or more Descriptor Items. All contained items describe the entity identified by the Descriptor's `about` property and share the contextual or provenance information recorded on that Descriptor.
+A Descriptor may contain one or more External Assertions. All contained assertions describe the entity identified by the Descriptor's `about` property and share the contextual or provenance information recorded on that Descriptor.
 
 ```mermaid
 flowchart TD
@@ -316,11 +317,11 @@ A **Semantic Attribute** represents one item of intrinsic metadata about a `Thin
 
 ---
 
-### Descriptor Item
+### External Assertion
 
-A **Descriptor Item** represents one item of extrinsic metadata about a `Thing`. It is represented as a `PropertyValue` and contained in a [Semantic Descriptor](#semantic-descriptor).
+An **External Assertion** represents one item of extrinsic metadata about a `Thing`. It is represented as a `PropertyValue` and contained in a [Semantic Descriptor](#semantic-descriptor).
 
-A Descriptor Item is classified as either an **Interpretation** or a **Designation**.
+An External Assertion is classified as either an **Interpretation** or a **Designation**.
 
 | Property         | Required | Expected Type            | Description                                                                                                                             |
 | ---------------- | -------- | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -343,7 +344,7 @@ A `Designation` SHOULD express a role, grouping, status, or classification whose
 
 ### Semantic Descriptor
 
-A **Semantic Descriptor** groups and qualifies one or more Descriptor Items concerning a `Thing`.
+A **Semantic Descriptor** groups and qualifies one or more External Assertions concerning a `Thing`.
 
 It is not itself an Interpretation or Designation. Instead, it establishes the subject and scope of its contained assertions and provides a place for contextual and provenance metadata concerning the annotation.
 
@@ -351,8 +352,8 @@ It is not itself an Interpretation or Designation. Instead, it establishes the s
 | ----------------- | -------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `@id`             | MUST     | [Text](https://schema.org/Text) or [URL](https://schema.org/URL)                                                     | Identifier of the descriptor.                                                                                                           |
 | `@type`           | MUST     | [Text](https://schema.org/Text) array                                                                                                      | MUST contain both [`schema.org/Statement`](https://schema.org/Statement) and [`schema.org/ItemList`](https://schema.org/ItemList).              |
-| `about`           | MUST     | [`schema.org/Thing`](https://schema.org/Thing)                                                                      | The entity described by the contained Descriptor Items.                                                                              |
-| `itemListElement` | MUST     | [`schema.org/PropertyValue`](https://schema.org/PropertyValue)                                                      | References the contained Descriptor Items. Each referenced object MUST follow the [Descriptor Item](#descriptor-item) profile. |
+| `about`           | MUST     | [`schema.org/Thing`](https://schema.org/Thing)                                                                      | The entity described by the contained External Assertions.                                                                              |
+| `itemListElement` | MUST     | [`schema.org/PropertyValue`](https://schema.org/PropertyValue)                                                      | References the contained External Assertions. Each referenced object MUST follow the [External Assertion](#external-assertion) profile. |
 | `creator`         | COULD      | [`schema.org/Person`](https://schema.org/Person), [`schema.org/Organization`](https://schema.org/Organization), or [Text](https://schema.org/Text) | Creator or annotator responsible for the contained assertions.                                                                          |
 | `dateCreated`     | COULD      | [Date](https://schema.org/Date) or [DateTime](https://schema.org/DateTime)                                                                                                | Time at which the annotation was created.                                                                                               |
 | `name`            | COULD      | [Text](https://schema.org/Text)                                                                                                            | Human-readable name of the descriptor.                                                                                                  |
