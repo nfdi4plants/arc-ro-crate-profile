@@ -47,10 +47,10 @@
     {
       "@id": "index.md",
       "@type": "File",
-      "name": "Semantic Designation RO-Crate Profile description",
+      "name": "Semantic Annotation RO-Crate Profile description",
       "encodingFormat": "text/markdown",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_designation"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_annotation"
       }
     },
     {
@@ -75,16 +75,16 @@
       "name": "ARC RO-Crate Annotation Modelling guidance",
       "encodingFormat": "text/html",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_designation"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_annotation"
       }
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/semantic_designation/ro-crate-metadata.json",
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/semantic_annotation/ro-crate-metadata.json",
       "@type": "File",
-      "name": "Semantic Designation RO-Crate Example",
+      "name": "Semantic Annotation RO-Crate Example",
       "encodingFormat": "application/json",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_designation"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_annotation"
       }
     },
     {
@@ -114,7 +114,7 @@
         "@id": "http://www.w3.org/ns/dx/prof/role/example"
       },
       "hasArtifact": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/semantic_designation/ro-crate-metadata.json"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/semantic_annotation/ro-crate-metadata.json"
       }
     },
     {
@@ -125,7 +125,7 @@
       "alternateName": "NFDI4Plants"
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_designation",
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_annotation",
       "@type": [
         "Dataset",
         "Profile"
@@ -133,7 +133,7 @@
       "license": {
         "@id": "https://mit-license.org/"
       },
-      "name": "Semantic Designation Profile",
+      "name": "Semantic Annotation Profile",
       "description": "An RO-Crate profile for representing semantic annotations of arbitrary entities within Research Object Crates (RO-Crates).",
       "author": [
         {
@@ -178,7 +178,7 @@
           "@id": "https://arc-rdm.org/details/documentation-principle/"
         },
         {
-          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/semantic_designation/ro-crate-metadata.json"
+          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/semantic_annotation/ro-crate-metadata.json"
         }
       ],
       "hasResource": [
@@ -202,7 +202,7 @@
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_designation"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic_annotation"
       },
       "license": {
         "@id": "https://mit-license.org/"

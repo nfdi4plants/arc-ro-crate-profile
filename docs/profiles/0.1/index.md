@@ -3,7 +3,7 @@
 The Annotated Research Context (ARC) RO-Crate Profile Collection is a set of profiles that focus on providing meaning and context to research data. Each of the profiles in this collection focuses on a distinct aspect of this context, and they can be used independently or in combination to provide a more complete understanding of the research data.
 
 - [Administrative Crate](./administrative_crate/index.md) describes the administrative information associated with research data, including information about the creators, contributors, and rights holders of the data.
-- [Semantic Annotation](./0.1/semantic_designation/index.md) describes the semantic annotation of data and contextual entities.
+- [Semantic Annotation](./semantic_annotation/index.md) describes the semantic annotation of data and contextual entities.
 - [Process Core Crate](./process_core_crate/index.md) describes provenance of research entities by capturing the processes that generate and transform them.
 
 In addition to the base profiles above, the following profiles are built on top of them to provide additional context and meaning to research data following specific formats or models:

@@ -13,11 +13,11 @@ let types = ResizeArray [
     Types.propertyValue
 ]
 
-let subId = "semantic_designation"
+let subId = "semantic_annotation"
 
 let id = $"{Profile.profilesRoot}/{subId}"
 
-let name = "Semantic Designation Profile"
+let name = "Semantic Annotation Profile"
 
 let description = "An RO-Crate profile for representing semantic annotations of arbitrary entities within Research Object Crates (RO-Crates)."
 
@@ -35,7 +35,7 @@ let keywords = ResizeArray [
 
 let specifications = ResizeArray[
     TextualResource(
-        name = "Semantic Designation RO-Crate Profile description",
+        name = "Semantic Annotation RO-Crate Profile description",
         filePath = "index.md",
         encodingFormat = "text/markdown",
         rootDataEntityId = id
@@ -59,7 +59,7 @@ let guidances = ResizeArray[
 
 let examples = ResizeArray[
     TextualResource(
-        name = "Semantic Designation RO-Crate Example",
+        name = "Semantic Annotation RO-Crate Example",
         filePath = $"{Profile.examplesRoot}/{subId}/ro-crate-metadata.json",
         encodingFormat = "application/json",
         rootDataEntityId = id
@@ -78,7 +78,7 @@ let rootEntity =
         name = name,
         description = description,
         license = License.mit,
-        authors = ResizeArray People.semanticDesignationAuthors,
+        authors = ResizeArray People.semanticAnnotationAuthors,
         version = Profile.version,
         keywords = keywords,
         usedTypes = types,
