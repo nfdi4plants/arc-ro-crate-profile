@@ -9,26 +9,22 @@ open Profile_crate_helpers
 
 let types = ResizeArray [
     Types.dataset
-    Types.labProcess
-    Types.labProtocol
     Types.sample
-    Types.mediaObject
     Types.propertyValue
 ]
 
-let subId = "process_core_crate"
+let subId = "semantic_core"
 
 let id = $"{Profile.profilesRoot}/{subId}"
 
-let name = "Process Core Crate Profile"
+let name = "Semantic Core Profile"
 
-let description = "An RO-Crate profile for representing the Process Core of the ARC metadata framework in Research Object Crates (RO-Crates)."
+let description = "An RO-Crate profile for representing semantic annotations of arbitrary entities within Research Object Crates (RO-Crates)."
 
 let keywords = ResizeArray [
     "RO-Crate"
     "Research Object Crate"
-    "Process Core"
-    "Process"
+    "Semantic Core"
     "Metadata Standard"
     "Bioschemas"
     "FAIR Data"
@@ -39,7 +35,7 @@ let keywords = ResizeArray [
 
 let specifications = ResizeArray[
     TextualResource(
-        name = "Process Core RO-Crate Profile description",
+        name = "Semantic Core RO-Crate Profile description",
         filePath = "index.md",
         encodingFormat = "text/markdown",
         rootDataEntityId = id
@@ -63,7 +59,7 @@ let guidances = ResizeArray[
 
 let examples = ResizeArray[
     TextualResource(
-        name = "Process Core RO-Crate Example",
+        name = "Semantic Core RO-Crate Example",
         filePath = $"{Profile.examplesRoot}/{subId}/ro-crate-metadata.json",
         encodingFormat = "application/json",
         rootDataEntityId = id
@@ -82,7 +78,7 @@ let rootEntity =
         name = name,
         description = description,
         license = License.mit,
-        authors = ResizeArray People.defaultAuthors,
+        authors = ResizeArray People.semanticAnnotationAuthors,
         version = Profile.version,
         keywords = keywords,
         usedTypes = types,

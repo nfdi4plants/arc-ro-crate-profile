@@ -14,7 +14,7 @@ cd arc-ro-crate-profile
 Check that the links were created correctly:
 
 ```powershell
-Get-Item docs\profiles\administrative_crate | Select-Object Name, LinkType, Target
+Get-Item docs\profiles\administrative_core | Select-Object Name, LinkType, Target
 ```
 
 `LinkType` should be `SymbolicLink`. If the profile links are regular text files instead, setting `core.symlinks` after the checkout will not repair them. Remove that working copy and clone it again with the command above. If Windows still reports that creating symbolic links requires permission, run the clone from an elevated terminal.
@@ -30,9 +30,9 @@ The main source content lives under `docs/`:
 The current profile collection includes:
 
 Core Crates:
-  - `ARC Administrative Crate`
+  - `ARC Administrative Core`
   - `ARC Datamap Crate`
-  - `ARC Process Core Crate`
+  - `ARC Provenance Core`
 Decorator Crates:
   - `ARC ISA RO-Crate`
   - `ARC Workflow Run RO-Crate`
@@ -47,11 +47,11 @@ On Windows, run the following commands from the repository root in PowerShell:
 
 ```powershell
 $profileDirectoryLinks = @(
-    "administrative_crate"
+    "administrative_core"
     "datamap_crate"
     "img"
     "isa_ro_crate"
-    "process_core_crate"
+    "provenance_core"
     "wr_ro_crate"
 )
 
@@ -71,7 +71,7 @@ Pop-Location
 `Remove-Item` removes each symbolic link, not the directory or file it points to. Verify and stage the updated links:
 
 ```powershell
-Get-Item docs\profiles\administrative_crate, docs\profiles\index.md |
+Get-Item docs\profiles\administrative_core, docs\profiles\index.md |
     Select-Object Name, LinkType, Target
 
 git add docs/profiles
@@ -85,23 +85,23 @@ The link targets should start with `x.y\`, and each link should have Git mode `1
 The F# scripts in `scripts/` generate two kinds of crate metadata files:
 
 - `profile crates` located in `docs/profiles/`:
-    - `create_administrative_profile_crate.fsx` generates the Administrative profile crate metadata in `docs/profiles/0.1/administrative_crate/`.
-    - `create_process_core_profile_crate.fsx` generates the Process Core profile crate metadata in `docs/profiles/0.1/process_core_crate/`.
+    - `create_administrative_core_profile_crate.fsx` generates the Administrative Core profile crate metadata in `docs/profiles/0.1/administrative_core/`.
+    - `create_provenance_core_profile_crate.fsx` generates the Provenance Core profile crate metadata in `docs/profiles/0.1/provenance_core/`.
     - `create_datamap_profile_crate.fsx` generates the Datamap profile crate metadata in `docs/profiles/0.1/datamap_crate/`.
     - `create_isa_profile_crate.fsx` generates the ISA profile crate metadata in `docs/profiles/0.1/isa_ro_crate/`.
     - `create_wr_profile_crate.fsx` generates the Workflow Run profile crate metadata in `docs/profiles/0.1/wr_ro_crate/`.
 
 - `example crates` located in `docs/examples/`:
-    - `create_administrative_example.fsx` generates the Administrative example crate metadata in `docs/examples/administrative_crate/`.
+    - `create_administrative_core_example.fsx` generates the Administrative Core example crate metadata in `docs/examples/administrative_core/`.
     - `create_datamap_example.fsx` generates the Datamap example crate metadata in `docs/examples/datamap_crate/`.
-    - `create_process_core_example.fsx` generates the Process Core example crate metadata in `docs/examples/process_core_crate/`.
-    - `create_process_core_dfs_example.fsx` generates the Process Core DFS example data.
+    - `create_provenance_core_example.fsx` generates the Provenance Core example crate metadata in `docs/examples/provenance_core/`.
+    - `create_provenance_core_dfs_example.fsx` generates the Provenance Core DFS example data.
     - `create_wr_example.fsx` generates the Workflow Run example crate metadata in `docs/examples/wr_ro_crate/`.
 
-The Administrative scripts currently write to these paths:
+The Administrative Core scripts currently write to these paths:
 
-- `docs/profiles/0.1/administrative_crate/ro-crate-metadata.json`
-- `docs/examples/administrative_crate/ro-crate-metadata.json`
+- `docs/profiles/0.1/administrative_core/ro-crate-metadata.json`
+- `docs/examples/administrative_core/ro-crate-metadata.json`
 
 When you regenerate an example crate, update the matching `index.md` files as well so the published example pages stay in sync.
 
@@ -110,7 +110,7 @@ When you regenerate an example crate, update the matching `index.md` files as we
 Install [.NET](https://dotnet.microsoft.com/en-us/download) first if needed, then run the scripts from the repository root with F# Interactive:
 
 ```powershell
-dotnet fsi scripts/create_administrative_profile_crate.fsx
+dotnet fsi scripts/create_administrative_core_profile_crate.fsx
 ```
 
 ## Editing Guidance

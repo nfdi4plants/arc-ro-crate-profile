@@ -70,7 +70,7 @@
       "@id": "./",
       "@type": "Dataset",
       "description": "An example of a ROCrate with a core process model, including processing from raw data to processed data fragments.",
-      "name": "Data Fragment ARC Process Core Crate Example",
+      "name": "Data Fragment ARC Provenance Core Example",
       "hasPart": [
         {
           "@id": "raw_data1.wiff"

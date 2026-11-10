@@ -1,14 +1,14 @@
 ---
-title: ARC Administrative Crate
+title: ARC Administrative Core
 ---
 
-# ARC Administrative RO-Crate profile
+# ARC Administrative Core RO-Crate profile
 
 * Version: 0.1
 <!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
 * Authors: [ARC RO-Crate community](./../../../index.md/#authors)
 * License: [MIT License](https://mit-license.org/)
-* Example conforming crate: [ro-crate-metadata.json](../../../examples/administrative_crate/ro-crate-metadata.json)
+* Example conforming crate: [ro-crate-metadata.json](../../../examples/administrative_core/ro-crate-metadata.json)
 * Profile Crate: [ro-crate-metadata.jsonld](ro-crate-metadata.jsonld)
 * Extends:
   - [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
@@ -58,8 +58,8 @@ article --identifier--> prop
 
 ## Example ro-crate-metadata.json
 
-* [ro-crate-metadata.json](../../../examples/administrative_crate/ro-crate-metadata.json)
-<!-- * [ro-crate-preview.html](../../../examples/administrative_crate/ro-crate-preview.html) -->
+* [ro-crate-metadata.json](../../../examples/administrative_core/ro-crate-metadata.json)
+<!-- * [ro-crate-preview.html](../../../examples/administrative_core/ro-crate-preview.html) -->
 
 <!-- Remember to update above as well as below! -->
 
@@ -177,7 +177,7 @@ article --identifier--> prop
       "@id": "./",
       "@type": "Dataset",
       "description": "An example of a ROCrate with administrative information including creators and citations.",
-      "name": "ARC Administrative Crate Example",
+      "name": "ARC Administrative Core Example",
       "creator": [
         {
           "@id": "http://orcid.org/0000-0003-1945-6342"

@@ -83,10 +83,10 @@
     {
       "@id": "index.md",
       "@type": "File",
-      "name": "Administrative RO-Crate Profile description",
+      "name": "Provenance Core RO-Crate Profile description",
       "encodingFormat": "text/markdown",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/provenance_core"
       }
     },
     {
@@ -95,19 +95,27 @@
       "name": "Dataset"
     },
     {
-      "@id": "https://schema.org/Person",
+      "@id": "https://bioschemas.org/types/LabProcess/0.1-DRAFT",
       "@type": "DefinedTerm",
-      "name": "Person"
+      "name": "LabProcess",
+      "termCode": "LabProcess"
     },
     {
-      "@id": "https://schema.org/ScholarlyArticle",
+      "@id": "https://bioschemas.org/types/LabProtocol/0.5-DRAFT",
       "@type": "DefinedTerm",
-      "name": "ScholarlyArticle"
+      "name": "LabProtocol",
+      "termCode": "LabProtocol"
     },
     {
-      "@id": "https://schema.org/Organization",
+      "@id": "https://bioschemas.org/types/Sample/0.3-DRAFT",
       "@type": "DefinedTerm",
-      "name": "Organization"
+      "name": "Sample",
+      "termCode": "Sample"
+    },
+    {
+      "@id": "https://schema.org/MediaObject",
+      "@type": "DefinedTerm",
+      "name": "MediaObject"
     },
     {
       "@id": "https://schema.org/PropertyValue",
@@ -120,16 +128,16 @@
       "name": "ARC RO-Crate Annotation Modelling guidance",
       "encodingFormat": "text/html",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/provenance_core"
       }
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/administrative_crate/ro-crate-metadata.json",
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/provenance_core/ro-crate-metadata.json",
       "@type": "File",
-      "name": "Administrative RO-Crate Example",
+      "name": "Provenance Core RO-Crate Example",
       "encodingFormat": "application/json",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/provenance_core"
       }
     },
     {
@@ -159,7 +167,7 @@
         "@id": "http://www.w3.org/ns/dx/prof/role/example"
       },
       "hasArtifact": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/administrative_crate/ro-crate-metadata.json"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/provenance_core/ro-crate-metadata.json"
       }
     },
     {
@@ -170,7 +178,7 @@
       "alternateName": "NFDI4Plants"
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative_crate",
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/provenance_core",
       "@type": [
         "Dataset",
         "Profile"
@@ -178,8 +186,8 @@
       "license": {
         "@id": "https://mit-license.org/"
       },
-      "name": "Administrative Crate Profile",
-      "description": "An RO-Crate profile for representing administrative information of the ARC metadata framework in Research Object Crates (RO-Crates).",
+      "name": "Provenance Core Profile",
+      "description": "An RO-Crate profile for representing the Provenance Core of the ARC metadata framework in Research Object Crates (RO-Crates).",
       "author": [
         {
           "@id": "https://orcid.org/0000-0002-5526-7138"
@@ -206,7 +214,8 @@
       "keywords": [
         "RO-Crate",
         "Research Object Crate",
-        "Administrative",
+        "Provenance Core",
+        "Process",
         "Metadata Standard",
         "Bioschemas",
         "FAIR Data",
@@ -223,13 +232,16 @@
           "@id": "https://schema.org/Dataset"
         },
         {
-          "@id": "https://schema.org/Person"
+          "@id": "https://bioschemas.org/types/LabProcess/0.1-DRAFT"
         },
         {
-          "@id": "https://schema.org/ScholarlyArticle"
+          "@id": "https://bioschemas.org/types/LabProtocol/0.5-DRAFT"
         },
         {
-          "@id": "https://schema.org/Organization"
+          "@id": "https://bioschemas.org/types/Sample/0.3-DRAFT"
+        },
+        {
+          "@id": "https://schema.org/MediaObject"
         },
         {
           "@id": "https://schema.org/PropertyValue"
@@ -238,7 +250,7 @@
           "@id": "https://arc-rdm.org/details/documentation-principle/"
         },
         {
-          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/administrative_crate/ro-crate-metadata.json"
+          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/provenance_core/ro-crate-metadata.json"
         }
       ],
       "hasResource": [
@@ -252,7 +264,7 @@
           "@id": "#hasExample"
         }
       ],
-      "datePublished": "2026-08-05T12:07:30.3285571Z",
+      "datePublished": "2026-08-05T12:07:39.6953848Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },
@@ -262,7 +274,7 @@
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/provenance_core"
       },
       "license": {
         "@id": "https://mit-license.org/"

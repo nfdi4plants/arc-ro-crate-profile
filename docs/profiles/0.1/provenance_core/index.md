@@ -1,15 +1,15 @@
 ---
-title: ARC Process Core Crate
+title: ARC Provenance Core
 ---
 
 
-# ARC Process Core Crate
+# ARC Provenance Core
 
 * Version: 0.1
 <!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
 * Authors: [ARC RO-Crate community](./../../../index.md/#authors)
 * License: [MIT License](https://mit-license.org/)
-* Example conforming crate: [ro-crate-metadata.json](../../../examples/process_core_crate/ro-crate-metadata.json)
+* Example conforming crate: [ro-crate-metadata.json](../../../examples/provenance_core/ro-crate-metadata.json)
 * Profile Crate: [ro-crate-metadata.jsonld](ro-crate-metadata.jsonld)
 * Extends:
   - [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
@@ -44,7 +44,7 @@ The profile relies on types from [Bioschemas](https://bioschemas.org/) types:
 Thereby separating the "what was planned" and "what happened" between LabProtocol and LabProcess respectively.
 A working group is working on the new type and adaptations of existing types.
 
-The following graph summarizes the Process Core model in terms of [Bioschemas](https://bioschemas.org/)/[Schema.org](https://schema.org/) vocabulary:
+The following graph summarizes the Provenance Core model in terms of [Bioschemas](https://bioschemas.org/)/[Schema.org](https://schema.org/) vocabulary:
 
 ```mermaid
 flowchart TD
@@ -81,8 +81,8 @@ Protocol --reagent---> prop
 
 ## Example Metadata File (`ro-crate-metadata.json`)
 
-* [ro-crate-metadata.json](../../../examples/process_core_crate/ro-crate-metadata.json)
-<!-- * [ro-crate-preview.html](../../../examples/process_core_crate/ro-crate-preview.html) -->
+* [ro-crate-metadata.json](../../../examples/provenance_core/ro-crate-metadata.json)
+<!-- * [ro-crate-preview.html](../../../examples/provenance_core/ro-crate-preview.html) -->
 
 <!-- Remember to update above as well as below! -->
 
@@ -177,7 +177,7 @@ Protocol --reagent---> prop
       "@id": "./",
       "@type": "Dataset",
       "description": "An example of a ROCrate with a core process model, including preparation and measurement processes.",
-      "name": "Experimental ARC Process Core Crate Example",
+      "name": "Experimental ARC Provenance Core Example",
       "hasPart": {
         "@id": "datafile.wiff"
       },

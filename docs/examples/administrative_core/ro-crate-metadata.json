@@ -111,7 +111,7 @@
       "@id": "./",
       "@type": "Dataset",
       "description": "An example of a ROCrate with administrative information including creators and citations.",
-      "name": "ARC Administrative Crate Example",
+      "name": "ARC Administrative Core Example",
       "creator": [
         {
           "@id": "http://orcid.org/0000-0003-1945-6342"

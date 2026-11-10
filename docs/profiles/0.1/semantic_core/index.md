@@ -1,8 +1,8 @@
 ---
-title: Semantic Annotation
+title: Semantic Core
 ---
 
-# Semantic Annotation profile
+# Semantic Core profile
 
 * Version: 0.1
 <!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
@@ -12,14 +12,14 @@ title: Semantic Annotation
   * Timo Mühlhaus - https://orcid.org/0000-0003-3925-6778
   * Christoph Garth - https://orcid.org/0000-0003-1669-8549
 * License: [MIT License](https://mit-license.org/)
-* Example conforming crate: [ro-crate-metadata.json](../../../examples/semantic_annotation_crate/ro-crate-metadata.json)
+* Example conforming crate: [ro-crate-metadata.json](../../../examples/semantic_core/ro-crate-metadata.json)
 * Profile Crate: [ro-crate-metadata.jsonld](ro-crate-metadata.jsonld)
 * Extends:
   * [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
 * JSON-LD context: <https://www.researchobject.org/ro-terms/arc/context.jsonld>
 * Vocabulary terms: <https://w3id.org/ro/terms/arc#>
 * **Table of contents**
-* [Semantic Annotation profile](#semantic-annotation-profile)
+* [Semantic Core profile](#semantic-core-profile)
   * [Overview](#overview)
   * [Detailed Description](#detailed-description)
     * [Semantic Attributes](#semantic-attributes)
@@ -161,7 +161,7 @@ dataset -- mentions --> desc
 
 ## Example Metadata File (`ro-crate-metadata.json`)
 
-* [ro-crate-metadata.json](../../../examples/semantic_annotation_crate/ro-crate-metadata.json)
+* [ro-crate-metadata.json](../../../examples/semantic_core/ro-crate-metadata.json)
 
 ```json
 {
@@ -175,7 +175,7 @@ dataset -- mentions --> desc
     {
       "@id": "./",
       "@type": "Dataset",
-      "name": "Semantic Annotation Example",
+      "name": "Semantic Core Example",
       "mentions": [
         { "@id": "#semanticDescriptor1" },
         { "@id": "#semanticDescriptor2" }

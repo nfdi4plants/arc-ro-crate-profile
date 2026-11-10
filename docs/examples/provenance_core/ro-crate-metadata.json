@@ -88,7 +88,7 @@
       "@id": "./",
       "@type": "Dataset",
       "description": "An example of a ROCrate with a core process model, including preparation and measurement processes.",
-      "name": "Experimental ARC Process Core Crate Example",
+      "name": "Experimental ARC Provenance Core Example",
       "hasPart": {
         "@id": "datafile.wiff"
       },

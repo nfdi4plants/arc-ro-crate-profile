@@ -44,11 +44,11 @@ let dataset = LDDataset.create(
 )
 
 let graph = ARC.ROCrate.packDatasetAsCrate(
-    dataset, datasetName = "Data Fragment ARC Process Core Crate Example", 
+    dataset, datasetName = "Data Fragment ARC Provenance Core Example", 
     datasetDescription = "An example of a ROCrate with a core process model, including processing from raw data to processed data fragments.", 
     metadataFileDescriptor = None,
     license = License.GetDefaultLicense()
     )
 
 let jsonString = graph.ToROCrateJsonString(spaces = 2)
-System.IO.File.WriteAllText(__SOURCE_DIRECTORY__ + "/../docs/examples/process_core_crate/dfs_example.json", jsonString)
+System.IO.File.WriteAllText(__SOURCE_DIRECTORY__ + "/../docs/examples/provenance_core/dfs_example.json", jsonString)
