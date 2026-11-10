@@ -51,7 +51,7 @@ module People =
         fw; hlw; ks; so; co; sb; tm
     ]
 
-    let semanticDesignationAuthors = ResizeArray [
+    let semanticAnnotationAuthors = ResizeArray [
         hlw; fw; tm; cg
     ]
 
