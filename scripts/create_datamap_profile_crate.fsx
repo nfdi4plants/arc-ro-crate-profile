@@ -13,7 +13,7 @@ let types = ResizeArray [
     Types.propertyValue
 ]
 
-let subId = "datamap_crate"
+let subId = "datamap"
 
 let id = $"{Profile.profilesRoot}/{subId}"
 

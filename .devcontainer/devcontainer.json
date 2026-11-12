@@ -5,7 +5,7 @@
   "image": "mcr.microsoft.com/devcontainers/jekyll:2-bullseye",
 
   // Adds the .NET SDK on top of the Jekyll image. The SDK bundles F#, so
-  // `dotnet fsi scripts/create_process_core_example.fsx` works out of the box.
+  // `dotnet fsi scripts/create_provenance_core_example.fsx` works out of the box.
   "features": {
     "ghcr.io/devcontainers/features/dotnet:2": {
       "version": "lts"

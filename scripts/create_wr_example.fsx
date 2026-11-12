@@ -152,7 +152,7 @@ let dataset = LDDataset.create(
 // The base IRI is the root data entity of the profile crate written by
 // create_wr_profile_crate.fsx; the anchors are the headings of its index.md.
 
-let profileId = "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate"
+let profileId = "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr"
 
 /// Appends a conformsTo reference, keeping any the node already declares.
 let addConformsTo (target: string) (node: LDNode) =
@@ -190,4 +190,4 @@ for id, name, version in externalProfiles do
     graph.AddNode(profile)
 
 let jsonString = graph.ToROCrateJsonString(spaces = 2)
-System.IO.File.WriteAllText(__SOURCE_DIRECTORY__ + "/../docs/examples/wr_ro_crate/ro-crate-metadata.json", jsonString)
+System.IO.File.WriteAllText(__SOURCE_DIRECTORY__ + "/../docs/examples/wr/ro-crate-metadata.json", jsonString)
