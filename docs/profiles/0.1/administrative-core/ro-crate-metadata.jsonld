@@ -83,10 +83,10 @@
     {
       "@id": "index.md",
       "@type": "File",
-      "name": "ARC Workflow Run RO-Crate Profile description",
+      "name": "Administrative Core RO-Crate Profile description",
       "encodingFormat": "text/markdown",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative-core"
       }
     },
     {
@@ -95,43 +95,19 @@
       "name": "Dataset"
     },
     {
-      "@id": "https://schema.org/MediaObject",
+      "@id": "https://schema.org/Person",
       "@type": "DefinedTerm",
-      "name": "MediaObject"
+      "name": "Person"
     },
     {
-      "@id": "https://schema.org/SoftwareSourceCode",
+      "@id": "https://schema.org/ScholarlyArticle",
       "@type": "DefinedTerm",
-      "name": "SoftwareSourceCode"
+      "name": "ScholarlyArticle"
     },
     {
-      "@id": "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE",
+      "@id": "https://schema.org/Organization",
       "@type": "DefinedTerm",
-      "name": "ComputationalWorkflow",
-      "termCode": "ComputationalWorkflow"
-    },
-    {
-      "@id": "https://bioschemas.org/types/LabProtocol/0.5-DRAFT",
-      "@type": "DefinedTerm",
-      "name": "LabProtocol",
-      "termCode": "LabProtocol"
-    },
-    {
-      "@id": "https://schema.org/CreateAction",
-      "@type": "DefinedTerm",
-      "name": "CreateAction"
-    },
-    {
-      "@id": "https://bioschemas.org/types/LabProcess/0.1-DRAFT",
-      "@type": "DefinedTerm",
-      "name": "LabProcess",
-      "termCode": "LabProcess"
-    },
-    {
-      "@id": "https://bioschemas.org/types/FormalParameter/1.0-RELEASE",
-      "@type": "DefinedTerm",
-      "name": "FormalParameter",
-      "termCode": "FormalParameter"
+      "name": "Organization"
     },
     {
       "@id": "https://schema.org/PropertyValue",
@@ -139,26 +115,21 @@
       "name": "PropertyValue"
     },
     {
-      "@id": "https://schema.org/SoftwareApplication",
-      "@type": "DefinedTerm",
-      "name": "SoftwareApplication"
-    },
-    {
       "@id": "https://arc-rdm.org/details/documentation-principle/",
       "@type": "File",
       "name": "ARC RO-Crate Annotation Modelling guidance",
       "encodingFormat": "text/html",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative-core"
       }
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/wr_ro_crate/ro-crate-metadata.json",
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/administrative-core/ro-crate-metadata.json",
       "@type": "File",
-      "name": "ARC Workflow Run RO-Crate Example",
+      "name": "Administrative Core RO-Crate Example",
       "encodingFormat": "application/json",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative-core"
       }
     },
     {
@@ -188,7 +159,7 @@
         "@id": "http://www.w3.org/ns/dx/prof/role/example"
       },
       "hasArtifact": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/wr_ro_crate/ro-crate-metadata.json"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/administrative-core/ro-crate-metadata.json"
       }
     },
     {
@@ -199,7 +170,7 @@
       "alternateName": "NFDI4Plants"
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate",
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative-core",
       "@type": [
         "Dataset",
         "Profile"
@@ -207,8 +178,8 @@
       "license": {
         "@id": "https://mit-license.org/"
       },
-      "name": "ARC Workflow Run RO-Crate Profile",
-      "description": "An RO-Crate profile for representing prospective (workflows) and retrospective (runs) provenance of computational workflows in Research Object Crates (RO-Crates).",
+      "name": "Administrative Core Profile",
+      "description": "An RO-Crate profile for representing administrative information of the ARC metadata framework in Research Object Crates (RO-Crates).",
       "author": [
         {
           "@id": "https://orcid.org/0000-0002-5526-7138"
@@ -235,11 +206,7 @@
       "keywords": [
         "RO-Crate",
         "Research Object Crate",
-        "Workflow",
-        "Workflow Run",
-        "Run",
-        "Provenance",
-        "Process",
+        "Administrative",
         "Metadata Standard",
         "Bioschemas",
         "FAIR Data",
@@ -256,37 +223,22 @@
           "@id": "https://schema.org/Dataset"
         },
         {
-          "@id": "https://schema.org/MediaObject"
+          "@id": "https://schema.org/Person"
         },
         {
-          "@id": "https://schema.org/SoftwareSourceCode"
+          "@id": "https://schema.org/ScholarlyArticle"
         },
         {
-          "@id": "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE"
-        },
-        {
-          "@id": "https://bioschemas.org/types/LabProtocol/0.5-DRAFT"
-        },
-        {
-          "@id": "https://schema.org/CreateAction"
-        },
-        {
-          "@id": "https://bioschemas.org/types/LabProcess/0.1-DRAFT"
-        },
-        {
-          "@id": "https://bioschemas.org/types/FormalParameter/1.0-RELEASE"
+          "@id": "https://schema.org/Organization"
         },
         {
           "@id": "https://schema.org/PropertyValue"
         },
         {
-          "@id": "https://schema.org/SoftwareApplication"
-        },
-        {
           "@id": "https://arc-rdm.org/details/documentation-principle/"
         },
         {
-          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/wr_ro_crate/ro-crate-metadata.json"
+          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/administrative-core/ro-crate-metadata.json"
         }
       ],
       "hasResource": [
@@ -300,7 +252,7 @@
           "@id": "#hasExample"
         }
       ],
-      "datePublished": "2026-08-05T12:51:07.6308997Z",
+      "datePublished": "2026-08-05T12:07:30.3285571Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },
@@ -310,7 +262,7 @@
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/administrative-core"
       },
       "license": {
         "@id": "https://mit-license.org/"

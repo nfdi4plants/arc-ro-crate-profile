@@ -51,4 +51,4 @@ let graph = ARC.ROCrate.packDatasetAsCrate(
     )
 
 let jsonString = graph.ToROCrateJsonString(spaces = 2)
-System.IO.File.WriteAllText(__SOURCE_DIRECTORY__ + "/../docs/examples/provenance_core/dfs_example.json", jsonString)
+System.IO.File.WriteAllText(__SOURCE_DIRECTORY__ + "/../docs/examples/provenance-core/dfs_example.json", jsonString)

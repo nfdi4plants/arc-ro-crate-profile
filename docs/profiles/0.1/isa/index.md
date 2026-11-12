@@ -38,7 +38,7 @@ title: ISA RO-Crate Profile
 
 ## Overview
 
-The ISA RO-Crate profile is an instantiation of the [Administrative Core](../administrative_core/index.md) and [Provenance Core](../provenance_core/index.md) profiles to describe datasets following the Investigation-Study-Assay ([ISA](https://isa-tools.org/index.html)) model.
+The ISA RO-Crate profile is an instantiation of the [Administrative Core](../administrative-core/index.md) and [Provenance Core](../provenance-core/index.md) profiles to describe datasets following the Investigation-Study-Assay ([ISA](https://isa-tools.org/index.html)) model.
 In particular, it describes a nested collection of datasets, all following the Provenance Core profile.
 Each datset in the collection uses Administrative Core vocabulary to describe its administrative information, with the top-level dataset (Investigation) precisely following the Administrative Core profile.
 
@@ -105,8 +105,8 @@ Protocol --reagent---> ont
 ### Investigation
 
 Is based upon [schema.org/Dataset](https://schema.org/Dataset) and maps to the [ISA-JSON Investigation](https://isa-specs.readthedocs.io/en/latest/isajson.html#investigation-schema-json).
-A dataset following this profile also follows the [Administrative Core](../administrative_core/index.md) profile.
-In particular, the Investigation object MUST follow the [Dataset profile](../administrative_core/index.md#dataset) defined in the Administrative Core profile with the following adaptions and additions to the properties defined in that profile.
+A dataset following this profile also follows the [Administrative Core](../administrative-core/index.md) profile.
+In particular, the Investigation object MUST follow the [Dataset profile](../administrative-core/index.md#dataset) defined in the Administrative Core profile with the following adaptions and additions to the properties defined in that profile.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
@@ -122,8 +122,8 @@ In particular, the Investigation object MUST follow the [Dataset profile](../adm
 ### Study
 
 Is based upon [schema.org/Dataset](https://schema.org/Dataset) and maps to the [ISA-JSON Study](https://isa-specs.readthedocs.io/en/latest/isajson.html#study-schema-json).
-A dataset following this profile also follows the [Provenance Core](../provenance_core/index.md) profile.
-In particular, the Study object MUST follow the [Provenance Core Dataset profile](../provenance_core/index.md#dataset) and the [Administrative Core Dataset profile](../administrative_core/index.md#dataset) with the following adaptions and additions to the properties defined in that profile.
+A dataset following this profile also follows the [Provenance Core](../provenance-core/index.md) profile.
+In particular, the Study object MUST follow the [Provenance Core Dataset profile](../provenance-core/index.md#dataset) and the [Administrative Core Dataset profile](../administrative-core/index.md#dataset) with the following adaptions and additions to the properties defined in that profile.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
@@ -141,8 +141,8 @@ In particular, the Study object MUST follow the [Provenance Core Dataset profile
 ### Assay
 
 Is based upon [schema.org/Dataset](https://schema.org/Dataset) and maps to the [ISA-JSON Assay](https://isa-specs.readthedocs.io/en/latest/isajson.html#assay-schema-json).
-A dataset following this profile also follows the [Provenance Core](../provenance_core/index.md) profile.
-In particular, the Assay object MUST follow the [Provenance Core Dataset profile](../provenance_core/index.md#dataset) and the [Administrative Core Dataset profile](../administrative_core/index.md#dataset) with the following adaptions and additions to the properties defined in that profile.
+A dataset following this profile also follows the [Provenance Core](../provenance-core/index.md) profile.
+In particular, the Assay object MUST follow the [Provenance Core Dataset profile](../provenance-core/index.md#dataset) and the [Administrative Core Dataset profile](../administrative-core/index.md#dataset) with the following adaptions and additions to the properties defined in that profile.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
@@ -162,7 +162,7 @@ In particular, the Assay object MUST follow the [Provenance Core Dataset profile
 ### LabProcess
 
 Has the new Bioschemas DRAFT [bioschemas.org/LabProcess](https://bioschemas.org/LabProcess) type and maps to the [ISA-JSON Process](https://isa-specs.readthedocs.io/en/latest/isajson.html#process-schema-json).
-An ISA Process MUST follow the [Process profile](../provenance_core/index.md#process) defined in the Provenance Core profile, with the following additions to the properties defined in that profile.
+An ISA Process MUST follow the [Process profile](../provenance-core/index.md#process) defined in the Provenance Core profile, with the following additions to the properties defined in that profile.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
@@ -173,18 +173,18 @@ An ISA Process MUST follow the [Process profile](../provenance_core/index.md#pro
 ### LabProtocol
 
 Is based on the Bioschemas [bioschemas.org/LabProtocol](https://bioschemas.org/LabProtocol) type and maps to the [ISA-JSON Protocol](https://isa-specs.readthedocs.io/en/latest/isajson.html#protocol-schema-json).
-An ISA Protocol MUST follow the [Protocol profile](../provenance_core/index.md#protocol) defined in the Provenance Core profile.
+An ISA Protocol MUST follow the [Protocol profile](../provenance-core/index.md#protocol) defined in the Provenance Core profile.
 
 ### Sample
 
 Is based on the Bioschemas [bioschemas.org/Sample](https://bioschemas.org/Sample) type, and represents the ISA-JSON [Sample](https://isa-specs.readthedocs.io/en/latest/isajson.html#sample-schema-json),
 [Source](https://isa-specs.readthedocs.io/en/latest/isajson.html#source-schema-json) and [Material](https://isa-specs.readthedocs.io/en/latest/isajson.html#material-schema-json).
-An ISA Sample MUST follow the [Sample profile](../provenance_core/index.md#sample) defined in the Provenance Core profile.
+An ISA Sample MUST follow the [Sample profile](../provenance-core/index.md#sample) defined in the Provenance Core profile.
 
 ### Data
 
 Describes and points to a Data file or a segment of a Data file (via [data fragment selectors](https://www.w3.org/TR/annotation-model/#fragment-selector)), and maps to the [ISA-JSON Data](https://isa-specs.readthedocs.io/en/latest/isajson.html#data-schema-json).
-An ISA Data object MUST follow the [Data profile](../provenance_core/index.md#data) defined in the Provenance Core profile, with the following additions to the properties defined in that profile.
+An ISA Data object MUST follow the [Data profile](../provenance-core/index.md#data) defined in the Provenance Core profile, with the following additions to the properties defined in that profile.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
@@ -194,7 +194,7 @@ An ISA Data object MUST follow the [Data profile](../provenance_core/index.md#da
 ### Person
 
 It is based on [schema.org/Person](https://schema.org/Person), and maps to the [ISA-JSON Person](https://isa-specs.readthedocs.io/en/latest/isajson.html#person-schema-json).
-An ISA Person MUST follow the [Person profile](../administrative_core/index.md#person) defined in the Administrative Core profile.
+An ISA Person MUST follow the [Person profile](../administrative-core/index.md#person) defined in the Administrative Core profile.
 Addionally, the following properties are defined for the ISA RO-Crate profile to describe a person in more detail.
 
 | Property | Required | Expected Type | Description |
@@ -205,7 +205,7 @@ Addionally, the following properties are defined for the ISA RO-Crate profile to
 ### ScholarlyArticle
 
 It is based on [schema.org/ScholarlyArticle](https://schema.org/ScholarlyArticle) and maps to the [ISA-JSON Publication](https://isa-specs.readthedocs.io/en/latest/isajson.html#publication-schema-json).
-An ISA ScholarlyArticle MUST follow the [ScholarlyArticle profile](../administrative_core/index.md#scholarlyarticle) defined in the Administrative Core profile.
+An ISA ScholarlyArticle MUST follow the [ScholarlyArticle profile](../administrative-core/index.md#scholarlyarticle) defined in the Administrative Core profile.
 Additionally, the following properties are defined for the ISA RO-Crate profile to describe a scholarly article in more detail.
 
 | Property | Required | Expected Type | Description |
@@ -226,7 +226,7 @@ It is based on [schema.org/Comment](https://schema.org/Comment) and maps to the 
 ### DefinedTerm
 
 It is based on [schema.org/DefinedTerm](https://schema.org/DefinedTerm) and maps to the [ISA-JSON OntologyAnnotation](https://isa-specs.readthedocs.io/en/latest/isajson.html#ontology-annotation-schema-json).
-An ISA DefinedTerm MUST follow the [DefinedTerm profile](../administrative_core/index.md#definedterm) defined in the Administrative Core profile, with the following additions to the properties defined in that profile.
+An ISA DefinedTerm MUST follow the [DefinedTerm profile](../administrative-core/index.md#definedterm) defined in the Administrative Core profile, with the following additions to the properties defined in that profile.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
@@ -235,12 +235,12 @@ An ISA DefinedTerm MUST follow the [DefinedTerm profile](../administrative_core/
 ### PropertyValue
 
 General profile for key-value pairs. It is based on [schema.org/PropertyValue](https://schema.org/PropertyValue).
-ISA PropertyValue objects, in general, MUST follow the [PropertyValue profile](../administrative_core/index.md#propertyvalue) defined in the Administrative Core profile.
+ISA PropertyValue objects, in general, MUST follow the [PropertyValue profile](../administrative-core/index.md#propertyvalue) defined in the Administrative Core profile.
 
 #### PropertyValue - Parameter
 
 Represents a process parameter. It is based on [schema.org/PropertyValue](https://schema.org/PropertyValue) and maps to the ISA-JSON Key-Value-Unit Triples [Process Parameter Value](https://isa-specs.readthedocs.io/en/latest/isajson.html#process-parameter-value-schema-json).
-An ISA process parameter MUST follow the [PropertyValue profile](../administrative_core/index.md#propertyvalue) defined in the Administrative Core profile, with the following additions to the properties defined in that profile.
+An ISA process parameter MUST follow the [PropertyValue profile](../administrative-core/index.md#propertyvalue) defined in the Administrative Core profile, with the following additions to the properties defined in that profile.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
@@ -249,7 +249,7 @@ An ISA process parameter MUST follow the [PropertyValue profile](../administrati
 #### PropertyValue - Characteristic
 
 Represents a characteristic. It is based on [schema.org/PropertyValue](https://schema.org/PropertyValue) and maps to the ISA-JSON Key-Value-Unit Triple [Material Attribute Value](https://isa-specs.readthedocs.io/en/latest/isajson.html#material-attribute-value-schema-json).
-ISA characteristics MUST follow the [PropertyValue profile](../administrative_core/index.md#propertyvalue) defined in the Administrative Core profile, with the following additions to the properties defined in that profile.
+ISA characteristics MUST follow the [PropertyValue profile](../administrative-core/index.md#propertyvalue) defined in the Administrative Core profile, with the following additions to the properties defined in that profile.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
@@ -258,7 +258,7 @@ ISA characteristics MUST follow the [PropertyValue profile](../administrative_co
 #### PropertyValue - Factor
 
 Represents a factor. It is based on [schema.org/PropertyValue](https://schema.org/PropertyValue) and maps to the ISA-JSON Key-Value-Unit Triple [Factor Value](https://isa-specs.readthedocs.io/en/latest/isajson.html#factor-value-schema-json).
-An ISA factor MUST follow the [PropertyValue profile](../administrative_core/index.md#propertyvalue) defined in the Administrative Core profile, with the following additions to the properties defined in that profile.
+An ISA factor MUST follow the [PropertyValue profile](../administrative-core/index.md#propertyvalue) defined in the Administrative Core profile, with the following additions to the properties defined in that profile.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
@@ -267,7 +267,7 @@ An ISA factor MUST follow the [PropertyValue profile](../administrative_core/ind
 #### PropertyValue - Component
 
 Represents a protocol component. It is based on [schema.org/PropertyValue](https://schema.org/PropertyValue) and maps to the a component of an [ISA-JSON protocol](https://isa-specs.readthedocs.io/en/latest/isajson.html#protocol-schema-json).
-An ISA protocol component MUST follow the [PropertyValue profile](../administrative_core/index.md#propertyvalue) defined in the Administrative Core profile, with the following additions to the properties defined in that profile.
+An ISA protocol component MUST follow the [PropertyValue profile](../administrative-core/index.md#propertyvalue) defined in the Administrative Core profile, with the following additions to the properties defined in that profile.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
@@ -275,11 +275,11 @@ An ISA protocol component MUST follow the [PropertyValue profile](../administrat
 
 #### PropertyValue - DOI
 
-If a [schema.org/PropertyValue](https://schema.org/PropertyValue) object represents a [DOI](https://www.doi.org/) identifier of an article, it is supposed to have the exact values described in the [PropertyValue - DOI](../administrative_core/index.md#propertyvalue---doi) section of the Administrative Core profile.
+If a [schema.org/PropertyValue](https://schema.org/PropertyValue) object represents a [DOI](https://www.doi.org/) identifier of an article, it is supposed to have the exact values described in the [PropertyValue - DOI](../administrative-core/index.md#propertyvalue---doi) section of the Administrative Core profile.
 
 #### PropertyValue - PubMedID
 
-If a [schema.org/PropertyValue](https://schema.org/PropertyValue) object represents a [PubMedID](https://pubmed.ncbi.nlm.nih.gov/) identifier of an article, it is supposed to have the exact values described in the [PropertyValue - PubMedID](../administrative_core/index.md#propertyvalue---pubmedid) section of the Administrative Core profile.
+If a [schema.org/PropertyValue](https://schema.org/PropertyValue) object represents a [PubMedID](https://pubmed.ncbi.nlm.nih.gov/) identifier of an article, it is supposed to have the exact values described in the [PropertyValue - PubMedID](../administrative-core/index.md#propertyvalue---pubmedid) section of the Administrative Core profile.
 
 ## Example ro-crate-metadata.json
 

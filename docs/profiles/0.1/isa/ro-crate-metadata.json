@@ -83,10 +83,10 @@
     {
       "@id": "index.md",
       "@type": "File",
-      "name": "Datamap RO-Crate Profile description",
+      "name": "ISA RO-Crate Profile description",
       "encodingFormat": "text/markdown",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/isa"
       }
     },
     {
@@ -95,9 +95,47 @@
       "name": "Dataset"
     },
     {
+      "@id": "https://bioschemas.org/types/LabProcess/0.1-DRAFT",
+      "@type": "DefinedTerm",
+      "name": "LabProcess",
+      "termCode": "LabProcess"
+    },
+    {
+      "@id": "https://bioschemas.org/types/LabProtocol/0.5-DRAFT",
+      "@type": "DefinedTerm",
+      "name": "LabProtocol",
+      "termCode": "LabProtocol"
+    },
+    {
+      "@id": "https://bioschemas.org/types/Sample/0.3-DRAFT",
+      "@type": "DefinedTerm",
+      "name": "Sample",
+      "termCode": "Sample"
+    },
+    {
       "@id": "https://schema.org/MediaObject",
       "@type": "DefinedTerm",
       "name": "MediaObject"
+    },
+    {
+      "@id": "https://schema.org/Person",
+      "@type": "DefinedTerm",
+      "name": "Person"
+    },
+    {
+      "@id": "https://schema.org/ScholarlyArticle",
+      "@type": "DefinedTerm",
+      "name": "ScholarlyArticle"
+    },
+    {
+      "@id": "https://schema.org/Comment",
+      "@type": "DefinedTerm",
+      "name": "Comment"
+    },
+    {
+      "@id": "https://schema.org/DefinedTerm",
+      "@type": "DefinedTerm",
+      "name": "DefinedTerm"
     },
     {
       "@id": "https://schema.org/PropertyValue",
@@ -110,16 +148,7 @@
       "name": "ARC RO-Crate Annotation Modelling guidance",
       "encodingFormat": "text/html",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap_crate"
-      }
-    },
-    {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/datamap_crate/ro-crate-metadata.json",
-      "@type": "File",
-      "name": "Datamap RO-Crate Example",
-      "encodingFormat": "application/json",
-      "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/isa"
       }
     },
     {
@@ -143,16 +172,6 @@
       }
     },
     {
-      "@id": "#hasExample",
-      "@type": "ResourceDescriptor",
-      "hasRole": {
-        "@id": "http://www.w3.org/ns/dx/prof/role/example"
-      },
-      "hasArtifact": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/datamap_crate/ro-crate-metadata.json"
-      }
-    },
-    {
       "@id": "https://nfdi4plants.de/",
       "@type": "Organization",
       "name": "DataPLANT",
@@ -160,7 +179,7 @@
       "alternateName": "NFDI4Plants"
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap_crate",
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/isa",
       "@type": [
         "Dataset",
         "Profile"
@@ -168,8 +187,8 @@
       "license": {
         "@id": "https://mit-license.org/"
       },
-      "name": "Datamap Crate Profile",
-      "description": "An RO-Crate profile for representing the Datamap of the ARC metadata framework in Research Object Crates (RO-Crates).",
+      "name": "ISA RO-Crate Profile",
+      "description": "An RO-Crate profile for representing ISA metadata in Research Object Crates (RO-Crates).",
       "author": [
         {
           "@id": "https://orcid.org/0000-0002-5526-7138"
@@ -196,7 +215,11 @@
       "keywords": [
         "RO-Crate",
         "Research Object Crate",
-        "Datamap",
+        "ISA",
+        "Investigation",
+        "Study",
+        "Assay",
+        "Process",
         "Metadata Standard",
         "Bioschemas",
         "FAIR Data",
@@ -213,16 +236,34 @@
           "@id": "https://schema.org/Dataset"
         },
         {
+          "@id": "https://bioschemas.org/types/LabProcess/0.1-DRAFT"
+        },
+        {
+          "@id": "https://bioschemas.org/types/LabProtocol/0.5-DRAFT"
+        },
+        {
+          "@id": "https://bioschemas.org/types/Sample/0.3-DRAFT"
+        },
+        {
           "@id": "https://schema.org/MediaObject"
+        },
+        {
+          "@id": "https://schema.org/Person"
+        },
+        {
+          "@id": "https://schema.org/ScholarlyArticle"
+        },
+        {
+          "@id": "https://schema.org/Comment"
+        },
+        {
+          "@id": "https://schema.org/DefinedTerm"
         },
         {
           "@id": "https://schema.org/PropertyValue"
         },
         {
           "@id": "https://arc-rdm.org/details/documentation-principle/"
-        },
-        {
-          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/datamap_crate/ro-crate-metadata.json"
         }
       ],
       "hasResource": [
@@ -231,12 +272,9 @@
         },
         {
           "@id": "#hasGuidance"
-        },
-        {
-          "@id": "#hasExample"
         }
       ],
-      "datePublished": "2026-08-05T12:07:34.9772166Z",
+      "datePublished": "2026-08-05T12:07:44.3761020Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },
@@ -246,7 +284,7 @@
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/isa"
       },
       "license": {
         "@id": "https://mit-license.org/"

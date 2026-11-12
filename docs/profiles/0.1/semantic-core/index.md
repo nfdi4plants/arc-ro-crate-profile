@@ -12,7 +12,7 @@ title: Semantic Core
   * Timo Mühlhaus - https://orcid.org/0000-0003-3925-6778
   * Christoph Garth - https://orcid.org/0000-0003-1669-8549
 * License: [MIT License](https://mit-license.org/)
-* Example conforming crate: [ro-crate-metadata.json](../../../examples/semantic_core/ro-crate-metadata.json)
+* Example conforming crate: [ro-crate-metadata.json](https://nfdi4plants.github.io/arc-ro-crate-profile/examples/semantic-core/ro-crate-metadata.json)
 * Profile Crate: [ro-crate-metadata.jsonld](ro-crate-metadata.jsonld)
 * Extends:
   * [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
@@ -161,7 +161,7 @@ dataset -- mentions --> desc
 
 ## Example Metadata File (`ro-crate-metadata.json`)
 
-* [ro-crate-metadata.json](../../../examples/semantic_core/ro-crate-metadata.json)
+* [ro-crate-metadata.json](https://nfdi4plants.github.io/arc-ro-crate-profile/examples/semantic-core/ro-crate-metadata.json)
 
 ```json
 {

@@ -20,7 +20,7 @@ let types = ResizeArray [
     Types.softwareApplication
 ]
 
-let subId = "wr_ro_crate"
+let subId = "wr"
 
 let id = $"{Profile.profilesRoot}/{subId}"
 

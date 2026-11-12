@@ -60,4 +60,4 @@ let graph = ARC.ROCrate.packDatasetAsCrate(
     )
 
 let jsonString = graph.ToROCrateJsonString(spaces = 2)
-System.IO.File.WriteAllText(__SOURCE_DIRECTORY__ + "/../docs/examples/provenance_core/ro-crate-metadata.json", jsonString)
+System.IO.File.WriteAllText(__SOURCE_DIRECTORY__ + "/../docs/examples/provenance-core/ro-crate-metadata.json", jsonString)

@@ -122,7 +122,7 @@
       "version": "0.1",
       "description": "Sums up the intensity columns of a table and writes the result to a new file.",
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate/index.md#workflow-protocol"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#workflow-protocol"
       }
     },
     {
@@ -141,7 +141,7 @@
         "@id": "workflows/FixedScript/workflow.cwl"
       },
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate/index.md#arc-workflow"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#arc-workflow"
       }
     },
     {
@@ -205,7 +205,7 @@
         "@id": "workflows/FixedScript/workflow.cwl"
       },
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate/index.md#workflow-invocation"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#workflow-invocation"
       }
     },
     {
@@ -234,7 +234,7 @@
           "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
         },
         {
-          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate/index.md#arc-run"
+          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#arc-run"
         }
       ],
       "mentions": {
@@ -263,7 +263,7 @@
         }
       ],
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr"
       },
       "dateCreated": "2026-08-05T14:07:17.0067155",
       "license": {

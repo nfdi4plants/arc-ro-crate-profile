@@ -6,7 +6,7 @@ title: ARC Workflow Run RO-Crate Profile
 
 * Version: 0.1
 * Permalink: _coming soon_
-* Example conforming crate: [ro-crate-metadata.json](../../../examples/wr_ro_crate/ro-crate-metadata.json)
+* Example conforming crate: [ro-crate-metadata.json](https://nfdi4plants.github.io/arc-ro-crate-profile/examples/wr/ro-crate-metadata.json)
 * Profile Crate: [ro-crate-metadata.jsonld](ro-crate-metadata.jsonld)
 * Authors
   * Caroline Ott - https://orcid.org/0000-0003-1512-9504
@@ -104,8 +104,8 @@ workflow --mainEntity--> workflowProtocol
 
 An ARC Workflow is an object that bundles ISA-compliant administrative metadata (e.g., the person that created it) and the prospective provenance of the workflow in form of [Workflow Protocol(s)](#workflow-protocol).
 It is based upon [schema.org/Dataset](https://schema.org/Dataset) and maps to the [ISA-XLSX **Workflow**](https://github.com/nfdi4plants/ARC-specification/blob/release/ISA-XLSX.md#workflow-section).
-A dataset following this profile also follows the [Administrative Core](../administrative_core/index.md) profile.
-In particular, the ARC Workflow object MUST follow the [Dataset profile](../administrative_core/index.md#dataset) defined in the Administrative Core profile with the following adaptions and additions to the properties defined in that profile.
+A dataset following this profile also follows the [Administrative Core](../administrative-core/index.md) profile.
+In particular, the ARC Workflow object MUST follow the [Dataset profile](../administrative-core/index.md#dataset) defined in the Administrative Core profile with the following adaptions and additions to the properties defined in that profile.
 In the context of an ARC, an ARC Workflow can be seen as the top-level object describing the contents and provenance of a single _workflow folder_ inside the _workflows folder_.
 
 An ARC Workflow contains a `mainEntity` following the [`Workflow Protocol` profile](#workflow-protocol) that describes the _Main Workflow_ of this `workflow folder`, analogous to [Workflow RO Crates](https://about.workflowhub.eu/Workflow-RO-Crate/).
@@ -128,7 +128,7 @@ An ARC Workflow contains a `mainEntity` following the [`Workflow Protocol` profi
 ### Workflow Protocol
 
 A multitype object that combines [`ComputationalWorkflow`](https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE) and [`LabProtocol`](https://bioschemas.org/types/LabProtocol/0.5-DRAFT), providing prospective provenance of computational workflows that can be understood as traditional workflows as well as from a protocol perspective.
-A Workflow Protocol MUST follow the [Protocol profile](../provenance_core/index.md#protocol) defined in the Provenance Core profile.
+A Workflow Protocol MUST follow the [Protocol profile](../provenance-core/index.md#protocol) defined in the Provenance Core profile.
 
 | Property | Required | Cardinality | Expected Type | Description | Source Profile |
 |----------|----------|-------------|---------------|-------------|----------------|
@@ -160,8 +160,8 @@ A Workflow Protocol MUST follow the [Protocol profile](../provenance_core/index.
 
 An ARC Run is an object that bundles ISA-compliant administrative metadata (e.g., the person that executed it) and the retrospective provenance of the run in form of [Workflow Invocation(s)](#workflow-invocation).
 It is based upon [schema.org/Dataset](https://schema.org/Dataset) and maps to the [ISA-XLSX **Run**](https://github.com/nfdi4plants/ARC-specification/blob/release/ISA-XLSX.md#run-section).
-A dataset following this profile also follows the [Provenance Core](../provenance_core/index.md) profile.
-In particular, the ARC Run object MUST follow the [Provenance Core Dataset profile](../provenance_core/index.md#dataset) and the [Administrative Core Dataset profile](../administrative_core/index.md#dataset) with the following adaptions and additions to the properties defined in that profile.
+A dataset following this profile also follows the [Provenance Core](../provenance-core/index.md) profile.
+In particular, the ARC Run object MUST follow the [Provenance Core Dataset profile](../provenance-core/index.md#dataset) and the [Administrative Core Dataset profile](../administrative-core/index.md#dataset) with the following adaptions and additions to the properties defined in that profile.
 In the context of an ARC, an ARC Run can be seen as the top-level object describing the contents and provenance of a single _run folder_ inside the _runs folder_.
 
 | Property | Required | Cardinality | Expected Type | Description |
@@ -188,7 +188,7 @@ In the context of an ARC, an ARC Run can be seen as the top-level object describ
 ### Workflow Invocation
 
 A multitype object that combines [`CreateAction`](https://schema.org/CreateAction) and [`LabProcess`](https://bioschemas.org/types/LabProcess/0.1-DRAFT), providing retrospective provenance of computational workflow execution that can be understood as traditional workflow runs as well as from a process sequence perspective.
-An Workflow Invocation MUST follow the [Process profile](../provenance_core/index.md#process) defined in the Provenance Core profile, with the following additions to the properties defined in that profile.
+An Workflow Invocation MUST follow the [Process profile](../provenance-core/index.md#process) defined in the Provenance Core profile, with the following additions to the properties defined in that profile.
 
 | Property | Required | Cardinality | Expected Type | Description | Source Profile |
 |----------|----------|-------------|---------------|-------------|----------------|
@@ -230,8 +230,8 @@ They provide prospective provenance, while their realized values are described b
 
 ### PropertyValue
 
-Where possible, PropertyValues representing `parameterValue`s in process sequences of [WorkflowInvocations](#workflow-invocation) SHOULD follow the respective (sub)profile defined in the [ISA RO-Crate Profile](../isa_ro_crate/index.md#propertyvalue)
-Workflow Run PropertyValue objects, in general, MUST follow the [PropertyValue profile](../administrative_core/index.md#propertyvalue) defined in the Administrative Core profile.
+Where possible, PropertyValues representing `parameterValue`s in process sequences of [WorkflowInvocations](#workflow-invocation) SHOULD follow the respective (sub)profile defined in the [ISA RO-Crate Profile](../isa/index.md#propertyvalue)
+Workflow Run PropertyValue objects, in general, MUST follow the [PropertyValue profile](../administrative-core/index.md#propertyvalue) defined in the Administrative Core profile.
 
 #### PropertyValue - Workflow Input
 
@@ -303,7 +303,7 @@ _This section, detailing the compatibility guarantees towards the underlying Wor
 As described above, workflows can be structured hierarchically.
 Each workflow (or sub-workflow) object in the hierarchy can have an associated run object in the RO-Crate metadata.
 The structure of JSON objects is visualized below.
-Every ARC Run consists of one or more Workflow Runs (and is therefore comparable to an [Assay](../isa_ro_crate/index.md#assay) in ISA).
+Every ARC Run consists of one or more Workflow Runs (and is therefore comparable to an [Assay](../isa/index.md#assay) in ISA).
 To reduce complexity, it is recommended to use top level description (marked red).
 One workflow describes the transformation of one set of input data to result data.
 If a workflow consists of several steps, forwarding the resulting data to the next step without returning them as a final result, it is described as one Workflow Run Crate.
@@ -349,8 +349,8 @@ flowchart TD
 
 ## Example ro-crate-metadata.json
 
-* [ro-crate-metadata.json](../../../examples/wr_ro_crate/ro-crate-metadata.json)
-<!-- * [ro-crate-preview.html](../../../examples/wr_ro_crate/ro-crate-preview.html) -->
+* [ro-crate-metadata.json](https://nfdi4plants.github.io/arc-ro-crate-profile/examples/wr/ro-crate-metadata.json)
+<!-- * [ro-crate-preview.html](https://nfdi4plants.github.io/arc-ro-crate-profile/examples/wr/ro-crate-preview.html) -->
 
 The crate below is an additional illustration, describing a Galaxy workflow and its run inside an ARC:
 
@@ -443,7 +443,7 @@ The crate below is an additional illustration, describing a Galaxy workflow and 
         "LabProtocol"
       ],
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate/index.md#workflow-protocol"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#workflow-protocol"
       },
       "additionalType": "WorkflowProtocol",
       "creator": {
@@ -464,7 +464,7 @@ The crate below is an additional illustration, describing a Galaxy workflow and 
       "@id": "workflows/Shuffle/",
       "@type": "Dataset",
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate/index.md#arc-workflow"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#arc-workflow"
       },
       "additionalType": "Workflow",
       "identifier": "Shuffle",
@@ -545,7 +545,7 @@ The crate below is an additional illustration, describing a Galaxy workflow and 
         "LabProcess"
       ],
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate/index.md#workflow-invocation"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#workflow-invocation"
       },
       "additionalType": "WorkflowInvocation",
       "name": "Out",
@@ -586,7 +586,7 @@ The crate below is an additional illustration, describing a Galaxy workflow and 
           "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
         },
         {
-          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate/index.md#arc-run"
+          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#arc-run"
         }
       ],
       "additionalType": "Run",
@@ -633,7 +633,7 @@ The crate below is an additional illustration, describing a Galaxy workflow and 
       "version": "1.0"
     },
     {   
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate",
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr",
       "@type": "CreativeWork",
       "name": "ARC Workflow Run RO-Crate Profile",
       "version": "0.1"
@@ -642,7 +642,7 @@ The crate below is an additional illustration, describing a Galaxy workflow and 
       "@id": "./",
       "@type": "Dataset",
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr_ro_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr"
       },
       "additionalType": "Investigation",
       "identifier": "ShuffleTest",

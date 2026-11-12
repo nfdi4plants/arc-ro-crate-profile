@@ -83,10 +83,10 @@
     {
       "@id": "index.md",
       "@type": "File",
-      "name": "ISA RO-Crate Profile description",
+      "name": "Provenance Core RO-Crate Profile description",
       "encodingFormat": "text/markdown",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/isa_ro_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/provenance-core"
       }
     },
     {
@@ -118,26 +118,6 @@
       "name": "MediaObject"
     },
     {
-      "@id": "https://schema.org/Person",
-      "@type": "DefinedTerm",
-      "name": "Person"
-    },
-    {
-      "@id": "https://schema.org/ScholarlyArticle",
-      "@type": "DefinedTerm",
-      "name": "ScholarlyArticle"
-    },
-    {
-      "@id": "https://schema.org/Comment",
-      "@type": "DefinedTerm",
-      "name": "Comment"
-    },
-    {
-      "@id": "https://schema.org/DefinedTerm",
-      "@type": "DefinedTerm",
-      "name": "DefinedTerm"
-    },
-    {
       "@id": "https://schema.org/PropertyValue",
       "@type": "DefinedTerm",
       "name": "PropertyValue"
@@ -148,7 +128,16 @@
       "name": "ARC RO-Crate Annotation Modelling guidance",
       "encodingFormat": "text/html",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/isa_ro_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/provenance-core"
+      }
+    },
+    {
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/provenance-core/ro-crate-metadata.json",
+      "@type": "File",
+      "name": "Provenance Core RO-Crate Example",
+      "encodingFormat": "application/json",
+      "about": {
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/provenance-core"
       }
     },
     {
@@ -172,6 +161,16 @@
       }
     },
     {
+      "@id": "#hasExample",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/example"
+      },
+      "hasArtifact": {
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/provenance-core/ro-crate-metadata.json"
+      }
+    },
+    {
       "@id": "https://nfdi4plants.de/",
       "@type": "Organization",
       "name": "DataPLANT",
@@ -179,7 +178,7 @@
       "alternateName": "NFDI4Plants"
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/isa_ro_crate",
+      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/provenance-core",
       "@type": [
         "Dataset",
         "Profile"
@@ -187,8 +186,8 @@
       "license": {
         "@id": "https://mit-license.org/"
       },
-      "name": "ISA RO-Crate Profile",
-      "description": "An RO-Crate profile for representing ISA metadata in Research Object Crates (RO-Crates).",
+      "name": "Provenance Core Profile",
+      "description": "An RO-Crate profile for representing the Provenance Core of the ARC metadata framework in Research Object Crates (RO-Crates).",
       "author": [
         {
           "@id": "https://orcid.org/0000-0002-5526-7138"
@@ -215,10 +214,7 @@
       "keywords": [
         "RO-Crate",
         "Research Object Crate",
-        "ISA",
-        "Investigation",
-        "Study",
-        "Assay",
+        "Provenance Core",
         "Process",
         "Metadata Standard",
         "Bioschemas",
@@ -248,22 +244,13 @@
           "@id": "https://schema.org/MediaObject"
         },
         {
-          "@id": "https://schema.org/Person"
-        },
-        {
-          "@id": "https://schema.org/ScholarlyArticle"
-        },
-        {
-          "@id": "https://schema.org/Comment"
-        },
-        {
-          "@id": "https://schema.org/DefinedTerm"
-        },
-        {
           "@id": "https://schema.org/PropertyValue"
         },
         {
           "@id": "https://arc-rdm.org/details/documentation-principle/"
+        },
+        {
+          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/provenance-core/ro-crate-metadata.json"
         }
       ],
       "hasResource": [
@@ -272,9 +259,12 @@
         },
         {
           "@id": "#hasGuidance"
+        },
+        {
+          "@id": "#hasExample"
         }
       ],
-      "datePublished": "2026-08-05T12:07:44.3761020Z",
+      "datePublished": "2026-08-05T12:07:39.6953848Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },
@@ -284,7 +274,7 @@
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/isa_ro_crate"
+        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/provenance-core"
       },
       "license": {
         "@id": "https://mit-license.org/"

@@ -16,7 +16,7 @@ let types = ResizeArray [
     Types.propertyValue
 ]
 
-let subId = "provenance_core"
+let subId = "provenance-core"
 
 let id = $"{Profile.profilesRoot}/{subId}"
 

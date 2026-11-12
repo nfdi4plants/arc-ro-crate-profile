@@ -6,9 +6,9 @@ title: ARC Datamap Crate
 
 * Version: 0.1
 <!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
-* Authors: [ARC RO-Crate community](./../../../index.md#authors)
+* Authors: [ARC RO-Crate community](https://nfdi4plants.github.io/arc-ro-crate-profile/#authors)
 * License: [MIT License](https://mit-license.org/)
-* Example conforming crate: [ro-crate-metadata.json](../../../examples/datamap_crate/ro-crate-metadata.json)
+* Example conforming crate: [ro-crate-metadata.json](https://nfdi4plants.github.io/arc-ro-crate-profile/examples/datamap/ro-crate-metadata.json)
 * Profile Crate: [ro-crate-metadata.jsonld](ro-crate-metadata.jsonld)
 * Extends:
   - [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
@@ -27,9 +27,9 @@ title: ARC Datamap Crate
 
 ## Overview
 
-This profile is an instantiation of the [Semantic Core](../semantic_core/index.md) profile, intended to represent the ARC datamap in the RO-Crate.
+This profile is an instantiation of the [Semantic Core](../semantic-core/index.md) profile, intended to represent the ARC datamap in the RO-Crate.
 The datamap contains contextual information for fragments within data files.
-Hence, these contextual information is represented as [interpretations](../semantic_core/index.md#semantic-descriptor) for the corresponding data entities.
+Hence, these contextual information is represented as [interpretations](../semantic-core/index.md#semantic-descriptor) for the corresponding data entities.
 
 To model data *fragments*, this profile extends the existing hierarchy at the bottom using the same mechanisms as in the normal RO-Crate data model:
 Data files are already referenced in their respective datasets through `hasPart`.
@@ -37,7 +37,7 @@ Fragments are of type `MediaObject` (equivalent to `File`) and referenced by the
 
 <img alt="Data Fragment Selector" src="../img/DFS.png" width="1000" />
 
-We add the contextual information per entry in the datamap to the `Dataset` objects, conforming with the [Semantic Core Profile](../semantic_core/index.md).
+We add the contextual information per entry in the datamap to the `Dataset` objects, conforming with the [Semantic Core Profile](../semantic-core/index.md).
 Accordingly, the fragments and their information then reference each other.
 
 <img alt="Datamap" src="../img/Datamap-XLSX_simple.svg" width="1000" />
@@ -46,7 +46,7 @@ See our peer-reviewed publication for more information on the datamap and its us
 
 ## Detailed Description
 
-We use `MediaObject` for data fragments and annotate them through descriptor objects for external metadata as described in the [Semantic Core Profile](../semantic_core/index.md). Both objects reference each other. The `Dataset` object lists all datamap entries. Specifically, we plan the following:
+We use `MediaObject` for data fragments and annotate them through descriptor objects for external metadata as described in the [Semantic Core Profile](../semantic-core/index.md). Both objects reference each other. The `Dataset` object lists all datamap entries. Specifically, we plan the following:
 - Each entry in the datamap becomes one entry in `mentions` of type `PropertyValue`.
 - Each data fragment becomes an object of type `MediaObject`, referenced from its file object through `hasPart`.
 - Each entry of the datamap becomes a semantic descriptor of type `ItemList` and `Statement` with an assertion in the form of a `PropertyValue` object.
@@ -78,8 +78,8 @@ desc --itemListElement--> prop
 ## Example Metadata File (`ro-crate-metadata.json`)
 
 
-* [ro-crate-metadata.json](../../../examples/datamap_crate/ro-crate-metadata.json)
-<!-- * [ro-crate-preview.html](../../../examples/datamap_crate/ro-crate-preview.html) -->
+* [ro-crate-metadata.json](https://nfdi4plants.github.io/arc-ro-crate-profile/examples/datamap/ro-crate-metadata.json)
+<!-- * [ro-crate-preview.html](https://nfdi4plants.github.io/arc-ro-crate-profile/examples/datamap/ro-crate-preview.html) -->
 
 ```json
 {

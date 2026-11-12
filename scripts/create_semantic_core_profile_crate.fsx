@@ -13,7 +13,7 @@ let types = ResizeArray [
     Types.propertyValue
 ]
 
-let subId = "semantic_core"
+let subId = "semantic-core"
 
 let id = $"{Profile.profilesRoot}/{subId}"
 

@@ -6,9 +6,9 @@ title: ARC Administrative Core
 
 * Version: 0.1
 <!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
-* Authors: [ARC RO-Crate community](./../../../index.md#authors)
+* Authors: [ARC RO-Crate community](https://nfdi4plants.github.io/arc-ro-crate-profile/#authors)
 * License: [MIT License](https://mit-license.org/)
-* Example conforming crate: [ro-crate-metadata.json](../../../examples/administrative_core/ro-crate-metadata.json)
+* Example conforming crate: [ro-crate-metadata.json](https://nfdi4plants.github.io/arc-ro-crate-profile/examples/administrative-core/ro-crate-metadata.json)
 * Profile Crate: [ro-crate-metadata.jsonld](ro-crate-metadata.jsonld)
 * Extends:
   - [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
@@ -58,8 +58,8 @@ article --identifier--> prop
 
 ## Example ro-crate-metadata.json
 
-* [ro-crate-metadata.json](../../../examples/administrative_core/ro-crate-metadata.json)
-<!-- * [ro-crate-preview.html](../../../examples/administrative_core/ro-crate-preview.html) -->
+* [ro-crate-metadata.json](https://nfdi4plants.github.io/arc-ro-crate-profile/examples/administrative-core/ro-crate-metadata.json)
+<!-- * [ro-crate-preview.html](https://nfdi4plants.github.io/arc-ro-crate-profile/examples/administrative-core/ro-crate-preview.html) -->
 
 <!-- Remember to update above as well as below! -->
 
