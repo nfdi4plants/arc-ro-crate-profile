@@ -6,7 +6,7 @@ title: ARC Provenance Core
 # ARC Provenance Core
 
 * Version: 0.1
-<!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
+<!-- * Permalink: <https://w3id.org/arc/ro-crate/provenance-core/0.1> -->
 * Authors: [ARC RO-Crate community](https://nfdi4plants.github.io/arc-ro-crate-profile/#authors)
 * License: [MIT License](https://mit-license.org/)
 * Example conforming crate: [ro-crate-metadata.json](https://nfdi4plants.github.io/arc-ro-crate-profile/examples/provenance-core/ro-crate-metadata.json)
