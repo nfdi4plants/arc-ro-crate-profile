@@ -52,6 +52,19 @@ let dataset = LDDataset.create(
     abouts = ResizeArray [preparation; measurement]
 )
 
+// Declare conformance to the profile on the root data entity, as RO-Crate 1.2 recommends,
+// and describe the profile as a contextual entity of type Profile.
+
+let profile = LDCreativeWork.create(
+    id = "https://w3id.org/arc/ro-crate/provenance-core/0.1",
+    name = "Provenance Core Profile"
+)
+
+profile.SchemaType.Add("http://www.w3.org/ns/dx/prof/Profile")
+profile.SetProperty("http://schema.org/version", "0.1")
+
+dataset.SetProperty(LDDataset.conformsTo, profile)
+
 let graph = ARC.ROCrate.packDatasetAsCrate(
     dataset, datasetName = "Experimental ARC Provenance Core Example", 
     datasetDescription = "An example of a ROCrate with a core process model, including preparation and measurement processes.", 

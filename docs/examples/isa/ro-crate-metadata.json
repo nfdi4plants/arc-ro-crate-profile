@@ -31,9 +31,13 @@
       "name": "RO-Crate Metadata Specification 1.2"
     },
     {
-      "@id": "https://github.com/nfdi4plants/isa-ro-crate-profile",
-      "@type": "Profile",
-      "name": "ISA RO-Crate Profile"
+      "@id": "https://w3id.org/arc/ro-crate/isa/0.1",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "name": "ISA RO-Crate Profile",
+      "version": "0.1"
     },
     {
       "@id": "./",
@@ -56,7 +60,7 @@
         }
       ],
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/isa-ro-crate-profile"
+        "@id": "https://w3id.org/arc/ro-crate/isa/0.1"
       }
     },
     {

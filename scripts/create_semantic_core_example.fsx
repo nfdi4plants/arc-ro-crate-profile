@@ -68,6 +68,18 @@ measurementsDescriptor.SetProperty("itemListElement", ResizeArray [LDRef(tempera
 let dataset = LDDataset.create(id = "./", name = "Semantic Core Example")
 dataset.SetProperty("mentions", ResizeArray [LDRef(sampleDescriptor.Id); LDRef(measurementsDescriptor.Id)])
 
+// Declare conformance to the profile on the root data entity, as RO-Crate 1.2 recommends,
+// and describe the profile as a contextual entity of type Profile.
+let profile = LDNode(
+    "https://w3id.org/arc/ro-crate/semantic-core/0.1",
+    schemaType = ResizeArray ["CreativeWork"; "Profile"]
+)
+
+profile.SetProperty("name", "Semantic Core Profile")
+profile.SetProperty("version", "0.1")
+
+dataset.SetProperty("conformsTo", LDRef(profile.Id))
+
 let metadata = LDNode("ro-crate-metadata.json", schemaType = ResizeArray ["CreativeWork"])
 metadata.SetProperty("conformsTo", LDRef("https://w3id.org/ro/crate/1.2"))
 metadata.SetProperty("about", LDRef(dataset.Id))
@@ -82,7 +94,7 @@ let graph = LDGraph(
     context = context,
     nodes = ResizeArray [
         dataset; sample; sampleDescriptor; measurementsDescriptor; mass
-        controlGroupDesignation; measurements; temperatureInterpretation; metadata
+        controlGroupDesignation; measurements; temperatureInterpretation; profile; metadata
     ]
 )
 

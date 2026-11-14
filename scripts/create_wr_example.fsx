@@ -149,10 +149,10 @@ let dataset = LDDataset.create(
 )
 
 // Declare which profile, and which section of it, each entity follows.
-// The base IRI is the root data entity of the profile crate written by
-// create_wr_profile_crate.fsx; the anchors are the headings of its index.md.
+// The base IRI is the permalink of the profile; the anchors are the headings of its index.md.
+// As RO-Crate 1.2 recommends, the profile as a whole is declared on the root data entity.
 
-let profileId = "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr"
+let profileId = "https://w3id.org/arc/ro-crate/wr/0.1"
 
 /// Appends a conformsTo reference, keeping any the node already declares.
 let addConformsTo (target: string) (node: LDNode) =
@@ -161,10 +161,10 @@ let addConformsTo (target: string) (node: LDNode) =
     node.SetProperty(LDDataset.conformsTo, refs)
 
 dataset            |> addConformsTo profileId
-arcWorkflow        |> addConformsTo $"{profileId}/index.md#arc-workflow"
-workflowProtocol   |> addConformsTo $"{profileId}/index.md#workflow-protocol"
-arcRun             |> addConformsTo $"{profileId}/index.md#arc-run"
-workflowInvocation |> addConformsTo $"{profileId}/index.md#workflow-invocation"
+arcWorkflow        |> addConformsTo $"{profileId}#arc-workflow"
+workflowProtocol   |> addConformsTo $"{profileId}#workflow-protocol"
+arcRun             |> addConformsTo $"{profileId}#arc-run"
+workflowInvocation |> addConformsTo $"{profileId}#workflow-invocation"
 
 let graph = ARC.ROCrate.packDatasetAsCrate(
     dataset, datasetName = "ARC Workflow Run Crate Example",
@@ -173,9 +173,11 @@ let graph = ARC.ROCrate.packDatasetAsCrate(
     license = License.GetDefaultLicense()
     )
 
-// CreativeWork entities for the external profiles the ARC Run declares conformance to
+// Contextual entities of type Profile for this profile and for the
+// external profiles the ARC Run declares conformance to
 
-let externalProfiles = [
+let referencedProfiles = [
+    profileId, "ARC Workflow Run RO-Crate Profile", "0.1"
     "https://w3id.org/ro/wfrun/process/0.5", "Process Run Crate", "0.5"
     "https://w3id.org/ro/wfrun/workflow/0.5", "Workflow Run Crate", "0.5"
     "https://w3id.org/workflowhub/workflow-ro-crate/1.0", "Workflow RO-Crate", "1.0"
@@ -183,8 +185,9 @@ let externalProfiles = [
 
 let graphContext = graph.TryGetContext() |> Option.get
 
-for id, name, version in externalProfiles do
+for id, name, version in referencedProfiles do
     let profile = LDCreativeWork.create(id = id, name = name)
+    profile.SchemaType.Add("http://www.w3.org/ns/dx/prof/Profile")
     profile.SetProperty("http://schema.org/version", version)
     profile.Compact_InPlace(graphContext)
     graph.AddNode(profile)

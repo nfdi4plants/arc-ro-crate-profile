@@ -75,6 +75,19 @@ let dataset = LDDataset.create(
     citations = ResizeArray [publication]
 )
 
+// Declare conformance to the profile on the root data entity, as RO-Crate 1.2 recommends,
+// and describe the profile as a contextual entity of type Profile.
+
+let profile = LDCreativeWork.create(
+    id = "https://w3id.org/arc/ro-crate/administrative-core/0.1",
+    name = "Administrative Core Profile"
+)
+
+profile.SchemaType.Add("http://www.w3.org/ns/dx/prof/Profile")
+profile.SetProperty("http://schema.org/version", "0.1")
+
+dataset.SetProperty(LDDataset.conformsTo, profile)
+
 let graph = ARC.ROCrate.packDatasetAsCrate(
     dataset, datasetName = "ARC Administrative Core Example", 
     datasetDescription = "An example of a ROCrate with administrative information including creators and citations.", 

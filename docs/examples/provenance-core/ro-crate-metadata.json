@@ -80,6 +80,15 @@
       }
     },
     {
+      "@id": "https://w3id.org/arc/ro-crate/provenance-core/0.1",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "name": "Provenance Core Profile",
+      "version": "0.1"
+    },
+    {
       "@id": "LICENSE",
       "@type": "CreativeWork",
       "text": "ALL RIGHTS RESERVED BY THE AUTHORS"
@@ -100,7 +109,10 @@
           "@id": "#Process_Measurement"
         }
       ],
-      "dateCreated": "2026-06-24T23:04:48.2431278",
+      "conformsTo": {
+        "@id": "https://w3id.org/arc/ro-crate/provenance-core/0.1"
+      },
+      "dateCreated": "2026-11-14T18:51:00.7803634",
       "license": {
         "@id": "LICENSE"
       }

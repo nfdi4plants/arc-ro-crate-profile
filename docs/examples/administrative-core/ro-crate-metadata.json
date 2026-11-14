@@ -103,6 +103,15 @@
       }
     },
     {
+      "@id": "https://w3id.org/arc/ro-crate/administrative-core/0.1",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "name": "Administrative Core Profile",
+      "version": "0.1"
+    },
+    {
       "@id": "LICENSE",
       "@type": "CreativeWork",
       "text": "ALL RIGHTS RESERVED BY THE AUTHORS"
@@ -126,7 +135,10 @@
       "citation": {
         "@id": "https://www.doi.org/the-identifier/resources/handbook/"
       },
-      "dateCreated": "2026-06-26T12:35:46.9265674",
+      "conformsTo": {
+        "@id": "https://w3id.org/arc/ro-crate/administrative-core/0.1"
+      },
+      "dateCreated": "2026-11-14T18:50:57.0433153",
       "license": {
         "@id": "LICENSE"
       }

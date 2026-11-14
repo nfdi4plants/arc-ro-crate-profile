@@ -124,6 +124,15 @@
       }
     },
     {
+      "@id": "https://w3id.org/arc/ro-crate/datamap/0.1",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "name": "Datamap Crate Profile",
+      "version": "0.1"
+    },
+    {
       "@id": "LICENSE",
       "@type": "CreativeWork",
       "text": "ALL RIGHTS RESERVED BY THE AUTHORS"
@@ -147,7 +156,10 @@
           "@id": "#Descriptor_processed_data.csv#col=3"
         }
       ],
-      "dateCreated": "2026-06-25T22:58:40.2416018",
+      "conformsTo": {
+        "@id": "https://w3id.org/arc/ro-crate/datamap/0.1"
+      },
+      "dateCreated": "2026-11-14T18:50:58.8895251",
       "license": {
         "@id": "LICENSE"
       }

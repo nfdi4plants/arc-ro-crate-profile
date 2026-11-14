@@ -17,7 +17,10 @@
         {
           "@id": "#semanticDescriptor2"
         }
-      ]
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/arc/ro-crate/semantic-core/0.1"
+      }
     },
     {
       "@id": "#sample1",
@@ -96,6 +99,15 @@
       "unitCode": "http://purl.obolibrary.org/obo/UO_0000027",
       "unitText": "°C",
       "valueReference": "http://purl.obolibrary.org/obo/PATO_0000146"
+    },
+    {
+      "@id": "https://w3id.org/arc/ro-crate/semantic-core/0.1",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "name": "Semantic Core Profile",
+      "version": "0.1"
     },
     {
       "@id": "ro-crate-metadata.json",

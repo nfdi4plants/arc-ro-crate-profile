@@ -122,7 +122,7 @@
       "version": "0.1",
       "description": "Sums up the intensity columns of a table and writes the result to a new file.",
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#workflow-protocol"
+        "@id": "https://w3id.org/arc/ro-crate/wr/0.1#workflow-protocol"
       }
     },
     {
@@ -141,7 +141,7 @@
         "@id": "workflows/FixedScript/workflow.cwl"
       },
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#arc-workflow"
+        "@id": "https://w3id.org/arc/ro-crate/wr/0.1#arc-workflow"
       }
     },
     {
@@ -205,7 +205,7 @@
         "@id": "workflows/FixedScript/workflow.cwl"
       },
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#workflow-invocation"
+        "@id": "https://w3id.org/arc/ro-crate/wr/0.1#workflow-invocation"
       }
     },
     {
@@ -234,7 +234,7 @@
           "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
         },
         {
-          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#arc-run"
+          "@id": "https://w3id.org/arc/ro-crate/wr/0.1#arc-run"
         }
       ],
       "mentions": {
@@ -263,9 +263,9 @@
         }
       ],
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr"
+        "@id": "https://w3id.org/arc/ro-crate/wr/0.1"
       },
-      "dateCreated": "2026-08-05T14:07:17.0067155",
+      "dateCreated": "2026-11-14T18:51:06.6807697",
       "license": {
         "@id": "LICENSE"
       }
@@ -281,20 +281,38 @@
       }
     },
     {
+      "@id": "https://w3id.org/arc/ro-crate/wr/0.1",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "name": "ARC Workflow Run RO-Crate Profile",
+      "version": "0.1"
+    },
+    {
       "@id": "https://w3id.org/ro/wfrun/process/0.5",
-      "@type": "CreativeWork",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
       "name": "Process Run Crate",
       "version": "0.5"
     },
     {
       "@id": "https://w3id.org/ro/wfrun/workflow/0.5",
-      "@type": "CreativeWork",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
       "name": "Workflow Run Crate",
       "version": "0.5"
     },
     {
       "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
-      "@type": "CreativeWork",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
       "name": "Workflow RO-Crate",
       "version": "1.0"
     }

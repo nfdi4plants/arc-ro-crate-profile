@@ -439,10 +439,19 @@ investigation.SetProperty(
     LDDataset.license,
     "https://creativecommons.org/licenses/by/4.0/"
 )
-investigation.SetProperty(
-    LDDataset.conformsTo,
-    "https://github.com/nfdi4plants/isa-ro-crate-profile"
-)
+
+// Declare conformance to the profile on the root data entity, as RO-Crate 1.2 recommends,
+// and describe the profile as a contextual entity of type Profile.
+let profile =
+    LDCreativeWork.create(
+        id = "https://w3id.org/arc/ro-crate/isa/0.1",
+        name = "ISA RO-Crate Profile"
+    )
+
+profile.SchemaType.Add("http://www.w3.org/ns/dx/prof/Profile")
+profile.SetProperty("http://schema.org/version", "0.1")
+
+investigation.SetProperty(LDDataset.conformsTo, profile)
 
 // ARC.ROCrate.packDatasetAsCrate creates the metadata descriptor and base
 // RO-Crate conformance entity and recursively includes linked typed entities.
