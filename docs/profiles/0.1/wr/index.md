@@ -5,7 +5,7 @@ title: ARC Workflow Run RO-Crate Profile
 # ARC Workflow Run RO-Crate Profiles
 
 * Version: 0.1
-* Permalink: _coming soon_
+* Permalink: <https://w3id.org/arc/ro-crate/wr/0.1>
 * Example conforming crate: [ro-crate-metadata.json](https://nfdi4plants.github.io/arc-ro-crate-profile/examples/wr/ro-crate-metadata.json)
 * Profile Crate: [ro-crate-metadata.jsonld](ro-crate-metadata.jsonld)
 * Authors

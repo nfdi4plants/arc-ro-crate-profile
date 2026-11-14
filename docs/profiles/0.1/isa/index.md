@@ -5,7 +5,7 @@ title: ISA RO-Crate Profile
 # ISA RO-Crate Profile
 
 * Version: 0.1
-* Permalink: _coming soon_
+* Permalink: <https://w3id.org/arc/ro-crate/isa/0.1>
 * Authors
   * Florian Wetzels - https://orcid.org/0000-0002-5526-7138
   * Lukas Weil - https://orcid.org/0000-0003-1945-6342

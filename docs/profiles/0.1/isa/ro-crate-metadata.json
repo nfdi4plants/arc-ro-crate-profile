@@ -86,7 +86,7 @@
       "name": "ISA RO-Crate Profile description",
       "encodingFormat": "text/markdown",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/isa"
+        "@id": "https://w3id.org/arc/ro-crate/isa/0.1"
       }
     },
     {
@@ -148,7 +148,7 @@
       "name": "ARC RO-Crate Annotation Modelling guidance",
       "encodingFormat": "text/html",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/isa"
+        "@id": "https://w3id.org/arc/ro-crate/isa/0.1"
       }
     },
     {
@@ -179,7 +179,7 @@
       "alternateName": "NFDI4Plants"
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/isa",
+      "@id": "https://w3id.org/arc/ro-crate/isa/0.1",
       "@type": [
         "Dataset",
         "Profile"
@@ -284,7 +284,7 @@
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/isa"
+        "@id": "https://w3id.org/arc/ro-crate/isa/0.1"
       },
       "license": {
         "@id": "https://mit-license.org/"

@@ -86,7 +86,7 @@
       "name": "Datamap RO-Crate Profile description",
       "encodingFormat": "text/markdown",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap"
+        "@id": "https://w3id.org/arc/ro-crate/datamap/0.1"
       }
     },
     {
@@ -110,7 +110,7 @@
       "name": "ARC RO-Crate Annotation Modelling guidance",
       "encodingFormat": "text/html",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap"
+        "@id": "https://w3id.org/arc/ro-crate/datamap/0.1"
       }
     },
     {
@@ -119,7 +119,7 @@
       "name": "Datamap RO-Crate Example",
       "encodingFormat": "application/json",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap"
+        "@id": "https://w3id.org/arc/ro-crate/datamap/0.1"
       }
     },
     {
@@ -160,7 +160,7 @@
       "alternateName": "NFDI4Plants"
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap",
+      "@id": "https://w3id.org/arc/ro-crate/datamap/0.1",
       "@type": [
         "Dataset",
         "Profile"
@@ -246,7 +246,7 @@
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/datamap"
+        "@id": "https://w3id.org/arc/ro-crate/datamap/0.1"
       },
       "license": {
         "@id": "https://mit-license.org/"
