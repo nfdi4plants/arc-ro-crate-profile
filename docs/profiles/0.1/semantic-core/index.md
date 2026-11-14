@@ -5,7 +5,7 @@ title: Semantic Core
 # Semantic Core profile
 
 * Version: 0.1
-<!-- * Permalink: <https://w3id.org/ro/wfrun/process/0.5> -->
+<!-- * Permalink: <https://w3id.org/arc/ro-crate/semantic-core/0.1> -->
 * Authors
   * Lukas Weil - https://orcid.org/0000-0003-1945-6342
   * Florian Wetzels - https://orcid.org/0000-0002-5526-7138

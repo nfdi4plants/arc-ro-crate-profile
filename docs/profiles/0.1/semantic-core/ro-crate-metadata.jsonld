@@ -125,7 +125,7 @@
       "alternateName": "NFDI4Plants"
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic-core",
+      "@id": "https://w3id.org/arc/ro-crate/semantic-core/0.1",
       "@type": [
         "Dataset",
         "Profile"
@@ -202,7 +202,7 @@
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic-core"
+        "@id": "https://w3id.org/arc/ro-crate/semantic-core/0.1"
       },
       "license": {
         "@id": "https://mit-license.org/"

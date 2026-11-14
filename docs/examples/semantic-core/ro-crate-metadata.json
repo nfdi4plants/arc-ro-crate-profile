@@ -1,0 +1,111 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.2/context",
+    {
+      "Sample": "https://bioschemas.org/Sample"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Semantic Core Example",
+      "mentions": [
+        {
+          "@id": "#semanticDescriptor1"
+        },
+        {
+          "@id": "#semanticDescriptor2"
+        }
+      ]
+    },
+    {
+      "@id": "#sample1",
+      "@type": "Sample",
+      "name": "Sample 1",
+      "additionalProperty": {
+        "@id": "#mass"
+      },
+      "subjectOf": {
+        "@id": "#semanticDescriptor1"
+      }
+    },
+    {
+      "@id": "#semanticDescriptor1",
+      "@type": [
+        "Statement",
+        "ItemList"
+      ],
+      "about": {
+        "@id": "#sample1"
+      },
+      "itemListElement": [
+        {
+          "@id": "#controlGroupDesignation"
+        }
+      ]
+    },
+    {
+      "@id": "#semanticDescriptor2",
+      "@type": [
+        "Statement",
+        "ItemList"
+      ],
+      "about": {
+        "@id": "measurements.csv"
+      },
+      "itemListElement": [
+        {
+          "@id": "#temperatureInterpretation"
+        }
+      ]
+    },
+    {
+      "@id": "#mass",
+      "@type": "PropertyValue",
+      "name": "mass",
+      "propertyID": "http://purl.obolibrary.org/obo/PATO_0000125",
+      "unitCode": "http://purl.obolibrary.org/obo/UO_0000021",
+      "unitText": "g",
+      "value": 2.3
+    },
+    {
+      "@id": "#controlGroupDesignation",
+      "@type": "PropertyValue",
+      "additionalType": "Designation",
+      "name": "experimental role",
+      "value": "control group",
+      "propertyID": "TODO",
+      "valueReference": "http://purl.bioontology.org/ontology/MESH/D035061"
+    },
+    {
+      "@id": "measurements.csv",
+      "@type": "File",
+      "name": "measurements.csv",
+      "encodingFormat": "text/csv",
+      "subjectOf": {
+        "@id": "#semanticDescriptor2"
+      }
+    },
+    {
+      "@id": "#temperatureInterpretation",
+      "@type": "PropertyValue",
+      "additionalType": "Interpretation",
+      "name": "physical quantity represented",
+      "value": "temperature",
+      "unitCode": "http://purl.obolibrary.org/obo/UO_0000027",
+      "unitText": "°C",
+      "valueReference": "http://purl.obolibrary.org/obo/PATO_0000146"
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      },
+      "about": {
+        "@id": "./"
+      }
+    }
+  ]
+}
