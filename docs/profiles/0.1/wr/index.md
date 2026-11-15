@@ -128,7 +128,7 @@ An ARC Workflow contains a `mainEntity` following the [`Workflow Protocol` profi
 ### Workflow Protocol
 
 A multitype object that combines [`ComputationalWorkflow`](https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE) and [`LabProtocol`](https://bioschemas.org/types/LabProtocol/0.5-DRAFT), providing prospective provenance of computational workflows that can be understood as traditional workflows as well as from a protocol perspective.
-A Workflow Protocol MUST follow the [Protocol profile](../provenance-core/index.md#protocol) defined in the Provenance Core profile.
+A Workflow Protocol MUST follow the [Protocol profile](../provenance-core/index.md#labprotocol) defined in the Provenance Core profile.
 
 | Property | Required | Cardinality | Expected Type | Description | Source Profile |
 |----------|----------|-------------|---------------|-------------|----------------|
@@ -188,7 +188,7 @@ In the context of an ARC, an ARC Run can be seen as the top-level object describ
 ### Workflow Invocation
 
 A multitype object that combines [`CreateAction`](https://schema.org/CreateAction) and [`LabProcess`](https://bioschemas.org/types/LabProcess/0.1-DRAFT), providing retrospective provenance of computational workflow execution that can be understood as traditional workflow runs as well as from a process sequence perspective.
-An Workflow Invocation MUST follow the [Process profile](../provenance-core/index.md#process) defined in the Provenance Core profile, with the following additions to the properties defined in that profile.
+An Workflow Invocation MUST follow the [Process profile](../provenance-core/index.md#labprocess) defined in the Provenance Core profile, with the following additions to the properties defined in that profile.
 
 | Property | Required | Cardinality | Expected Type | Description | Source Profile |
 |----------|----------|-------------|---------------|-------------|----------------|
@@ -443,7 +443,7 @@ The crate below is an additional illustration, describing a Galaxy workflow and 
         "LabProtocol"
       ],
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#workflow-protocol"
+        "@id": "https://w3id.org/arc/ro-crate/wr/0.1#workflow-protocol"
       },
       "additionalType": "WorkflowProtocol",
       "creator": {
@@ -464,7 +464,7 @@ The crate below is an additional illustration, describing a Galaxy workflow and 
       "@id": "workflows/Shuffle/",
       "@type": "Dataset",
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#arc-workflow"
+        "@id": "https://w3id.org/arc/ro-crate/wr/0.1#arc-workflow"
       },
       "additionalType": "Workflow",
       "identifier": "Shuffle",
@@ -545,7 +545,7 @@ The crate below is an additional illustration, describing a Galaxy workflow and 
         "LabProcess"
       ],
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#workflow-invocation"
+        "@id": "https://w3id.org/arc/ro-crate/wr/0.1#workflow-invocation"
       },
       "additionalType": "WorkflowInvocation",
       "name": "Out",
@@ -586,7 +586,7 @@ The crate below is an additional illustration, describing a Galaxy workflow and 
           "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
         },
         {
-          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr/index.md#arc-run"
+          "@id": "https://w3id.org/arc/ro-crate/wr/0.1#arc-run"
         }
       ],
       "additionalType": "Run",
@@ -633,7 +633,7 @@ The crate below is an additional illustration, describing a Galaxy workflow and 
       "version": "1.0"
     },
     {   
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr",
+      "@id": "https://w3id.org/arc/ro-crate/wr/0.1",
       "@type": "CreativeWork",
       "name": "ARC Workflow Run RO-Crate Profile",
       "version": "0.1"
@@ -642,7 +642,7 @@ The crate below is an additional illustration, describing a Galaxy workflow and 
       "@id": "./",
       "@type": "Dataset",
       "conformsTo": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/wr"
+        "@id": "https://w3id.org/arc/ro-crate/wr/0.1"
       },
       "additionalType": "Investigation",
       "identifier": "ShuffleTest",

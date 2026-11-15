@@ -15,7 +15,7 @@ let types = ResizeArray [
 
 let subId = "datamap"
 
-let id = $"{Profile.profilesRoot}/{subId}"
+let id = Profile.permalink subId
 
 let name = "Datamap Crate Profile"
 
@@ -60,7 +60,7 @@ let guidances = ResizeArray[
 let examples = ResizeArray[
     TextualResource(
         name = "Datamap RO-Crate Example",
-        filePath = $"{Profile.examplesRoot}/{subId}/ro-crate-metadata.json",
+        filePath = Profile.exampleUrl subId,
         encodingFormat = "application/json",
         rootDataEntityId = id
     )

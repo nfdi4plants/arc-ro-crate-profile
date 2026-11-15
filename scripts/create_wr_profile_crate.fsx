@@ -22,7 +22,7 @@ let types = ResizeArray [
 
 let subId = "wr"
 
-let id = $"{Profile.profilesRoot}/{subId}"
+let id = Profile.permalink subId
 
 let name = "ARC Workflow Run RO-Crate Profile"
 
@@ -71,7 +71,7 @@ let guidances = ResizeArray[
 let examples = ResizeArray[
     TextualResource(
         name = "ARC Workflow Run RO-Crate Example",
-        filePath = $"{Profile.examplesRoot}/{subId}/ro-crate-metadata.json",
+        filePath = Profile.exampleUrl subId,
         encodingFormat = "application/json",
         rootDataEntityId = id
     )

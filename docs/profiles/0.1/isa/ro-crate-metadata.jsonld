@@ -274,11 +274,13 @@
           "@id": "#hasGuidance"
         }
       ],
-      "datePublished": "2026-08-05T12:07:44.3761020Z",
+      "datePublished": "2026-11-15T16:05:26.3409292Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },
-      "isProfileOf": "https://w3id.org/ro/crate/1.2"
+      "isProfileOf": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      }
     },
     {
       "@id": "ro-crate-metadata.json",
@@ -289,7 +291,9 @@
       "license": {
         "@id": "https://mit-license.org/"
       },
-      "conformsTo": "https://w3id.org/ro/crate/1.2"
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      }
     }
   ]
 }

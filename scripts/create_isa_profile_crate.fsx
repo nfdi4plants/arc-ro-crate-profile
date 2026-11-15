@@ -22,7 +22,7 @@ let types = ResizeArray [
 
 let subId = "isa"
 
-let id = $"{Profile.profilesRoot}/{subId}"
+let id = Profile.permalink subId
 
 let name = "ISA RO-Crate Profile"
 
@@ -71,7 +71,7 @@ let guidances = ResizeArray[
 // let examples = ResizeArray[
 //     TextualResource(
 //         name = "ISA RO-Crate Example",
-//         filePath = $"{Profile.examplesRoot}/{subId}/ro-crate-metadata.json",
+//         filePath = Profile.exampleUrl subId,
 //         encodingFormat = "application/json",
 //         rootDataEntityId = id
 //     )
@@ -105,4 +105,4 @@ let profile =
 
 let string = profile.ToROCrateJsonString(spaces = 2)
 
-System.IO.File.WriteAllText(__SOURCE_DIRECTORY__ + $"/../docs/profiles/{Profile.version}/{subId}/ro-crate-metadata.json", string)
+System.IO.File.WriteAllText(__SOURCE_DIRECTORY__ + $"/../docs/profiles/{Profile.version}/{subId}/ro-crate-metadata.jsonld", string)

@@ -162,7 +162,7 @@ In particular, the Assay object MUST follow the [Provenance Core Dataset profile
 ### LabProcess
 
 Has the new Bioschemas DRAFT [bioschemas.org/LabProcess](https://bioschemas.org/LabProcess) type and maps to the [ISA-JSON Process](https://isa-specs.readthedocs.io/en/latest/isajson.html#process-schema-json).
-An ISA Process MUST follow the [Process profile](../provenance-core/index.md#process) defined in the Provenance Core profile, with the following additions to the properties defined in that profile.
+An ISA Process MUST follow the [Process profile](../provenance-core/index.md#labprocess) defined in the Provenance Core profile, with the following additions to the properties defined in that profile.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
@@ -173,7 +173,7 @@ An ISA Process MUST follow the [Process profile](../provenance-core/index.md#pro
 ### LabProtocol
 
 Is based on the Bioschemas [bioschemas.org/LabProtocol](https://bioschemas.org/LabProtocol) type and maps to the [ISA-JSON Protocol](https://isa-specs.readthedocs.io/en/latest/isajson.html#protocol-schema-json).
-An ISA Protocol MUST follow the [Protocol profile](../provenance-core/index.md#protocol) defined in the Provenance Core profile.
+An ISA Protocol MUST follow the [Protocol profile](../provenance-core/index.md#labprotocol) defined in the Provenance Core profile.
 
 ### Sample
 

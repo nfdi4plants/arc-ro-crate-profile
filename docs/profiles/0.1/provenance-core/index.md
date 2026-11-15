@@ -20,7 +20,7 @@ This profile uses terminology from the [RO-Crate 1.2 specification](https://w3id
 
 * **Table of contents**
   * [Overview](#overview)
-  * [Example ro-crate-metadata.json](#example-ro-crate-metadatajson)
+  * [Example ro-crate-metadata.json](#example-metadata-file-ro-crate-metadatajson)
   * [Requirements](#requirements)
     * [Dataset](#dataset)
     * [LabProcess](#labprocess)
@@ -234,7 +234,7 @@ Has the new Bioschemas DRAFT [bioschemas.org/LabProcess](https://bioschemas.org/
 |object|SHOULD|[bioschemas.org/Sample](#sample) or [File](https://schema.org/MediaObject)|The input of the process. If there are multiple inputs, they SHOULD be stored as a sorted list to establish correspondence with outputs. (Both lists need the same length in that case.)|
 |result|SHOULD|[bioschemas.org/Sample](#sample) or [File](https://schema.org/MediaObject)|The output of the process. If there are multiple outputs, they SHOULD be stored as a sorted list to establish correspondence with inputs. (Both lists need the same length in that case.)|
 |executesLabProtocol|SHOULD|[bioschemas.org/LabProtocol](https://bioschemas.org/LabProtocol)|The protocol executed|
-|parameterValue|SHOULD|[schema.org/PropertyValue](https://schema.org/PropertyValue) ([Parameter](#propertyvalue---parameter))|A parameter value of the experimental process, usually a key-value pair using ontology terms|
+|parameterValue|SHOULD|[schema.org/PropertyValue](https://schema.org/PropertyValue) ([Parameter](#propertyvalue))|A parameter value of the experimental process, usually a key-value pair using ontology terms|
 
 ### LabProtocol
 
@@ -247,9 +247,9 @@ Is based on the Bioschemas [bioschemas.org/LabProtocol](https://bioschemas.org/L
 |description|SHOULD|[Text](https://schema.org/Text)|A short description of the protocol (e.g. an abstract)|
 |intendedUse|SHOULD|[schema.org/DefinedTerm](#definedterm) or [Text](https://schema.org/Text) or [URL](https://schema.org/URL)|The protocol type as an ontology term|
 |name|SHOULD|[Text](https://schema.org/Text)|Main title of the LabProtocol.|
-|computationalTool|COULD|[schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue---component)) or [schema.org/SoftwareApplication](https://schema.org/SoftwareApplication)|Software or tool used as part of the lab protocol to complete a part of it.|
-|labEquipment|COULD|[schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue---component)) or [Text](https://schema.org/Text) or [URL](https://schema.org/URL)|For LabProtocols it would be a laboratory equipment use by a person to follow one or more steps described in this LabProtocol.|
-|reagent|COULD|[schema.org/BioChemEntity](https://schema.org/BioChemEntity) or [schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue---component)) or [Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Reagents used in the protocol.|
+|computationalTool|COULD|[schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue)) or [schema.org/SoftwareApplication](https://schema.org/SoftwareApplication)|Software or tool used as part of the lab protocol to complete a part of it.|
+|labEquipment|COULD|[schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue)) or [Text](https://schema.org/Text) or [URL](https://schema.org/URL)|For LabProtocols it would be a laboratory equipment use by a person to follow one or more steps described in this LabProtocol.|
+|reagent|COULD|[schema.org/BioChemEntity](https://schema.org/BioChemEntity) or [schema.org/DefinedTerm](#definedterm) or [schema.org/PropertyValue](https://schema.org/PropertyValue) ([Component](#propertyvalue)) or [Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Reagents used in the protocol.|
 |url|COULD|[URL](https://schema.org/URL)|Pointer to protocol resources external to the ISA-Tab that can be accessed by their Uniform Resource Identifier (URI).|
 |version|COULD|[Number](https://schema.org/Number) or [Text](https://schema.org/Text)|An identifier for the version to ensure protocol tracking.|
 
@@ -263,7 +263,7 @@ Is based on the Bioschemas [bioschemas.org/Sample](https://bioschemas.org/Sample
 |@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Could be the unique sample name.|
 |@type |MUST|[Text](https://schema.org/Text)|MUST be '[bioschemas.org/Sample](https://bioschemas.org/Sample)'|
 |name|MUST|[Text](https://schema.org/Text)|A name identifying the sample.|
-|additionalProperty|SHOULD|[schema.org/PropertyValue](https://schema.org/PropertyValue) ([Characteristic](#propertyvalue---characteristic) or [Factor](#propertyvalue---factor))|characteristics or factors|
+|additionalProperty|SHOULD|[schema.org/PropertyValue](https://schema.org/PropertyValue) ([Characteristic](#propertyvalue) or [Factor](#propertyvalue))|characteristics or factors|
 
 ### Data
 
@@ -278,9 +278,9 @@ Describes and points to a Data file or a segment of a Data file (via [data fragm
 |hasPart|COULD|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Data fragments of this Data object, described by [data fragment selectors](https://www.w3.org/TR/annotation-model/#fragment-selector). SHOULD not be used on data fragments.|
 |usageInfo|COULD|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Description/specification of the [data fragment selector](https://www.w3.org/TR/annotation-model/#fragment-selector), if the object describes a data fragment and a selector is present in the path/`@id`. SHOULD only be used on data fragments.|
 
-Entities referenced by an processes's [object](http://schema.org/object) or [result](http://schema.org/result) SHOULD be of type `File` (an RO-Crate alias for [MediaObject](http://schema.org/MediaObject)) for files, [Dataset](http://schema.org/Dataset) for directories and [Collection](http://schema.org/Collection) for [multi-file datasets](#representing-multi-file-objects), but MAY be a [CreativeWork](http://schema.org/CreativeWork) for other types of data (e.g. an online database); they MAY be of type [PropertyValue](http://schema.org/PropertyValue) to capture numbers/strings that are not stored as files.
+Entities referenced by an processes's [object](http://schema.org/object) or [result](http://schema.org/result) SHOULD be of type `File` (an RO-Crate alias for [MediaObject](http://schema.org/MediaObject)) for files, [Dataset](http://schema.org/Dataset) for directories and [Collection](http://schema.org/Collection) for [multi-file datasets](https://w3id.org/ro/wfrun/process/0.5#representing-multi-file-objects), but MAY be a [CreativeWork](http://schema.org/CreativeWork) for other types of data (e.g. an online database); they MAY be of type [PropertyValue](http://schema.org/PropertyValue) to capture numbers/strings that are not stored as files.
 
-Data entities involved in an application's input and output SHOULD have an `@id` that reflects the original file or directory name as processed by the application, but MAY be renamed to avoid clashes with other entities in the crate. In this case, they SHOULD refer to the original name via [alternateName](http://schema.org/alternateName). This is particularly important to support reproducibility in cases where an application expects to find input in specific locations and with specific names (see the MIRAX example in [Representing multi-file objects](#representing-multi-file-objects)).
+Data entities involved in an application's input and output SHOULD have an `@id` that reflects the original file or directory name as processed by the application, but MAY be renamed to avoid clashes with other entities in the crate. In this case, they SHOULD refer to the original name via [alternateName](http://schema.org/alternateName). This is particularly important to support reproducibility in cases where an application expects to find input in specific locations and with specific names (see the MIRAX example in [Representing multi-file objects](https://w3id.org/ro/wfrun/process/0.5#representing-multi-file-objects)).
 
 ### DefinedTerm
 

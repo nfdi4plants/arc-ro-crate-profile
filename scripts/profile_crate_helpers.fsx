@@ -1,4 +1,4 @@
-#r "nuget: ROCratePCC"
+#r "nuget: ROCratePCC, 0.2.0"
 
 open ARCtrl.ROCrate
 open ARCtrl.Json
@@ -75,11 +75,29 @@ module Types =
     let computationalWorkflow = UsedType(iri = "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE", name = "ComputationalWorkflow", termCode = "ComputationalWorkflow")
     let formalParameter = UsedType(iri = "https://bioschemas.org/types/FormalParameter/1.0-RELEASE", name = "FormalParameter", termCode = "FormalParameter")
 
-module Profile = 
+module Profile =
 
-    let rootID = "https://github.com/nfdi4plants/arc-ro-crate-profile/tree"
+    /// Version of the profile collection. Part of the permalinks and of the paths below `docs/profiles/`.
     let version = "0.1"
 
-    let profilesRoot = $"{rootID}/profiles/{version}"
+    /// Namespace of the persistent identifiers (permalinks) of the profile collection, registered at https://w3id.org.
+    ///
+    /// `<permalinkRoot>/<profile>/<version>` redirects to the published profile description and, if
+    /// `application/ld+json` is requested, to the profile crate (`ro-crate-metadata.jsonld`) next to it.
+    let permalinkRoot = "https://w3id.org/arc/ro-crate"
 
-    let examplesRoot = $"{rootID}/examples"
+    /// Web location the `docs/` folder of this repository is published to (GitHub Pages).
+    ///
+    /// Only use it for resources that have no permalink of their own, e.g. the example crates.
+    /// Repository URLs (`https://github.com/<org>/<repo>/tree/...`) are not identifiers:
+    /// they depend on a branch name and do not serve the file content.
+    let siteRoot = "https://nfdi4plants.github.io/arc-ro-crate-profile"
+
+    /// Versioned permalink of a profile, e.g. `https://w3id.org/arc/ro-crate/isa/0.1`.
+    ///
+    /// This is the `@id` of the root data entity of the profile crate, the `about` of every resource
+    /// describing the profile, and the IRI conforming crates reference with `conformsTo`.
+    let permalink (subId : string) = $"{permalinkRoot}/{subId}/{version}"
+
+    /// Download URL of the example crate published for a profile.
+    let exampleUrl (subId : string) = $"{siteRoot}/examples/{subId}/ro-crate-metadata.json"

@@ -17,7 +17,7 @@ let types = ResizeArray [
 
 let subId = "administrative-core"
 
-let id = $"{Profile.profilesRoot}/{subId}"
+let id = Profile.permalink subId
 
 let name = "Administrative Core Profile"
 
@@ -62,7 +62,7 @@ let guidances = ResizeArray[
 let examples = ResizeArray[
     TextualResource(
         name = "Administrative Core RO-Crate Example",
-        filePath = $"{Profile.examplesRoot}/{subId}/ro-crate-metadata.json",
+        filePath = Profile.exampleUrl subId,
         encodingFormat = "application/json",
         rootDataEntityId = id
     )

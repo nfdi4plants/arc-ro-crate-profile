@@ -50,7 +50,7 @@
       "name": "Semantic Core RO-Crate Profile description",
       "encodingFormat": "text/markdown",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic-core"
+        "@id": "https://w3id.org/arc/ro-crate/semantic-core/0.1"
       }
     },
     {
@@ -75,16 +75,16 @@
       "name": "ARC RO-Crate Annotation Modelling guidance",
       "encodingFormat": "text/html",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic-core"
+        "@id": "https://w3id.org/arc/ro-crate/semantic-core/0.1"
       }
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/semantic-core/ro-crate-metadata.json",
+      "@id": "https://nfdi4plants.github.io/arc-ro-crate-profile/examples/semantic-core/ro-crate-metadata.json",
       "@type": "File",
       "name": "Semantic Core RO-Crate Example",
       "encodingFormat": "application/json",
       "about": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/profiles/0.1/semantic-core"
+        "@id": "https://w3id.org/arc/ro-crate/semantic-core/0.1"
       }
     },
     {
@@ -114,7 +114,7 @@
         "@id": "http://www.w3.org/ns/dx/prof/role/example"
       },
       "hasArtifact": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/semantic-core/ro-crate-metadata.json"
+        "@id": "https://nfdi4plants.github.io/arc-ro-crate-profile/examples/semantic-core/ro-crate-metadata.json"
       }
     },
     {
@@ -178,7 +178,7 @@
           "@id": "https://arc-rdm.org/details/documentation-principle/"
         },
         {
-          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/semantic-core/ro-crate-metadata.json"
+          "@id": "https://nfdi4plants.github.io/arc-ro-crate-profile/examples/semantic-core/ro-crate-metadata.json"
         }
       ],
       "hasResource": [
@@ -192,11 +192,13 @@
           "@id": "#hasExample"
         }
       ],
-      "datePublished": "2026-08-07T09:37:45.0479819Z",
+      "datePublished": "2026-11-15T16:05:19.5082493Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },
-      "isProfileOf": "https://w3id.org/ro/crate/1.2"
+      "isProfileOf": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      }
     },
     {
       "@id": "ro-crate-metadata.json",
@@ -207,7 +209,9 @@
       "license": {
         "@id": "https://mit-license.org/"
       },
-      "conformsTo": "https://w3id.org/ro/crate/1.2"
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      }
     }
   ]
 }

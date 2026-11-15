@@ -114,7 +114,7 @@
       }
     },
     {
-      "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/datamap/ro-crate-metadata.json",
+      "@id": "https://nfdi4plants.github.io/arc-ro-crate-profile/examples/datamap/ro-crate-metadata.json",
       "@type": "File",
       "name": "Datamap RO-Crate Example",
       "encodingFormat": "application/json",
@@ -149,7 +149,7 @@
         "@id": "http://www.w3.org/ns/dx/prof/role/example"
       },
       "hasArtifact": {
-        "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/datamap/ro-crate-metadata.json"
+        "@id": "https://nfdi4plants.github.io/arc-ro-crate-profile/examples/datamap/ro-crate-metadata.json"
       }
     },
     {
@@ -222,7 +222,7 @@
           "@id": "https://arc-rdm.org/details/documentation-principle/"
         },
         {
-          "@id": "https://github.com/nfdi4plants/arc-ro-crate-profile/tree/examples/datamap/ro-crate-metadata.json"
+          "@id": "https://nfdi4plants.github.io/arc-ro-crate-profile/examples/datamap/ro-crate-metadata.json"
         }
       ],
       "hasResource": [
@@ -236,11 +236,13 @@
           "@id": "#hasExample"
         }
       ],
-      "datePublished": "2026-08-05T12:07:34.9772166Z",
+      "datePublished": "2026-11-15T16:05:24.0927167Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },
-      "isProfileOf": "https://w3id.org/ro/crate/1.2"
+      "isProfileOf": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      }
     },
     {
       "@id": "ro-crate-metadata.json",
@@ -251,7 +253,9 @@
       "license": {
         "@id": "https://mit-license.org/"
       },
-      "conformsTo": "https://w3id.org/ro/crate/1.2"
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      }
     }
   ]
 }
