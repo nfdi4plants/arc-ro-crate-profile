@@ -33,8 +33,7 @@ This profile uses terminology from the [RO-Crate 1.2 specification](https://w3id
 
 ## Overview
 
-The aim of the profile is to be able to fully represent [ISA-JSON](https://isa-specs.readthedocs.io/en/latest/isajson.html) as RO-Crate, fully capturing the metadata and files in a non-lossy form such that it
-should be possible to convert between one to the other, in either direction, without loss of information.
+The aim of the profile is to capture the provenance of experimental and computational processes in a structured way, focusing on the separation between the planned protocol and its execution, the process. With each process stating its input and output, the profile allows to build a process graph that can be used to trace back the origin of data files and samples.
 
 The profile relies on types from [Bioschemas](https://bioschemas.org/) types:
   
