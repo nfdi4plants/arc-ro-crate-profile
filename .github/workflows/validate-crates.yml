@@ -20,9 +20,30 @@ env:
   ROCRATE_VALIDATOR_VERSION: "0.13.1"
 
 jobs:
-  validate:
-    name: rocrate-validator
+  # Lists the example crates and the profile crates; each gets a validation job of its own.
+  find-crates:
+    name: Find crates
     runs-on: ubuntu-latest
+    outputs:
+      crates: ${{ steps.list.outputs.crates }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: List crates
+        id: list
+        run: |
+          crates="$(python3 scripts/validate_crates.py --list)"
+          echo "crates=$crates" >> "$GITHUB_OUTPUT"
+
+  validate:
+    name: ${{ matrix.crate.name }}
+    needs: find-crates
+    runs-on: ubuntu-latest
+    strategy:
+      # Report on every crate, not only on the first one that fails.
+      fail-fast: false
+      matrix:
+        crate: ${{ fromJson(needs.find-crates.outputs.crates) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -32,6 +53,7 @@ jobs:
           python-version: "3.12"
       - name: Install rocrate-validator
         run: python -m pip install "roc-validator==${ROCRATE_VALIDATOR_VERSION}"
-      # Checks the example crates and the profile crates with --extra-checks.
-      - name: Validate crates
-        run: python scripts/validate_crates.py
+      - name: Validate crate with --extra-checks
+        env:
+          CRATE: ${{ matrix.crate.path }}
+        run: python scripts/validate_crates.py "$CRATE"

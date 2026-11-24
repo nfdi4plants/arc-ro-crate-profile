@@ -1,7 +1,9 @@
-"""Validate every RO-Crate under docs/ with rocrate-validator and --extra-checks.
+"""Validate the RO-Crates under docs/ with rocrate-validator and --extra-checks.
 
     pip install roc-validator==0.13.1     # as pinned in .github/workflows/validate-crates.yml
-    python scripts/validate_crates.py
+    python scripts/validate_crates.py                       # all crates
+    python scripts/validate_crates.py docs/examples/wr      # only the given crates
+    python scripts/validate_crates.py --list                # the crates, as the job matrix of the workflow
 
 A crate is a directory holding `ro-crate-metadata.json` (examples and profile
 crates alike), or any other JSON file that carries its own metadata descriptor,
@@ -14,6 +16,7 @@ reported as warnings: the validator defines them as not affecting conformance.
 
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import shutil
@@ -77,6 +80,25 @@ def find_crates() -> list[Path]:
             if name == METADATA or (name.endswith(".json") and has_metadata_descriptor(path)):
                 crates.append(path)
     return crates
+
+
+def metadata_file(crate: Path) -> Path:
+    """The metadata file of a crate given as that file or as its directory."""
+    crate = crate.resolve()
+    if crate.is_dir():
+        crate = crate / METADATA
+    if not crate.is_file():
+        sys.exit(f"No crate metadata at {crate}")
+    return crate
+
+
+def job_matrix(crates: list[Path]) -> list[dict[str, str]]:
+    """One entry per crate: the path to validate and a short name for its job."""
+    matrix = []
+    for metadata in crates:
+        named_by = metadata.parent if metadata.name == METADATA else metadata
+        matrix.append({"name": named_by.relative_to(DOCS).as_posix(), "path": metadata.relative_to(REPO).as_posix()})
+    return matrix
 
 
 def describe(finding: dict, check_id: str, with_property: bool = False) -> str:
@@ -150,46 +172,40 @@ def print_result(result: Result) -> None:
         annotate("warning", result, "\n".join(["Extra-check findings:", *result.extra_findings]))
 
 
-def write_summary(results: list[Result], version: str) -> None:
-    """Render the results on the workflow run page."""
+def write_summary(result: Result) -> None:
+    """Show the findings of a crate on the workflow run page."""
     summary_file = os.environ.get("GITHUB_STEP_SUMMARY")
-    if not summary_file:
+    if not summary_file or (result.passed and not result.extra_findings):
         return
 
-    lines = [
-        "## RO-Crate validation",
-        "",
-        f"{version}, run with `--extra-checks`.",
-        "",
-        "| Crate | Result | Issues | Extra-check findings |",
-        "| --- | --- | --- | --- |",
-    ]
-    for result in results:
-        status = "✅ valid" if result.passed else "❌ invalid"
-        lines.append(f"| `{result.crate}` | {status} | {len(result.issues)} | {len(result.extra_findings)} |")
-
-    for result in results:
-        if result.passed and not result.extra_findings:
-            continue
-        lines += ["", f"### `{result.crate}`", ""]
-        lines += [f"- ❌ {issue}" for issue in result.issues]
-        lines += [f"- ⚠️ extra check: {finding}" for finding in result.extra_findings]
-        if result.error:
-            lines += ["", "```", result.error, "```"]
+    lines = [f"### {'✅' if result.passed else '❌'} `{result.crate}`", ""]
+    lines += [f"- ❌ {issue}" for issue in result.issues]
+    lines += [f"- ⚠️ extra check: {finding}" for finding in result.extra_findings]
+    if result.error:
+        lines += ["", "```", result.error, "```"]
 
     with open(summary_file, "a", encoding="utf-8") as summary:
-        summary.write("\n".join(lines) + "\n")
+        summary.write("\n".join(lines) + "\n\n")
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Validate the RO-Crates under docs/ with rocrate-validator and --extra-checks.")
+    parser.add_argument("crates", nargs="*", type=Path, metavar="CRATE", help="metadata file or directory of a crate (default: all crates under docs/)")
+    parser.add_argument("--list", action="store_true", help="print the crates as a JSON job matrix instead of validating them")
+    arguments = parser.parse_args()
+
+    crates = [metadata_file(crate) for crate in arguments.crates] or find_crates()
+    if not crates:
+        sys.exit(f"No crates found under {DOCS}")
+    if arguments.list:
+        print(json.dumps(job_matrix(crates)))
+        return 0
+
     # Validator messages quote crate content; never let an unencodable character abort the run.
     sys.stdout.reconfigure(errors="replace")
 
     validator = find_validator()
     version = subprocess.run([validator, "--version"], capture_output=True, text=True).stdout.strip()
-    crates = find_crates()
-    if not crates:
-        sys.exit(f"No crates found under {DOCS}")
     print(f"{version}: validating {len(crates)} crate(s) with --extra-checks\n", flush=True)
 
     results = []
@@ -198,9 +214,8 @@ def main() -> int:
             result = validate(validator, metadata, Path(workdir))
         print_result(result)
         sys.stdout.flush()
+        write_summary(result)
         results.append(result)
-
-    write_summary(results, version)
 
     failed = [result for result in results if not result.passed]
     findings = sum(len(result.extra_findings) for result in results)
