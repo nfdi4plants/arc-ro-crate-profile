@@ -83,7 +83,8 @@ module Profile =
     /// Namespace of the persistent identifiers (permalinks) of the profile collection, registered at https://w3id.org.
     ///
     /// `<permalinkRoot>/<profile>/<version>` redirects to the published profile description and, if
-    /// `application/ld+json` is requested, to the profile crate (`ro-crate-metadata.jsonld`) next to it.
+    /// `application/ld+json` is requested, to `ro-crate-metadata.jsonld` next to it, a symbolic link
+    /// to the profile crate (`ro-crate-metadata.json`).
     let permalinkRoot = "https://w3id.org/arc/ro-crate"
 
     /// Web location the `docs/` folder of this repository is published to (GitHub Pages).
