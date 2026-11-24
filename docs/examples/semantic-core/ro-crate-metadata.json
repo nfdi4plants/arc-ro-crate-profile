@@ -9,6 +9,8 @@
     {
       "@id": "./",
       "@type": "Dataset",
+      "datePublished": "2026-11-25T00:08:59.6968901",
+      "description": "An example of a ROCrate with semantic annotations, attaching a designation to a sample and an interpretation to a data file.",
       "name": "Semantic Core Example",
       "mentions": [
         {
@@ -18,6 +20,12 @@
           "@id": "#semanticDescriptor2"
         }
       ],
+      "hasPart": {
+        "@id": "measurements.csv"
+      },
+      "license": {
+        "@id": "LICENSE"
+      },
       "conformsTo": {
         "@id": "https://w3id.org/arc/ro-crate/semantic-core/0.1"
       }
@@ -108,6 +116,11 @@
       ],
       "name": "Semantic Core Profile",
       "version": "0.1"
+    },
+    {
+      "@id": "LICENSE",
+      "@type": "CreativeWork",
+      "text": "ALL RIGHTS RESERVED BY THE AUTHORS"
     },
     {
       "@id": "ro-crate-metadata.json",

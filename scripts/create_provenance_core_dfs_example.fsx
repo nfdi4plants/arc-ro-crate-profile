@@ -40,7 +40,8 @@ let dataProcessing2 = LDLabProcess.create(
 let dataset = LDDataset.create(
     id = "./",
     hasParts = ResizeArray [rawData1; rawData2; processedDataColumn1; processedDataColumn2],
-    abouts = ResizeArray [dataProcessing1; dataProcessing2]
+    abouts = ResizeArray [dataProcessing1; dataProcessing2],
+    datePublished = System.DateTime.Now
 )
 
 // Declare conformance to the profile on the root data entity, as RO-Crate 1.2 recommends,

@@ -142,6 +142,7 @@
       "@type": "Dataset",
       "description": "An example of a ROCrate with a datamap, including annotation of a tabular data file.",
       "name": "ARC Datamap Crate Example",
+      "datePublished": "2026-11-25T00:08:52.9459491",
       "hasPart": {
         "@id": "processed_data.csv"
       },
@@ -159,7 +160,7 @@
       "conformsTo": {
         "@id": "https://w3id.org/arc/ro-crate/datamap/0.1"
       },
-      "dateCreated": "2026-11-14T18:50:58.8895251",
+      "dateCreated": "2026-11-25T00:08:52.9504303",
       "license": {
         "@id": "LICENSE"
       }

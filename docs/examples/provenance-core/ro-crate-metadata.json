@@ -98,6 +98,7 @@
       "@type": "Dataset",
       "description": "An example of a ROCrate with a core process model, including preparation and measurement processes.",
       "name": "Experimental ARC Provenance Core Example",
+      "datePublished": "2026-11-25T00:08:55.1879355",
       "hasPart": {
         "@id": "datafile.wiff"
       },
@@ -112,7 +113,7 @@
       "conformsTo": {
         "@id": "https://w3id.org/arc/ro-crate/provenance-core/0.1"
       },
-      "dateCreated": "2026-11-14T18:51:00.7803634",
+      "dateCreated": "2026-11-25T00:08:55.1915474",
       "license": {
         "@id": "LICENSE"
       }

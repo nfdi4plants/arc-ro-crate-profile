@@ -92,7 +92,8 @@ file.SetProperty(LDDataset.hasPart, ResizeArray [proteinIdentifierColumn; protei
 let dataset = LDDataset.create(
     id = "./",
     hasParts = ResizeArray [file],
-    variableMeasureds = ResizeArray [proteinIdentifierDescriptor; proteinAbundanceDescriptor1; proteinAbundanceDescriptor2]
+    variableMeasureds = ResizeArray [proteinIdentifierDescriptor; proteinAbundanceDescriptor1; proteinAbundanceDescriptor2],
+    datePublished = System.DateTime.Now
 )
 
 // Declare conformance to the profile on the root data entity, as RO-Crate 1.2 recommends,

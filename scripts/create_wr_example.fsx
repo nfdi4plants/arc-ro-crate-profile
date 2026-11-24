@@ -40,6 +40,12 @@ let fsharp = LDComputerLanguage.create(
 
 let cwl = LDComputerLanguage.createCWL()
 
+// RO-Crate 1.2 requires a version on every ComputerLanguage.
+// LDComputerLanguage.create has no parameter for it, so it is set on the created nodes.
+
+fsharp.SetProperty("http://schema.org/version", "11.0")
+cwl.SetProperty("http://schema.org/version", "v1.2")
+
 // Encoding formats of the parameters, taken from EDAM
 
 let csv = LDDefinedTerm.create(
@@ -151,7 +157,8 @@ arcRun.SetProperty(LDDataset.mentions, ResizeArray [workflowInvocation])
 
 let dataset = LDDataset.create(
     id = "./",
-    hasParts = ResizeArray [arcWorkflow; arcRun; intensityTableValue]
+    hasParts = ResizeArray [arcWorkflow; arcRun; intensityTableValue],
+    datePublished = System.DateTime.Now
 )
 
 // Declare which profile, and which section of it, each entity follows.

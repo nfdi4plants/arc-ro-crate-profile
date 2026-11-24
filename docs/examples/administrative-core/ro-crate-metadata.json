@@ -135,13 +135,14 @@
           "@id": "http://orcid.org/0000-0003-3925-6778"
         }
       ],
+      "datePublished": "2026-11-25T00:08:50.6668888",
       "citation": {
         "@id": "https://www.doi.org/the-identifier/resources/handbook/"
       },
       "conformsTo": {
         "@id": "https://w3id.org/arc/ro-crate/administrative-core/0.1"
       },
-      "dateCreated": "2026-11-24T21:27:42.4399101",
+      "dateCreated": "2026-11-25T00:08:50.6707545",
       "license": {
         "@id": "LICENSE"
       }

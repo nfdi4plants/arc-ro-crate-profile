@@ -65,8 +65,18 @@ let measurementsDescriptor = LDNode(
 measurementsDescriptor.SetProperty("about", LDRef(measurements.Id))
 measurementsDescriptor.SetProperty("itemListElement", ResizeArray [LDRef(temperatureInterpretation.Id)])
 
-let dataset = LDDataset.create(id = "./", name = "Semantic Core Example")
+let dataset = LDDataset.create(
+    id = "./",
+    name = "Semantic Core Example",
+    description = "An example of a ROCrate with semantic annotations, attaching a designation to a sample and an interpretation to a data file.",
+    datePublished = System.DateTime.Now
+)
 dataset.SetProperty("mentions", ResizeArray [LDRef(sampleDescriptor.Id); LDRef(measurementsDescriptor.Id)])
+dataset.SetProperty("hasPart", LDRef(measurements.Id))
+
+// The same license ARCtrl assigns to the other example crates.
+let license = ARC.ROCrate.createLicenseNode(Some (ARCtrl.License.GetDefaultLicense()))
+dataset.SetProperty("license", LDRef(license.Id))
 
 // Declare conformance to the profile on the root data entity, as RO-Crate 1.2 recommends,
 // and describe the profile as a contextual entity of type Profile.
@@ -94,7 +104,7 @@ let graph = LDGraph(
     context = context,
     nodes = ResizeArray [
         dataset; sample; sampleDescriptor; measurementsDescriptor; mass
-        controlGroupDesignation; measurements; temperatureInterpretation; profile; metadata
+        controlGroupDesignation; measurements; temperatureInterpretation; profile; license; metadata
     ]
 )
 

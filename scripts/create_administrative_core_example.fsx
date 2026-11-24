@@ -78,7 +78,8 @@ timo.SetProperty("http://schema.org/name", "Timo Mühlhaus")
 let dataset = LDDataset.create(
     id = "./",
     creators = ResizeArray [lukas; kevin; timo],
-    citations = ResizeArray [publication]
+    citations = ResizeArray [publication],
+    datePublished = System.DateTime.Now
 )
 
 // Declare conformance to the profile on the root data entity, as RO-Crate 1.2 recommends,
