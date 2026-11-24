@@ -68,6 +68,12 @@ let timo = LDPerson.create(
     address = "Erwin-Schrödinger-Str. 56, 67663 Kaiserslautern, Germany"
 )
 
+// The profile recommends the full name of a person next to givenName and familyName.
+// LDPerson.create has no parameter for it, so it is set on the created nodes.
+
+lukas.SetProperty("http://schema.org/name", "Heinrich Lukas Weil")
+kevin.SetProperty("http://schema.org/name", "Kevin Schneider")
+timo.SetProperty("http://schema.org/name", "Timo Mühlhaus")
 
 let dataset = LDDataset.create(
     id = "./",

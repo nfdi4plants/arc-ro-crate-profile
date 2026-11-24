@@ -18,6 +18,12 @@ let caroline = LDPerson.create(
     orcid = "https://orcid.org/0000-0003-1512-9504"
 )
 
+// The Administrative Core profile recommends the full name of a person next to givenName and familyName.
+// LDPerson.create has no parameter for it, so it is set on the created nodes.
+
+timo.SetProperty("http://schema.org/name", "Timo Mühlhaus")
+caroline.SetProperty("http://schema.org/name", "Caroline Ott")
+
 let dataHub = LDOrganization.create(
     name = "DataPLANT DataHub",
     id = "https://git.nfdi4plants.org/explore"

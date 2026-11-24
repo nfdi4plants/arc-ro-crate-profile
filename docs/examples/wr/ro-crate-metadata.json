@@ -19,7 +19,8 @@
       "@id": "http://orcid.org/0000-0003-3925-6778",
       "@type": "Person",
       "givenName": "Timo",
-      "familyName": "Mühlhaus"
+      "familyName": "Mühlhaus",
+      "name": "Timo Mühlhaus"
     },
     {
       "@id": "http://edamontology.org/format_3752",
@@ -148,7 +149,8 @@
       "@id": "http://orcid.org/0000-0003-1512-9504",
       "@type": "Person",
       "givenName": "Caroline",
-      "familyName": "Ott"
+      "familyName": "Ott",
+      "name": "Caroline Ott"
     },
     {
       "@id": "runs/fsResult1/summed_intensities.csv",
@@ -265,7 +267,7 @@
       "conformsTo": {
         "@id": "https://w3id.org/arc/ro-crate/wr/0.1"
       },
-      "dateCreated": "2026-11-14T18:51:06.6807697",
+      "dateCreated": "2026-11-24T21:27:45.7467343",
       "license": {
         "@id": "LICENSE"
       }

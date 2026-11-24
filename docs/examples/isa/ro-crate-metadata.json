@@ -70,7 +70,8 @@
       "familyName": "Brilhaus",
       "affiliation": {
         "@id": "#org-hhu"
-      }
+      },
+      "name": "Dominik Brilhaus"
     },
     {
       "@id": "#org-hhu",

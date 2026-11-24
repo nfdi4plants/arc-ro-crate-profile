@@ -408,7 +408,8 @@ The crate below is an additional illustration, describing a Galaxy workflow and 
       "jobTitle": {
         "@id": "https://credit.niso.org/contributor-roles/formal-analysis/"
       },
-      "address": "Georges-Köhler-Allee 106, 79110 Freiburg"
+      "address": "Georges-Köhler-Allee 106, 79110 Freiburg",
+      "name": "Björn Grüning"
     },
     {
       "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy",
@@ -491,7 +492,8 @@ The crate below is an additional illustration, describing a Galaxy workflow and 
       "email": "caroline.ott@rptu.de",
       "familyName": "Ott",
       "additionalName": "J. V.",
-      "address": "Erwin-Schrödinger-Straße 56, Kaiserslautern, DE"
+      "address": "Erwin-Schrödinger-Straße 56, Kaiserslautern, DE",
+      "name": "Caroline Ott"
     },
     {
       "@id": "studies/Yeast/resources/Yeast.fasta",

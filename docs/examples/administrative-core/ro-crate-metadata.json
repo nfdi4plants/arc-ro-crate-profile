@@ -37,7 +37,8 @@
       "familyName": "Weil",
       "jobTitle": {
         "@id": "http://purl.obolibrary.org/obo/T4FS_0000132"
-      }
+      },
+      "name": "Heinrich Lukas Weil"
     },
     {
       "@id": "http://purl.obolibrary.org/obo/T4FS_0000352",
@@ -55,7 +56,8 @@
       "familyName": "Schneider",
       "jobTitle": {
         "@id": "http://purl.obolibrary.org/obo/T4FS_0000352"
-      }
+      },
+      "name": "Kevin Schneider"
     },
     {
       "@id": "https://credit.niso.org/contributor-roles/supervision",
@@ -75,7 +77,8 @@
       "jobTitle": {
         "@id": "https://credit.niso.org/contributor-roles/supervision"
       },
-      "address": "Erwin-Schrödinger-Str. 56, 67663 Kaiserslautern, Germany"
+      "address": "Erwin-Schrödinger-Str. 56, 67663 Kaiserslautern, Germany",
+      "name": "Timo Mühlhaus"
     },
     {
       "@id": "https://www.doi.org/10.1000/182",
@@ -138,7 +141,7 @@
       "conformsTo": {
         "@id": "https://w3id.org/arc/ro-crate/administrative-core/0.1"
       },
-      "dateCreated": "2026-11-14T18:50:57.0433153",
+      "dateCreated": "2026-11-24T21:27:42.4399101",
       "license": {
         "@id": "LICENSE"
       }

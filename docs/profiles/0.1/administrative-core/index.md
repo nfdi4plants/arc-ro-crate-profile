@@ -103,7 +103,8 @@ article --identifier--> prop
       "familyName": "Weil",
       "jobTitle": {
         "@id": "http://purl.obolibrary.org/obo/T4FS_0000132"
-      }
+      },
+      "name": "Heinrich Lukas Weil"
     },
     {
       "@id": "http://purl.obolibrary.org/obo/T4FS_0000352",
@@ -121,7 +122,8 @@ article --identifier--> prop
       "familyName": "Schneider",
       "jobTitle": {
         "@id": "http://purl.obolibrary.org/obo/T4FS_0000352"
-      }
+      },
+      "name": "Kevin Schneider"
     },
     {
       "@id": "https://credit.niso.org/contributor-roles/supervision",
@@ -141,7 +143,8 @@ article --identifier--> prop
       "jobTitle": {
         "@id": "https://credit.niso.org/contributor-roles/supervision"
       },
-      "address": "Erwin-Schrödinger-Str. 56, 67663 Kaiserslautern, Germany"
+      "address": "Erwin-Schrödinger-Str. 56, 67663 Kaiserslautern, Germany",
+      "name": "Timo Mühlhaus"
     },
     {
       "@id": "https://www.doi.org/10.1000/182",
@@ -169,6 +172,15 @@ article --identifier--> prop
       }
     },
     {
+      "@id": "https://w3id.org/arc/ro-crate/administrative-core/0.1",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "name": "Administrative Core Profile",
+      "version": "0.1"
+    },
+    {
       "@id": "LICENSE",
       "@type": "CreativeWork",
       "text": "ALL RIGHTS RESERVED BY THE AUTHORS"
@@ -192,7 +204,10 @@ article --identifier--> prop
       "citation": {
         "@id": "https://www.doi.org/the-identifier/resources/handbook/"
       },
-      "dateCreated": "2026-06-26T12:35:46.9265674",
+      "conformsTo": {
+        "@id": "https://w3id.org/arc/ro-crate/administrative-core/0.1"
+      },
+      "dateCreated": "2026-11-24T21:27:42.4399101",
       "license": {
         "@id": "LICENSE"
       }
@@ -246,6 +261,7 @@ Person associated with the dataset.
 |familyName|SHOULD|[Text](https://schema.org/Text)|Family name of a person.|
 |identifier|SHOULD|[Text](https://schema.org/Text) or [URL](https://schema.org/URL) or [schema.org/PropertyValue](#propertyvalue)|One or many identifiers for this person, e.g. an ORCID. Can be of type PropertyValue to indicate the kind of reference.|
 |jobTitle|SHOULD|[schema.org/DefinedTerm](#definedterm)||
+|name|SHOULD|[Text](https://schema.org/Text)|Full name of a person, e.g. given name followed by family name.|
 |additionalName|COULD|[Text](https://schema.org/Text)||
 |address|COULD|[schema.org/PostalAddress](https://schema.org/PostalAddress) or Text||
 |telephone|COULD|[Text](https://schema.org/Text)||
@@ -323,6 +339,7 @@ If possible, the profile recommends to use [ORCID](https://orcid.org/) identifie
   "@type": "Person",
   "givenName": "Heinrich Lukas",
   "familyName": "Weil",
+  "name": "Heinrich Lukas Weil"
 }
 
 ```
