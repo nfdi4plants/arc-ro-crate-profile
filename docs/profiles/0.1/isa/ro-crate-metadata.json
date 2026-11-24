@@ -152,6 +152,15 @@
       }
     },
     {
+      "@id": "https://nfdi4plants.github.io/arc-ro-crate-profile/examples/isa/ro-crate-metadata.json",
+      "@type": "File",
+      "name": "ISA RO-Crate Example",
+      "encodingFormat": "application/json",
+      "about": {
+        "@id": "https://w3id.org/arc/ro-crate/isa/0.1"
+      }
+    },
+    {
       "@id": "#hasSpecification",
       "@type": "ResourceDescriptor",
       "hasRole": {
@@ -169,6 +178,16 @@
       },
       "hasArtifact": {
         "@id": "https://arc-rdm.org/details/documentation-principle/"
+      }
+    },
+    {
+      "@id": "#hasExample",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/example"
+      },
+      "hasArtifact": {
+        "@id": "https://nfdi4plants.github.io/arc-ro-crate-profile/examples/isa/ro-crate-metadata.json"
       }
     },
     {
@@ -264,6 +283,9 @@
         },
         {
           "@id": "https://arc-rdm.org/details/documentation-principle/"
+        },
+        {
+          "@id": "https://nfdi4plants.github.io/arc-ro-crate-profile/examples/isa/ro-crate-metadata.json"
         }
       ],
       "hasResource": [
@@ -272,9 +294,12 @@
         },
         {
           "@id": "#hasGuidance"
+        },
+        {
+          "@id": "#hasExample"
         }
       ],
-      "datePublished": "2026-11-15T16:05:26.3409292Z",
+      "datePublished": "2026-11-24T23:54:32.9600166Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },

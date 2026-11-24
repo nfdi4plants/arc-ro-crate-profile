@@ -68,19 +68,19 @@ let guidances = ResizeArray[
     )
 ]
 
-// let examples = ResizeArray[
-//     TextualResource(
-//         name = "ISA RO-Crate Example",
-//         filePath = Profile.exampleUrl subId,
-//         encodingFormat = "application/json",
-//         rootDataEntityId = id
-//     )
-// ]
+let examples = ResizeArray[
+    TextualResource(
+        name = "ISA RO-Crate Example",
+        filePath = Profile.exampleUrl subId,
+        encodingFormat = "application/json",
+        rootDataEntityId = id
+    )
+]
 
 let resourceDescriptors = ResizeArray [
     Specification(specifications) :> ResourceDescriptor
     Guidance(guidances) :> ResourceDescriptor
-    // Example(examples) :> ResourceDescriptor
+    Example(examples) :> ResourceDescriptor
 ]
 
 let rootEntity = 
