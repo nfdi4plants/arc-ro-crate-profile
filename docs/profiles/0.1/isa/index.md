@@ -13,6 +13,13 @@ title: ISA RO-Crate Profile
   * Sebastian Beier - https://orcid.org/0000-0002-2177-8781
   * Stuart Owen - https://orcid.org/0000-0003-2130-0865
   * Timo Muehlhaus - https://orcid.org/0000-0003-3925-6778
+* License: [MIT License](https://mit-license.org/)
+* Example conforming crate: [ro-crate-metadata.json](https://nfdi4plants.github.io/arc-ro-crate-profile/examples/isa/ro-crate-metadata.json)
+* Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json)
+* Extends:
+  * [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
+* JSON-LD context: <https://www.researchobject.org/ro-terms/arc/context.jsonld>
+* Vocabulary terms: <https://w3id.org/ro/terms/arc#>
 * **Table of contents**
   * [Overview](#overview)
   * [Requirements](#requirements)
