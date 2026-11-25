@@ -161,6 +161,24 @@
       }
     },
     {
+      "@id": "https://w3id.org/arc/ro-crate/administrative-core/0.1",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "name": "Administrative Core Profile",
+      "version": "0.1"
+    },
+    {
+      "@id": "https://w3id.org/arc/ro-crate/provenance-core/0.1",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "name": "Provenance Core Profile",
+      "version": "0.1"
+    },
+    {
       "@id": "#hasSpecification",
       "@type": "ResourceDescriptor",
       "hasRole": {
@@ -188,6 +206,26 @@
       },
       "hasArtifact": {
         "@id": "https://nfdi4plants.github.io/arc-ro-crate-profile/examples/isa/ro-crate-metadata.json"
+      }
+    },
+    {
+      "@id": "#shouldConformTo_https://w3id.org/arc/ro-crate/administrative-core/0.1",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://purl.org/dc/terms/conformsTo"
+      },
+      "hasArtifact": {
+        "@id": "https://w3id.org/arc/ro-crate/administrative-core/0.1"
+      }
+    },
+    {
+      "@id": "#shouldConformTo_https://w3id.org/arc/ro-crate/provenance-core/0.1",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://purl.org/dc/terms/conformsTo"
+      },
+      "hasArtifact": {
+        "@id": "https://w3id.org/arc/ro-crate/provenance-core/0.1"
       }
     },
     {
@@ -286,6 +324,12 @@
         },
         {
           "@id": "https://nfdi4plants.github.io/arc-ro-crate-profile/examples/isa/ro-crate-metadata.json"
+        },
+        {
+          "@id": "https://w3id.org/arc/ro-crate/administrative-core/0.1"
+        },
+        {
+          "@id": "https://w3id.org/arc/ro-crate/provenance-core/0.1"
         }
       ],
       "hasResource": [
@@ -297,9 +341,15 @@
         },
         {
           "@id": "#hasExample"
+        },
+        {
+          "@id": "#shouldConformTo_https://w3id.org/arc/ro-crate/administrative-core/0.1"
+        },
+        {
+          "@id": "#shouldConformTo_https://w3id.org/arc/ro-crate/provenance-core/0.1"
         }
       ],
-      "datePublished": "2026-11-24T23:54:32.9600166Z",
+      "datePublished": "2026-11-25T20:43:12.0892209Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },

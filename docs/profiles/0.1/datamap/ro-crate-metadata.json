@@ -133,6 +133,15 @@
       }
     },
     {
+      "@id": "https://w3id.org/arc/ro-crate/semantic-core/0.1",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "name": "Semantic Core Profile",
+      "version": "0.1"
+    },
+    {
       "@id": "#hasSpecification",
       "@type": "ResourceDescriptor",
       "hasRole": {
@@ -160,6 +169,16 @@
       },
       "hasArtifact": {
         "@id": "https://nfdi4plants.github.io/arc-ro-crate-profile/examples/datamap/ro-crate-metadata.json"
+      }
+    },
+    {
+      "@id": "#shouldConformTo_https://w3id.org/arc/ro-crate/semantic-core/0.1",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://purl.org/dc/terms/conformsTo"
+      },
+      "hasArtifact": {
+        "@id": "https://w3id.org/arc/ro-crate/semantic-core/0.1"
       }
     },
     {
@@ -239,6 +258,9 @@
         },
         {
           "@id": "https://nfdi4plants.github.io/arc-ro-crate-profile/examples/datamap/ro-crate-metadata.json"
+        },
+        {
+          "@id": "https://w3id.org/arc/ro-crate/semantic-core/0.1"
         }
       ],
       "hasResource": [
@@ -250,9 +272,12 @@
         },
         {
           "@id": "#hasExample"
+        },
+        {
+          "@id": "#shouldConformTo_https://w3id.org/arc/ro-crate/semantic-core/0.1"
         }
       ],
-      "datePublished": "2026-11-25T12:43:15.6761292Z",
+      "datePublished": "2026-11-25T20:43:14.4345235Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },

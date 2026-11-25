@@ -81,6 +81,8 @@ let resourceDescriptors = ResizeArray [
     Specification(specifications) :> ResourceDescriptor
     Guidance(guidances) :> ResourceDescriptor
     Example(examples) :> ResourceDescriptor
+    ConformsTo(RelatedProfiles.provenanceCore) :> ResourceDescriptor
+    ConformsTo(RelatedProfiles.workflowRunCrate) :> ResourceDescriptor
 ]
 
 let rootEntity =

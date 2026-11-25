@@ -162,6 +162,24 @@
       }
     },
     {
+      "@id": "https://w3id.org/arc/ro-crate/provenance-core/0.1",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "name": "Provenance Core Profile",
+      "version": "0.1"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.5",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "name": "Workflow Run Crate",
+      "version": "0.5"
+    },
+    {
       "@id": "#hasSpecification",
       "@type": "ResourceDescriptor",
       "hasRole": {
@@ -189,6 +207,26 @@
       },
       "hasArtifact": {
         "@id": "https://nfdi4plants.github.io/arc-ro-crate-profile/examples/wr/ro-crate-metadata.json"
+      }
+    },
+    {
+      "@id": "#shouldConformTo_https://w3id.org/arc/ro-crate/provenance-core/0.1",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://purl.org/dc/terms/conformsTo"
+      },
+      "hasArtifact": {
+        "@id": "https://w3id.org/arc/ro-crate/provenance-core/0.1"
+      }
+    },
+    {
+      "@id": "#shouldConformTo_https://w3id.org/ro/wfrun/workflow/0.5",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://purl.org/dc/terms/conformsTo"
+      },
+      "hasArtifact": {
+        "@id": "https://w3id.org/ro/wfrun/workflow/0.5"
       }
     },
     {
@@ -287,6 +325,12 @@
         },
         {
           "@id": "https://nfdi4plants.github.io/arc-ro-crate-profile/examples/wr/ro-crate-metadata.json"
+        },
+        {
+          "@id": "https://w3id.org/arc/ro-crate/provenance-core/0.1"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/workflow/0.5"
         }
       ],
       "hasResource": [
@@ -298,9 +342,15 @@
         },
         {
           "@id": "#hasExample"
+        },
+        {
+          "@id": "#shouldConformTo_https://w3id.org/arc/ro-crate/provenance-core/0.1"
+        },
+        {
+          "@id": "#shouldConformTo_https://w3id.org/ro/wfrun/workflow/0.5"
         }
       ],
-      "datePublished": "2026-11-15T16:05:28.9764627Z",
+      "datePublished": "2026-11-25T20:43:16.7953905Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },

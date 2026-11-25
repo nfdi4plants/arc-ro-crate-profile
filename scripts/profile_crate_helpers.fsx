@@ -1,4 +1,4 @@
-#r "nuget: ROCratePCC, 0.2.0"
+#r "nuget: ROCratePCC, 0.3.0"
 
 open ARCtrl.ROCrate
 open ARCtrl.Json
@@ -104,3 +104,22 @@ module Profile =
 
     /// Download URL of the example crate published for a profile.
     let exampleUrl (subId : string) = $"{siteRoot}/examples/{subId}/ro-crate-metadata.json"
+
+/// Profiles that other profiles build on. A profile states them with `ConformsTo` in its resource
+/// descriptors: crates of that profile should conform to the stated profiles as well.
+module RelatedProfiles =
+
+    /// A profile of this collection, referenced by its versioned permalink.
+    let private ofCollection (subId : string) (name : string) =
+        RelatedProfile(iri = Profile.permalink subId, name = name, version = Profile.version)
+
+    let administrativeCore = ofCollection "administrative-core" "Administrative Core Profile"
+    let provenanceCore = ofCollection "provenance-core" "Provenance Core Profile"
+    let semanticCore = ofCollection "semantic-core" "Semantic Core Profile"
+
+    /// Workflow Run Crate, https://www.researchobject.org/workflow-run-crate/profiles/workflow_run_crate
+    let workflowRunCrate = RelatedProfile(
+        iri = "https://w3id.org/ro/wfrun/workflow/0.5",
+        name = "Workflow Run Crate",
+        version = "0.5"
+    )

@@ -72,6 +72,7 @@ let resourceDescriptors = ResizeArray [
     Specification(specifications) :> ResourceDescriptor
     Guidance(guidances) :> ResourceDescriptor
     Example(examples) :> ResourceDescriptor
+    ConformsTo(RelatedProfiles.semanticCore) :> ResourceDescriptor
 ]
 
 let rootEntity = 
