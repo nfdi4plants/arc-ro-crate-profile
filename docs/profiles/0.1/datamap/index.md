@@ -24,14 +24,14 @@ title: ARC Datamap Crate
     * [Data File](#data-file)
     * [Data Fragment](#data-fragment)
     * [Fragment Descriptor](#fragment-descriptor)
-    * [Descriptor Assertion](#descriptor-assertion)
+    * [Descriptor Item](#descriptor-item)
 
 
 ## Overview
 
 This profile is an instantiation of the [Semantic Core](../semantic-core/index.md) profile, intended to represent the ARC datamap in the RO-Crate.
 The datamap contains contextual information for fragments within data files.
-Hence, these contextual information is represented as [interpretations](../semantic-core/index.md#semantic-descriptor) for the corresponding data entities.
+Hence, these contextual information is represented as [interpretations](../semantic-core/index.md#descriptor-item) for the corresponding data entities.
 
 To model data *fragments*, this profile extends the existing hierarchy at the bottom using the same mechanisms as in the normal RO-Crate data model:
 Data files are already referenced in their respective datasets through `hasPart`.
@@ -50,7 +50,7 @@ See our peer-reviewed publication for more information on the datamap and its us
 
 We use `MediaObject` for data fragments and annotate them through descriptor objects for external metadata as described in the [Semantic Core Profile](../semantic-core/index.md). Both objects reference each other. The `Dataset` object lists all datamap entries. Specifically, we plan the following:
 - Each data fragment becomes an object of type `MediaObject` with the `additionalType` `DataFragment`, referenced from its file object through `hasPart`.
-- Each entry of the datamap becomes a semantic descriptor of type `ItemList` and `Statement` with the `additionalType` `DataContext`, which references an assertion in the form of a `PropertyValue` object through `itemListElement`.
+- Each entry of the datamap becomes a semantic descriptor of type `ItemList` and `Statement` with the `additionalType` `DataContext`, which references a descriptor item in the form of a `PropertyValue` object through `itemListElement`.
 - Each of these descriptors becomes one entry in `mentions` of the `Dataset`, which is marked as the datamap through the `additionalType` `Datamap`.
 - The data fragments and their descriptors reference each other: the descriptor points to its fragment through `about`, the fragment points back through `subjectOf`.
 
@@ -350,17 +350,17 @@ Adds further annotation to a Data file or a *Fragment* thereof.
 |@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)||
 |additionalType|MUST|[Text](https://schema.org/Text)|Must be `"DataContext"`, marking the descriptor as an entry of the datamap.|
 |about|MUST|[schema.org/MediaObject](https://schema.org/MediaObject)|The described data fragement using a [fragment selector](https://www.w3.org/TR/annotation-model/#selectors), following the [data fragment profile](#data-fragment).|
-|itemListElement|MUST|[schema.org/PropertyValue](https://schema.org/PropertyValue)| The assertion described in the datamap entry. It must follow the [descriptor assertion profile](#descriptor-assertion). |
+|itemListElement|MUST|[schema.org/PropertyValue](https://schema.org/PropertyValue)| The descriptor item of the datamap entry. It must follow the [descriptor item profile](#descriptor-item). |
 
-### Descriptor Assertion
+### Descriptor Item
 
-The actual assertion of a datamap entry, describing the contents of a data fragment. It is represented as a [PropertyValue](https://schema.org/PropertyValue) object.
+The [descriptor item](../semantic-core/index.md#descriptor-item) of a datamap entry, describing the contents of a data fragment. It is represented as a [PropertyValue](https://schema.org/PropertyValue) object.
 
 | Property | Required | Expected Type | Description |
 |----------|----------|---------------|-------------|
 |@type |MUST|[Text](https://schema.org/Text)|Must be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
 |@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)||
-|additionalType|SHOULD|[Text](https://schema.org/Text)|Should be `"Interpretation"`, marking the assertion as an [interpretation](../semantic-core/index.md#descriptor-item) in the sense of the Semantic Core Profile.|
+|additionalType|SHOULD|[Text](https://schema.org/Text)|Should be `"Interpretation"`, marking the descriptor item as an [interpretation](../semantic-core/index.md#descriptor-item) in the sense of the Semantic Core Profile.|
 |name|MUST|[Text](https://schema.org/Text)|Must be `"Explication"`|
 |propertyID|MUST|[URL](https://schema.org/URL)|MUST be `"https://purl.org/nfdi4plants/ontology/dpbo/DPBO_0000111"`|
 |value|SHOULD|[Text](https://schema.org/Text)|Explication of the data fragment contents|

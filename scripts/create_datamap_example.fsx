@@ -59,10 +59,10 @@ for fragment in [proteinIdentifierColumn; proteinAbundanceColumn1; proteinAbunda
 
 // A datamap entry is modelled as defined by the Datamap profile: a descriptor (`Statement`, `ItemList`,
 // marked as `DataContext`) about the data fragment, holding the explication of the fragment as its
-// assertion (`PropertyValue`).
+// descriptor item (`PropertyValue`).
 // ARCtrl's `LDPropertyValue.createFragmentDescriptor` still merges both into a single `PropertyValue`.
 
-/// The assertion of a datamap entry: an interpretation of what the data fragment contains.
+/// The descriptor item of a datamap entry: an interpretation of what the data fragment contains.
 let createExplication (fragment : LDNode) (value : string) (valueReference : string) (alternateName : string) (unit : (string * string) option) =
     let explication = LDPropertyValue.create(
         name = "Explication",
