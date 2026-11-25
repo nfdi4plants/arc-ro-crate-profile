@@ -63,6 +63,8 @@ module Types =
     let labProtocol = UsedType(iri = "https://bioschemas.org/types/LabProtocol/0.5-DRAFT", name = "LabProtocol", termCode = "LabProtocol")
     let propertyValue = UsedType(iri = "https://schema.org/PropertyValue", name = "PropertyValue")
     let definedTerm = UsedType(iri = "https://schema.org/DefinedTerm", name = "DefinedTerm")
+    let statement = UsedType(iri = "https://schema.org/Statement", name = "Statement")
+    let itemList = UsedType(iri = "https://schema.org/ItemList", name = "ItemList")
     let person = UsedType(iri = "https://schema.org/Person", name = "Person")
     let scholarlyArticle = UsedType(iri = "https://schema.org/ScholarlyArticle", name = "ScholarlyArticle")
     let comment = UsedType(iri = "https://schema.org/Comment", name = "Comment")

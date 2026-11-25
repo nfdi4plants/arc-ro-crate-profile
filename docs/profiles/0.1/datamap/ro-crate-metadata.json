@@ -100,6 +100,16 @@
       "name": "MediaObject"
     },
     {
+      "@id": "https://schema.org/Statement",
+      "@type": "DefinedTerm",
+      "name": "Statement"
+    },
+    {
+      "@id": "https://schema.org/ItemList",
+      "@type": "DefinedTerm",
+      "name": "ItemList"
+    },
+    {
       "@id": "https://schema.org/PropertyValue",
       "@type": "DefinedTerm",
       "name": "PropertyValue"
@@ -216,6 +226,12 @@
           "@id": "https://schema.org/MediaObject"
         },
         {
+          "@id": "https://schema.org/Statement"
+        },
+        {
+          "@id": "https://schema.org/ItemList"
+        },
+        {
           "@id": "https://schema.org/PropertyValue"
         },
         {
@@ -236,7 +252,7 @@
           "@id": "#hasExample"
         }
       ],
-      "datePublished": "2026-11-15T16:05:24.0927167Z",
+      "datePublished": "2026-11-25T12:43:15.6761292Z",
       "publisher": {
         "@id": "https://nfdi4plants.de/"
       },

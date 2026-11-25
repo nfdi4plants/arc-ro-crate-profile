@@ -17,12 +17,14 @@ title: ARC Datamap Crate
 
 * **Table of contents**
   * [Overview](#overview)
+  * [Detailed Description](#detailed-description)
   * [Example ro-crate-metadata.json](#example-metadata-file-ro-crate-metadatajson)
   * [Requirements](#requirements)
     * [Dataset](#dataset)
     * [Data File](#data-file)
     * [Data Fragment](#data-fragment)
-    * [Fragment Description](#fragment-descriptor)
+    * [Fragment Descriptor](#fragment-descriptor)
+    * [Descriptor Assertion](#descriptor-assertion)
 
 
 ## Overview
@@ -47,10 +49,10 @@ See our peer-reviewed publication for more information on the datamap and its us
 ## Detailed Description
 
 We use `MediaObject` for data fragments and annotate them through descriptor objects for external metadata as described in the [Semantic Core Profile](../semantic-core/index.md). Both objects reference each other. The `Dataset` object lists all datamap entries. Specifically, we plan the following:
-- Each entry in the datamap becomes one entry in `mentions` of type `PropertyValue`.
 - Each data fragment becomes an object of type `MediaObject`, referenced from its file object through `hasPart`.
-- Each entry of the datamap becomes a semantic descriptor of type `ItemList` and `Statement` with an assertion in the form of a `PropertyValue` object.
-- The data fragments and their descriptors referennce each other through the `about` and `subjectOf` properties.
+- Each entry of the datamap becomes a semantic descriptor of type `ItemList` and `Statement`, which references an assertion in the form of a `PropertyValue` object through `itemListElement`.
+- Each of these descriptors becomes one entry in `mentions` of the `Dataset`.
+- The data fragments and their descriptors reference each other: the descriptor points to its fragment through `about`, the fragment points back through `subjectOf`.
 
 ```mermaid
 flowchart TD
@@ -200,18 +202,20 @@ desc --itemListElement--> prop
     {
       "@id": "#Explication_processed_data.csv#col=1",
       "@type": "PropertyValue",
+      "additionalType": "Interpretation",
       "name": "Explication",
       "value": "Protein identifier",
-      "propertyID": "https://github.com/nfdi4plants/ARC-specification/blob/dev/ISA-XLSX.md#datamap-table-sheets",
+      "propertyID": "https://purl.org/nfdi4plants/ontology/dpbo/DPBO_0000111",
       "valueReference": "http://purl.obolibrary.org/obo/NCIT_C165059",
       "alternateName": "protID"
     },
     {
       "@id": "#Explication_processed_data.csv#col=2",
       "@type": "PropertyValue",
+      "additionalType": "Interpretation",
       "name": "Explication",
       "value": "molecule count",
-      "propertyID": "https://github.com/nfdi4plants/ARC-specification/blob/dev/ISA-XLSX.md#datamap-table-sheets",
+      "propertyID": "https://purl.org/nfdi4plants/ontology/dpbo/DPBO_0000111",
       "unitCode": "http://purl.obolibrary.org/obo/NCIT_C68892",
       "unitText": "Millimole per Kilogram",
       "valueReference": "http://purl.obolibrary.org/obo/UO_0000192",
@@ -220,13 +224,23 @@ desc --itemListElement--> prop
     {
       "@id": "#Explication_processed_data.csv#col=3",
       "@type": "PropertyValue",
+      "additionalType": "Interpretation",
       "name": "Explication",
       "value": "molecule count",
-      "propertyID": "https://github.com/nfdi4plants/ARC-specification/blob/dev/ISA-XLSX.md#datamap-table-sheets",
+      "propertyID": "https://purl.org/nfdi4plants/ontology/dpbo/DPBO_0000111",
       "unitCode": "http://purl.obolibrary.org/obo/NCIT_C68892",
       "unitText": "Millimole per Kilogram",
       "valueReference": "http://purl.obolibrary.org/obo/UO_0000192",
       "alternateName": "quant2"
+    },
+    {
+      "@id": "https://w3id.org/arc/ro-crate/datamap/0.1",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "name": "Datamap Crate Profile",
+      "version": "0.1"
     },
     {
       "@id": "LICENSE",
@@ -238,6 +252,7 @@ desc --itemListElement--> prop
       "@type": "Dataset",
       "description": "An example of a ROCrate with a datamap, including annotation of a tabular data file.",
       "name": "ARC Datamap Crate Example",
+      "datePublished": "2026-11-25T00:08:52.9459491",
       "hasPart": {
         "@id": "processed_data.csv"
       },
@@ -252,7 +267,10 @@ desc --itemListElement--> prop
           "@id": "#Descriptor_processed_data.csv#col=3"
         }
       ],
-      "dateCreated": "2026-06-25T22:58:40.2416018",
+      "conformsTo": {
+        "@id": "https://w3id.org/arc/ro-crate/datamap/0.1"
+      },
+      "dateCreated": "2026-11-25T00:08:52.9504303",
       "license": {
         "@id": "LICENSE"
       }
@@ -282,7 +300,7 @@ Object containing and annotating data files and fragments. In the context of thi
 |@type |MUST|[Text](https://schema.org/Text)|Must be '[schema.org/Dataset](https://schema.org/Dataset)'|
 |@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Should be a subdirectory corresponding to this dataset.|
 |hasPart|SHOULD|[File](https://schema.org/MediaObject)|The data files resulting from the processes performed in this dataset.|
-|mentions|COULD|[Text](https://schema.org/Text) or [schema.org/PropertyValue](https://schema.org/PropertyValue)|A fragment description entry from the datamap as a [PropertyValue](https://schema.org/PropertyValue) following the [fragment description profile](#fragment-descriptor).|
+|mentions|SHOULD|[schema.org/Statement](https://schema.org/Statement) and [schema.org/ItemList](https://schema.org/ItemList)|The entries of the datamap, each as a fragment descriptor following the [fragment descriptor profile](#fragment-descriptor).|
 
 
 ### Data (File)
@@ -307,7 +325,7 @@ Describes and points to a *Fragment* of a Data file. In addition to the filepath
 |@type |MUST|[Text](https://schema.org/Text)|Must be 'File' or 'MediaObject'|
 |@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Should be the path pointing to the file with a [fragment selector](https://www.w3.org/TR/annotation-model/#selectors) attached.|
 |usageInfo|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|(Formal) Description of the fragment selector.|
-|about|SHOULD|[schema.org/PropertyValue](https://schema.org/PropertyValue)|The fragment description for this fragment. It must follow the [fragment description profile](#fragment-descriptor).|
+|subjectOf|SHOULD|[schema.org/Statement](https://schema.org/Statement) and [schema.org/ItemList](https://schema.org/ItemList)|The fragment descriptor for this fragment. It must follow the [fragment descriptor profile](#fragment-descriptor).|
 |pattern|SHOULD|[schema.org/DefinedTerm](https://schema.org/DefinedTerm)|Defines the shape or format of entries in this fragment.|
 |name|COULD|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|The name of the file.|
 |comment|COULD|[schema.org/Comment](https://schema.org/Comment)|Comment|
@@ -322,7 +340,7 @@ Adds further annotation to a Data file or a *Fragment* thereof.
 |@type |MUST|[Text](https://schema.org/Text)|Must be `[schema.org/Statement, schema.org/ItemList]`|
 |@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)||
 |about|MUST|[schema.org/MediaObject](https://schema.org/MediaObject)|The described data fragement using a [fragment selector](https://www.w3.org/TR/annotation-model/#selectors), following the [data fragment profile](#data-fragment).|
-|itemListElement|MUST|[schema.org/PropertyValue](https://schema.org/PropertyValue)| The assertion described in the datamap entry. |
+|itemListElement|MUST|[schema.org/PropertyValue](https://schema.org/PropertyValue)| The assertion described in the datamap entry. It must follow the [descriptor assertion profile](#descriptor-assertion). |
 
 ### Descriptor Assertion
 
@@ -332,6 +350,7 @@ The actual assertion of a datamap entry, describing the contents of a data fragm
 |----------|----------|---------------|-------------|
 |@type |MUST|[Text](https://schema.org/Text)|Must be '[schema.org/PropertyValue](https://schema.org/PropertyValue)'|
 |@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)||
+|additionalType|SHOULD|[Text](https://schema.org/Text)|Should be `"Interpretation"`, marking the assertion as an [interpretation](../semantic-core/index.md#descriptor-item) in the sense of the Semantic Core Profile.|
 |name|MUST|[Text](https://schema.org/Text)|Must be `"Explication"`|
 |propertyID|MUST|[URL](https://schema.org/URL)|MUST be `"https://purl.org/nfdi4plants/ontology/dpbo/DPBO_0000111"`|
 |value|SHOULD|[Text](https://schema.org/Text)|Explication of the data fragment contents|

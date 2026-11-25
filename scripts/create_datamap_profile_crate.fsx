@@ -10,6 +10,8 @@ open Profile_crate_helpers
 let types = ResizeArray [
     Types.dataset
     Types.mediaObject
+    Types.statement
+    Types.itemList
     Types.propertyValue
 ]
 
