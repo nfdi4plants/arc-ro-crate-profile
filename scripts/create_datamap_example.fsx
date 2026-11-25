@@ -53,34 +53,58 @@ let proteinAbundanceColumn2 = LDFile.create(
 
 proteinAbundanceColumn2.SetProperty(LDFile.pattern, float_type)
 
-let proteinIdentifierDescriptor = LDPropertyValue.createFragmentDescriptor(
-    fileName = proteinIdentifierColumn.Id,
-    value = "Protein identifier",
-    valueReference = "http://purl.obolibrary.org/obo/NCIT_C165059",
-    subjectOf = proteinIdentifierColumn,
-    alternateName = "protID")
+// Mark the columns as data fragments in the sense of the Datamap profile.
+for fragment in [proteinIdentifierColumn; proteinAbundanceColumn1; proteinAbundanceColumn2] do
+    fragment.AdditionalType <- ResizeArray ["DataFragment"]
 
-let proteinAbundanceDescriptor1 = LDPropertyValue.createFragmentDescriptor(
-    fileName = proteinAbundanceColumn1.Id,
-    value = "molecule count",
-    valueReference = "http://purl.obolibrary.org/obo/UO_0000192",
-    subjectOf = proteinAbundanceColumn1,
-    unitText = "Millimole per Kilogram",
-    unitCode = "http://purl.obolibrary.org/obo/NCIT_C68892",
-    alternateName = "quant1")
+// A datamap entry is modelled as defined by the Datamap profile: a descriptor (`Statement`, `ItemList`,
+// marked as `DataContext`) about the data fragment, holding the explication of the fragment as its
+// descriptor item (`PropertyValue`).
+// ARCtrl's `LDPropertyValue.createFragmentDescriptor` still merges both into a single `PropertyValue`.
 
-let proteinAbundanceDescriptor2 = LDPropertyValue.createFragmentDescriptor(
-    fileName = proteinAbundanceColumn2.Id,
-    value = "molecule count",
-    valueReference = "http://purl.obolibrary.org/obo/UO_0000192",
-    subjectOf = proteinAbundanceColumn2,
-    unitText = "Millimole per Kilogram",
-    unitCode = "http://purl.obolibrary.org/obo/NCIT_C68892",
-    alternateName = "quant2")
+/// The descriptor item of a datamap entry: an interpretation of what the data fragment contains.
+let createExplication (fragment : LDNode) (value : string) (valueReference : string) (alternateName : string) (unit : (string * string) option) =
+    let explication = LDPropertyValue.create(
+        name = "Explication",
+        value = value,
+        id = $"#Explication_{fragment.Id}",
+        propertyID = "https://purl.org/nfdi4plants/ontology/dpbo/DPBO_0000111",
+        ?unitText = Option.map fst unit,
+        ?unitCode = Option.map snd unit,
+        valueReference = valueReference
+    )
+    explication.AdditionalType <- ResizeArray ["Interpretation"]
+    LDPropertyValue.setAlternateNameAsString(explication, alternateName)
+    explication
 
-proteinIdentifierColumn.SetProperty(LDDataset.about, ResizeArray [LDRef(proteinIdentifierDescriptor.Id)])
-proteinAbundanceColumn1.SetProperty(LDDataset.about, ResizeArray [LDRef(proteinAbundanceDescriptor1.Id)])
-proteinAbundanceColumn2.SetProperty(LDDataset.about, ResizeArray [LDRef(proteinAbundanceDescriptor2.Id)])
+/// The descriptor of a datamap entry. It points to its data fragment through `about`,
+/// the fragment points back through `subjectOf`.
+let createDescriptor (fragment : LDNode) (explication : LDNode) =
+    let descriptor = LDNode(
+        $"#Descriptor_{fragment.Id}",
+        schemaType = ResizeArray ["http://schema.org/Statement"; "http://schema.org/ItemList"]
+    )
+    descriptor.AdditionalType <- ResizeArray ["DataContext"]
+    // References instead of nested nodes, as fragment and descriptor point to each other.
+    descriptor.SetProperty(LDDataset.about, LDRef(fragment.Id))
+    descriptor.SetProperty("http://schema.org/itemListElement", ResizeArray [explication])
+    fragment.SetProperty(LDPropertyValue.subjectOf, LDRef(descriptor.Id))
+    descriptor
+
+let millimolePerKilogram = Some ("Millimole per Kilogram", "http://purl.obolibrary.org/obo/NCIT_C68892")
+
+let proteinIdentifierExplication =
+    createExplication proteinIdentifierColumn "Protein identifier" "http://purl.obolibrary.org/obo/NCIT_C165059" "protID" None
+
+let proteinAbundanceExplication1 =
+    createExplication proteinAbundanceColumn1 "molecule count" "http://purl.obolibrary.org/obo/UO_0000192" "quant1" millimolePerKilogram
+
+let proteinAbundanceExplication2 =
+    createExplication proteinAbundanceColumn2 "molecule count" "http://purl.obolibrary.org/obo/UO_0000192" "quant2" millimolePerKilogram
+
+let proteinIdentifierDescriptor = createDescriptor proteinIdentifierColumn proteinIdentifierExplication
+let proteinAbundanceDescriptor1 = createDescriptor proteinAbundanceColumn1 proteinAbundanceExplication1
+let proteinAbundanceDescriptor2 = createDescriptor proteinAbundanceColumn2 proteinAbundanceExplication2
 
 let file = LDFile.create(
     name = "processed_data.csv",
@@ -92,7 +116,8 @@ file.SetProperty(LDDataset.hasPart, ResizeArray [proteinIdentifierColumn; protei
 let dataset = LDDataset.create(
     id = "./",
     hasParts = ResizeArray [file],
-    variableMeasureds = ResizeArray [proteinIdentifierDescriptor; proteinAbundanceDescriptor1; proteinAbundanceDescriptor2]
+    mentions = ResizeArray [proteinIdentifierDescriptor; proteinAbundanceDescriptor1; proteinAbundanceDescriptor2],
+    datePublished = System.DateTime.Now
 )
 
 // Declare conformance to the profile on the root data entity, as RO-Crate 1.2 recommends,
@@ -114,6 +139,20 @@ let graph = ARC.ROCrate.packDatasetAsCrate(
     metadataFileDescriptor = None,
     license = License.GetDefaultLicense()
     )
+
+// Mark the dataset as the datamap. Done on the packed crate, as packing does not carry over
+// the `AdditionalType` of the root dataset.
+graph.GetNode(dataset.Id).AdditionalType <- ResizeArray ["Datamap"]
+
+// Compaction unwraps singleton lists; keep the descriptor items as arrays, as documented in the profile.
+[
+    proteinIdentifierDescriptor, proteinIdentifierExplication
+    proteinAbundanceDescriptor1, proteinAbundanceExplication1
+    proteinAbundanceDescriptor2, proteinAbundanceExplication2
+]
+|> List.iter (fun (descriptor, explication) ->
+    graph.GetNode(descriptor.Id).SetProperty("itemListElement", ResizeArray [LDRef(explication.Id)])
+)
 
 let jsonString = graph.ToROCrateJsonString(spaces = 2)
 System.IO.File.WriteAllText(__SOURCE_DIRECTORY__ + "/../docs/examples/datamap/ro-crate-metadata.json", jsonString)

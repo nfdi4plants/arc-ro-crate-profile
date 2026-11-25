@@ -92,6 +92,10 @@ let dominik =
         affiliation = one hhuPlantBiochemistry
     )
 
+// The Administrative Core profile recommends the full name of a person next to givenName and familyName.
+// LDPerson.create has no parameter for it, so it is set on the created node.
+dominik.SetProperty("http://schema.org/name", "Dominik Brilhaus")
+
 // -----------------------------------------------------------------------------
 // Characteristics, factor value, variable, and process parameter values
 // -----------------------------------------------------------------------------

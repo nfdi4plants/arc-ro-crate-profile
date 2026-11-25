@@ -1,4 +1,4 @@
-#r "nuget: ROCratePCC, 0.2.0"
+#r "nuget: ROCratePCC, 0.3.0"
 
 open ARCtrl.ROCrate
 open ARCtrl.Json
@@ -63,6 +63,8 @@ module Types =
     let labProtocol = UsedType(iri = "https://bioschemas.org/types/LabProtocol/0.5-DRAFT", name = "LabProtocol", termCode = "LabProtocol")
     let propertyValue = UsedType(iri = "https://schema.org/PropertyValue", name = "PropertyValue")
     let definedTerm = UsedType(iri = "https://schema.org/DefinedTerm", name = "DefinedTerm")
+    let statement = UsedType(iri = "https://schema.org/Statement", name = "Statement")
+    let itemList = UsedType(iri = "https://schema.org/ItemList", name = "ItemList")
     let person = UsedType(iri = "https://schema.org/Person", name = "Person")
     let scholarlyArticle = UsedType(iri = "https://schema.org/ScholarlyArticle", name = "ScholarlyArticle")
     let comment = UsedType(iri = "https://schema.org/Comment", name = "Comment")
@@ -83,7 +85,8 @@ module Profile =
     /// Namespace of the persistent identifiers (permalinks) of the profile collection, registered at https://w3id.org.
     ///
     /// `<permalinkRoot>/<profile>/<version>` redirects to the published profile description and, if
-    /// `application/ld+json` is requested, to the profile crate (`ro-crate-metadata.jsonld`) next to it.
+    /// `application/ld+json` is requested, to `ro-crate-metadata.jsonld` next to it, a symbolic link
+    /// to the profile crate (`ro-crate-metadata.json`).
     let permalinkRoot = "https://w3id.org/arc/ro-crate"
 
     /// Web location the `docs/` folder of this repository is published to (GitHub Pages).
@@ -101,3 +104,22 @@ module Profile =
 
     /// Download URL of the example crate published for a profile.
     let exampleUrl (subId : string) = $"{siteRoot}/examples/{subId}/ro-crate-metadata.json"
+
+/// Profiles that other profiles build on. A profile states them with `ConformsTo` in its resource
+/// descriptors: crates of that profile should conform to the stated profiles as well.
+module RelatedProfiles =
+
+    /// A profile of this collection, referenced by its versioned permalink.
+    let private ofCollection (subId : string) (name : string) =
+        RelatedProfile(iri = Profile.permalink subId, name = name, version = Profile.version)
+
+    let administrativeCore = ofCollection "administrative-core" "Administrative Core Profile"
+    let provenanceCore = ofCollection "provenance-core" "Provenance Core Profile"
+    let semanticCore = ofCollection "semantic-core" "Semantic Core Profile"
+
+    /// Workflow Run Crate, https://www.researchobject.org/workflow-run-crate/profiles/workflow_run_crate
+    let workflowRunCrate = RelatedProfile(
+        iri = "https://w3id.org/ro/wfrun/workflow/0.5",
+        name = "Workflow Run Crate",
+        version = "0.5"
+    )

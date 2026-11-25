@@ -103,14 +103,16 @@ The F# scripts in `scripts/` generate two kinds of crate metadata files:
 
 The Administrative Core scripts currently write to these paths:
 
-- `docs/profiles/0.1/administrative-core/ro-crate-metadata.jsonld`
+- `docs/profiles/0.1/administrative-core/ro-crate-metadata.json`
 - `docs/examples/administrative-core/ro-crate-metadata.json`
 
 When you regenerate an example crate, update the matching `index.md` files as well so the published example pages stay in sync.
 
 ## Identifiers
 
-Each profile is identified by its versioned permalink `https://w3id.org/arc/ro-crate/<profile>/<version>`, for example <https://w3id.org/arc/ro-crate/isa/0.1>. The permalink redirects to the profile page published from `docs/profiles/<version>/<profile>/`. If `application/ld+json` is requested, it redirects to the profile crate `ro-crate-metadata.jsonld` in the same folder, so the profile crate must keep this file name.
+Each profile is identified by its versioned permalink `https://w3id.org/arc/ro-crate/<profile>/<version>`, for example <https://w3id.org/arc/ro-crate/isa/0.1>. The permalink redirects to the profile page published from `docs/profiles/<version>/<profile>/`. If `application/ld+json` is requested, it redirects to `ro-crate-metadata.jsonld` in the same folder.
+
+The profile crate itself is named `ro-crate-metadata.json`, the file name RO-Crate prescribes. `ro-crate-metadata.jsonld` is a symbolic link to it, so the site publishes the crate under both names and the permalinks keep resolving.
 
 - Use the permalink wherever a profile is identified: as the `@id` of the root data entity of its profile crate, in the `about` of the resources describing it, and in the `conformsTo` of conforming crates. To point at one section of a profile, append the anchor of its heading, for example `https://w3id.org/arc/ro-crate/wr/0.1#arc-run`.
 - The example crates have no permalink. Reference them by the URL they are published at: `https://nfdi4plants.github.io/arc-ro-crate-profile/examples/<profile>/ro-crate-metadata.json`.

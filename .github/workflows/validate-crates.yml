@@ -1,0 +1,59 @@
+name: Validate RO-Crates
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A newer commit on the same branch or pull request supersedes a run still in progress.
+concurrency:
+  group: validate-crates-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Published on PyPI as `roc-validator`.
+  ROCRATE_VALIDATOR_VERSION: "0.13.1"
+
+jobs:
+  # Lists the example crates and the profile crates; each gets a validation job of its own.
+  find-crates:
+    name: Find crates
+    runs-on: ubuntu-latest
+    outputs:
+      crates: ${{ steps.list.outputs.crates }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: List crates
+        id: list
+        run: |
+          crates="$(python3 scripts/validate_crates.py --list)"
+          echo "crates=$crates" >> "$GITHUB_OUTPUT"
+
+  validate:
+    name: ${{ matrix.crate.name }}
+    needs: find-crates
+    runs-on: ubuntu-latest
+    strategy:
+      # Report on every crate, not only on the first one that fails.
+      fail-fast: false
+      matrix:
+        crate: ${{ fromJson(needs.find-crates.outputs.crates) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install rocrate-validator
+        run: python -m pip install "roc-validator==${ROCRATE_VALIDATOR_VERSION}"
+      - name: Validate crate with --extra-checks
+        env:
+          CRATE: ${{ matrix.crate.path }}
+        run: python scripts/validate_crates.py "$CRATE"

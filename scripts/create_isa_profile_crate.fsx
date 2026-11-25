@@ -68,19 +68,21 @@ let guidances = ResizeArray[
     )
 ]
 
-// let examples = ResizeArray[
-//     TextualResource(
-//         name = "ISA RO-Crate Example",
-//         filePath = Profile.exampleUrl subId,
-//         encodingFormat = "application/json",
-//         rootDataEntityId = id
-//     )
-// ]
+let examples = ResizeArray[
+    TextualResource(
+        name = "ISA RO-Crate Example",
+        filePath = Profile.exampleUrl subId,
+        encodingFormat = "application/json",
+        rootDataEntityId = id
+    )
+]
 
 let resourceDescriptors = ResizeArray [
     Specification(specifications) :> ResourceDescriptor
     Guidance(guidances) :> ResourceDescriptor
-    // Example(examples) :> ResourceDescriptor
+    Example(examples) :> ResourceDescriptor
+    ConformsTo(RelatedProfiles.administrativeCore) :> ResourceDescriptor
+    ConformsTo(RelatedProfiles.provenanceCore) :> ResourceDescriptor
 ]
 
 let rootEntity = 
@@ -105,4 +107,4 @@ let profile =
 
 let string = profile.ToROCrateJsonString(spaces = 2)
 
-System.IO.File.WriteAllText(__SOURCE_DIRECTORY__ + $"/../docs/profiles/{Profile.version}/{subId}/ro-crate-metadata.jsonld", string)
+System.IO.File.WriteAllText(__SOURCE_DIRECTORY__ + $"/../docs/profiles/{Profile.version}/{subId}/ro-crate-metadata.json", string)

@@ -10,7 +10,7 @@ title: ARC Provenance Core
 * Authors: [ARC RO-Crate community](https://nfdi4plants.github.io/arc-ro-crate-profile/#authors)
 * License: [MIT License](https://mit-license.org/)
 * Example conforming crate: [ro-crate-metadata.json](https://nfdi4plants.github.io/arc-ro-crate-profile/examples/provenance-core/ro-crate-metadata.json)
-* Profile Crate: [ro-crate-metadata.jsonld](ro-crate-metadata.jsonld)
+* Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json)
 * Extends:
   - [RO-Crate 1.2 specification](https://w3id.org/ro/crate/1.2)
 * JSON-LD context: <https://www.researchobject.org/ro-terms/arc/context.jsonld>
@@ -33,8 +33,7 @@ This profile uses terminology from the [RO-Crate 1.2 specification](https://w3id
 
 ## Overview
 
-The aim of the profile is to be able to fully represent [ISA-JSON](https://isa-specs.readthedocs.io/en/latest/isajson.html) as RO-Crate, fully capturing the metadata and files in a non-lossy form such that it
-should be possible to convert between one to the other, in either direction, without loss of information.
+The aim of the profile is to capture the provenance of experimental and computational processes in a structured way, focusing on the separation between the planned protocol and its execution, the process. With each process stating its input and output, the profile allows to build a process graph that can be used to trace back the origin of data files and samples.
 
 The profile relies on types from [Bioschemas](https://bioschemas.org/) types:
   
@@ -66,6 +65,7 @@ dataset --hasPart----> DataFile
 dataset --processSequence--> Process
 
 Process --"result"---> DataFile
+Process --"object"---> DataFile
 Process --"result"--> Sample
 Process --"object"--> Sample
 Process --executesLabProtocol--> Protocol
@@ -231,8 +231,8 @@ Has the new Bioschemas DRAFT [bioschemas.org/LabProcess](https://bioschemas.org/
 |@id|MUST|[Text](https://schema.org/Text) or [URL](https://schema.org/URL)|Could identify the process using the isa metadata filename and the protocol reference or process name.|
 |@type |MUST|[Text](https://schema.org/Text)|MUST be '[bioschemas.org/LabProcess](https://bioschemas.org/LabProcess)'|
 |name|MUST|[Text](https://schema.org/Text)| -|
-|object|SHOULD|[bioschemas.org/Sample](#sample) or [File](https://schema.org/MediaObject)|The input of the process. If there are multiple inputs, they SHOULD be stored as a sorted list to establish correspondence with outputs. (Both lists need the same length in that case.)|
-|result|SHOULD|[bioschemas.org/Sample](#sample) or [File](https://schema.org/MediaObject)|The output of the process. If there are multiple outputs, they SHOULD be stored as a sorted list to establish correspondence with inputs. (Both lists need the same length in that case.)|
+|object|SHOULD|[bioschemas.org/Sample](#sample) or [File](https://schema.org/MediaObject)|The inputs of the process.|
+|result|SHOULD|[bioschemas.org/Sample](#sample) or [File](https://schema.org/MediaObject)|The outputs of the process.|
 |executesLabProtocol|SHOULD|[bioschemas.org/LabProtocol](https://bioschemas.org/LabProtocol)|The protocol executed|
 |parameterValue|SHOULD|[schema.org/PropertyValue](https://schema.org/PropertyValue) ([Parameter](#propertyvalue))|A parameter value of the experimental process, usually a key-value pair using ontology terms|
 

@@ -18,6 +18,12 @@ let caroline = LDPerson.create(
     orcid = "https://orcid.org/0000-0003-1512-9504"
 )
 
+// The Administrative Core profile recommends the full name of a person next to givenName and familyName.
+// LDPerson.create has no parameter for it, so it is set on the created nodes.
+
+timo.SetProperty("http://schema.org/name", "Timo Mühlhaus")
+caroline.SetProperty("http://schema.org/name", "Caroline Ott")
+
 let dataHub = LDOrganization.create(
     name = "DataPLANT DataHub",
     id = "https://git.nfdi4plants.org/explore"
@@ -33,6 +39,12 @@ let fsharp = LDComputerLanguage.create(
 )
 
 let cwl = LDComputerLanguage.createCWL()
+
+// RO-Crate 1.2 requires a version on every ComputerLanguage.
+// LDComputerLanguage.create has no parameter for it, so it is set on the created nodes.
+
+fsharp.SetProperty("http://schema.org/version", "11.0")
+cwl.SetProperty("http://schema.org/version", "v1.2")
 
 // Encoding formats of the parameters, taken from EDAM
 
@@ -145,7 +157,8 @@ arcRun.SetProperty(LDDataset.mentions, ResizeArray [workflowInvocation])
 
 let dataset = LDDataset.create(
     id = "./",
-    hasParts = ResizeArray [arcWorkflow; arcRun; intensityTableValue]
+    hasParts = ResizeArray [arcWorkflow; arcRun; intensityTableValue],
+    datePublished = System.DateTime.Now
 )
 
 // Declare which profile, and which section of it, each entity follows.

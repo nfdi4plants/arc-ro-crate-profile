@@ -49,7 +49,8 @@ let measurement = LDLabProcess.create(
 let dataset = LDDataset.create(
     id = "./",
     hasParts = ResizeArray [data],
-    abouts = ResizeArray [preparation; measurement]
+    abouts = ResizeArray [preparation; measurement],
+    datePublished = System.DateTime.Now
 )
 
 // Declare conformance to the profile on the root data entity, as RO-Crate 1.2 recommends,

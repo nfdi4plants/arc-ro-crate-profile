@@ -80,6 +80,7 @@
       "@type": "Dataset",
       "description": "An example of a ROCrate with a core process model, including processing from raw data to processed data fragments.",
       "name": "Data Fragment ARC Provenance Core Example",
+      "datePublished": "2026-11-25T00:08:57.3946289",
       "hasPart": [
         {
           "@id": "raw_data1.wiff"
@@ -105,7 +106,7 @@
       "conformsTo": {
         "@id": "https://w3id.org/arc/ro-crate/provenance-core/0.1"
       },
-      "dateCreated": "2026-11-14T18:51:02.6995139",
+      "dateCreated": "2026-11-25T00:08:57.3985509",
       "license": {
         "@id": "LICENSE"
       }
